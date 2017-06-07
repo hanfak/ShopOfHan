@@ -6,10 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static java.lang.String.format;
+
 public class ProductAvailabilityServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().write("Going to check the product availability");
+        String productName = request.getParameter("productName");
+
+        response.getWriter().write(format("Going to check the product availability of %s", productName));
     }
 }
