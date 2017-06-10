@@ -1,5 +1,6 @@
 package wiring;
 
+import application.ProductCheckUseCase;
 import infrastructure.web.productavailability.ProductAvailabilityServlet;
 import infrastructure.web.productavailability.ProductAvailabilityUnmarshaller;
 import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
@@ -14,7 +15,11 @@ public class Wiring {
         return new ProductAvailabilityMarshaller();
     }
 
+    private static ProductCheckUseCase productCheckUseCase() {
+        return new ProductCheckUseCase();
+    }
+
     public static ProductAvailabilityServlet productAvailabilityServlet() {
-        return new ProductAvailabilityServlet(productAvailabilityUnmarshaller(), productAvailabilityMarshaller());
+        return new ProductAvailabilityServlet(productAvailabilityUnmarshaller(), productAvailabilityMarshaller(), productCheckUseCase());
     }
 }
