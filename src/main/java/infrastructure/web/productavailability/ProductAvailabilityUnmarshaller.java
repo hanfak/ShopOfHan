@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.stream.Collectors;
 
 import static java.lang.String.format;
-
+// Change to marshaller
 public class ProductAvailabilityUnmarshaller implements JsonUnmarshaller<ProductAvailabilityRequest> {
 
     @Override

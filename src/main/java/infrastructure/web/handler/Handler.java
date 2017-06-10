@@ -1,6 +1,8 @@
 package infrastructure.web.handler;
 
 
+import infrastructure.web.productavailability.ProductAvailabilityServlet;
+import infrastructure.web.productavailability.ProductAvailabilityUnmarshaller;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
