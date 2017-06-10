@@ -1,32 +1,37 @@
 package infrastructure.web.productavailability;
 
+import domain.ProductStock;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-import static java.lang.String.format;
 
 public class ProductAvailabilityServlet extends HttpServlet {
 
-    private ProductAvailabilityUnmarshaller unmarshaller;
+    private final ProductAvailabilityUnmarshaller unmarshaller;
+    private final ProductAvaliabilityMarshaller marshaller; //Use interface type?? Need to be injecte??
 
-    public ProductAvailabilityServlet(ProductAvailabilityUnmarshaller unmarshaller) {
+    public ProductAvailabilityServlet(ProductAvailabilityUnmarshaller unmarshaller, ProductAvaliabilityMarshaller marshaller) {
         this.unmarshaller = unmarshaller;
+        this.marshaller = marshaller;
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProductAvailabilityRequest productAvailabilityRequest = unmarshaller.unmarshall(request);
-        System.out.println("productAvailabilityRequest = " + productAvailabilityRequest.productName);
 
-        String checking = format("Going to check the product availability of %s", productAvailabilityRequest.productName);
+        //productCheckUseCase.checkStock(productAvailabilityRequest);
+        ProductStock productStock;
+        if (productAvailabilityRequest.productName.equals("Han")) {
+            productStock = new ProductStock(productAvailabilityRequest.productName, 5);
+        }
+        else {
+            productStock = new ProductStock(productAvailabilityRequest.productName, 0);
+        }
 
-        response.getWriter().write(checking);
+        response.setContentType("application/json");
+        response.getWriter().write(marshaller.marshall(productStock));
     }
 }

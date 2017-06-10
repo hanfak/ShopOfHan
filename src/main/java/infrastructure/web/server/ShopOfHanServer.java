@@ -18,7 +18,6 @@ public class ShopOfHanServer {
 
     public void start() throws Exception {
         server.start();
-
     }
 
     public void stop() throws Exception {
