@@ -14,50 +14,19 @@ import static java.lang.String.format;
 
 public class ProductAvailabilityServlet extends HttpServlet {
 
+    private ProductAvailabilityUnmarshaller unmarshaller;
+
+    public ProductAvailabilityServlet(ProductAvailabilityUnmarshaller unmarshaller) {
+        this.unmarshaller = unmarshaller;
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Get All params from queries
-        Map<String, String[]> parameterMap = request.getParameterMap();
-        //Get All keys
-        List<String> keys = parameterMap.keySet().stream().collect(Collectors.toList());
-        keys.forEach(System.out::println);
-        //Get all values for each key, which is a list
-        List<String[]> values = parameterMap.values().stream().collect(Collectors.toList());
-        //get each value for each key
-        values.stream().forEach((val)->Arrays.stream(val).forEach(System.out::println));
-        //get each value for first key
-        Stream<String> stream = Arrays.stream(values.get(0));
-        // String reduce = stream.reduce("", String::concat);
-        String reduce = stream.collect(Collectors.joining(", "));
+        ProductAvailabilityRequest productAvailabilityRequest = unmarshaller.unmarshall(request);
+        System.out.println("productAvailabilityRequest = " + productAvailabilityRequest.productName);
 
+        String checking = format("Going to check the product availability of %s", productAvailabilityRequest.productName);
 
-        // procedural
-
-        String allKeyValues = "";
-
-        for(Map.Entry<String, String[]> entry : parameterMap.entrySet() ) {
-            String key = entry.getKey();
-            String[] vals = entry.getValue();
-            String valsStr = Arrays.stream(vals).collect(Collectors.joining(", "));
-            String x = "Parameter Name - " + key + ", Value - " + valsStr + "\n";
-            System.out.println("key values = " + x);
-            allKeyValues += x;
-        }
-
-        //functional way
-        String s = parameterMap.entrySet()
-                .stream()
-                .map(e -> e.getKey() + " = " + getValues(e))
-                .collect(Collectors.joining("\n"));
-
-        response.getWriter().write(format("output of all values for first query %s \n\n" +
-                "output of all queries (key and values) procedurally\n\n%s\n\n" +
-                "output of all queries (key and values) functionally \n\n" +
-                "%s", reduce, allKeyValues, s));
+        response.getWriter().write(checking);
     }
-
-    private String getValues(Map.Entry<String, String[]> map) {
-        return Arrays.stream(map.getValue()).collect(Collectors.joining(", "));
-    }
-
 }

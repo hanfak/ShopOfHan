@@ -1,32 +1,18 @@
 package infrastructure.web.productavailability;
 
-import infrastructure.web.JsonUnmarshaller;
-import org.json.JSONObject;
+import infrastructure.web.QueryUnmarshaller;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 import static java.lang.String.format;
-// Change to marshaller
-public class ProductAvailabilityUnmarshaller implements JsonUnmarshaller<ProductAvailabilityRequest> {
+public class ProductAvailabilityUnmarshaller implements QueryUnmarshaller<ProductAvailabilityRequest> {
 
     @Override
     public ProductAvailabilityRequest unmarshall(HttpServletRequest request) throws IOException {
-        String requestBody = stringifyBody(request);
-        System.out.println(format("body from request = %s\n", requestBody));
+        String productName = request.getParameter("productName");
+        System.out.println(format("body from request = %s\n", productName));
 
-        JSONObject jsonObject = new JSONObject(requestBody);
-        System.out.println(format("title from request = %s\n", jsonObject.getString("productName")));
-
-        return new ProductAvailabilityRequest(
-                jsonObject.getString("productName"));
+        return new ProductAvailabilityRequest(productName);
     }
-
-    private static String stringifyBody(HttpServletRequest request) throws IOException {
-        return request.getReader()
-                .lines()
-                .collect(Collectors.joining(System.lineSeparator()));
-    }
-
 }

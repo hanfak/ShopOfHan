@@ -12,7 +12,7 @@ public class Handler {
 
     public static ServletContextHandler servletHandler() {
         ServletContextHandler servletHandler = new ServletContextHandler();
-        servletHandler.addServlet(new ServletHolder(new ProductAvailabilityServlet()), PRODUCT_AVAILABILITY);
+        servletHandler.addServlet(new ServletHolder(new ProductAvailabilityServlet(new ProductAvailabilityUnmarshaller())), PRODUCT_AVAILABILITY);
         return servletHandler;
     }
 }
