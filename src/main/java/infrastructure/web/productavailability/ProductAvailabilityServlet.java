@@ -11,9 +11,9 @@ import java.io.IOException;
 public class ProductAvailabilityServlet extends HttpServlet {
 
     private final ProductAvailabilityUnmarshaller unmarshaller;
-    private final ProductAvaliabilityMarshaller marshaller; //Use interface type?? Need to be injecte??
+    private final ProductAvailabilityMarshaller marshaller; //Use interface type?? Need to be injecte??
 
-    public ProductAvailabilityServlet(ProductAvailabilityUnmarshaller unmarshaller, ProductAvaliabilityMarshaller marshaller) {
+    public ProductAvailabilityServlet(ProductAvailabilityUnmarshaller unmarshaller, ProductAvailabilityMarshaller marshaller) {
         this.unmarshaller = unmarshaller;
         this.marshaller = marshaller;
     }

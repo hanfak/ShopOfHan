@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import static java.lang.String.format;
 
-public class ProductAvaliabilityMarshaller {
+public class ProductAvailabilityMarshaller {
 
     String marshall(ProductStock productStock) throws IOException {
         // toJson in here or in ProductStock??

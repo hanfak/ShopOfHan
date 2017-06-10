@@ -1,6 +1,6 @@
 package infrastructure.web.productavailability;
 
-import infrastructure.web.Request;
+import domain.crosscutting.Request;
 
 public class ProductAvailabilityRequest implements Request {
     public final String productName;
