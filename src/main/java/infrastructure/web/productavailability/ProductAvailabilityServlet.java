@@ -26,8 +26,12 @@ public class ProductAvailabilityServlet extends HttpServlet {
         ProductAvailabilityRequest productAvailabilityRequest = unmarshaller.unmarshall(request);
 
         ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
-
-        response.setContentType("application/json");
-        response.getWriter().write(marshaller.marshall(productStock));
+        // Need to change, this logic should be usecase
+        if (productStock != null) {
+            response.setContentType("application/json");
+            response.getWriter().write(marshaller.marshall(productStock));
+        } else {
+            response.getWriter().write("No product of this name is stocked here");
+        }
     }
 }
