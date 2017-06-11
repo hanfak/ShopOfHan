@@ -19,6 +19,7 @@ public class StockRepository {
         this.databaseConnectionManager = databaseConnectionManager;
     }
 
+    // What should this return
     public ProductStock checkStock(ProductAvailabilityRequest request) {
         //Avoid using null
         ProductStock producatAvailability = null;
@@ -30,8 +31,8 @@ public class StockRepository {
             // more elegent (functional) way of doing this
             while(rs.next()) {
                 producatAvailability = new ProductStock(
-                        rs.getString(2),
-                        rs.getInt(3));
+                        rs.getString("product_name"),
+                        rs.getInt("amount"));
             }
 
             dbConnection.close();

@@ -15,9 +15,10 @@ public class DatabaseConnectionManager {
 
     public Connection getDBConnection() {
         try {
-            //autoReconnect -> must be better way of avoid connection closed error???
             Connection con = DriverManager.getConnection(
-                    settings.databaseURL() + "shop_of_han_database", settings.databaseUsername(), settings.databasePassword());
+                    settings.databaseURL() + "shop_of_han_database",
+                    settings.databaseUsername(),
+                    settings.databasePassword());
             return con;
         } catch(Exception e) {
             System.out.println(e);

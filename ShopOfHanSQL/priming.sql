@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS stock
 );
 
 INSERT INTO stock (product_name, amount) VALUES
-('Joy Of Java', 4),
+('Joy Of java', 4),
 ('SQL the sequel', 0);
 
