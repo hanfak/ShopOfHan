@@ -8,6 +8,8 @@ import infrastructure.properties.Settings;
 import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import infrastructure.web.productavailability.ProductAvailabilityServlet;
 import infrastructure.web.productavailability.ProductAvailabilityUnmarshaller;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Wiring {
 
@@ -36,7 +38,12 @@ public class Wiring {
         return new ProductCheckUseCase(stockRepository());
     }
 
+    // Is this the correct way of passing in a class as a parameter
+    private static Logger logger(Class<?> cls) {
+        return LoggerFactory.getLogger(cls);
+    }
+
     public static ProductAvailabilityServlet productAvailabilityServlet() {
-        return new ProductAvailabilityServlet(productAvailabilityUnmarshaller(), productAvailabilityMarshaller(), productCheckUseCase());
+        return new ProductAvailabilityServlet(productAvailabilityUnmarshaller(), productAvailabilityMarshaller(), productCheckUseCase(), logger(ProductAvailabilityServlet.class));
     }
 }
