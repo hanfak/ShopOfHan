@@ -37,7 +37,6 @@ public class ProductAvailabilityServlet extends HttpServlet {
             response.getWriter().write(marshaller.marshall(productStock));
         } else {
             logger.info("Product does not exist");
-
             response.getWriter().write("No product of this name is stocked here");
         }
     }

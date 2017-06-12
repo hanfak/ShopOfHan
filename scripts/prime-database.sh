@@ -1,4 +1,5 @@
   #!/bin/bash
+  # Script for accessing docker then running the following
   DB_USER='root'
   DB_PASS='password'
   DB='shop_of_han_database'
