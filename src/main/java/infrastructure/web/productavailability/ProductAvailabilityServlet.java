@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 public class ProductAvailabilityServlet extends HttpServlet {
 
@@ -25,16 +26,16 @@ public class ProductAvailabilityServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        // move to a webervice class
         ProductAvailabilityRequest productAvailabilityRequest = unmarshaller.unmarshall(request);
         logger.info("Unmarshalling");
-        ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
+        Optional<ProductStock> productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
         // Need to change, this logic should be usecase
-        if (productStock != null) {
+        if (productStock.isPresent() ) {
             logger.info("Product exists");
 
             response.setContentType("application/json");
-            response.getWriter().write(marshaller.marshall(productStock));
+            response.getWriter().write(marshaller.marshall(productStock.get()));
         } else {
             logger.info("Product does not exist");
             response.getWriter().write("No product of this name is stocked here");

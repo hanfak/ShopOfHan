@@ -31,7 +31,7 @@ public class StockRepository {
 
             // more elegent (functional) way of doing this
             while(rs.next()) {
-                producatAvailability = new ProductStock(
+                producatAvailability = ProductStock.productStock(
                         rs.getString("product_name"),
                         rs.getInt("amount"));
             }

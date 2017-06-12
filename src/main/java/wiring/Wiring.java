@@ -35,7 +35,7 @@ public class Wiring {
     }
 
     private static ProductCheckUseCase productCheckUseCase() {
-        return new ProductCheckUseCase(stockRepository());
+        return new ProductCheckUseCase(stockRepository(), logger(ProductCheckUseCase.class));
     }
 
     // Is this the correct way of passing in a class as a parameter
