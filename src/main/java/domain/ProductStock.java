@@ -11,3 +11,12 @@ public class ProductStock {
         this.amountInStock = amountInStock;
     }
 }
+
+//    private PacStatusRejection(String rejectionCode, String rejectionReason) {
+//        this.rejectionCode = rejectionCode;
+//        this.rejectionReason = rejectionReason;
+//    }
+//
+//    public static PacStatusRejection pacStatusRejection(String pacStatus, String message){
+//        return new PacStatusRejection(pacStatus, message);
+//    }

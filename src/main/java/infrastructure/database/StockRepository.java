@@ -9,8 +9,9 @@ import java.sql.Statement;
 
 import static java.lang.String.format;
 
-
 // implement interface in Domain.crosscutting
+// -> used for test db, this class will be extended by test db
+// -> interface in domain.crosscutting and used in usecase (JDBC implements stock)
 public class StockRepository {
 
     private DatabaseConnectionManager databaseConnectionManager;
@@ -21,7 +22,7 @@ public class StockRepository {
 
     // What should this return
     public ProductStock checkStock(ProductAvailabilityRequest request) {
-        //Avoid using null
+        //Avoid using null, -> use optional
         ProductStock producatAvailability = null;
         try {
             Connection dbConnection = databaseConnectionManager.getDBConnection();

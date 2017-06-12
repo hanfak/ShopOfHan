@@ -12,11 +12,16 @@ public class ShopOfHan {
 
     public static void main(String[] args) throws Exception {
         LOGGER.info("Starting web app");
-        Settings settings = new Settings(new PropertiesReader("localhost"));
+        Settings settings = loadSettings("localhost");
 
+        // builder
         ShopOfHanServer server = new ShopOfHanServer(settings);
         server.withContext(Handler.servletHandler());
 
         server.start();
+    }
+
+    private static Settings loadSettings(String propertyFile) {
+        return new Settings(new PropertiesReader(propertyFile));
     }
 }

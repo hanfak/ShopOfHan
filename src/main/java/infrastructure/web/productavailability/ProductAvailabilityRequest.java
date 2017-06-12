@@ -1,7 +1,9 @@
 package infrastructure.web.productavailability;
 
 import domain.crosscutting.Request;
-
+// -> put into domain.crosscutting
+// -> implement value type
+// -> No need to implement request???
 public class ProductAvailabilityRequest implements Request {
     public final String productName;
 
@@ -9,6 +11,7 @@ public class ProductAvailabilityRequest implements Request {
         this.productName = productName;
     }
 
+    // -> remove
     @Override
     public String toJson() {
         return null;

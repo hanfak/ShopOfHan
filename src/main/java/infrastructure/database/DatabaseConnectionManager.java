@@ -5,7 +5,7 @@ import infrastructure.properties.Settings;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+//Implement interface for DBconnection manager, make more explicit
 public class DatabaseConnectionManager {
     private static Settings settings;
 

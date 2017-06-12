@@ -1,6 +1,6 @@
 package infrastructure.properties;
 
-public class Settings {
+public class Settings implements DatabaseSettings{
     private PropertiesReader propertiesReader;
 
     public Settings(PropertiesReader propertiesReader) {
@@ -11,14 +11,15 @@ public class Settings {
         return Integer.parseInt(propertiesReader.readProperty("server.port"));
     }
 
+    @Override
     public String databaseURL() {
         return propertiesReader.readProperty("database.url");
     }
-
+    @Override
     public String databaseUsername() {
         return propertiesReader.readProperty("database.username");
     }
-
+    @Override
     public String databasePassword() {
         return propertiesReader.readProperty("database.password");
     }

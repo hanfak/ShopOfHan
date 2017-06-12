@@ -11,7 +11,6 @@ public class Handler {
 
     public static ServletContextHandler servletHandler() {
         ServletContextHandler servletHandler = new ServletContextHandler();
-        // Need to start wiring in dependencies in new class, get to big newing up
         // builder pattern to create servletHandler
         servletHandler.addServlet(new ServletHolder(productAvailabilityServlet()), PRODUCT_AVAILABILITY);
         return servletHandler;
