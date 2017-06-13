@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import static domain.Product.product;
 import static domain.ProductStock.productStock;
 import static java.lang.String.format;
 
@@ -15,23 +16,23 @@ import static java.lang.String.format;
 // -> interface in domain.crosscutting and used in usecase (JDBC implements stock)
 public class StockRepository {
 
-    private DatabaseConnectionManager databaseConnectionManager;
+    private MySqlJDBCDatabaseConnectionManager mySqlDatabaseConnectionManager;
 
-    public StockRepository(DatabaseConnectionManager databaseConnectionManager) {
-        this.databaseConnectionManager = databaseConnectionManager;
+    public StockRepository(MySqlJDBCDatabaseConnectionManager mySqlDatabaseConnectionManager) {
+        this.mySqlDatabaseConnectionManager = mySqlDatabaseConnectionManager;
     }
 
-    // What should this return
+    // What should this return optional?
     public ProductStock checkStock(ProductAvailabilityRequest request) {
         //Avoid using null, -> use optional
         ProductStock producatAvailability = null;
         try {
-            Connection dbConnection = databaseConnectionManager.getDBConnection();
+            Connection dbConnection = mySqlDatabaseConnectionManager.getDBConnection();
             Statement stmt = dbConnection.createStatement();
             ResultSet rs = stmt.executeQuery(sqlQuery(request));
                 while(rs.next()) {
                     return productStock(
-                            rs.getString("product_name"),
+                            product("", rs.getString("product_name"), ""),
                             rs.getInt("amount"));
                 }
             dbConnection.close();
@@ -46,3 +47,22 @@ public class StockRepository {
         return format("select * from stock where product_name='%s'", request.productName);
     }
 }
+
+// Example JdbcReader
+
+// tried to implement
+
+//        try( Connection dbConnection = mySqlDatabaseConnectionManager.getDBConnection();
+//                Statement stmt = dbConnection.createStatement();
+//                ResultSet rs = stmt.executeQuery(sqlQuery(request))) {
+//                ProductStock productAvailability;
+//                if(rs.next()) {
+//                productAvailability = productStock(
+//                rs.getString("product_name"),
+//                rs.getInt("amount"));
+//                }
+//                dbConnection.close();
+//                return productAvailability;
+//                } catch(SQLException e) {
+//                throw new IllegalStateException(e.toString());
+//                }

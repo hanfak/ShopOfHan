@@ -6,13 +6,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 //Implement interface for DBconnection manager, make more explicit
-public class DatabaseConnectionManager {
+public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectionManager {
     private static Settings settings;
 
-    public DatabaseConnectionManager(Settings settings) {
+    public MySqlJDBCDatabaseConnectionManager(Settings settings) {
         this.settings = settings;
     }
 
+    @Override
     public Connection getDBConnection() {
         try {
             Connection con = DriverManager.getConnection(

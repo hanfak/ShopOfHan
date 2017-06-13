@@ -2,18 +2,16 @@ package domain;
 
 import domain.crosscutting.ValueType;
 
-// Extend valuetype for equals, hashcode etc
 public class ProductStock extends ValueType {
-    // Add ProductID, which is acquired from DB
-    public final String productName;
+    public final Product product;
     public final Integer amountInStock;
-    // static factory method instead??
-    private ProductStock(String productName, Integer amountInStock) {
-        this.productName = productName;
+
+    private ProductStock( Product product, Integer amountInStock) {
+        this.product = product;
         this.amountInStock = amountInStock;
     }
 
-    public static ProductStock productStock(String productName, Integer amountInStock){
-        return new ProductStock(productName, amountInStock);
+    public static ProductStock productStock(Product product, Integer amountInStock){
+        return new ProductStock(product, amountInStock);
     }
 }

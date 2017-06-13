@@ -1,7 +1,7 @@
 package wiring;
 
 import application.ProductCheckUseCase;
-import infrastructure.database.DatabaseConnectionManager;
+import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
 import infrastructure.database.StockRepository;
 import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
@@ -27,8 +27,8 @@ public class Wiring {
     }
     // Extract to separate wiring for database
     // use a singleton???
-    private static DatabaseConnectionManager databaseConnectionManager() {
-        return new DatabaseConnectionManager(settings());
+    private static MySqlJDBCDatabaseConnectionManager databaseConnectionManager() {
+        return new MySqlJDBCDatabaseConnectionManager(settings());
     }
 
     private static StockRepository stockRepository(){
