@@ -5,8 +5,6 @@ import infrastructure.database.StockRepository;
 import infrastructure.web.productavailability.ProductAvailabilityRequest;
 import org.slf4j.Logger;
 
-import java.util.Optional;
-
 public class ProductCheckUseCase {
 
     private StockRepository stockRepository;
@@ -21,12 +19,7 @@ public class ProductCheckUseCase {
     // REturn rendered content
 
     // How to use interface instead of implementation
-    public Optional<ProductStock> checkStock(ProductAvailabilityRequest request) {
-        ProductStock productStock = stockRepository.checkStock(request);
-        if (productStock == null) {
-            return Optional.empty();
-        }
-        return Optional.of(productStock);
-
+    public ProductStock checkStock(ProductAvailabilityRequest request) {
+           return stockRepository.checkStock(request);
     }
 }

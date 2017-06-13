@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import static domain.ProductStock.productStock;
 import static java.lang.String.format;
 
 // implement interface in Domain.crosscutting
@@ -28,17 +29,14 @@ public class StockRepository {
             Connection dbConnection = databaseConnectionManager.getDBConnection();
             Statement stmt = dbConnection.createStatement();
             ResultSet rs = stmt.executeQuery(sqlQuery(request));
-
-            // more elegent (functional) way of doing this
-            while(rs.next()) {
-                producatAvailability = ProductStock.productStock(
-                        rs.getString("product_name"),
-                        rs.getInt("amount"));
-            }
-
+                while(rs.next()) {
+                    return productStock(
+                            rs.getString("product_name"),
+                            rs.getInt("amount"));
+                }
             dbConnection.close();
         } catch(Exception e) {
-            System.out.println(e);
+            System.out.println("afse");
         }
         return producatAvailability;
     }

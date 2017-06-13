@@ -2,6 +2,7 @@ package infrastructure.web.productavailability;
 
 import application.ProductCheckUseCase;
 import domain.ProductStock;
+import infrastructure.web.RenderedContent;
 import org.slf4j.Logger;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
+
+import static java.lang.String.format;
 
 public class ProductAvailabilityServlet extends HttpServlet {
 
@@ -29,16 +32,24 @@ public class ProductAvailabilityServlet extends HttpServlet {
         // move to a webervice class
         ProductAvailabilityRequest productAvailabilityRequest = unmarshaller.unmarshall(request);
         logger.info("Unmarshalling");
-        Optional<ProductStock> productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
         // Need to change, this logic should be usecase
-        if (productStock.isPresent() ) {
-            logger.info("Product exists");
+        responseReturned(response, productAvailabilityRequest);
+    }
 
-            response.setContentType("application/json");
-            response.getWriter().write(marshaller.marshall(productStock.get()));
-        } else {
-            logger.info("Product does not exist");
-            response.getWriter().write("No product of this name is stocked here");
+    private void responseReturned(HttpServletResponse response, ProductAvailabilityRequest productAvailabilityRequest) throws IOException {
+        // Extract creation of rendered content and usecase to webservice
+        try {
+            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
+            RenderedContent renderedContent = new RenderedContent(format(marshaller.marshall(productStock), productAvailabilityRequest.productName), "application/json", 200);
+            renderedContent.render(response);
+        } catch (NullPointerException e) {
+            logger.info("Product does not exist" + e);
+            RenderedContent renderedContent = new RenderedContent(format("Product '%s' is not stocked", productAvailabilityRequest.productName), "text/plain", 404);
+            renderedContent.render(response);
         }
     }
 }
+
+//    String body = readInputStream(request.getInputStream());
+//    RenderedContent renderedContent = portInRequestWebService.requestPortIn(body);
+//        renderedContent.render(response);
