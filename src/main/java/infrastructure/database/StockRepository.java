@@ -6,6 +6,7 @@ import infrastructure.web.productavailability.ProductAvailabilityRequest;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Optional;
 
 import static domain.Product.product;
 import static domain.ProductStock.productStock;
@@ -22,26 +23,24 @@ public class StockRepository {
         this.mySqlDatabaseConnectionManager = mySqlDatabaseConnectionManager;
     }
 
-    // What should this return optional?
-    public ProductStock checkStock(ProductAvailabilityRequest request) {
-        //Avoid using null, -> use optional
-        ProductStock producatAvailability = null;
+    public Optional<ProductStock> checkStock(ProductAvailabilityRequest request) {
         try {
             Connection dbConnection = mySqlDatabaseConnectionManager.getDBConnection();
             Statement stmt = dbConnection.createStatement();
             ResultSet rs = stmt.executeQuery(sqlQuery(request));
-                while(rs.next()) {
-                    return productStock(
+                if (rs.next()) {
+                    return Optional.of(productStock(
                             product("", rs.getString("product_name"), ""),
-                            rs.getInt("amount"));
+                            rs.getInt("amount")));
                 }
+                // if (!rs.next) error
+                // if (rs.next) error
             dbConnection.close();
         } catch(Exception e) {
             System.out.println("afse");
         }
-        return producatAvailability;
+        return Optional.empty();
     }
-
 
     private String sqlQuery(ProductAvailabilityRequest request) {
         return format("select * from stock where product_name='%s'", request.productName);
