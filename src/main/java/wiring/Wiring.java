@@ -8,6 +8,7 @@ import infrastructure.properties.Settings;
 import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import infrastructure.web.productavailability.ProductAvailabilityServlet;
 import infrastructure.web.productavailability.ProductAvailabilityUnmarshaller;
+import infrastructure.web.productavailability.ProductAvailabilityWebService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,6 +45,10 @@ public class Wiring {
     }
 
     public static ProductAvailabilityServlet productAvailabilityServlet() {
-        return new ProductAvailabilityServlet(productAvailabilityUnmarshaller(), productAvailabilityMarshaller(), productCheckUseCase(), logger(ProductAvailabilityServlet.class));
+        return new ProductAvailabilityServlet(productAvailabilityUnmarshaller(), logger(ProductAvailabilityServlet.class), productAvailabilityWebService());
+    }
+
+    private static ProductAvailabilityWebService productAvailabilityWebService() {
+        return new ProductAvailabilityWebService(productCheckUseCase(), productAvailabilityMarshaller(), logger(ProductAvailabilityWebService.class));
     }
 }
