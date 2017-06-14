@@ -2,6 +2,7 @@ package infrastructure.web.productavailability;
 
 import application.ProductCheckUseCase;
 import domain.ProductStock;
+import infrastructure.web.Marshaller;
 import infrastructure.web.RenderedContent;
 import org.slf4j.Logger;
 
@@ -13,7 +14,7 @@ import static java.lang.String.format;
 public class ProductAvailabilityWebService {
 
     private final ProductCheckUseCase productCheckUseCase;
-    private final ProductAvailabilityMarshaller marshaller; //Use interface type?? Need to be injecte??
+    private final Marshaller marshaller; //Use interface type?? Need to be injecte??
     private Logger logger;
 
     public ProductAvailabilityWebService(ProductCheckUseCase productCheckUseCase, ProductAvailabilityMarshaller marshaller, Logger logger) {
@@ -23,15 +24,13 @@ public class ProductAvailabilityWebService {
     }
 
     public RenderedContent requestProductCheck(ProductAvailabilityRequest productAvailabilityRequest) throws IOException {
-        Optional<ProductStock> productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
-
-        if (productStock.isPresent()) {
-            logger.info("Product does exist " + productStock.get().product.productName);
-            return new RenderedContent(marshaller.marshall(productStock.get()), "application/json", 200);
-        }
-        else {
+        try {
+            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
+            logger.info("Product does exist " + productStock.product.productName); //use the name from stock or from request (to keep consistent?
+            return new RenderedContent(marshaller.marshall(productStock), "application/json", 200);
+        } catch (IllegalStateException e) {
             logger.info("Product does not exist " + productAvailabilityRequest.productName);
-            return new RenderedContent(format("Product '%s' is not stocked", productAvailabilityRequest.productName), "text/plain", 404);
+            return new RenderedContent(format("Product '%s' is not stocked %s", productAvailabilityRequest.productName, e.toString()), "text/plain", 404);
         }
     }
 }

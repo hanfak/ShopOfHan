@@ -29,7 +29,7 @@ public class StockRepository {
             Statement stmt = dbConnection.createStatement();
             ResultSet rs = stmt.executeQuery(sqlQuery(request));
                 if (rs.next()) {
-                    return Optional.of(productStock(
+                    return Optional.of(productStock( //store productID instead
                             product("", rs.getString("product_name"), ""),
                             rs.getInt("amount")));
                 }
@@ -48,20 +48,3 @@ public class StockRepository {
 }
 
 // Example JdbcReader
-
-// tried to implement
-
-//        try( Connection dbConnection = mySqlDatabaseConnectionManager.getDBConnection();
-//                Statement stmt = dbConnection.createStatement();
-//                ResultSet rs = stmt.executeQuery(sqlQuery(request))) {
-//                ProductStock productAvailability;
-//                if(rs.next()) {
-//                productAvailability = productStock(
-//                rs.getString("product_name"),
-//                rs.getInt("amount"));
-//                }
-//                dbConnection.close();
-//                return productAvailability;
-//                } catch(SQLException e) {
-//                throw new IllegalStateException(e.toString());
-//                }

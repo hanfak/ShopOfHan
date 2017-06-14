@@ -17,7 +17,7 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
     public Connection getDBConnection() {
         try {
             Connection con = DriverManager.getConnection(
-                    settings.databaseURL() + "shop_of_han_database",
+                    settings.databaseURL() + "shop_of_han_database?verifyServerCertificate=false&useSSL=true",
                     settings.databaseUsername(),
                     settings.databasePassword());
             return con;

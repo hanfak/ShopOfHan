@@ -21,7 +21,15 @@ public class ProductCheckUseCase {
     // REturn rendered content
 
     // How to use interface instead of implementation
-    public Optional<ProductStock> checkStock(ProductAvailabilityRequest request) {
-           return stockRepository.checkStock(request);
+    public ProductStock checkStock(ProductAvailabilityRequest request) {
+        logger.info("checking stock...");
+        Optional<ProductStock> checkStock = stockRepository.checkStock(request);
+        logger.info("Stock checked");
+        if (checkStock.isPresent()) {
+            return checkStock.get();
+        } else {
+            logger.info("Stock not there");
+            throw new IllegalStateException("Product is not found");
+        }
     }
 }
