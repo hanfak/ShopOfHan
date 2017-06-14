@@ -10,7 +10,7 @@ import java.io.IOException;
 
 import static infrastructure.web.RenderedContent.errorContent;
 import static infrastructure.web.RenderedContent.jsonContent;
-import static java.lang.String.*;
+import static java.lang.String.format;
 
 public class ProductAvailabilityWebService {
 
@@ -18,7 +18,7 @@ public class ProductAvailabilityWebService {
     private final Marshaller<ProductStock> marshaller;
     private Logger logger;
 
-    public ProductAvailabilityWebService(ProductCheckUseCase productCheckUseCase, ProductAvailabilityMarshaller marshaller, Logger logger) {
+    public ProductAvailabilityWebService(ProductCheckUseCase productCheckUseCase, Marshaller<ProductStock> marshaller, Logger logger) {
         this.productCheckUseCase = productCheckUseCase;
         this.marshaller = marshaller;
         this.logger = logger;

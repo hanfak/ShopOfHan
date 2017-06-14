@@ -1,11 +1,14 @@
 package wiring;
 
 import application.ProductCheckUseCase;
+import domain.crosscutting.StockRepository;
 import infrastructure.database.JDBCDatabaseConnectionManager;
-import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
 import infrastructure.database.JDBCStockRepository;
+import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
 import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
+import infrastructure.web.Marshaller;
+import infrastructure.web.Unmarshaller;
 import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import infrastructure.web.productavailability.ProductAvailabilityServlet;
 import infrastructure.web.productavailability.ProductAvailabilityUnmarshaller;
@@ -19,11 +22,12 @@ public class Wiring {
         return new Settings(new PropertiesReader("localhost"));
     }
 
-    private static ProductAvailabilityUnmarshaller productAvailabilityUnmarshaller() {
+    //Need to set generric here
+    private static Unmarshaller productAvailabilityUnmarshaller() {
         return new ProductAvailabilityUnmarshaller();
     }
 
-    private static ProductAvailabilityMarshaller productAvailabilityMarshaller() {
+    private static Marshaller productAvailabilityMarshaller() {
         return new ProductAvailabilityMarshaller();
     }
     // Extract to separate wiring for database
@@ -32,7 +36,7 @@ public class Wiring {
         return new MySqlJDBCDatabaseConnectionManager(settings());
     }
 
-    private static JDBCStockRepository stockRepository(){
+    private static StockRepository stockRepository() {
         return new JDBCStockRepository(databaseConnectionManager());
     }
 

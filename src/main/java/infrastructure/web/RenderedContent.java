@@ -5,9 +5,9 @@ import java.io.IOException;
 
 public class RenderedContent {
 
-    public final String body;
-    public final String contentType;
-    public final int statusCode;
+    private final String body;
+    private final String contentType;
+    private final int statusCode;
 
     private RenderedContent(String body, String contentType, int statusCode) {
         this.body = body;
@@ -15,16 +15,16 @@ public class RenderedContent {
         this.statusCode = statusCode;
     }
 
-    public static RenderedContent renderedContent(String body, String contentType, int statusCode) {
+    private static RenderedContent renderedContent(String body, String contentType, int statusCode) {
         return new RenderedContent(body, contentType, statusCode);
     }
 
     // good way??
     public static RenderedContent jsonContent(String body) {
-        return new RenderedContent(body, "application/json", 200);
+        return renderedContent(body, "application/json", 200);
     }
     public static RenderedContent errorContent(String body) {
-        return new RenderedContent(body, "text/plain", 404);
+        return renderedContent(body, "text/plain", 404);
     }
 
     public void render(HttpServletResponse response) throws IOException {

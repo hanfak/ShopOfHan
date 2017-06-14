@@ -13,7 +13,7 @@ import static domain.Product.product;
 import static domain.ProductStock.productStock;
 import static java.lang.String.format;
 
-public class JDBCStockRepository implements StockRepository<ProductStock> {
+public class JDBCStockRepository implements StockRepository<ProductStock, ProductAvailabilityRequest> {
 
     private JDBCDatabaseConnectionManager databaseConnectionManager;
 
@@ -21,6 +21,7 @@ public class JDBCStockRepository implements StockRepository<ProductStock> {
         this.databaseConnectionManager = databaseConnectionManager;
     }
 
+    @Override
     public Optional<ProductStock> checkStock(ProductAvailabilityRequest request) {
         try {
             Connection dbConnection = databaseConnectionManager.getDBConnection();

@@ -12,6 +12,7 @@ public class ProductAvailabilityMarshaller implements Marshaller<ProductStock> {
     private static final String EXPECTED_BODY_FORMAT = "{\"productName\": \"%s\"," +
                     "\"amountInStock\": \"%s\"}";
 
+    @Override
     public String marshall(ProductStock productStock) throws IOException {
         return toJson(productStock);
     }

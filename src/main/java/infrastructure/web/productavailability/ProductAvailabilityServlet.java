@@ -1,6 +1,5 @@
 package infrastructure.web.productavailability;
 
-import domain.crosscutting.Request;
 import infrastructure.web.RenderedContent;
 import infrastructure.web.Unmarshaller;
 import org.slf4j.Logger;
@@ -17,7 +16,7 @@ public class ProductAvailabilityServlet extends HttpServlet {
     private final Logger logger;
     private final ProductAvailabilityWebService productAvailabilityWebService;
 
-    public ProductAvailabilityServlet(ProductAvailabilityUnmarshaller unmarshaller, Logger logger, ProductAvailabilityWebService productAvailabilityWebService) {
+    public ProductAvailabilityServlet(Unmarshaller<ProductAvailabilityRequest> unmarshaller, Logger logger, ProductAvailabilityWebService productAvailabilityWebService) {
         this.unmarshaller = unmarshaller;
         this.logger = logger;
         this.productAvailabilityWebService = productAvailabilityWebService;
