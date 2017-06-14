@@ -1,7 +1,8 @@
 package application;
 
 import domain.ProductStock;
-import infrastructure.database.StockRepository;
+import domain.crosscutting.StockRepository;
+import infrastructure.database.JDBCStockRepository;
 import infrastructure.web.productavailability.ProductAvailabilityRequest;
 import org.slf4j.Logger;
 
@@ -18,7 +19,7 @@ public class ProductCheckUseCase {
     }
     //Should this be void??? Need to return different object for empty query??
     // What should I return
-    // REturn rendered content
+    // REturn rendered content???
 
     // How to use interface instead of implementation
     public ProductStock checkStock(ProductAvailabilityRequest request) {

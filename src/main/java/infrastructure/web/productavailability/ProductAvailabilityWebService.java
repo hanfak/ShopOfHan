@@ -7,14 +7,15 @@ import infrastructure.web.RenderedContent;
 import org.slf4j.Logger;
 
 import java.io.IOException;
-import java.util.Optional;
 
-import static java.lang.String.format;
+import static infrastructure.web.RenderedContent.errorContent;
+import static infrastructure.web.RenderedContent.jsonContent;
+import static java.lang.String.*;
 
 public class ProductAvailabilityWebService {
 
     private final ProductCheckUseCase productCheckUseCase;
-    private final Marshaller marshaller; //Use interface type?? Need to be injecte??
+    private final Marshaller<ProductStock> marshaller;
     private Logger logger;
 
     public ProductAvailabilityWebService(ProductCheckUseCase productCheckUseCase, ProductAvailabilityMarshaller marshaller, Logger logger) {
@@ -27,10 +28,10 @@ public class ProductAvailabilityWebService {
         try {
             ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
             logger.info("Product does exist " + productStock.product.productName); //use the name from stock or from request (to keep consistent?
-            return new RenderedContent(marshaller.marshall(productStock), "application/json", 200);
+            return jsonContent(marshaller.marshall(productStock));
         } catch (IllegalStateException e) {
             logger.info("Product does not exist " + productAvailabilityRequest.productName);
-            return new RenderedContent(format("Product '%s' is not stocked %s", productAvailabilityRequest.productName, e.toString()), "text/plain", 404);
+            return errorContent(format("Product '%s' is not stocked %s", productAvailabilityRequest.productName, e.toString()));
         }
     }
 }

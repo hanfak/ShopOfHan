@@ -1,8 +1,9 @@
 package wiring;
 
 import application.ProductCheckUseCase;
+import infrastructure.database.JDBCDatabaseConnectionManager;
 import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
-import infrastructure.database.StockRepository;
+import infrastructure.database.JDBCStockRepository;
 import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
 import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
@@ -27,12 +28,12 @@ public class Wiring {
     }
     // Extract to separate wiring for database
     // use a singleton???
-    private static MySqlJDBCDatabaseConnectionManager databaseConnectionManager() {
+    private static JDBCDatabaseConnectionManager databaseConnectionManager() {
         return new MySqlJDBCDatabaseConnectionManager(settings());
     }
 
-    private static StockRepository stockRepository(){
-        return new StockRepository(databaseConnectionManager());
+    private static JDBCStockRepository stockRepository(){
+        return new JDBCStockRepository(databaseConnectionManager());
     }
 
     private static ProductCheckUseCase productCheckUseCase() {

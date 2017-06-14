@@ -5,8 +5,9 @@ import infrastructure.properties.Settings;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-//Implement interface for DBconnection manager, make more explicit
+
 public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectionManager {
+    public static final String DATABASE_NAME = "shop_of_han_database";
     private static Settings settings;
 
     public MySqlJDBCDatabaseConnectionManager(Settings settings) {
@@ -17,7 +18,7 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
     public Connection getDBConnection() {
         try {
             Connection con = DriverManager.getConnection(
-                    settings.databaseURL() + "shop_of_han_database?verifyServerCertificate=false&useSSL=true",
+                    settings.databaseURL() + DATABASE_NAME + "?verifyServerCertificate=false&useSSL=true",
                     settings.databaseUsername(),
                     settings.databasePassword());
             return con;
@@ -26,9 +27,7 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
         }
         return null;
     }
-
-    private void closeDBConnection(Connection con) throws SQLException {
-        con.close();
-    }
-
 }
+
+
+/// Database pooling???

@@ -10,10 +10,4 @@ public class ProductAvailabilityRequest implements Request {
     public ProductAvailabilityRequest(String productName) {
         this.productName = productName;
     }
-
-    // -> remove
-    @Override
-    public String toJson() {
-        return null;
-    }
 }

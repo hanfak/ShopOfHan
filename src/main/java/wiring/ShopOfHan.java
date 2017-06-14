@@ -14,7 +14,11 @@ public class ShopOfHan {
         LOGGER.info("Starting web app");
         Settings settings = loadSettings("localhost");
 
-        // builder
+        startWebServer(settings);
+    }
+
+    private static void startWebServer(Settings settings) throws Exception {
+        // Webserver builder
         ShopOfHanServer server = new ShopOfHanServer(settings);
         server.withContext(Handler.servletHandler());
 

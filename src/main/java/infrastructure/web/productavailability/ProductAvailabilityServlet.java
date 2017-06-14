@@ -1,6 +1,8 @@
 package infrastructure.web.productavailability;
 
+import domain.crosscutting.Request;
 import infrastructure.web.RenderedContent;
+import infrastructure.web.Unmarshaller;
 import org.slf4j.Logger;
 
 import javax.servlet.ServletException;
@@ -11,7 +13,7 @@ import java.io.IOException;
 
 public class ProductAvailabilityServlet extends HttpServlet {
 
-    private final ProductAvailabilityUnmarshaller unmarshaller;
+    private final Unmarshaller<ProductAvailabilityRequest> unmarshaller;
     private final Logger logger;
     private final ProductAvailabilityWebService productAvailabilityWebService;
 
@@ -28,7 +30,3 @@ public class ProductAvailabilityServlet extends HttpServlet {
         renderedContent.render(response);
     }
 }
-
-//    String body = readInputStream(request.getInputStream());
-//    RenderedContent renderedContent = portInRequestWebService.requestPortIn(body);
-//        renderedContent.render(response);
