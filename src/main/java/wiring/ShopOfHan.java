@@ -9,17 +9,17 @@ import org.slf4j.LoggerFactory;
 
 public class ShopOfHan {
     static Logger LOGGER = LoggerFactory.getLogger(ShopOfHan.class);
+    private static ShopOfHanServer server;
 
     public static void main(String[] args) throws Exception {
-        LOGGER.info("Starting web app");
-        Settings settings = loadSettings("localhost");
-
-        startWebServer(settings);
+        new ShopOfHan().startWebServer();
     }
 
-    private static void startWebServer(Settings settings) throws Exception {
+    public void startWebServer() throws Exception {
+        LOGGER.info("Starting web app");
+        Settings settings = loadSettings("localhost");
         // Webserver builder
-        ShopOfHanServer server = new ShopOfHanServer(settings);
+        server = new ShopOfHanServer(settings);
         server.withContext(Handler.servletHandler());
 
         server.start();
@@ -27,5 +27,9 @@ public class ShopOfHan {
 
     private static Settings loadSettings(String propertyFile) {
         return new Settings(new PropertiesReader(propertyFile));
+    }
+
+    public void stopWebServer() throws Exception {
+        server.stop();
     }
 }
