@@ -9,10 +9,10 @@ import com.googlecode.yatspec.rendering.html.HtmlResultRenderer;
 import com.googlecode.yatspec.state.givenwhenthen.ActionUnderTest;
 import com.googlecode.yatspec.state.givenwhenthen.CapturedInputAndOutputs;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
+import httpclient.Response;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,8 +29,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AcceptanceTests extends TestState implements WithCustomResultListeners   {
 
     private ShopOfHan shopOfHan = new ShopOfHan();
-    private HttpResponse response;
-    private String responseBody;
+    private Response domainResponse;
+    //    private TestState testState = new TestState();
     // Need to show Interesting givens
     // Dictionary
 
@@ -51,6 +51,12 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     public void shouldReturnStockAmountForItem() throws Exception {
         when(weMakeAGetRequestTo("http://localhost:8081/productscheck?productName=Joy%20Of%20Java"));
         thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of java\",\"amountInStock\": \"4\"}");
+        andThenContentTypeIs("application/json");
+    }
+
+    private void andThenContentTypeIs(String s) {
+//        assertThat(domainResponse.getContentType()).isEqualTo(s);
+        assertThat(domainResponse.getContentType()).contains(s);
     }
 
     @Test
@@ -66,7 +72,7 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     }
 
     private void thenItReturnsAStatusCodeOf(int expected) {
-        assertThat(response.getStatusLine().getStatusCode()).isEqualTo(expected);
+        assertThat(domainResponse.getStatusCode()).isEqualTo(expected);
     }
 
     private ActionUnderTest weMakeAGetRequestTo(String uri) {
@@ -74,21 +80,21 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     }
 
     private CapturedInputAndOutputs whenWeMakeARequestTo(CapturedInputAndOutputs capturedInputAndOutputs, HttpGet request) throws IOException {
-        capturedInputAndOutputs.add(format("Request from %s to %s", "client", "ShopOfHan"), request);
-        response = HttpClientBuilder.create().build().execute(request);
-        responseBody = EntityUtils.toString(response.getEntity());
-        capturedInputAndOutputs.add(format("Response from %s to %s", "ShopOfHan", "client"), response.getStatusLine().toString());
+        capturedInputAndOutputs.add(format("Request from %s to %s", "client", "ShopOfHan"), httpclient.Request.toNiceRequestForYatspec(request));
+        HttpResponse response = HttpClientBuilder.create().build().execute(request);
+        domainResponse = Response.fromApacheResponse(response);
+        capturedInputAndOutputs.add(format("Response from %s to %s", "ShopOfHan", "client"), domainResponse);
         return capturedInputAndOutputs;
     }
 
     private void thenTheResponseCodeIs200AndTheBodyIs(String expected) throws IOException {
         thenItReturnsAStatusCodeOf(200);
-        assertThat(responseBody).isEqualTo(expected);
+        assertThat(domainResponse.getBody()).isEqualTo(expected);
     }
 
     private void thenTheResponseCodeIs404AndTheBodyIs(String expected) throws IOException {
         thenItReturnsAStatusCodeOf(404);
-        assertThat(responseBody).isEqualTo(expected);
+        assertThat(domainResponse.getBody()).isEqualTo(expected);
     }
 
     //Need to show body of response and queries of request in diagrams
