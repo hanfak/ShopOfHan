@@ -8,6 +8,7 @@ import com.googlecode.yatspec.rendering.html.DontHighlightRenderer;
 import com.googlecode.yatspec.rendering.html.HtmlResultRenderer;
 import com.googlecode.yatspec.state.givenwhenthen.ActionUnderTest;
 import com.googlecode.yatspec.state.givenwhenthen.CapturedInputAndOutputs;
+import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
 import httpclient.Response;
 import org.apache.http.HttpResponse;
@@ -30,8 +31,8 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
 
     private ShopOfHan shopOfHan = new ShopOfHan();
     private Response domainResponse;
-    //    private TestState testState = new TestState();
-    // Need to show Interesting givens
+    private TestState testState = new TestState();
+
     // Dictionary
 
     // Log4j is showing jetty in tests out, remove this
@@ -49,10 +50,17 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     // Need to test content type
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
+        given(theSystemIsRunning());
         when(weMakeAGetRequestTo("http://localhost:8081/productscheck?productName=Joy%20Of%20Java"));
         thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of java\",\"amountInStock\": \"4\"}");
         andThenContentTypeIs("application/json");
     }
+
+    private GivensBuilder theSystemIsRunning() {
+        testState().interestingGivens.add("productName","Joy Of Java");
+        return givens -> givens;
+    }
+
 
     private void andThenContentTypeIs(String s) {
 //        assertThat(domainResponse.getContentType()).isEqualTo(s);
