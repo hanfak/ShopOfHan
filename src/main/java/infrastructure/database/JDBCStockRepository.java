@@ -5,14 +5,15 @@ import domain.crosscutting.StockRepository;
 import infrastructure.web.productavailability.ProductAvailabilityRequest;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Optional;
 
 import static domain.ProductStock.productStock;
-import static java.lang.String.format;
 
 public class JDBCStockRepository implements StockRepository<ProductStock, ProductAvailabilityRequest> {
+
+    public static final String SQL_STATEMENT = "select * from stock where product_name=?";
 
     private JDBCDatabaseConnectionManager databaseConnectionManager;
 
@@ -24,8 +25,10 @@ public class JDBCStockRepository implements StockRepository<ProductStock, Produc
     public Optional<ProductStock> checkStock(ProductAvailabilityRequest request) {
         try {
             Connection dbConnection = databaseConnectionManager.getDBConnection();
-            Statement stmt = dbConnection.createStatement();
-            ResultSet rs = stmt.executeQuery(sqlQuery(request));
+            PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT);
+            stmt.setString(1, request.productName);
+            //multiple different stock checks will return first one only (new user story)
+            ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
                     return Optional.of(productStock(
                             rs.getString("product_name"),
@@ -38,10 +41,6 @@ public class JDBCStockRepository implements StockRepository<ProductStock, Produc
             System.out.println("afse");
         }
         return Optional.empty();
-    }
-
-    private String sqlQuery(ProductAvailabilityRequest request) {
-        return format("select * from stock where product_name='%s'", request.productName);
     }
 }
 

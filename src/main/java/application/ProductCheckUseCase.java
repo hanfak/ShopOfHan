@@ -2,7 +2,6 @@ package application;
 
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
-import infrastructure.database.JDBCStockRepository;
 import infrastructure.web.productavailability.ProductAvailabilityRequest;
 import org.slf4j.Logger;
 
@@ -27,6 +26,7 @@ public class ProductCheckUseCase {
         Optional<ProductStock> checkStock = stockRepository.checkStock(request);
         logger.info("Stock checked");
         if (checkStock.isPresent()) {
+            logger.info("Stock is there");
             return checkStock.get();
         } else {
             logger.info("Stock not there");
