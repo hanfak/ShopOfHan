@@ -30,7 +30,7 @@ public class Wiring {
     private static Marshaller productAvailabilityMarshaller() {
         return new ProductAvailabilityMarshaller();
     }
-    // Extract to separate wiring for database
+    // TODO Extract to separate wiring for database
     // use a singleton???
     private static JDBCDatabaseConnectionManager databaseConnectionManager() {
         return new MySqlJDBCDatabaseConnectionManager(settings());
@@ -44,7 +44,7 @@ public class Wiring {
         return new ProductCheckUseCase(stockRepository(), logger(ProductCheckUseCase.class));
     }
 
-    // Is this the correct way of passing in a class as a parameter
+    // TODO Is this the correct way of passing in a class as a parameter
     private static Logger logger(Class<?> cls) {
         return LoggerFactory.getLogger(cls);
     }

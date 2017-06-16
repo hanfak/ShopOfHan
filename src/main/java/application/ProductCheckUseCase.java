@@ -16,11 +16,11 @@ public class ProductCheckUseCase {
         this.stockRepository = stockRepository;
         this.logger = logger;
     }
-    //Should this be void??? Need to return different object for empty query??
+    // TODO Should this be void??? Need to return different object for empty query??
     // What should I return
     // REturn rendered content???
 
-    // How to use interface instead of implementation
+    // TODO How to use interface instead of implementation? Do I need?
     public ProductStock checkStock(ProductAvailabilityRequest request) {
         logger.info("checking stock...");
         Optional<ProductStock> checkStock = stockRepository.checkStock(request);

@@ -11,7 +11,7 @@ public class Settings implements DatabaseSettings{
         return Integer.parseInt(propertiesReader.readProperty("server.port"));
     }
 
-    // Set depending on the machine??
+    // TODO Set depending on the machine??
     @Override
     public String databaseURL() {
         return propertiesReader.readProperty("database.url");

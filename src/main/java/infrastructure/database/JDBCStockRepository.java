@@ -27,15 +27,15 @@ public class JDBCStockRepository implements StockRepository<ProductStock, Produc
             Connection dbConnection = databaseConnectionManager.getDBConnection();
             PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT);
             stmt.setString(1, request.productName);
-            //multiple different stock checks will return first one only (new user story)
+            // TODO multiple different stock checks will return first one only (new user story)
             ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {
                     return Optional.of(productStock(
                             rs.getString("product_name"),
                             rs.getInt("amount")));
                 }
-                // if (!rs.next) error
-                // if (rs.next) error
+                // TODO  if (!rs.next) error
+                // TODO if (rs.next) error
             dbConnection.close();
         } catch(Exception e) {
             System.out.println("afse");

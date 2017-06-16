@@ -19,21 +19,20 @@ public class ShopOfHanServer {
         server.setHandler(servletHandler);
     }
 
-    public void start() throws Exception {
-        server.start();
+    public void start() {
+        try {
+            server.start();
+        } catch (Exception e) {
+            throw new IllegalStateException(format("Could not start server on port '%d'", server.getURI().getPort()), e);
+        }
     }
 
-    // Add try/catch for start and stop
-//    public void stop() {
-//        try {
-//            server.stop();
-//        } catch (Exception e) {
-//            throw new IllegalStateException(format("Could not stop server on port '%d'", httpPort), e);
-//        }
-//    }
-
-    public void stop() throws Exception {
-        server.stop();
+    public void stop() {
+        try {
+            server.stop();
+        } catch (Exception e) {
+            throw new IllegalStateException(format("Could not stop server on port '%d'", server.getURI().getPort()), e);
+        }
     }
 
 //    @Override

@@ -27,7 +27,7 @@ public class ProductAvailabilityWebService {
     public RenderedContent requestProductCheck(ProductAvailabilityRequest productAvailabilityRequest) throws IOException {
         try {
             ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
-            logger.info("Product does exist " + productStock.productName); //use the name from stock or from request (to keep consistent?
+            logger.info("Product does exist " + productStock.productName); //TODO use the name from stock or from request (to keep consistent?
             return jsonContent(marshaller.marshall(productStock));
         } catch (IllegalStateException e) {
             logger.info("Product does not exist " + productAvailabilityRequest.productName);

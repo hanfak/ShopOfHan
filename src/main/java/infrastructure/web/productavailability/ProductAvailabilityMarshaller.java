@@ -20,5 +20,5 @@ public class ProductAvailabilityMarshaller implements Marshaller<ProductStock> {
         return format(EXPECTED_BODY_FORMAT, productStock.productName, productStock.amountInStock);
     }
 
-    // toJson as template distinct and Marhsaller taking STring jsonResult???
+    // TODO toJson as template distinct and Marhsaller taking STring jsonResult???
 }

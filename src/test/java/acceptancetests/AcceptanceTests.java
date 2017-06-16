@@ -12,6 +12,7 @@ import com.googlecode.yatspec.state.givenwhenthen.ActionUnderTest;
 import com.googlecode.yatspec.state.givenwhenthen.CapturedInputAndOutputs;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
+import httpclient.Request;
 import httpclient.Response;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -40,7 +41,7 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     // Log4j is showing jetty in tests out, remove this
     @Before
     public void setUp() throws Exception {
-        shopOfHan.startWebServer();//Should this be public??
+        shopOfHan.startWebServer();// TODO Should this be public??
     }
 
     @After
@@ -49,7 +50,6 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
         capturedInputAndOutputs.add("Sequence Diagram", generateSequenceDiagram());
     }
 
-    // Need to test content type
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
@@ -91,7 +91,9 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     }
 
     private CapturedInputAndOutputs whenWeMakeARequestTo(CapturedInputAndOutputs capturedInputAndOutputs, HttpGet request) throws IOException {
-        capturedInputAndOutputs.add(format("Request from %s to %s", "client", "ShopOfHan"), httpclient.Request.toNiceRequestForYatspec(request));
+        Request instance = Request.toNiceRequestForYatspec(request);
+        capturedInputAndOutputs.add(format("Request from %s to %s", "client", "ShopOfHan"), instance);
+
         HttpResponse response = HttpClientBuilder.create().build().execute(request);
         domainResponse = Response.fromApacheResponse(response);
         capturedInputAndOutputs.add(format("Response from %s to %s", "ShopOfHan", "client"), domainResponse);

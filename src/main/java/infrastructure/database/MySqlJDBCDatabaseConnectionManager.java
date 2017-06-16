@@ -4,10 +4,12 @@ import infrastructure.properties.Settings;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectionManager {
+
     public static final String DATABASE_NAME = "shop_of_han_database";
+    public static final String DATABASE_FLAGS = "?verifyServerCertificate=false&useSSL=true";
+
     private static Settings settings;
 
     public MySqlJDBCDatabaseConnectionManager(Settings settings) {
@@ -18,7 +20,7 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
     public Connection getDBConnection() {
         try {
             Connection con = DriverManager.getConnection(
-                    settings.databaseURL() + DATABASE_NAME + "?verifyServerCertificate=false&useSSL=true",
+                    settings.databaseURL() + DATABASE_NAME + DATABASE_FLAGS,
                     settings.databaseUsername(),
                     settings.databasePassword());
             return con;

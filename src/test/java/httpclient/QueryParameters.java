@@ -19,13 +19,21 @@ class QueryParameters extends ValueType implements Iterable<QueryParameter> {
     static QueryParameters empty() {
         return new QueryParameters(new HashMap<>());
     }
-
     @Override
     public Iterator<QueryParameter> iterator() {
         return queryParameters.entrySet().stream()
                 .map(entry -> new QueryParameter(entry.getKey(), entry.getValue()))
                 .iterator();
     }
+
+    // TODO How to get list of query params
+//    public static Headers fromApacheHeaders(org.apache.http.Header[] queryParameters){
+//        Multimap<String, String> accumulator = ArrayListMultimap.create();
+//        for (org.apache.http.Header queryParameter : queryParameters){
+//            accumulator.put(queryParameter.getName(), queryParameter.getValue());
+//        }
+//        return new QueryParameters(accumulator);
+//    }
 
     @Override
     public String toString() {

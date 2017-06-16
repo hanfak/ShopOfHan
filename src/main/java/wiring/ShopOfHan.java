@@ -18,7 +18,7 @@ public class ShopOfHan {
     public void startWebServer() throws Exception {
         LOGGER.info("Starting web app");
         Settings settings = loadSettings("localhost");
-        // Webserver builder
+        // TODO Webserver builder
         server = new ShopOfHanServer(settings);
         server.withContext(Handler.servletHandler());
 
@@ -29,6 +29,7 @@ public class ShopOfHan {
         return new Settings(new PropertiesReader(propertyFile));
     }
 
+    // For testsing only
     public void stopWebServer() throws Exception {
         server.stop();
     }
