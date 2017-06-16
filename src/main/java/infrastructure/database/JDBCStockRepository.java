@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Optional;
 
-import static domain.Product.product;
 import static domain.ProductStock.productStock;
 import static java.lang.String.format;
 
@@ -28,8 +27,8 @@ public class JDBCStockRepository implements StockRepository<ProductStock, Produc
             Statement stmt = dbConnection.createStatement();
             ResultSet rs = stmt.executeQuery(sqlQuery(request));
                 if (rs.next()) {
-                    return Optional.of(productStock( //store productID instead
-                            product("", rs.getString("product_name"), ""),
+                    return Optional.of(productStock(
+                            rs.getString("product_name"),
                             rs.getInt("amount")));
                 }
                 // if (!rs.next) error

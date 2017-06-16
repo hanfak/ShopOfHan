@@ -1,3 +1,5 @@
+package acceptancetests;
+
 import com.googlecode.yatspec.junit.SpecResultListener;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.junit.WithCustomResultListeners;
@@ -56,17 +58,6 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
         andThenContentTypeIs("application/json");
     }
 
-    private GivensBuilder theSystemIsRunning() {
-        testState().interestingGivens.add("productName","Joy Of Java");
-        return givens -> givens;
-    }
-
-
-    private void andThenContentTypeIs(String s) {
-//        assertThat(domainResponse.getContentType()).isEqualTo(s);
-        assertThat(domainResponse.getContentType()).contains(s);
-    }
-
     @Test
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMakeAGetRequestTo("http://localhost:8081/productscheck?productName=Harry%20Potter"));
@@ -77,6 +68,18 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     public void shouldFail() throws Exception {
         when(weMakeAGetRequestTo("http://localhost:8081/a/bad/url"));
         thenItReturnsAStatusCodeOf(404);
+    }
+
+
+    private GivensBuilder theSystemIsRunning() {
+        testState().interestingGivens.add("productName","Joy Of Java");
+        return givens -> givens;
+    }
+
+
+    private void andThenContentTypeIs(String s) {
+//        assertThat(domainResponse.getContentType()).isEqualTo(s);
+        assertThat(domainResponse.getContentType()).contains(s);
     }
 
     private void thenItReturnsAStatusCodeOf(int expected) {
