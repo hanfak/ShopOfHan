@@ -1,8 +1,13 @@
 package httpclient;
 
+import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.utils.URLEncodedUtils;
 
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
 
 import static httpclient.Headers.fromApacheHeaders;
 
@@ -21,7 +26,20 @@ public class Request extends ValueType {
         this.body = body;
     }
 
-    public static Request toNiceRequestForYatspec(HttpGet request){
+//    public static getQueryParameters() {
+//        return URLEncodedUtils.parse(new URI(request.getURI().toString()), "UTF-8");
+//    }
+
+    public static Request toNiceRequestForYatspec(HttpGet request) {
+        try {
+            List<NameValuePair> parse = URLEncodedUtils.parse(new URI(request.getURI().toString()), "UTF-8");
+            for (NameValuePair param : parse) {
+                System.out.println(param.getName() + " : " + param.getValue());
+            }
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+
         try {
             return new Request(request.getURI().toURL().toString(), request.getMethod(), fromApacheHeaders(request.getAllHeaders()), QueryParameters.empty(), "");
         } catch (MalformedURLException exception) {

@@ -2,7 +2,6 @@ package infrastructure.database;
 
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
-import infrastructure.web.productavailability.ProductAvailabilityRequest;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +10,7 @@ import java.util.Optional;
 
 import static domain.ProductStock.productStock;
 
-public class JDBCStockRepository implements StockRepository<ProductStock, ProductAvailabilityRequest> {
+public class JDBCStockRepository implements StockRepository<ProductStock> {
 
     public static final String SQL_STATEMENT = "select * from stock where product_name=?";
 
@@ -22,11 +21,11 @@ public class JDBCStockRepository implements StockRepository<ProductStock, Produc
     }
 
     @Override
-    public Optional<ProductStock> checkStock(ProductAvailabilityRequest request) {
+    public Optional<ProductStock> checkStock(String product) {
         try {
             Connection dbConnection = databaseConnectionManager.getDBConnection();
             PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT);
-            stmt.setString(1, request.productName);
+            stmt.setString(1, product);
             // TODO multiple different stock checks will return first one only (new user story)
             ResultSet rs = stmt.executeQuery();
                 if (rs.next()) {

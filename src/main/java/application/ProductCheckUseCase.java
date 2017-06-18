@@ -2,7 +2,6 @@ package application;
 
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
-import infrastructure.web.productavailability.ProductAvailabilityRequest;
 import org.slf4j.Logger;
 
 import java.util.Optional;
@@ -21,15 +20,17 @@ public class ProductCheckUseCase {
     // REturn rendered content???
 
     // TODO How to use interface instead of implementation? Do I need?
-    public ProductStock checkStock(ProductAvailabilityRequest request) {
+    // create new interface for usecase to access ProductAvailabilityRequest from infrastructure,
+    // which also implements Request
+    public ProductStock checkStock(String productToCheck) {
         logger.info("checking stock...");
-        Optional<ProductStock> checkStock = stockRepository.checkStock(request);
+        Optional<ProductStock> checkStock = stockRepository.checkStock(productToCheck);
         logger.info("Stock checked");
         if (checkStock.isPresent()) {
             logger.info("Stock is there");
             return checkStock.get();
         } else {
-            logger.info("Stock not there");
+            logger.warn("Stock not there");
             throw new IllegalStateException("Product is not found");
         }
     }

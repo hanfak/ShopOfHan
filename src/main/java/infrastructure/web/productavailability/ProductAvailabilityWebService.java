@@ -26,7 +26,8 @@ public class ProductAvailabilityWebService {
 
     public RenderedContent requestProductCheck(ProductAvailabilityRequest productAvailabilityRequest) throws IOException {
         try {
-            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
+            // TODO Should productAvailabilityRequest be passed as argument or an interface or the value??
+            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest.productName);
             logger.info("Product does exist " + productStock.productName); //TODO use the name from stock or from request (to keep consistent?
             return jsonContent(marshaller.marshall(productStock));
         } catch (IllegalStateException e) {
