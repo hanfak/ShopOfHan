@@ -1,6 +1,5 @@
 package infrastructure.properties;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -25,7 +24,7 @@ public class PropertiesReader {
     private void loadProperties() {
         try (InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream(propertiesFileName())) {
             properties.load(resourceAsStream);
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new IllegalStateException("Unable to read file: " + propertiesFileName());
         }
     }
