@@ -17,18 +17,6 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpecRunner.class)
 public class ProductAvailabilityRequestCheckTest {
-    // TODO should be static and final?/
-    private static final StockRepository stockRepository = mock(StockRepository.class);
-    private static final Logger logger = mock(Logger.class); // TODO static call cannot do this
-    public static final String LORD_OF_THE_RINGS = "Lord Of The Rings"; // TODO should I use String instead
-    public static final String CATCH_22 = "Catch-22";
-    public static final String FIFTY_SHADES = "50 Shades";
-    private static final ProductAvailabilityRequest requestOne = ProductAvailabilityRequest.productAvailabilityRequest(LORD_OF_THE_RINGS);
-    private static final ProductAvailabilityRequest requestTwo = ProductAvailabilityRequest.productAvailabilityRequest(CATCH_22);
-    private static final ProductAvailabilityRequest requestThree = ProductAvailabilityRequest.productAvailabilityRequest(FIFTY_SHADES);
-    private ProductCheckUseCase productCheckUseCase = new ProductCheckUseCase(stockRepository, logger);
-    private ProductStock checkedStock;
-
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         givenStockRepositoryContainsTheProduct(LORD_OF_THE_RINGS, withStock(5));
@@ -97,6 +85,18 @@ public class ProductAvailabilityRequestCheckTest {
     private void givenStockRepositoryContainsTheProduct(String product, Integer amount) {
         when(stockRepository.checkStock(product)).thenReturn(Optional.of(ProductStock.productStock(product, amount)));
     }
+
+    // TODO should be static and final?/
+    private static final StockRepository stockRepository = mock(StockRepository.class);
+    private static final Logger logger = mock(Logger.class); // TODO static call cannot do this
+    private static final String LORD_OF_THE_RINGS = "Lord Of The Rings"; // TODO should I use String instead
+    private static final String CATCH_22 = "Catch-22";
+    private static final String FIFTY_SHADES = "50 Shades";
+    private static final ProductAvailabilityRequest requestOne = ProductAvailabilityRequest.productAvailabilityRequest(LORD_OF_THE_RINGS);
+    private static final ProductAvailabilityRequest requestTwo = ProductAvailabilityRequest.productAvailabilityRequest(CATCH_22);
+    private static final ProductAvailabilityRequest requestThree = ProductAvailabilityRequest.productAvailabilityRequest(FIFTY_SHADES);
+    private ProductCheckUseCase productCheckUseCase = new ProductCheckUseCase(stockRepository, logger);
+    private ProductStock checkedStock;
 }
 
 //@After

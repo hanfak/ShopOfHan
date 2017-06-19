@@ -32,9 +32,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpecRunner.class)
 public class AcceptanceTests extends TestState implements WithCustomResultListeners   {
 
+    public static final String HARRY_POTTER = "Harry%20Potter";
+    public static final String PATH = "http://localhost:8081/productscheck?productName=";
+    public static final String JOY_OF_JAVA = "Joy%20Of%20Java";
+    public static final String BAD_URL = "http://localhost:8081/a/bad/url";
     private ShopOfHan shopOfHan = new ShopOfHan();
     private Response domainResponse;
-    private TestState testState = new TestState();
 
     // Dictionary
 
@@ -53,20 +56,20 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
-        when(weMakeAGetRequestTo("http://localhost:8081/productscheck?productName=Joy%20Of%20Java"));
+        when(weMakeAGetRequestTo(PATH + JOY_OF_JAVA));
         thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of java\",\"amountInStock\": \"4\"}");
         andThenContentTypeIs("application/json");
     }
 
     @Test
     public void shouldReturnItemNotStocked() throws Exception {
-        when(weMakeAGetRequestTo("http://localhost:8081/productscheck?productName=Harry%20Potter"));
+        when(weMakeAGetRequestTo(PATH + HARRY_POTTER));
         thenTheResponseCodeIs404AndTheBodyIs("Product 'Harry Potter' is not stocked java.lang.IllegalStateException: Product is not found");
     }
 
     @Test
     public void shouldFail() throws Exception {
-        when(weMakeAGetRequestTo("http://localhost:8081/a/bad/url"));
+        when(weMakeAGetRequestTo(BAD_URL));
         thenItReturnsAStatusCodeOf(404);
     }
 
