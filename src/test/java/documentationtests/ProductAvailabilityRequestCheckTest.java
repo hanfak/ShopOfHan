@@ -4,6 +4,7 @@ import application.ProductCheckUseCase;
 import com.googlecode.yatspec.junit.SpecRunner;
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
+import infrastructure.web.productavailability.ProductAvailabilityRequest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -15,21 +16,23 @@ import static org.assertj.core.api.ThrowableAssert.catchThrowable;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpecRunner.class)
-public class ProductAvailabilityCheckTest {
+public class ProductAvailabilityRequestCheckTest {
     // TODO should be static and final?/
     private static final StockRepository stockRepository = mock(StockRepository.class);
     private static final Logger logger = mock(Logger.class); // TODO static call cannot do this
     public static final String LORD_OF_THE_RINGS = "Lord Of The Rings"; // TODO should I use String instead
     public static final String CATCH_22 = "Catch-22";
     public static final String FIFTY_SHADES = "50 Shades";
-    //    private static final ProductAvailabilityRequest request = ProductAvailabilityRequest.productAvailabilityRequest(LORD_OF_THE_RINGS);
+    private static final ProductAvailabilityRequest requestOne = ProductAvailabilityRequest.productAvailabilityRequest(LORD_OF_THE_RINGS);
+    private static final ProductAvailabilityRequest requestTwo = ProductAvailabilityRequest.productAvailabilityRequest(CATCH_22);
+    private static final ProductAvailabilityRequest requestThree = ProductAvailabilityRequest.productAvailabilityRequest(FIFTY_SHADES);
     private ProductCheckUseCase productCheckUseCase = new ProductCheckUseCase(stockRepository, logger);
     private ProductStock checkedStock;
 
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         givenStockRepositoryContainsTheProduct(LORD_OF_THE_RINGS, withStock(5));
-        whenCheckingStockOfProduct(LORD_OF_THE_RINGS);
+        whenCheckingStockOfProduct(requestOne);
 //        thenLogThatTheProductWasCheckedAndFound();
         andTheProducHasAmountOfStockOf(5, forProduct(LORD_OF_THE_RINGS));
     }
@@ -37,7 +40,7 @@ public class ProductAvailabilityCheckTest {
     @Test
     public void shouldReturnZeroStockAmountForItem() throws Exception {
         givenStockRepositoryContainsTheProduct(CATCH_22, withStock(0));
-        whenCheckingStockOfProduct(CATCH_22);
+        whenCheckingStockOfProduct(requestTwo);
         //TODO is called twice, how to clear invocation of log,
         // Should I use real logger and assert?
 //        thenLogThatTheProductWasCheckedAndFound();
@@ -50,7 +53,7 @@ public class ProductAvailabilityCheckTest {
 //        whenCheckingStockOfProduct(FIFTY_SHADES);
         // TODO find a better way of doing this
         // TODO Should I be testing that exception was thrown??
-        Throwable thrown = catchThrowable(() -> { whenCheckingStockOfProduct(FIFTY_SHADES); });
+        Throwable thrown = catchThrowable(() -> { whenCheckingStockOfProduct(requestThree); });
         assertThat(thrown).isInstanceOf(IllegalStateException.class)
                             .hasMessage("Product is not found");
         thenLogThatTheProductWasNotFound();
@@ -87,7 +90,7 @@ public class ProductAvailabilityCheckTest {
         verify(logger).warn("Stock not there");
     }
 
-    private void whenCheckingStockOfProduct(String product) {
+    private void whenCheckingStockOfProduct(ProductAvailabilityRequest product) {
         checkedStock = productCheckUseCase.checkStock(product);
     }
 

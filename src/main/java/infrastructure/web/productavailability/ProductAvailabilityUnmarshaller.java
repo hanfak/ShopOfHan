@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import static infrastructure.web.productavailability.ProductAvailabilityRequest.productAvailabilityRequest;
 
+
 public class ProductAvailabilityUnmarshaller implements Unmarshaller<ProductAvailabilityRequest> {
 
     @Override

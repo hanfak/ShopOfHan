@@ -24,9 +24,9 @@ public class ProductAvailabilityServlet extends HttpServlet {
     // TODO Should I test this?
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductAvailabilityRequest productAvailabilityRequest = unmarshaller.unmarshall(request);
+        ProductAvailabilityRequest productAvailabilityRequestRequest = unmarshaller.unmarshall(request);
         logger.info("Unmarshalling");
-        RenderedContent renderedContent = productAvailabilityWebService.requestProductCheck(productAvailabilityRequest);
+        RenderedContent renderedContent = productAvailabilityWebService.requestProductCheck(productAvailabilityRequestRequest);
         renderedContent.render(response);
     }
 }

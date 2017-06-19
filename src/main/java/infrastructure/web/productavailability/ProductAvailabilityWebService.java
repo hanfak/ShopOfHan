@@ -24,15 +24,17 @@ public class ProductAvailabilityWebService {
         this.logger = logger;
     }
 
+    //TODO should param be ProductAvailabilityRequest or ProductToCheck
     public RenderedContent requestProductCheck(ProductAvailabilityRequest productAvailabilityRequest) throws IOException {
         try {
-            // TODO Should productAvailabilityRequest be passed as argument or an interface or the value??
-            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest.productName);
+            // TODO KEY: Should productAvailabilityRequest be passed as argument or change to an interface or use the String value??
+            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
             logger.info("Product does exist " + productStock.productName); //TODO use the name from stock or from request (to keep consistent?
             return jsonContent(marshaller.marshall(productStock));
         } catch (IllegalStateException e) {
-            logger.info("Product does not exist " + productAvailabilityRequest.productName);
-            return errorContent(format("Product '%s' is not stocked %s", productAvailabilityRequest.productName, e.toString()));
+            String productName = productAvailabilityRequest.getProductName();
+            logger.info("Product does not exist " + productName);
+            return errorContent(format("Product '%s' is not stocked %s", productName, e.toString()));
         }
     }
 }

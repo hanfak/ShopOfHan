@@ -17,7 +17,7 @@ public class PropertiesReader {
         loadProperties();
     }
 
-    public String readProperty(String key) {
+    String readProperty(String key) {
         return properties.getProperty(key);
     }
 
