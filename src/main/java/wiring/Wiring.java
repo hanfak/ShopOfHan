@@ -5,6 +5,7 @@ import domain.crosscutting.StockRepository;
 import infrastructure.database.JDBCDatabaseConnectionManager;
 import infrastructure.database.JDBCStockRepository;
 import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
+import infrastructure.monitoring.DatabaseConnectionProbe;
 import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
 import infrastructure.web.Marshaller;
@@ -13,6 +14,7 @@ import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import infrastructure.web.productavailability.ProductAvailabilityServlet;
 import infrastructure.web.productavailability.ProductAvailabilityUnmarshaller;
 import infrastructure.web.productavailability.ProductAvailabilityWebService;
+import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,6 +41,16 @@ public class Wiring {
     private static StockRepository stockRepository() {
         return new JDBCStockRepository(databaseConnectionManager());
     }
+
+    // new databaseconnectionprobe and pass to servlet
+    private static DatabaseConnectionProbe databaseConnectionProbe() {
+        return new DatabaseConnectionProbe(logger(DatabaseConnectionProbe.class), settings(), databaseConnectionManager());
+    }
+
+    public static StatusProbeServlet statusProbeServlet() {
+        return new StatusProbeServlet(databaseConnectionProbe());
+    }
+
 
     private static ProductCheckUseCase productCheckUseCase() {
         return new ProductCheckUseCase(stockRepository(), logger(ProductCheckUseCase.class));
