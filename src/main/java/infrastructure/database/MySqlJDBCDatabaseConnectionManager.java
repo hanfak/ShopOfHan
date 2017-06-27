@@ -1,6 +1,6 @@
 package infrastructure.database;
 
-import infrastructure.properties.Settings;
+import infrastructure.Settings;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -23,13 +23,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/monitoring/ProbeResult.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/monitoring/ProbeStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/monitoring/StatusProbe.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/infrastructure/properties/monitoring/DatabaseConnectionProbeTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/DatabaseSettings.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/PropertiesReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/staticanalysis/SQLConventionsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/localhost.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/DatabaseSettings.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/Settings.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/properties/PropertiesReaderTest.java" afterPath="$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/properties/SettingsTest.java" afterPath="$PROJECT_DIR$/src/test/java/infrastructure/settings/SettingsTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/properties/monitoring/DatabaseConnectionProbeTest.java" afterPath="$PROJECT_DIR$/src/test/java/infrastructure/monitoring/DatabaseConnectionProbeTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,12 +53,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DatabaseConnectionProbeTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/properties/monitoring/DatabaseConnectionProbeTest.java">
+      <file leaf-file-name="PropertiesReaderTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="280">
+              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+              <folding>
+                <marker date="1498583477193" expanded="false" signature="81:140" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,6 +73,17 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>paddington.receive.api.url</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>\n</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/test/java/infrastructure/properties</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,6 +104,12 @@
         <option value="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" />
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/properties/monitoring/DatabaseConnectionProbeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/staticanalysis/SQLConventionsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/infrastructure/properties/settings/PropertiesReaderTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/infrastructure/properties/settings/SettingsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/infrastructure/PropertiesReader.java" />
       </list>
     </option>
   </component>
@@ -153,8 +182,34 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="properties" />
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infrastructure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -180,33 +235,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="properties" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="monitoring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="infrastructure" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -251,6 +280,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="wiring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infrastructure" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,36 +438,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="handler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="infrastructure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="properties" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -582,7 +607,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="staticanalysis" />
       <recent name="infrastructure.properties.monitoring" />
       <recent name="domain.monitoring" />
       <recent name="infrastructure.monitoring" />
@@ -600,7 +629,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.SQLConventionsTest.neverUseSelectStar">
+    <configuration default="false" name="SQLConventionsTest.neverUseSelectStar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="staticanalysis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="ShopOfHan" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="staticanalysis" />
+      <option name="MAIN_CLASS_NAME" value="staticanalysis.SQLConventionsTest" />
+      <option name="METHOD_NAME" value="neverUseSelectStar" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -914,6 +969,14 @@
       <envs />
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SQLConventionsTest.neverUseSelectStar" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.SQLConventionsTest.neverUseSelectStar" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -936,12 +999,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498581159895</updated>
-      <workItem from="1498581161941" duration="1550000" />
+      <workItem from="1498581161941" duration="2347000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="SQLConventionsTest_neverUseSelectStar - 2017.06.27 at 18h 06m 06s.xml">
+      <configuration name="SQLConventionsTest.neverUseSelectStar" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SQLConventionsTest_neverUseSelectStar - 2017.06.27 at 18h 06m 35s.xml">
+      <configuration name="SQLConventionsTest.neverUseSelectStar" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1550000" />
+    <option name="totallyTimeSpent" value="2347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-4" width="1920" height="1204" extended-state="6" />
@@ -964,20 +1035,21 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -991,6 +1063,10 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/monitoring/StatusProbe.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1002,16 +1078,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <marker date="1498561727818" expanded="true" signature="190:247" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="277:363" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="454:523" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="575:649" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="701:775" ph="{...}" />
+            <marker date="1498583477125" expanded="true" signature="179:236" ph="{...}" />
+            <marker date="1498583477125" expanded="true" signature="266:352" ph="{...}" />
+            <marker date="1498583477125" expanded="true" signature="443:512" ph="{...}" />
+            <marker date="1498583477125" expanded="true" signature="564:638" ph="{...}" />
+            <marker date="1498583477125" expanded="true" signature="690:764" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1035,9 +1111,9 @@
         <state relative-caret-position="80">
           <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
           <folding>
-            <marker date="1498561727818" expanded="false" signature="41:136" ph="..." />
-            <marker date="1498561727818" expanded="true" signature="500:541" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="597:973" ph="{...}" />
+            <marker date="1498583477157" expanded="false" signature="41:125" ph="..." />
+            <marker date="1498583477157" expanded="true" signature="489:530" ph="{...}" />
+            <marker date="1498583477157" expanded="true" signature="586:962" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1047,19 +1123,6 @@
         <state relative-caret-position="80">
           <caret line="4" column="46" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="46" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <marker date="1498561727818" expanded="false" signature="41:272" ph="..." />
-            <marker date="1498561727818" expanded="true" signature="601:676" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="753:1573" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="1348:1419" ph="//..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1087,18 +1150,18 @@
         <state relative-caret-position="495">
           <caret line="50" column="63" lean-forward="false" selection-start-line="50" selection-start-column="63" selection-end-line="50" selection-end-column="63" />
           <folding>
-            <marker date="1498582443801" expanded="true" signature="24:940" ph="..." />
-            <marker date="1498582443801" expanded="true" signature="1004:1075" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="1175:1236" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="1300:1359" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="1515:1589" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="1644:1720" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="1846:1977" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="2037:2110" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="2174:2275" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="2397:2449" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="2525:2689" ph="{...}" />
-            <marker date="1498582443801" expanded="true" signature="2772:2930" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="24:918" ph="..." />
+            <marker date="1498583477149" expanded="true" signature="982:1053" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="1153:1214" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="1278:1337" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="1493:1567" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="1622:1698" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="1824:1955" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="2015:2088" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="2152:2253" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="2375:2427" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="2503:2667" ph="{...}" />
+            <marker date="1498583477149" expanded="true" signature="2750:2908" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1172,31 +1235,103 @@
         <state relative-caret-position="609">
           <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding>
-            <marker date="1498582443813" expanded="true" signature="45:404" ph="..." />
-            <marker date="1498582443813" expanded="true" signature="727:852" ph="{...}" />
-            <marker date="1498582443813" expanded="true" signature="899:1695" ph="{...}" />
-            <marker date="1498582443813" expanded="true" signature="1736:1828" ph="{...}" />
+            <marker date="1498583477181" expanded="true" signature="45:393" ph="..." />
+            <marker date="1498583477181" expanded="true" signature="716:841" ph="{...}" />
+            <marker date="1498583477181" expanded="true" signature="888:1684" ph="{...}" />
+            <marker date="1498583477181" expanded="true" signature="1725:1817" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/properties/PropertiesReaderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <marker date="1498561727818" expanded="false" signature="43:102" ph="..." />
-            <marker date="1498561727818" expanded="true" signature="225:396" ph="{...}" />
-            <marker date="1498561727818" expanded="true" signature="471:782" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/properties/monitoring/DatabaseConnectionProbeTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/monitoring/DatabaseConnectionProbeTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+          <folding>
+            <marker date="1498582712053" expanded="true" signature="0:3902" ph="/.../" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <marker date="1498583477137" expanded="false" signature="41:272" ph="..." />
+            <marker date="1498583477137" expanded="true" signature="681:756" ph="{...}" />
+            <marker date="1498583477137" expanded="true" signature="833:1653" ph="{...}" />
+            <marker date="1498583477137" expanded="true" signature="1428:1499" ph="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/staticanalysis/SQLConventionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
+          <folding>
+            <marker date="1498583477097" expanded="true" signature="32:599" ph="..." />
+            <marker date="1498583477097" expanded="true" signature="692:1866" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="853:1005" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="1059:1293" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="1343:1418" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="1470:1537" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="1597:1764" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="1808:1864" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="1886:2937" ph="{...}" />
+            <marker date="1498583477097" expanded="false" signature="1974:1990" ph="&lt;~&gt;" />
+            <marker date="1498583477097" expanded="false" signature="2022:2189" ph="(CacheLoader) (directory) → { " />
+            <marker date="1498583477097" expanded="false" signature="2229:2261" ph=" }" />
+            <marker date="1498583477097" expanded="true" signature="2324:2385" ph="{...}" />
+            <marker date="1498583477097" expanded="true" signature="2474:2935" ph="{...}" />
+            <marker date="1498583477097" expanded="false" signature="2560:2725" ph="(SimpleFileVisitor) visitFile(file, fileAttributes) → {" />
+            <marker date="1498583477097" expanded="false" signature="2890:2905" ph="}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/DatabaseSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/PropertiesReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1498583477101" expanded="false" signature="32:121" ph="..." />
+            <marker date="1498583477101" expanded="true" signature="278:396" ph="{...}" />
+            <marker date="1498583477101" expanded="true" signature="441:492" ph="{...}" />
+            <marker date="1498583477101" expanded="true" signature="528:839" ph="{...}" />
+            <marker date="1498583477101" expanded="true" signature="881:941" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/settings/SettingsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <marker date="1498583477113" expanded="false" signature="41:253" ph="..." />
+            <marker date="1498583477113" expanded="false" signature="73:253" ph="..." />
+            <marker date="1498583477113" expanded="true" signature="370:633" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <marker date="1498583477193" expanded="false" signature="81:140" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-package infrastructure.properties;
+package infrastructure;
 
 public class Settings implements DatabaseSettings{
     private PropertiesReader propertiesReader;

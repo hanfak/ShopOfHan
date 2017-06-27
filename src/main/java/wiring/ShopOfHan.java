@@ -1,7 +1,7 @@
 package wiring;
 
-import infrastructure.properties.PropertiesReader;
-import infrastructure.properties.Settings;
+import infrastructure.PropertiesReader;
+import infrastructure.Settings;
 import infrastructure.web.handler.Handler;
 import infrastructure.web.server.ShopOfHanServer;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package infrastructure.properties;
+package infrastructure;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -17,7 +17,7 @@ public class PropertiesReader {
         loadProperties();
     }
 
-    String readProperty(String key) {
+    public String readProperty(String key) {
         return properties.getProperty(key);
     }
 

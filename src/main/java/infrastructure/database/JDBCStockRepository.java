@@ -12,7 +12,9 @@ import static domain.ProductStock.productStock;
 
 public class JDBCStockRepository implements StockRepository<ProductStock> {
 
-    public static final String SQL_STATEMENT = "select * from stock where product_name=?";
+    // TODO use SELECT product_name, amount instead
+    // pass static analysis
+    public static final String SQL_STATEMENT = "SELECT * from stock where product_name=?";
 
     private JDBCDatabaseConnectionManager databaseConnectionManager;
 
