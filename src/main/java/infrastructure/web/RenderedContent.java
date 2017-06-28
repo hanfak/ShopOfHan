@@ -19,7 +19,6 @@ public class RenderedContent {
         return new RenderedContent(body, contentType, statusCode);
     }
 
-    // TODO good way??
     public static RenderedContent jsonContent(String body) {
         return renderedContent(body, "application/json", 200);
     }

@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.properties;
 
 public interface DatabaseSettings {
     String databaseURL();

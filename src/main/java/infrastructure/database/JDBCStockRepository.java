@@ -12,9 +12,7 @@ import static domain.ProductStock.productStock;
 
 public class JDBCStockRepository implements StockRepository<ProductStock> {
 
-    // TODO use SELECT product_name, amount instead
-    // pass static analysis
-    public static final String SQL_STATEMENT = "SELECT * from stock where product_name=?";
+    public static final String SQL_STATEMENT = "SELECT product_name, amount from stock where product_name=?";
 
     private JDBCDatabaseConnectionManager databaseConnectionManager;
 
@@ -25,21 +23,25 @@ public class JDBCStockRepository implements StockRepository<ProductStock> {
     @Override
     public Optional<ProductStock> checkStock(String product) {
         try {
-            Connection dbConnection = databaseConnectionManager.getDBConnection();
-            PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT);
-            stmt.setString(1, product);
-            // TODO multiple different stock checks will return first one only (new user story)
-            ResultSet rs = stmt.executeQuery();
-                if (rs.next()) {
-                    return Optional.of(productStock(
-                            rs.getString("product_name"),
-                            rs.getInt("amount")));
-                }
-                // TODO  if (!rs.next) error
-                // TODO if (rs.next) error
-            dbConnection.close();
-        } catch(Exception e) {
-            System.out.println("afse");
+             try (Connection dbConnection = databaseConnectionManager.getDBConnection();
+                  PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
+
+                 stmt.setString(1, product);
+                 // TODO multiple different stock checks will return first one only (new user story)
+                 ResultSet rs = stmt.executeQuery();
+                 if (rs.next()) {
+                     return Optional.of(productStock(
+                             rs.getString("product_name"),
+                             rs.getInt("amount")));
+                 }
+                 // TODO  if (!rs.next) error
+                 // TODO if (rs.next) error
+            } catch (Exception e) {
+             System.out.println(e);
+            }
+
+        } catch(Exception e) { // TODO be more specific with exception
+            System.out.println(e);
         }
         return Optional.empty();
     }

@@ -6,10 +6,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
-/**
- * We have decided that it is OK to consider org.apache.commons.lang3.builder.* classes part of the domain.
- * This is because these are just utility methods to save us from making manual mistakes implementing these methods.
- */
 public abstract class ValueType {
 
     @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")

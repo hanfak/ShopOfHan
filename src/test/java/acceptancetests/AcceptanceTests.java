@@ -41,7 +41,6 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
 
     // Dictionary
 
-    // Log4j is showing jetty in tests out, remove this
     @Before
     public void setUp() throws Exception {
         shopOfHan.startWebServer();// TODO Should this be public??
@@ -57,7 +56,7 @@ public class AcceptanceTests extends TestState implements WithCustomResultListen
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
         when(weMakeAGetRequestTo(PATH + JOY_OF_JAVA));
-        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of java\",\"amountInStock\": \"4\"}");
+        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\",\"amountInStock\": \"4\"}");
         andThenContentTypeIs("application/json");
     }
 

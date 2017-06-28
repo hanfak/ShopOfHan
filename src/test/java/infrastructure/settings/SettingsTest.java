@@ -1,7 +1,7 @@
 package infrastructure.settings;
 
-import infrastructure.Settings;
-import infrastructure.PropertiesReader;
+import infrastructure.properties.Settings;
+import infrastructure.properties.PropertiesReader;
 import org.assertj.core.api.WithAssertions;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package infrastructure;
+package infrastructure.properties;
 
 import java.io.InputStream;
 import java.util.Properties;

@@ -17,11 +17,14 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpecRunner.class)
 public class ProductAvailabilityRequestCheckTest {
+
+    private Throwable thrown;
+
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         givenStockRepositoryContainsTheProduct(LORD_OF_THE_RINGS, withStock(5));
         whenCheckingStockOfProduct(requestOne);
-//        thenLogThatTheProductWasCheckedAndFound();
+        thenLogThatTheProductWasCheckedAndFound();
         andTheProducHasAmountOfStockOf(5, forProduct(LORD_OF_THE_RINGS));
     }
 
@@ -29,27 +32,25 @@ public class ProductAvailabilityRequestCheckTest {
     public void shouldReturnZeroStockAmountForItem() throws Exception {
         givenStockRepositoryContainsTheProduct(CATCH_22, withStock(0));
         whenCheckingStockOfProduct(requestTwo);
-        //TODO is called twice, how to clear invocation of log,
-        // Should I use real logger and assert?
-//        thenLogThatTheProductWasCheckedAndFound();
+        thenLogThatTheProductWasCheckedAndFound();
         andTheProducHasAmountOfStockOf(0, forProduct(CATCH_22));
     }
 
     @Test
     public void shouldThrowErrorIfProductIsNotStocker() {
         givenSTockRepositoryDoesNotContainTheProduct(FIFTY_SHADES);
-//        whenCheckingStockOfProduct(FIFTY_SHADES);
-        // TODO find a better way of doing this
-        // TODO Should I be testing that exception was thrown??
-        Throwable thrown = catchThrowable(() -> { whenCheckingStockOfProduct(requestThree); });
-        assertThat(thrown).isInstanceOf(IllegalStateException.class)
-                            .hasMessage("Product is not found");
+        whencheckingProducThatIsNotInStock();
         thenLogThatTheProductWasNotFound();
-//        andAnErrorIsThrown();
+        andAnErrorIsThrown();
+    }
+
+    private void whencheckingProducThatIsNotInStock() {
+        thrown = catchThrowable(() -> { whenCheckingStockOfProduct(requestThree); });
     }
 
     private void andAnErrorIsThrown() {
-//        assertThatThrownBy().hasMessage("Product is not found");
+        assertThat(thrown).isInstanceOf(IllegalStateException.class)
+                .hasMessage("Product is not found");
     }
 
     private void givenSTockRepositoryDoesNotContainTheProduct(String product) {
@@ -86,15 +87,15 @@ public class ProductAvailabilityRequestCheckTest {
         when(stockRepository.checkStock(product)).thenReturn(Optional.of(ProductStock.productStock(product, amount)));
     }
 
-    // TODO should be static and final?/
-    private static final StockRepository stockRepository = mock(StockRepository.class);
-    private static final Logger logger = mock(Logger.class); // TODO static call cannot do this
-    private static final String LORD_OF_THE_RINGS = "Lord Of The Rings"; // TODO should I use String instead
+    private static final String LORD_OF_THE_RINGS = "Lord Of The Rings";
     private static final String CATCH_22 = "Catch-22";
     private static final String FIFTY_SHADES = "50 Shades";
     private static final ProductAvailabilityRequest requestOne = ProductAvailabilityRequest.productAvailabilityRequest(LORD_OF_THE_RINGS);
     private static final ProductAvailabilityRequest requestTwo = ProductAvailabilityRequest.productAvailabilityRequest(CATCH_22);
     private static final ProductAvailabilityRequest requestThree = ProductAvailabilityRequest.productAvailabilityRequest(FIFTY_SHADES);
+
+    private final StockRepository stockRepository = mock(StockRepository.class);
+    private final Logger logger = mock(Logger.class);
     private ProductCheckUseCase productCheckUseCase = new ProductCheckUseCase(stockRepository, logger);
     private ProductStock checkedStock;
 }

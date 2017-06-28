@@ -13,19 +13,16 @@ import java.io.IOException;
 public class ProductAvailabilityServlet extends HttpServlet {
 
     private final Unmarshaller<ProductAvailabilityRequest> unmarshaller;
-    private final Logger logger;
     private final ProductAvailabilityWebService productAvailabilityWebService;
 
-    public ProductAvailabilityServlet(Unmarshaller<ProductAvailabilityRequest> unmarshaller, Logger logger, ProductAvailabilityWebService productAvailabilityWebService) {
+    public ProductAvailabilityServlet(Unmarshaller<ProductAvailabilityRequest> unmarshaller, ProductAvailabilityWebService productAvailabilityWebService) {
         this.unmarshaller = unmarshaller;
-        this.logger = logger;
         this.productAvailabilityWebService = productAvailabilityWebService;
     }
-    // TODO Should I test this?
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProductAvailabilityRequest productAvailabilityRequestRequest = unmarshaller.unmarshall(request);
-        logger.info("Unmarshalling");
         RenderedContent renderedContent = productAvailabilityWebService.requestProductCheck(productAvailabilityRequestRequest);
         renderedContent.render(response);
     }

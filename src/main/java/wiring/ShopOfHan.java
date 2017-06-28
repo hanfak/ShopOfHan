@@ -1,7 +1,7 @@
 package wiring;
 
-import infrastructure.PropertiesReader;
-import infrastructure.Settings;
+import infrastructure.properties.PropertiesReader;
+import infrastructure.properties.Settings;
 import infrastructure.web.handler.Handler;
 import infrastructure.web.server.ShopOfHanServer;
 import org.slf4j.Logger;
@@ -29,7 +29,7 @@ public class ShopOfHan {
         return new Settings(new PropertiesReader(propertyFile));
     }
 
-    // For testsing only
+    // INFO: For testsing only
     public void stopWebServer() throws Exception {
         server.stop();
     }
