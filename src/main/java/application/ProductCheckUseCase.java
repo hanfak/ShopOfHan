@@ -1,7 +1,7 @@
 package application;
 
+import domain.ProductName;
 import domain.ProductStock;
-import domain.crosscutting.ProductToCheck;
 import domain.crosscutting.StockRepository;
 import org.slf4j.Logger;
 
@@ -18,12 +18,9 @@ public class ProductCheckUseCase {
     }
 
     // TODO REturn rendered content???
-
-    // TODO How to use interface instead of implementation? Do I need?
-
-    public ProductStock checkStock(ProductToCheck productToCheck) {
+    public ProductStock checkStock(ProductName productName) {
         logger.info("checking stock...");
-        Optional<ProductStock> checkStock = stockRepository.checkStock(productToCheck.getProductName());
+        Optional<ProductStock> checkStock = stockRepository.checkStock(productName.value);
         logger.info("Stock checked");
         if (checkStock.isPresent()) {
             logger.info("Stock is there");

@@ -30,7 +30,7 @@ import static java.util.Collections.singletonList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpecRunner.class)
-public class AcceptanceTests extends TestState implements WithCustomResultListeners   {
+public class CheckAmountOfProductInStockByNameTests extends TestState implements WithCustomResultListeners   {
 
     public static final String HARRY_POTTER = "Harry%20Potter";
     public static final String PATH = "http://localhost:8081/productscheck?productName=";

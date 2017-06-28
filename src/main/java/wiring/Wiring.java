@@ -20,8 +20,18 @@ import org.slf4j.LoggerFactory;
 
 public class Wiring {
 
+    // TODO singleton pattern
     private static Settings settings() {
         return new Settings(new PropertiesReader("localhost"));
+    }
+    // TODO singleton pattern
+    // TODO Extract to separate wiring for database
+    private static JDBCDatabaseConnectionManager databaseConnectionManager() {
+        return new MySqlJDBCDatabaseConnectionManager(settings());
+    }
+    // TODO singleton pattern
+    private static Logger logger(Class<?> cls) {
+        return LoggerFactory.getLogger(cls);
     }
 
     // TODO Need to set generric here
@@ -31,11 +41,6 @@ public class Wiring {
 
     private static Marshaller productAvailabilityMarshaller() {
         return new ProductAvailabilityMarshaller();
-    }
-    // TODO Extract to separate wiring for database
-    // TODO use a singleton???
-    private static JDBCDatabaseConnectionManager databaseConnectionManager() {
-        return new MySqlJDBCDatabaseConnectionManager(settings());
     }
 
     private static StockRepository stockRepository() {
@@ -50,13 +55,8 @@ public class Wiring {
         return new StatusProbeServlet(databaseConnectionProbe());
     }
 
-
     private static ProductCheckUseCase productCheckUseCase() {
         return new ProductCheckUseCase(stockRepository(), logger(ProductCheckUseCase.class));
-    }
-
-    private static Logger logger(Class<?> cls) {
-        return LoggerFactory.getLogger(cls);
     }
 
     public static ProductAvailabilityServlet productAvailabilityServlet() {

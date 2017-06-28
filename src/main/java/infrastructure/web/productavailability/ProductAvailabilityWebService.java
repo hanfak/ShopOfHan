@@ -1,6 +1,7 @@
 package infrastructure.web.productavailability;
 
 import application.ProductCheckUseCase;
+import domain.ProductName;
 import domain.ProductStock;
 import infrastructure.web.Marshaller;
 import infrastructure.web.RenderedContent;
@@ -18,21 +19,20 @@ public class ProductAvailabilityWebService {
     private final Marshaller<ProductStock> marshaller;
     private Logger logger;
 
+    // TODO Loggere should be removed
     public ProductAvailabilityWebService(ProductCheckUseCase productCheckUseCase, Marshaller<ProductStock> marshaller, Logger logger) {
         this.productCheckUseCase = productCheckUseCase;
         this.marshaller = marshaller;
         this.logger = logger;
     }
 
-    //TODO should param be ProductAvailabilityRequest or ProductToCheck
     public RenderedContent requestProductCheck(ProductAvailabilityRequest productAvailabilityRequest) throws IOException {
         try {
-            // TODO KEY: Should productAvailabilityRequest be passed as argument or change to an interface or use the String value??
-            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest); // request parrt of sdomain
-            logger.info("Product does exist " + productStock.productName);
+            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest.productName);
+            logger.info("Product does exist " + productStock.productName.value);
             return jsonContent(marshaller.marshall(productStock));
         } catch (IllegalStateException e) {
-            String productName = productAvailabilityRequest.getProductName();
+            String productName = productAvailabilityRequest.productName.value;
             logger.info("Product does not exist " + productName);
             return errorContent(format("Product '%s' is not stocked %s", productName, e.toString()));
         }

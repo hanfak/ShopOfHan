@@ -1,23 +1,22 @@
 package infrastructure.web.productavailability;
 
-import domain.crosscutting.ProductToCheck;
+import domain.ProductName;
 import domain.crosscutting.ValueType;
 
-public class ProductAvailabilityRequest extends ValueType implements ProductToCheck {
-    private final String productName;
+public class ProductAvailabilityRequest extends ValueType {
+    public final ProductName productName;
 
-    private ProductAvailabilityRequest(String productName) {
+    private ProductAvailabilityRequest(ProductName productName) {
         this.productName = productName;
     }
 
     public static ProductAvailabilityRequest productAvailabilityRequest(String productName) {
-        return new ProductAvailabilityRequest(productName);
+        return new ProductAvailabilityRequest(ProductName.productName(productName));
     }
 
-    // TODO how to remove this getter?
-    //  TODO test this
-    @Override
-    public String getProductName() {
-        return productName;
-    }
+//    //  TODO test this
+//    @Override
+//    public String getProductName() {
+//        return productName;
+//    }
 }

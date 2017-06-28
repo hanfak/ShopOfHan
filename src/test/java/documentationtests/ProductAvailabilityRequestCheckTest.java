@@ -2,6 +2,7 @@ package documentationtests;
 
 import application.ProductCheckUseCase;
 import com.googlecode.yatspec.junit.SpecRunner;
+import domain.ProductName;
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
 import infrastructure.web.productavailability.ProductAvailabilityRequest;
@@ -79,20 +80,20 @@ public class ProductAvailabilityRequestCheckTest {
         verify(logger).warn("Stock not there");
     }
 
-    private void whenCheckingStockOfProduct(ProductAvailabilityRequest product) {
+    private void whenCheckingStockOfProduct(ProductName product) {
         checkedStock = productCheckUseCase.checkStock(product);
     }
 
     private void givenStockRepositoryContainsTheProduct(String product, Integer amount) {
-        when(stockRepository.checkStock(product)).thenReturn(Optional.of(ProductStock.productStock(product, amount)));
+        when(stockRepository.checkStock(product)).thenReturn(Optional.of(ProductStock.productStock(ProductName.productName(product), amount)));
     }
 
     private static final String LORD_OF_THE_RINGS = "Lord Of The Rings";
     private static final String CATCH_22 = "Catch-22";
     private static final String FIFTY_SHADES = "50 Shades";
-    private static final ProductAvailabilityRequest requestOne = ProductAvailabilityRequest.productAvailabilityRequest(LORD_OF_THE_RINGS);
-    private static final ProductAvailabilityRequest requestTwo = ProductAvailabilityRequest.productAvailabilityRequest(CATCH_22);
-    private static final ProductAvailabilityRequest requestThree = ProductAvailabilityRequest.productAvailabilityRequest(FIFTY_SHADES);
+    private static final ProductName requestOne = ProductAvailabilityRequest.productAvailabilityRequest(LORD_OF_THE_RINGS).productName;
+    private static final ProductName requestTwo = ProductAvailabilityRequest.productAvailabilityRequest(CATCH_22).productName;
+    private static final ProductName requestThree = ProductAvailabilityRequest.productAvailabilityRequest(FIFTY_SHADES).productName;
 
     private final StockRepository stockRepository = mock(StockRepository.class);
     private final Logger logger = mock(Logger.class);

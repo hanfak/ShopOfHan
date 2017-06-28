@@ -1,5 +1,6 @@
 package infrastructure.database;
 
+import domain.ProductName;
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
 
@@ -31,7 +32,7 @@ public class JDBCStockRepository implements StockRepository<ProductStock> {
                  ResultSet rs = stmt.executeQuery();
                  if (rs.next()) {
                      return Optional.of(productStock(
-                             rs.getString("product_name"),
+                             ProductName.productName(rs.getString("product_name")),
                              rs.getInt("amount")));
                  }
                  // TODO  if (!rs.next) error
