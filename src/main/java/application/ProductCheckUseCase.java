@@ -33,7 +33,6 @@ public class ProductCheckUseCase {
             * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
             * if statement here
             * */
-
             logger.warn("Stock not there");
             throw new IllegalStateException("Product is not found");
         }

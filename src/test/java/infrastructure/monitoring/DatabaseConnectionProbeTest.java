@@ -17,16 +17,6 @@ import static org.mockito.Mockito.*;
 
 public class DatabaseConnectionProbeTest implements WithAssertions {
 
-    private static final String DATABASE_URL = "jdbc:mysql://172.17.0.3:3306/";
-
-    private final Logger logger = mock(Logger.class);
-
-    private final Settings settings = settings();
-    private final JDBCDatabaseConnectionManager connectionProvider = mock(JDBCDatabaseConnectionManager.class);
-    private final Connection connection = mock(Connection.class);
-    private final PreparedStatement preparedStatement = mock(PreparedStatement.class);
-    private final ResultSet resultSet = mock(ResultSet.class);
-
     @Test
     public void nameMentionsDatabaseURL() {
         DatabaseConnectionProbe databaseConnectionProbe = new DatabaseConnectionProbe(logger, settings, connectionProvider);
@@ -85,4 +75,13 @@ public class DatabaseConnectionProbeTest implements WithAssertions {
         when(settings.databaseURL()).thenReturn(DATABASE_URL);
         return settings;
     }
+
+    private static final String DATABASE_URL = "jdbc:mysql://172.17.0.3:3306/";
+
+    private final Logger logger = mock(Logger.class);
+    private final Settings settings = settings();
+    private final JDBCDatabaseConnectionManager connectionProvider = mock(JDBCDatabaseConnectionManager.class);
+    private final Connection connection = mock(Connection.class);
+    private final PreparedStatement preparedStatement = mock(PreparedStatement.class);
+    private final ResultSet resultSet = mock(ResultSet.class);
 }
