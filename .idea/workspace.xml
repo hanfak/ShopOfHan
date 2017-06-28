@@ -23,23 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="refactor&#10;- Pass in field from request to use case, which is a domain object&#10;- used single value type for domain object&#10;- got rid of ProductTocheck interface to allow usecase to access request object in webservice">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/ProductName.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/domain/crosscutting/SingleValueType.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByIdTests.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/ProductToCheck.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/Request.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTests.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByNameTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductStock.java" afterPath="$PROJECT_DIR$/src/main/java/domain/ProductStock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityRequest.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java" afterPath="$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1114,7 +1099,7 @@
       <option name="presentableId" value="Default" />
       <updated>1498581159895</updated>
       <workItem from="1498581161941" duration="2588000" />
-      <workItem from="1498653257800" duration="16957000" />
+      <workItem from="1498653257800" duration="16985000" />
     </task>
     <task id="LOCAL-00001" summary="static anaylsis test example created">
       <created>1498583541325</created>
@@ -1144,7 +1129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498667849368</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor&#10;- Pass in field from request to use case, which is a domain object&#10;- used single value type for domain object&#10;- got rid of ProductTocheck interface to allow usecase to access request object in webservice">
+      <created>1498672931218</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1498672931218</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1180,7 +1172,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19545000" />
+    <option name="totallyTimeSpent" value="19573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-4" width="1920" height="1204" extended-state="6" />
@@ -1232,7 +1224,8 @@
     <MESSAGE value="Sorting out Todos" />
     <MESSAGE value="test database connection probe" />
     <MESSAGE value="static anaylsis comments test WIP" />
-    <option name="LAST_COMMIT_MESSAGE" value="static anaylsis comments test WIP" />
+    <MESSAGE value="refactor&#10;- Pass in field from request to use case, which is a domain object&#10;- used single value type for domain object&#10;- got rid of ProductTocheck interface to allow usecase to access request object in webservice" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor&#10;- Pass in field from request to use case, which is a domain object&#10;- used single value type for domain object&#10;- got rid of ProductTocheck interface to allow usecase to access request object in webservice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
