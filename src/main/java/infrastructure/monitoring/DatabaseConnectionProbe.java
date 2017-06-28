@@ -39,7 +39,7 @@ public class DatabaseConnectionProbe implements StatusProbe {
             }
         } catch (SQLException e) {
             String message = format("SQLException: %s", e.getMessage());
-            logger.error(message, e);
+            logger.error(message);
             return ProbeResult.failure(name(), message);
         }
     }
