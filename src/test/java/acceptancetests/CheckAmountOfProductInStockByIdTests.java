@@ -35,18 +35,18 @@ public class CheckAmountOfProductInStockByIdTests extends TestState implements W
 
     public static final String HARRY_POTTER = "Harry%20Potter";
     public static final String PATH = "http://localhost:8081/productscheck?productId=";
-    public static final String JOY_OF_JAVA = "Joy%20Of%20Java";
-    private static final String EXPECTED_RESPONSE =
-            "{\"productName\": \"Joy Of Java\"," +
-            "\"productId\": \"JOJ1\"," +
-            "\"productDescription\": \"blah blah\"," +
-            "[" +
-                "{" +
-                    "\"stockId\": \"1\"}" +
-                    "\"amountInStock\": \"4\"}" +
-                    "\"stockDescription\": \"blah\"}" +
-                "}" +
-            "]}";
+    public static final String JOY_OF_JAVA_ID = "JOJ1";
+//    private static final String EXPECTED_RESPONSE =
+//            "{\"productName\": \"Joy Of Java\"," +
+//            "\"productId\": \"JOJ1\"," +
+//            "\"productDescription\": \"blah blah\"," +
+//            "[" +
+//                "{" +
+//                    "\"stockId\": \"1\"}" +
+//                    "\"amountInStock\": \"4\"}" +
+//                    "\"stockDescription\": \"blah\"}" +
+//                "}" +
+//            "]}";
     private ShopOfHan shopOfHan = new ShopOfHan();
     private Response domainResponse;
 
@@ -66,8 +66,8 @@ public class CheckAmountOfProductInStockByIdTests extends TestState implements W
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
-        when(weMakeAGetRequestTo(PATH + JOY_OF_JAVA));
-        thenTheResponseCodeIs200AndTheBodyIs(EXPECTED_RESPONSE);
+        when(weMakeAGetRequestTo(PATH + JOY_OF_JAVA_ID));
+        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\",\"amountInStock\": \"4\"}");
         andThenContentTypeIs("application/json");
     }
 

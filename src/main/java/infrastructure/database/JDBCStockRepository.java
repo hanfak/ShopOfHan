@@ -11,9 +11,10 @@ import java.util.Optional;
 
 import static domain.ProductStock.productStock;
 
-public class JDBCStockRepository implements StockRepository<ProductStock> {
+public class JDBCStockRepository implements StockRepository {
 
     public static final String SQL_STATEMENT = "SELECT product_name, amount from stock where product_name=?";
+    public static final String SQL_STATEMENT_TWO = "SELECT product_name, amount from stock where product_id=?";
 
     private JDBCDatabaseConnectionManager databaseConnectionManager;
 
@@ -21,13 +22,14 @@ public class JDBCStockRepository implements StockRepository<ProductStock> {
         this.databaseConnectionManager = databaseConnectionManager;
     }
 
+    // TODO M001B Extract duplication
     @Override
-    public Optional<ProductStock> checkStockByName(String product) {
+    public Optional<ProductStock> checkStockByName(String productName) {
         try {
              try (Connection dbConnection = databaseConnectionManager.getDBConnection();
                   PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
 
-                 stmt.setString(1, product);
+                 stmt.setString(1, productName);
                  // TODO multiple different stock checks will return first one only (new user story)
                  ResultSet rs = stmt.executeQuery();
                  if (rs.next()) {
@@ -46,6 +48,31 @@ public class JDBCStockRepository implements StockRepository<ProductStock> {
         }
         return Optional.empty();
     }
-}
 
-// Example JdbcReader
+
+    @Override
+    public Optional<ProductStock> checkStockById(String productId) {
+        try {
+            try (Connection dbConnection = databaseConnectionManager.getDBConnection();
+                 PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
+
+                stmt.setString(1, productId);
+                ResultSet rs = stmt.executeQuery();
+                if (rs.next()) {
+                    String product_name = rs.getString("product_name");
+                    int amount = rs.getInt("amount");
+                    Optional<ProductStock> productStock = Optional.of(productStock(
+                            ProductName.productName(product_name),
+                            amount));
+                    return productStock;
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+        } catch(Exception e) { // TODO be more specific with exception
+            System.out.println(e);
+        }
+        return Optional.empty();
+    }
+}
