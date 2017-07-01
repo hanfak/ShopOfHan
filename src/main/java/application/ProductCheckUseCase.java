@@ -25,6 +25,8 @@ public class ProductCheckUseCase {
 
     // TODO REturn rendered content???
     public ProductStock checkStock(ProductToCheck productToCheck) {
+
+        // TODO M001B throw illegal argument here if both getters are ""
         logger.info("checking stock...");
         Optional<ProductStock> checkStock = Optional.empty();
         // TODO M001B use optional instead of ""

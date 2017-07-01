@@ -31,6 +31,7 @@ public class ProductAvailabilityWebService {
             String productName = productAvailabilityRequest.getProductName().value;
             return errorContent(format("Product '%s' is not stocked %s", productName, e.toString()));
         }
+        // TODO M001B catch illegal argument here
 //        catch (IllegalArgumentException e) {
 //            return errorContent(format("Product name or id not supplied, cannot find product in stock\n%s", e.toString()));
 //        }
