@@ -1,4 +1,10 @@
 language : java
 jdk:
   - oraclejdk8
-script:  mvn install
+service:
+  - mysql
+before_install:
+  - mysql -e 'DROP DATABASE IF EXISTS shop_of_han_database;'
+  - mysql -u root --default-character-set=utf8 shop_of_han_database < ShopOfHanSQL/priming.sql
+script:
+  - mvn install

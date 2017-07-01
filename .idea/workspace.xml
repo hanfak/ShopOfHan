@@ -24,10 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,15 +37,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="36">
-                <caret line="2" column="115" lean-forward="false" selection-start-line="2" selection-start-column="115" selection-end-line="2" selection-end-column="115" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-169">
+              <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,7 +110,6 @@
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/properties/ServerSettings.java" />
         <option value="$PROJECT_DIR$/src/main/java/wiring/ShopOfHanURLs.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/notes.md" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java" />
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/monitoring/DatabaseConnectionProbeTest.java" />
@@ -147,6 +140,7 @@
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -1082,7 +1076,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498940316037</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="build passing image">
+      <created>1498948141101</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1498948141101</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1205,7 +1206,8 @@
     <MESSAGE value="refactor&#10;- Pass in field from request to use case, which is a domain object&#10;- used single value type for domain object&#10;- got rid of ProductTocheck interface to allow usecase to access request object in webservice" />
     <MESSAGE value="Remove logging from webservice and method naming conflict" />
     <MESSAGE value="M001B - Acceptance test for check stock by Id&#10;&#10;Env variable for database url used depending on the operating system" />
-    <option name="LAST_COMMIT_MESSAGE" value="M001B - Acceptance test for check stock by Id&#10;&#10;Env variable for database url used depending on the operating system" />
+    <MESSAGE value="build passing image" />
+    <option name="LAST_COMMIT_MESSAGE" value="build passing image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1301,14 +1303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,19 +1442,6 @@
             <marker date="1498908016000" expanded="false" signature="175:181" ph=" }" />
             <marker date="1498908016000" expanded="false" signature="225:236" ph=" { " />
             <marker date="1498908016000" expanded="false" signature="260:266" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <marker date="1498919783000" expanded="true" signature="0:45" ph=" DROP statement" />
-            <marker date="1498919783000" expanded="true" signature="47:98" ph=" CREATE statement" />
-            <marker date="1498919783000" expanded="true" signature="127:159" ph=" CREATE statement" />
-            <marker date="1498919783000" expanded="true" signature="349:435" ph=" INSERT statement (STOCK)" />
           </folding>
         </state>
       </provider>
@@ -2045,19 +2026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <marker date="1498908016000" expanded="true" signature="11:15" ph="java" />
-            <marker date="1498908016000" expanded="true" signature="16:35" ph="jdk: &lt;1 item&gt;" />
-            <marker date="1498908016000" expanded="true" signature="25:35" ph="oraclejdk8" />
-            <marker date="1498908016000" expanded="true" signature="45:56" ph="mvn install" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -2066,6 +2034,46 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="45" />
+          <folding>
+            <marker date="1498919783000" expanded="true" signature="0:45" ph=" DROP statement" />
+            <marker date="1498919783000" expanded="true" signature="47:98" ph=" CREATE statement" />
+            <marker date="1498919783000" expanded="true" signature="127:159" ph=" CREATE statement" />
+            <marker date="1498919783000" expanded="true" signature="349:435" ph=" INSERT statement (STOCK)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="94" lean-forward="false" selection-start-line="7" selection-start-column="94" selection-end-line="7" selection-end-column="94" />
+          <folding>
+            <marker date="1498948606000" expanded="true" signature="11:15" ph="java" />
+            <marker date="1498948606000" expanded="true" signature="16:35" ph="jdk: &lt;1 item&gt;" />
+            <marker date="1498948606000" expanded="true" signature="25:35" ph="oraclejdk8" />
+            <marker date="1498948606000" expanded="true" signature="36:54" ph="service: &lt;1 item&gt;" />
+            <marker date="1498948606000" expanded="true" signature="49:54" ph="mysql" />
+            <marker date="1498948606000" expanded="true" signature="55:226" ph="before_install: &lt;2 items&gt;" />
+            <marker date="1498948606000" expanded="true" signature="75:131" ph="mysql -e …database;'" />
+            <marker date="1498948606000" expanded="true" signature="136:226" ph="mysql -u …riming.sql" />
+            <marker date="1498948606000" expanded="true" signature="227:250" ph="script: &lt;1 item&gt;" />
+            <marker date="1498948606000" expanded="true" signature="239:250" ph="mvn install" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169">
+          <caret line="70" column="13" lean-forward="true" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
