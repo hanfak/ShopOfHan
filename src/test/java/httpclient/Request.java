@@ -31,14 +31,14 @@ public class Request extends ValueType {
 //    }
 
     public static Request toNiceRequestForYatspec(HttpGet request) {
-        try {
-            List<NameValuePair> parse = URLEncodedUtils.parse(new URI(request.getURI().toString()), "UTF-8");
-            for (NameValuePair param : parse) {
-                System.out.println(param.getName() + " : " + param.getValue());
-            }
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            List<NameValuePair> parse = URLEncodedUtils.parse(new URI(request.getURI().toString()), "UTF-8");
+//            for (NameValuePair param : parse) {
+//                System.out.println(param.getName() + " : " + param.getValue());
+//            }
+//        } catch (URISyntaxException e) {
+//            e.printStackTrace();
+//        }
 
         try {
             return new Request(request.getURI().toURL().toString(), request.getMethod(), fromApacheHeaders(request.getAllHeaders()), QueryParameters.empty(), "");

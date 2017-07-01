@@ -22,7 +22,7 @@ public class JDBCStockRepository implements StockRepository<ProductStock> {
     }
 
     @Override
-    public Optional<ProductStock> checkStock(String product) {
+    public Optional<ProductStock> checkStockByName(String product) {
         try {
              try (Connection dbConnection = databaseConnectionManager.getDBConnection();
                   PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {

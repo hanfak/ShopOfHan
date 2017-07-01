@@ -55,7 +55,7 @@ public class ProductAvailabilityRequestCheckTest {
     }
 
     private void givenSTockRepositoryDoesNotContainTheProduct(String product) {
-        when(stockRepository.checkStock(product)).thenReturn(Optional.empty());
+        when(stockRepository.checkStockByName(product)).thenReturn(Optional.empty());
     }
 
     private Integer withStock(int stock) {
@@ -85,7 +85,7 @@ public class ProductAvailabilityRequestCheckTest {
     }
 
     private void givenStockRepositoryContainsTheProduct(String product, Integer amount) {
-        when(stockRepository.checkStock(product)).thenReturn(Optional.of(ProductStock.productStock(ProductName.productName(product), amount)));
+        when(stockRepository.checkStockByName(product)).thenReturn(Optional.of(ProductStock.productStock(ProductName.productName(product), amount)));
     }
 
     private static final String LORD_OF_THE_RINGS = "Lord Of The Rings";

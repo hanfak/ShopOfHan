@@ -64,6 +64,6 @@ public class Wiring {
     }
 
     private static ProductAvailabilityWebService productAvailabilityWebService() {
-        return new ProductAvailabilityWebService(productCheckUseCase(), productAvailabilityMarshaller(), logger(ProductAvailabilityWebService.class));
+        return new ProductAvailabilityWebService(productCheckUseCase(), productAvailabilityMarshaller());
     }
 }

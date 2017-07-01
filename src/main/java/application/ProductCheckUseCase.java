@@ -20,7 +20,7 @@ public class ProductCheckUseCase {
     // TODO REturn rendered content???
     public ProductStock checkStock(ProductName productName) {
         logger.info("checking stock...");
-        Optional<ProductStock> checkStock = stockRepository.checkStock(productName.value);
+        Optional<ProductStock> checkStock = stockRepository.checkStockByName(productName.value);
         logger.info("Stock checked");
         if (checkStock.isPresent()) {
             logger.info("Stock is there");

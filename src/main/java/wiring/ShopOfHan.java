@@ -16,7 +16,7 @@ public class ShopOfHan {
     }
 
     public void startWebServer() throws Exception {
-        LOGGER.info("Starting web app");
+        LOGGER.info("Starting Shop Of Han app");
         Settings settings = loadSettings("localhost");
         // TODO Webserver builder
         startServer(settings);
@@ -35,6 +35,7 @@ public class ShopOfHan {
 
     // INFO: For testsing only
     public void stopWebServer() throws Exception {
+        LOGGER.info("Closing Shop Of Han app");
         server.stop();
     }
 }

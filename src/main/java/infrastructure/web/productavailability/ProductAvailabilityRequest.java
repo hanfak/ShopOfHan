@@ -13,10 +13,4 @@ public class ProductAvailabilityRequest extends ValueType {
     public static ProductAvailabilityRequest productAvailabilityRequest(String productName) {
         return new ProductAvailabilityRequest(ProductName.productName(productName));
     }
-
-//    //  TODO test this
-//    @Override
-//    public String getProductName() {
-//        return productName;
-//    }
 }

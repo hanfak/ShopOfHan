@@ -22,8 +22,8 @@ public class ProductAvailabilityServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductAvailabilityRequest productAvailabilityRequestRequest = unmarshaller.unmarshall(request);
-        RenderedContent renderedContent = productAvailabilityWebService.requestProductCheck(productAvailabilityRequestRequest);
+        ProductAvailabilityRequest unmarshall = unmarshaller.unmarshall(request);
+        RenderedContent renderedContent = productAvailabilityWebService.requestProductCheck(unmarshall);
         renderedContent.render(response);
     }
 }
