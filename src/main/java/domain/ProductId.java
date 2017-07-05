@@ -8,7 +8,13 @@ public class ProductId extends SingleValueType<String> {
     }
 
     public static ProductId productId(String productId) {
-        //TODO: validation
-        return new ProductId(productId);
+        if (validate(productId))
+            return new ProductId(productId);
+        else
+            throw new IllegalArgumentException();
+    }
+
+    private static boolean validate(String productId) {
+        return productId.length() < 10;
     }
 }

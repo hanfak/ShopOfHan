@@ -20,6 +20,9 @@ From scratch
 If already pulled image
 `docker start <container name>`
 
+Check containers that are not running
+`docker ps -a`
+
 Check if working
 `docker ps`
 

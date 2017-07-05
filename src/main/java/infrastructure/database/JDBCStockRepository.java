@@ -1,5 +1,6 @@
 package infrastructure.database;
 
+import domain.ProductId;
 import domain.ProductName;
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
@@ -24,14 +25,19 @@ public class JDBCStockRepository implements StockRepository {
 
     // TODO M001B Extract duplication
     @Override
-    public Optional<ProductStock> checkStockByName(String productName) {
+    public Optional<ProductStock> checkStockByName(ProductName productName) {
         try {
              try (Connection dbConnection = databaseConnectionManager.getDBConnection();
                   PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
 
-                 stmt.setString(1, productName);
-                 // TODO multiple different stock checks will return first one only (new user story)
+                 stmt.setString(1, productName.value);
+
                  ResultSet rs = stmt.executeQuery();
+                 if (!rs.next()) {
+                     // TODO add a logger
+                     return Optional.empty();
+                 }
+                 // TODO multiple different stock checks will return first one only (new user story)
                  if (rs.next()) {
                      return Optional.of(productStock(
                              ProductName.productName(rs.getString("product_name")),
@@ -51,20 +57,24 @@ public class JDBCStockRepository implements StockRepository {
 
 
     @Override
-    public Optional<ProductStock> checkStockById(String productId) {
+    public Optional<ProductStock> checkStockById(ProductId productId) {
         try {
             try (Connection dbConnection = databaseConnectionManager.getDBConnection();
                  PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
 
-                stmt.setString(1, productId);
+                stmt.setString(1, productId.value);
                 ResultSet rs = stmt.executeQuery();
+                if (!rs.next()) {
+                    // TODO add a logger
+                    return Optional.empty();
+                }
                 if (rs.next()) {
                     String product_name = rs.getString("product_name");
                     int amount = rs.getInt("amount");
-                    Optional<ProductStock> productStock = Optional.of(productStock(
+
+                    return Optional.of(productStock(
                             ProductName.productName(product_name),
                             amount));
-                    return productStock;
                 }
             } catch (Exception e) {
                 System.out.println(e);

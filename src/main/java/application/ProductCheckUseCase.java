@@ -1,11 +1,8 @@
 package application;
 
-import domain.ProductId;
-import domain.ProductName;
 import domain.ProductStock;
 import domain.crosscutting.ProductToCheck;
 import domain.crosscutting.StockRepository;
-import infrastructure.web.productavailability.ProductAvailabilityRequest;
 import org.slf4j.Logger;
 
 import java.util.Optional;
@@ -33,11 +30,11 @@ public class ProductCheckUseCase {
         if (!productToCheck.getProductName().equals(productName(""))){
             // TODO M001B pass object not primitive
             logger.info("checking stock by Name...");
-            checkStock = stockRepository.checkStockByName(productToCheck.getProductName().value);
+            checkStock = stockRepository.checkStockByName(productToCheck.getProductName());
         }
         if (!productToCheck.getProductId().equals(productId(""))){
             logger.info("checking stock by Id...");
-            checkStock = stockRepository.checkStockById(productToCheck.getProductId().value);
+            checkStock = stockRepository.checkStockById(productToCheck.getProductId());
         }
         logger.info("Stock checked");
         return respondWithProduct(checkStock);
