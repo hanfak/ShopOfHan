@@ -93,40 +93,87 @@
 
 
             <!-- PMD -->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-jxr-plugin</artifactId>-->
+                <!--<version>2.5</version>-->
+                <!--<configuration>-->
+                    <!--<skip>false</skip>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>verify</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>jxr</goal>-->
+                            <!--<goal>test-jxr</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-pmd-plugin</artifactId>-->
+                <!--<version>3.6</version>-->
+                <!--<configuration>-->
+                    <!--<skip>false</skip>-->
+                    <!--<verbose>true</verbose>-->
+                    <!--<printFailingErrors>true</printFailingErrors>-->
+                    <!--<rulesets>-->
+                        <!--<ruleset>${project.basedir}/pmd/pmd-ruleset.xml</ruleset>-->
+                    <!--</rulesets>-->
+                <!--</configuration>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>verify</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>check</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+
+            <!-- Mutation testing -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.5</version>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.1.11</version>
                 <configuration>
-                    <skip>false</skip>
+                    <skip>${skipTests}</skip>
+                    <threads>1</threads>
+                    <maxSurviving>0</maxSurviving>
+                    <withHistory>false</withHistory>
+                    <timestampedReports>false</timestampedReports>
+                    <failWhenNoMutations>true</failWhenNoMutations>
+                    <timeoutFactor>1.25</timeoutFactor>
+                    <timeoutConstant>3000</timeoutConstant>
+                    <mutators>
+                        <mutator>INVERT_NEGS</mutator>
+                        <mutator>RETURN_VALS</mutator>
+                        <mutator>MATH</mutator>
+                        <mutator>VOID_METHOD_CALLS</mutator>
+                        <mutator>NEGATE_CONDITIONALS</mutator>
+                        <mutator>CONDITIONALS_BOUNDARY</mutator>
+                        <mutator>INCREMENTS</mutator>
+                        <mutator>REMOVE_CONDITIONALS</mutator>
+                    </mutators>
+                    <parseSurefireConfig>false</parseSurefireConfig>
+                    <exportLineCoverage>true</exportLineCoverage>
+                    <targetClasses>
+                        <targetClass>${project.basedir}.*</targetClass>
+                    </targetClasses>
+                    <targetTests>
+                        <targetTest>${project.basedir}.*</targetTest>
+                        <targetTest>acceptancetests.*</targetTest>
+                        <!--<targetTest>moduletests.*</targetTest>-->
+                        <!--<targetTest>pacttests.*</targetTest>-->
+                        <!--<targetTest>documentation.*</targetTest>-->
+                    </targetTests>
                 </configuration>
                 <executions>
                     <execution>
                         <phase>verify</phase>
                         <goals>
-                            <goal>jxr</goal>
-                            <goal>test-jxr</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.6</version>
-                <configuration>
-                    <skip>false</skip>
-                    <verbose>true</verbose>
-                    <printFailingErrors>true</printFailingErrors>
-                    <rulesets>
-                        <ruleset>${project.basedir}/pmd/pmd-ruleset.xml</ruleset>
-                    </rulesets>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
+                            <goal>mutationCoverage</goal>
                         </goals>
                     </execution>
                 </executions>

@@ -23,26 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pmd/pmd-ruleset.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/domain/Product.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notes.md" afterPath="$PROJECT_DIR$/notes.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductId.java" afterPath="$PROJECT_DIR$/src/main/java/domain/ProductId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductName.java" afterPath="$PROJECT_DIR$/src/main/java/domain/ProductName.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/ValueType.java" afterPath="$PROJECT_DIR$/src/main/java/domain/crosscutting/ValueType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,14 +37,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Wiring.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/wiring/Wiring.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-              <folding>
-                <marker date="1499265789137" expanded="true" signature="964:1000" ph="/UseUtilityClass/" />
-              </folding>
+            <state relative-caret-position="534">
+              <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/main/java/domain/ProductName.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/crosscutting/ValueType.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java" />
@@ -167,6 +146,7 @@
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
         <option value="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -1329,7 +1309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499262380473</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Setup pmd(style guide testing) and sorted some of the failures">
+      <created>1499265858044</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1499265858044</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1365,7 +1352,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28798000" />
+    <option name="totallyTimeSpent" value="29327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1204" extended-state="6" />
@@ -1480,7 +1467,8 @@
     <MESSAGE value="M001B - Acceptance test for check stock by Id&#10;&#10;Env variable for database url used depending on the operating system" />
     <MESSAGE value="build passing image" />
     <MESSAGE value="validate productId, setting up findbugs (WIP), pass object instead of string to repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="validate productId, setting up findbugs (WIP), pass object instead of string to repository" />
+    <MESSAGE value="Setup pmd(style guide testing) and sorted some of the failures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup pmd(style guide testing) and sorted some of the failures" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1920,68 +1908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="117" column="31" lean-forward="false" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
-          <folding>
-            <marker date="1499264917001" expanded="true" signature="89:9094" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="427:837" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="849:5411" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="867:5398" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="888:1514" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="1077:1492" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="1160:1459" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="1195:1428" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="1535:1868" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="1731:1846" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="1889:2859" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2041:2837" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2073:2807" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2105:2188" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2275:2774" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2375:2506" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2544:2733" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2587:2694" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="2911:3877" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="3100:3573" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="3602:3855" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="3634:3825" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="3712:3792" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="3925:4538" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="4114:4186" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="4215:4516" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="4247:4486" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="4325:4453" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="4559:5379" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="4748:5075" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="4928:5042" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="5104:5357" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="5136:5327" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="5214:5294" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="5431:8918" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="5452:5621" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="5643:5813" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="5835:5979" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="6076:6225" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="6306:6470" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="6536:6693" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="6793:6947" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="6969:7116" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="7137:7288" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="7372:7550" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="7572:7742" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="7764:7948" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="7970:8155" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="8177:8366" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="8387:8606" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="8627:8897" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="8938:9082" ph="..." />
-            <marker date="1499264917001" expanded="true" signature="8959:9062" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -2092,11 +2018,11 @@
         <state relative-caret-position="240">
           <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
           <folding>
-            <marker date="1499265473989" expanded="false" signature="55:424" ph="..." />
-            <marker date="1499265473989" expanded="true" signature="628:699" ph="{...}" />
-            <marker date="1499265473989" expanded="true" signature="705:745" ph="@{...}" />
-            <marker date="1499265473989" expanded="true" signature="705:759" ph="@{...}" />
-            <marker date="1499265473989" expanded="true" signature="876:1220" ph="{...}" />
+            <marker date="1499265854169" expanded="false" signature="55:381" ph="..." />
+            <marker date="1499265854169" expanded="true" signature="585:656" ph="{...}" />
+            <marker date="1499265854169" expanded="true" signature="662:702" ph="@{...}" />
+            <marker date="1499265854169" expanded="true" signature="662:716" ph="@{...}" />
+            <marker date="1499265854169" expanded="true" signature="833:1177" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2148,8 +2074,28 @@
         <state relative-caret-position="540">
           <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
           <folding>
+            <marker date="1499265789137" expanded="false" signature="24:940" ph="..." />
             <marker date="1499265789137" expanded="true" signature="964:1000" ph="/UseUtilityClass/" />
+            <marker date="1499265789137" expanded="true" signature="1093:1164" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="1324:1398" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="1476:1528" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="1634:1695" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="1759:1818" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="1873:1949" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="2020:2151" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="2211:2284" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="2347:2448" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="2524:2646" ph="{...}" />
+            <marker date="1499265789137" expanded="true" signature="2729:2842" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
