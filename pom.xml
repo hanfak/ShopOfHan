@@ -7,6 +7,16 @@
     <groupId>com.hanfak</groupId>
     <artifactId>ShopOfHan</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <skipTests>false</skipTests>
+        <sonar.language>java</sonar.language>
+        <maven.scm.plugin.version>1.9.5</maven.scm.plugin.version>
+        <java.language.level>1.8</java.language.level>
+        <jetty.version>9.4.4.v20170414</jetty.version>
+        <commons.lang.version>3.4</commons.lang.version>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -80,16 +90,49 @@
                     </execution>
                 </executions>
             </plugin>
+
+
+            <!-- PMD -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jxr</goal>
+                            <goal>test-jxr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.6</version>
+                <configuration>
+                    <skip>false</skip>
+                    <verbose>true</verbose>
+                    <printFailingErrors>true</printFailingErrors>
+                    <rulesets>
+                        <ruleset>${project.basedir}/pmd/pmd-ruleset.xml</ruleset>
+                    </rulesets>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-    <properties>
-        <java.language.level>1.8</java.language.level>
-        <jetty.version>9.4.4.v20170414</jetty.version>
-        <commons.lang.version>3.4</commons.lang.version>
-    </properties>
-
-
 
     <dependencies>
         <dependency>

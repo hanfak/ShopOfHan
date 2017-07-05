@@ -3,7 +3,6 @@ package infrastructure.web.server;
 import infrastructure.properties.Settings;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
-import wiring.Wiring;
 
 import static java.lang.String.format;
 

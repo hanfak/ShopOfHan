@@ -6,3 +6,7 @@ https://gist.github.com/mike-hogan/ced18517802f76cf950dab286b5fc992
 skip test in maven
 
 https://stackoverflow.com/questions/4389744/is-there-a-way-to-tell-surefire-to-skip-tests-in-a-certain-package
+
+run pmd
+
+mvn verify

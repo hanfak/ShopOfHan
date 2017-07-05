@@ -1,11 +1,9 @@
 package infrastructure.web.productavailability;
 
 import application.ProductCheckUseCase;
-import domain.ProductName;
 import domain.ProductStock;
 import infrastructure.web.Marshaller;
 import infrastructure.web.RenderedContent;
-import org.slf4j.Logger;
 
 import java.io.IOException;
 

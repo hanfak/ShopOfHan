@@ -21,6 +21,7 @@ public class PropertiesReader {
         return properties.getProperty(key);
     }
 
+    @SuppressWarnings("PreserveStackTrace")
     private void loadProperties() {
         try (InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream(propertiesFileName())) {
             properties.load(resourceAsStream);

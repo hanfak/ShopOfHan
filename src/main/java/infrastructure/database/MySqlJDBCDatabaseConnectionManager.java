@@ -10,7 +10,7 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
     public static final String DATABASE_NAME = "shop_of_han_database";
     public static final String DATABASE_FLAGS = "?verifyServerCertificate=false&useSSL=true";
 
-    private static Settings settings;
+    private Settings settings;
 
     public MySqlJDBCDatabaseConnectionManager(Settings settings) {
         this.settings = settings;

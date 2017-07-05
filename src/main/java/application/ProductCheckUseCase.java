@@ -12,8 +12,8 @@ import static domain.ProductName.productName;
 
 public class ProductCheckUseCase {
 
-    private StockRepository stockRepository;
-    private Logger logger;
+    private final StockRepository stockRepository;
+    private final Logger logger;
 
     public ProductCheckUseCase(StockRepository stockRepository, Logger logger) {
         this.stockRepository = stockRepository;

@@ -3,7 +3,6 @@ package infrastructure.web.statusprobeservlet;
 import domain.monitoring.ProbeResult;
 import domain.monitoring.ProbeStatus;
 import infrastructure.monitoring.DatabaseConnectionProbe;
-import infrastructure.web.RenderedContent;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +18,7 @@ public class StatusProbeServlet extends HttpServlet {
         this.databaseConnectionProbe = databaseConnectionProbe;
     }
 
+    @SuppressWarnings("UnusedLocalVariable")
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         ProbeResult probe = databaseConnectionProbe.probe();

@@ -17,7 +17,7 @@ public class JDBCStockRepository implements StockRepository {
     public static final String SQL_STATEMENT = "SELECT product_name, amount from stock where product_name=?";
     public static final String SQL_STATEMENT_TWO = "SELECT product_name, amount from stock where product_id=?";
 
-    private JDBCDatabaseConnectionManager databaseConnectionManager;
+    private final JDBCDatabaseConnectionManager databaseConnectionManager;
 
     public JDBCStockRepository(JDBCDatabaseConnectionManager databaseConnectionManager) {
         this.databaseConnectionManager = databaseConnectionManager;
@@ -32,22 +32,21 @@ public class JDBCStockRepository implements StockRepository {
 
                  stmt.setString(1, productName.value);
 
-                 ResultSet rs = stmt.executeQuery();
-                 if (!rs.next()) {
+                 ResultSet resultSet = stmt.executeQuery();
+                 if (!resultSet.next()) {
                      // TODO add a logger
                      return Optional.empty();
                  }
                  // TODO multiple different stock checks will return first one only (new user story)
-                 if (rs.next()) {
+                 if (resultSet.next()) {
                      return Optional.of(productStock(
-                             ProductName.productName(rs.getString("product_name")),
-                             rs.getInt("amount")));
+                             ProductName.productName(resultSet.getString("product_name")),
+                             resultSet.getInt("amount")));
                  }
-                 // TODO  if (!rs.next) error
-                 // TODO if (rs.next) error
-            } catch (Exception e) {
-             System.out.println(e);
-            }
+                 // TODO  if (!resultSet.next) error
+                 // TODO if (resultSet.next) error
+                 resultSet.close();
+             }
 
         } catch(Exception e) { // TODO be more specific with exception
             System.out.println(e);
@@ -63,19 +62,20 @@ public class JDBCStockRepository implements StockRepository {
                  PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
 
                 stmt.setString(1, productId.value);
-                ResultSet rs = stmt.executeQuery();
-                if (!rs.next()) {
+                ResultSet resultSet = stmt.executeQuery();
+                if (!resultSet.next()) {
                     // TODO add a logger
                     return Optional.empty();
                 }
-                if (rs.next()) {
-                    String product_name = rs.getString("product_name");
-                    int amount = rs.getInt("amount");
+                if (resultSet.next()) {
+                    String productName = resultSet.getString("product_name");
+                    int amount = resultSet.getInt("amount");
 
                     return Optional.of(productStock(
-                            ProductName.productName(product_name),
+                            ProductName.productName(productName),
                             amount));
                 }
+                resultSet.close();
             } catch (Exception e) {
                 System.out.println(e);
             }

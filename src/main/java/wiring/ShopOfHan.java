@@ -8,15 +8,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ShopOfHan {
-    static Logger LOGGER = LoggerFactory.getLogger(ShopOfHan.class);
+    private final static Logger logger = LoggerFactory.getLogger(ShopOfHan.class);
     private static ShopOfHanServer server;
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String... arguments) throws Exception {
+
+        // TODO initialize wiring
         new ShopOfHan().startWebServer();
     }
 
     public void startWebServer() throws Exception {
-        LOGGER.info("Starting Shop Of Han app");
+        logger.info("Starting Shop Of Han app");
         Settings settings = loadSettings("localhost");
         // TODO Webserver builder
         startServer(settings);
@@ -35,7 +37,7 @@ public class ShopOfHan {
 
     // INFO: For testsing only
     public void stopWebServer() throws Exception {
-        LOGGER.info("Closing Shop Of Han app");
+        logger.info("Closing Shop Of Han app");
         server.stop();
     }
 }

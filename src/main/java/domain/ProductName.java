@@ -4,7 +4,7 @@ import domain.crosscutting.SingleValueType;
 
 public class ProductName extends SingleValueType<String> {
 
-    public ProductName(String value) {
+    private ProductName(String value) {
         super(value);
     }
 

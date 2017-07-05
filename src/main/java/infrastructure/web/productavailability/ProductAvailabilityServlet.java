@@ -2,7 +2,6 @@ package infrastructure.web.productavailability;
 
 import infrastructure.web.RenderedContent;
 import infrastructure.web.Unmarshaller;
-import org.slf4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

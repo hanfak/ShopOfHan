@@ -2,13 +2,13 @@ package infrastructure.web.handler;
 
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import wiring.Wiring;
 
 import static wiring.ShopOfHanURLs.PRODUCT_AVAILABILITY;
 import static wiring.ShopOfHanURLs.STATUS_PAGE;
 import static wiring.Wiring.productAvailabilityServlet;
 import static wiring.Wiring.statusProbeServlet;
 
+@SuppressWarnings("UseUtilityClass")
 public class Handler {
 
     public static ServletContextHandler servletHandler() {

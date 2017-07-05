@@ -17,7 +17,8 @@ import infrastructure.web.productavailability.ProductAvailabilityWebService;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+// TODO make singleton
+@SuppressWarnings("UseUtilityClass")
 public class Wiring {
 
     // TODO singleton pattern

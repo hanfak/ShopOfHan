@@ -1,11 +1,8 @@
 package infrastructure.properties;
 
-import infrastructure.properties.DatabaseSettings;
-import infrastructure.properties.PropertiesReader;
-
 public class Settings implements DatabaseSettings, ServerSettings {
     public static final String MAC = "Mac";
-    private PropertiesReader propertiesReader;
+    private final PropertiesReader propertiesReader;
 
     public Settings(PropertiesReader propertiesReader) {
         this.propertiesReader = propertiesReader;
