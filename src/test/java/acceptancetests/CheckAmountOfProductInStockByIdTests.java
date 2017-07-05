@@ -33,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpecRunner.class)
 public class CheckAmountOfProductInStockByIdTests extends TestState implements WithCustomResultListeners   {
 
-    public static final String HARRY_POTTER = "Harry%20Potter";
+    public static final String HARRY_POTTER = "HP1";
     public static final String PATH = "http://localhost:8081/productscheck?productId=";
     public static final String JOY_OF_JAVA_ID = "JOJ1";
 //    private static final String EXPECTED_RESPONSE =
@@ -72,10 +72,9 @@ public class CheckAmountOfProductInStockByIdTests extends TestState implements W
     }
 
     @Test
-    @Ignore
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMakeAGetRequestTo(PATH + HARRY_POTTER));
-        thenTheResponseCodeIs404AndTheBodyIs("Product 'Harry Potter' is not stocked java.lang.IllegalStateException: Product is not found");
+        thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");
     }
 
     @Test

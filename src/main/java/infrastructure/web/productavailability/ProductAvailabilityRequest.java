@@ -12,6 +12,7 @@ public class ProductAvailabilityRequest extends ValueType implements ProductToCh
     private final ProductName productName;
     private final ProductId productId;
 
+    // TODO use only one field 'productQuery'??
     private ProductAvailabilityRequest(ProductName productName, ProductId productId) {
         this.productName = productName;
         this.productId = productId;
