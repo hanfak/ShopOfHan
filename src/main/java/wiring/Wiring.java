@@ -22,9 +22,10 @@ import org.slf4j.LoggerFactory;
 public class Wiring {
 
     // TODO singleton pattern
-    private static Settings settings() {
-        return new Settings(new PropertiesReader("localhost"));
+    public static Settings settings() {
+        return new Settings(new PropertiesReader("work"));
     }
+
     // TODO singleton pattern
     // TODO Extract to separate wiring for database
     private static JDBCDatabaseConnectionManager databaseConnectionManager() {

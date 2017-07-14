@@ -33,10 +33,7 @@ public class JDBCStockRepository implements StockRepository {
                  stmt.setString(1, productName.value);
 
                  ResultSet resultSet = stmt.executeQuery();
-                 if (!resultSet.next()) {
-                     // TODO add a logger
-                     return Optional.empty();
-                 }
+
                  // TODO multiple different stock checks will return first one only (new user story)
                  if (resultSet.next()) {
                      return Optional.of(productStock(
@@ -63,10 +60,7 @@ public class JDBCStockRepository implements StockRepository {
 
                 stmt.setString(1, productId.value);
                 ResultSet resultSet = stmt.executeQuery();
-                if (!resultSet.next()) {
-                    // TODO add a logger
-                    return Optional.empty();
-                }
+
                 if (resultSet.next()) {
                     String productName = resultSet.getString("product_name");
                     int amount = resultSet.getInt("amount");

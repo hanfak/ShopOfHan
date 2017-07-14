@@ -22,10 +22,18 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
+    <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="use different property files to define environments instead of logic, one place to alter details">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/work.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopOfHanSQL/priming_01.sql" afterPath="$PROJECT_DIR$/ShopOfHanSQL/priming_01.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/localhost.properties" afterPath="$PROJECT_DIR$/src/main/resources/localhost.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/localhost.properties" afterPath="$PROJECT_DIR$/target/classes/localhost.properties" />
     </list>
+    <list id="d61528c6-70b0-4caa-83ef-ee074123d94b" name="change change properties lookup to two files instead of logic in code ignore external testing in pom" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,12 +45,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="Wiring.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/wiring/Wiring.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="400">
+              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+              <folding>
+                <marker date="1500040230181" expanded="false" signature="964:1000" ph="/UseUtilityClass/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,6 +86,13 @@
       <find>T</find>
       <find>TODO</find>
       <find>queryParameters</find>
+      <find>l</find>
+      <find>loc</find>
+      <find>loca</find>
+      <find>local</find>
+      <find>localh</find>
+      <find>localhos</find>
+      <find>localhost</find>
     </findStrings>
     <replaceStrings>
       <replace>\n</replace>
@@ -87,6 +104,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="244f9d5a25bd5eb263e4afbcdc72f0bebb1041e0" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -96,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/infrastructure/properties/settings/PropertiesReaderTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/properties/settings/SettingsTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/PropertiesReader.java" />
@@ -119,7 +140,6 @@
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityRequest.java" />
         <option value="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByIdTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/crosscutting/ProductToCheck.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/localhost.properties" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshaller.java" />
@@ -134,19 +154,21 @@
         <option value="$PROJECT_DIR$/src/main/java/domain/ProductId.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/ProductName.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/crosscutting/ValueType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
-        <option value="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/localhost.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
+        <option value="$PROJECT_DIR$/ShopOfHanSQL/priming_01.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
       </list>
     </option>
   </component>
@@ -165,9 +187,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1855" />
-    <option name="height" value="1204" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -185,8 +207,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,6 +232,40 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptancetests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -228,6 +282,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,74 +342,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="infrastructure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statusprobeservlet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ShopOfHan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="infrastructure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -595,8 +585,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHanSQL" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -612,10 +618,10 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="domain" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -643,26 +649,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.travis.yml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/ShopOfHanSQL/priming.sql</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/domain/crosscutting/StockRepository.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityRequest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshaller.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/wiring/Wiring.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/localhost.properties</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByIdTests.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/httpclient/Request.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/staticanalysis/CommentsConventionsTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/localhost.properties</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -670,8 +656,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/domain/ProductId.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/domain/crosscutting/ProductToCheck.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -757,6 +741,812 @@
         <option name="mySupportsDeletion" value="false" />
         <option name="myCanBeAbsent" value="false" />
         <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.travis.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ShopOfHanSQL/priming.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/domain/crosscutting/StockRepository.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityRequest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshaller.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/wiring/Wiring.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/resources/localhost.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByIdTests.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/httpclient/Request.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/staticanalysis/CommentsConventionsTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/localhost.properties</PATH>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/domain/ProductId.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/domain/crosscutting/ProductToCheck.java</PATH>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" />
+            <option name="myStatusName" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" />
+          <option name="myStatusName" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" />
+        </FILE-GROUP>
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
@@ -1045,6 +1835,7 @@
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -1183,6 +1974,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1352,16 +2149,16 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29327000" />
+    <option name="totallyTimeSpent" value="30297000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1204" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1176" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.51022667" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1372,17 +2169,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4295499" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3304762" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2642344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.48977336" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778865" sideWeight="0.49253732" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27197346" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1406,18 +2203,19 @@
       <window_info id="SBT Execute" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33012047" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33012047" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1427,6 +2225,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1468,7 +2276,8 @@
     <MESSAGE value="build passing image" />
     <MESSAGE value="validate productId, setting up findbugs (WIP), pass object instead of string to repository" />
     <MESSAGE value="Setup pmd(style guide testing) and sorted some of the failures" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup pmd(style guide testing) and sorted some of the failures" />
+    <MESSAGE value="use different property files to define environments instead of logic, one place to alter details" />
+    <option name="LAST_COMMIT_MESSAGE" value="use different property files to define environments instead of logic, one place to alter details" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1516,8 +2325,26 @@
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1526,22 +2353,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/RenderedContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/monitoring/ProbeResult.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCDatabaseConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/staticanalysis/FileHelpers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1553,13 +2364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/ShopOfHanURLs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1608,19 +2412,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityMarshaller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1628,18 +2423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="94" lean-forward="false" selection-start-line="7" selection-start-column="94" selection-end-line="7" selection-end-column="94" />
-          <folding>
-            <marker date="1499256315973" expanded="true" signature="11:15" ph="java" />
-            <marker date="1499256315973" expanded="true" signature="16:35" ph="jdk: &lt;1 item&gt;" />
-            <marker date="1499256315973" expanded="true" signature="25:35" ph="oraclejdk8" />
-            <marker date="1499256315973" expanded="true" signature="36:54" ph="service: &lt;1 item&gt;" />
-            <marker date="1499256315973" expanded="true" signature="49:54" ph="mysql" />
-            <marker date="1499256315973" expanded="true" signature="55:226" ph="before_install: &lt;2 items&gt;" />
-            <marker date="1499256315973" expanded="true" signature="75:131" ph="mysql -e …database;'" />
-            <marker date="1499256315973" expanded="true" signature="136:226" ph="mysql -u …riming.sql" />
-            <marker date="1499256315973" expanded="true" signature="227:250" ph="script: &lt;1 item&gt;" />
-            <marker date="1499256315973" expanded="true" signature="239:250" ph="mvn install" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1647,7 +2430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="40">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1655,15 +2437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/localhost.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1671,26 +2444,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1484">
           <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding>
-            <marker date="1499256315973" expanded="false" signature="33:1351" ph="..." />
-            <marker date="1499256315973" expanded="true" signature="2310:2384" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="2441:2567" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="2645:2906" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="2912:2929" ph="@{...}" />
-            <marker date="1499256315973" expanded="true" signature="2992:3196" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="3202:3219" ph="@{...}" />
-            <marker date="1499256315973" expanded="true" signature="3299:3306" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="3355:3467" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="3518:3658" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="3718:3797" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="3859:3994" ph="{...}" />
-            <marker date="1499256315973" expanded="false" signature="4000:4031" ph="/Duplicates/" />
-            <marker date="1499256315973" expanded="true" signature="4174:4653" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="4745:4859" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="4951:5065" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="5187:5340" ph="{...}" />
-            <marker date="1499256315973" expanded="true" signature="5434:5683" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1698,23 +2452,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="104" column="17" lean-forward="false" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
-          <folding>
-            <marker date="1498669538512" expanded="false" signature="33:1326" ph="..." />
-            <marker date="1498669538512" expanded="true" signature="1922:1996" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="2053:2179" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="2257:2515" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="2589:2793" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="2851:2943" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="2993:3105" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="3156:3296" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="3356:3435" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="3497:3632" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="3776:4255" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="4347:4461" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="4553:4667" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="4789:4942" ph="{...}" />
-            <marker date="1498669538512" expanded="true" signature="5036:5285" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1723,7 +2461,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="525">
             <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1733,20 +2470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <marker date="1498561727818" expanded="false" signature="37:103" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding>
-            <marker date="1499258233417" expanded="false" signature="56:272" ph="..." />
-            <marker date="1499258233417" expanded="true" signature="485:824" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1754,24 +2477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="10" column="65" lean-forward="false" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
-          <folding>
-            <marker date="1499258233413" expanded="false" signature="37:137" ph="..." />
-            <marker date="1499258233413" expanded="false" signature="62:137" ph="..." />
-            <marker date="1499258233413" expanded="false" signature="89:137" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <marker date="1499256315973" expanded="true" signature="0:44" ph="DROP DATABAS... " />
-            <marker date="1499256315973" expanded="true" signature="47:97" ph="CREATE DATAB... IF" />
-            <marker date="1499256315973" expanded="true" signature="127:346" ph="CREATE TABLE... IF" />
-            <marker date="1499256315973" expanded="true" signature="349:466" ph="INSERT INTO stock... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1779,9 +2484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
           <caret line="93" column="33" lean-forward="false" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
-          <folding>
-            <marker date="1499256323345" expanded="true" signature="0:4303" ph="/.../" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1789,12 +2491,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" column="83" lean-forward="false" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
-          <folding>
-            <marker date="1499262374701" expanded="true" signature="24:160" ph="..." />
-            <marker date="1499262374701" expanded="true" signature="273:499" ph="{...}" />
-            <marker date="1499262374701" expanded="true" signature="593:768" ph="{...}" />
-            <marker date="1499262374701" expanded="true" signature="643:687" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1813,9 +2510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <marker date="1499256315973" expanded="false" signature="37:81" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1823,12 +2517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <marker date="1499261421925" expanded="true" signature="43:704" ph="..." />
-            <marker date="1499261421925" expanded="true" signature="792:1248" ph="..." />
-            <marker date="1499261421925" expanded="true" signature="1130:1230" ph="..." />
-            <marker date="1499261421925" expanded="true" signature="1143:1217" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1836,18 +2524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
           <caret line="69" column="10" lean-forward="false" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
-          <folding>
-            <marker date="1499262568561" expanded="true" signature="26:687" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="699:4370" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="1252:1352" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="1401:1903" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="1947:2276" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="2318:2467" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="2733:3221" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="3270:3632" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="3683:4007" ph="..." />
-            <marker date="1499262568561" expanded="true" signature="4147:4264" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1856,40 +2532,17 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="220">
             <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/ProductId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <marker date="1499264468853" expanded="true" signature="155:184" ph="{...}" />
-            <marker date="1499264468853" expanded="true" signature="242:406" ph="{...}" />
-            <marker date="1499264468853" expanded="true" signature="462:509" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Product.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/ProductName.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <marker date="1499264468865" expanded="true" signature="160:189" ph="{...}" />
-            <marker date="1499264468865" expanded="true" signature="253:332" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1897,13 +2550,450 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <marker date="1499264550149" expanded="false" signature="37:280" ph="..." />
-            <marker date="1499264550149" expanded="true" signature="312:369" ph="@{...}" />
-            <marker date="1499264550149" expanded="true" signature="312:383" ph="@{...}" />
-            <marker date="1499264550149" expanded="true" signature="425:493" ph="{...}" />
-            <marker date="1499264550149" expanded="true" signature="535:599" ph="{...}" />
-            <marker date="1499264550149" expanded="true" signature="644:728" ph="{...}" />
+            <marker date="1500039576189" expanded="false" signature="41:324" ph="..." />
+            <marker date="1500039576189" expanded="true" signature="776:851" ph="{...}" />
+            <marker date="1500039576189" expanded="true" signature="981:1970" ph="{...}" />
+            <marker date="1500039576189" expanded="true" signature="1677:1763" ph="//..." />
+            <marker date="1500039576189" expanded="true" signature="2057:3002" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1500039278249" expanded="false" signature="56:270" ph="..." />
+            <marker date="1500039278249" expanded="true" signature="574:657" ph="{...}" />
+            <marker date="1500039278249" expanded="true" signature="769:871" ph="{...}" />
+            <marker date="1500039278249" expanded="true" signature="927:962" ph="{...}" />
+            <marker date="1500039278249" expanded="true" signature="1014:1047" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1500038429441" expanded="false" signature="56:272" ph="..." />
+            <marker date="1500038429441" expanded="true" signature="485:824" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1500038636361" expanded="true" signature="56:331" ph="..." />
+            <marker date="1500038636361" expanded="true" signature="703:828" ph="{...}" />
+            <marker date="1500038636361" expanded="true" signature="964:1140" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <marker date="1500039278249" expanded="false" signature="56:391" ph="..." />
+            <marker date="1500039278249" expanded="true" signature="673:774" ph="{...}" />
+            <marker date="1500039278249" expanded="true" signature="897:1458" ph="{...}" />
+            <marker date="1500039278249" expanded="true" signature="1226:1452" ph="//..." />
+            <marker date="1500039278249" expanded="true" signature="1601:1978" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1500038636357" expanded="false" signature="29:278" ph="..." />
+            <marker date="1500038636357" expanded="true" signature="480:565" ph="{...}" />
+            <marker date="1500038636357" expanded="true" signature="672:1487" ph="{...}" />
+            <marker date="1500038636357" expanded="true" signature="1568:2019" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding>
+            <marker date="1500038636357" expanded="false" signature="41:136" ph="..." />
+            <marker date="1500038636357" expanded="true" signature="493:534" ph="{...}" />
+            <marker date="1500038636357" expanded="true" signature="590:966" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Applications/Java/jdk1.8.0_51/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding>
+            <marker date="1433817478000" expanded="false" signature="0:215" ph="/.../" />
+            <marker date="1433817478000" expanded="false" signature="244:651" ph="..." />
+            <marker date="1433817478000" expanded="true" signature="653:3596" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="3700:3747" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="3785:3826" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="3870:3933" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="4011:4334" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="4444:4656" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="4677:4718" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="4724:5152" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="5188:5267" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="5273:5657" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="5690:5754" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="5760:6590" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="6646:7100" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="7106:8204" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="8264:9435" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="9441:10912" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="10996:11444" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="11450:12701" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="12762:12815" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="13067:13364" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="13370:14604" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="14729:14950" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="14956:16161" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="16235:16445" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="16451:17377" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="17478:17536" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="17542:18395" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="18445:18499" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="18505:19520" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="19577:19693" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="19699:20358" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="20391:20436" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="20442:20796" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="20836:20960" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="20966:21583" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="21625:21706" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="22049:22136" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="22142:22425" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="22450:22486" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="22492:22706" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="22736:22777" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="22783:23630" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="23665:23827" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="23833:24865" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="24904:25107" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="25113:26173" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="26216:26431" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="26437:27382" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="27443:27680" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="27686:28641" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="28708:28938" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="28944:29081" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="29126:29198" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="29204:30619" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="30697:31111" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="31117:32979" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="33073:33656" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="33662:34386" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="34482:34629" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="34635:35334" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="35379:35518" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="35524:36027" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="36057:36124" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="36130:36711" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="36755:37351" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="37357:37982" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="38033:38088" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="38157:38468" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="38474:39118" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="39169:40002" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="40008:41194" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="41253:41487" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="41493:43823" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="43871:44299" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="44305:44794" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="45052:46167" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="45247:46038" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="46048:46089" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="46127:46161" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="46173:47154" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="47202:47267" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="47273:48851" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="48946:49472" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="49478:51945" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="52060:53515" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="52644:52863" ph="//..." />
+            <marker date="1433817478000" expanded="true" signature="53066:53312" ph="//..." />
+            <marker date="1433817478000" expanded="true" signature="53521:54330" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="54389:54829" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="54835:55418" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="55464:55509" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="55515:56057" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="56101:56179" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="56185:56711" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="56738:56996" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="57002:58113" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="58145:58183" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="58189:60099" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="60146:60854" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="60439:60545" ph="//..." />
+            <marker date="1433817478000" expanded="true" signature="60860:60942" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="61003:61463" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="61469:62488" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="62524:62581" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="62587:64342" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="64393:64926" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="64466:64572" ph="//..." />
+            <marker date="1433817478000" expanded="true" signature="64932:65018" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="65083:65526" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="65532:66085" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="66121:66160" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="66166:66913" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="66964:67078" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="67084:67589" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="67705:67866" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="67872:68483" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="68646:69701" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="69707:70373" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="70413:70467" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="70473:71247" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="71302:71420" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="71426:71931" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="72051:72216" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="72222:72833" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="73000:74226" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="74232:74936" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="74981:75323" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="75329:76268" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="76327:76827" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="76833:77837" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="77904:77964" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="77970:78889" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="78927:79196" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="79202:80526" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="80581:81311" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="81317:82238" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="82280:82332" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="82338:82590" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="82635:82685" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="82691:84297" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="84363:84449" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="84455:86062" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="86126:86210" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="86216:86750" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="86824:86991" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="86997:90743" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="90795:92873" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="91938:92006" ph="//..." />
+            <marker date="1433817478000" expanded="true" signature="92879:94221" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="94262:94301" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="94307:95199" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="95280:95616" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="95622:97110" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="97220:97485" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="97491:99768" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="99814:103386" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="103392:104306" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="104339:104395" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="104401:106235" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="106281:109899" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="109905:110827" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="110860:110916" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="110922:112466" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="112492:112850" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="112856:112977" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="113007:113035" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="113041:113334" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="113367:113587" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="113593:115188" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="115252:115323" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="115329:117003" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="117077:117149" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="117155:117511" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="117557:117620" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="117626:118022" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="118069:118109" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="118115:119050" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="119120:119175" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="119181:119749" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="119823:119878" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="119884:120095" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="120146:120186" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="120192:120508" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="120553:120597" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="120603:120855" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="120897:120970" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="120976:121350" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="121391:121434" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="121440:121806" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="121848:121888" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="121894:122266" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="122309:122350" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="122356:122735" ph="/**...*/" />
+            <marker date="1433817478000" expanded="true" signature="122779:122821" ph="{...}" />
+            <marker date="1433817478000" expanded="true" signature="122827:123937" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding>
+            <marker date="1500039608813" expanded="true" signature="257:314" ph="{...}" />
+            <marker date="1500039608813" expanded="true" signature="358:444" ph="{...}" />
+            <marker date="1500039608813" expanded="true" signature="492:561" ph="{...}" />
+            <marker date="1500039608813" expanded="true" signature="614:688" ph="{...}" />
+            <marker date="1500039608813" expanded="true" signature="741:815" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/ProductId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <marker date="1500038636357" expanded="true" signature="155:184" ph="{...}" />
+            <marker date="1500038636357" expanded="true" signature="242:406" ph="{...}" />
+            <marker date="1500038636357" expanded="true" signature="462:509" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/localhost.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <marker date="1500038636361" expanded="false" signature="43:132" ph="..." />
+            <marker date="1500038636361" expanded="true" signature="289:407" ph="{...}" />
+            <marker date="1500038636361" expanded="true" signature="452:503" ph="{...}" />
+            <marker date="1500038636361" expanded="false" signature="509:548" ph="/PreserveStackTrace/" />
+            <marker date="1500038636361" expanded="true" signature="583:894" ph="{...}" />
+            <marker date="1500038636361" expanded="true" signature="936:996" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/ShopOfHanURLs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <marker date="1500038636361" expanded="true" signature="44:350" ph="..." />
+            <marker date="1500038636361" expanded="true" signature="352:388" ph="/UseUtilityClass/" />
+            <marker date="1500038636361" expanded="true" signature="470:836" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <marker date="1500040393549" expanded="false" signature="17:209" ph="..." />
+            <marker date="1500040393549" expanded="true" signature="429:513" ph="{...}" />
+            <marker date="1500040393549" expanded="true" signature="565:730" ph="{...}" />
+            <marker date="1500040393549" expanded="true" signature="780:914" ph="{...}" />
+            <marker date="1500040393549" expanded="true" signature="959:1000" ph="{...}" />
+            <marker date="1500040393549" expanded="true" signature="1082:1160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/work.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="137" />
+          <folding>
+            <marker date="1500039278245" expanded="true" signature="0:44" ph="DROP DATABAS... " />
+            <marker date="1500039278245" expanded="true" signature="47:97" ph="CREATE DATAB... IF" />
+            <marker date="1500039278245" expanded="true" signature="127:307" ph="CREATE TABLE... product" />
+            <marker date="1500039278245" expanded="true" signature="310:543" ph="CREATE TABLE... stock" />
+            <marker date="1500039278245" expanded="true" signature="546:651" ph="INSERT INTO product... " />
+            <marker date="1500039278245" expanded="true" signature="654:714" ph="INSERT INTO stock... " />
+            <marker date="1500039278245" expanded="true" signature="717:807" ph="SELECT * FRO... product" />
+            <marker date="1500039278245" expanded="true" signature="778:806" ph="SELECT produ... stock" />
+            <marker date="1500039278245" expanded="true" signature="810:947" ph="SELECT produ... product" />
+            <marker date="1500039278245" expanded="true" signature="949:1085" ph="SELECT produ... product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming_01.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <marker date="1500040318901" expanded="true" signature="0:44" ph="DROP DATABAS... " />
+            <marker date="1500040318901" expanded="true" signature="47:97" ph="CREATE DATAB... IF" />
+            <marker date="1500040318901" expanded="true" signature="127:313" ph="CREATE TABLE... IF" />
+            <marker date="1500040318901" expanded="true" signature="316:445" ph="INSERT INTO stock... " />
           </folding>
         </state>
       </provider>
@@ -1921,181 +3011,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <marker date="1499264986909" expanded="false" signature="41:136" ph="..." />
-            <marker date="1499264986909" expanded="true" signature="493:534" ph="{...}" />
-            <marker date="1499264986909" expanded="true" signature="590:966" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <marker date="1499265364453" expanded="false" signature="43:132" ph="..." />
-            <marker date="1499265364453" expanded="true" signature="289:407" ph="{...}" />
-            <marker date="1499265364453" expanded="true" signature="452:503" ph="{...}" />
-            <marker date="1499265364453" expanded="true" signature="509:548" ph="/PreserveStackTrace/" />
-            <marker date="1499265364453" expanded="true" signature="583:894" ph="{...}" />
-            <marker date="1499265364453" expanded="true" signature="936:996" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding>
-            <marker date="1499265364465" expanded="true" signature="257:314" ph="{...}" />
-            <marker date="1499265364465" expanded="true" signature="358:444" ph="{...}" />
-            <marker date="1499265364465" expanded="true" signature="492:728" ph="{...}" />
-            <marker date="1499265364465" expanded="true" signature="781:855" ph="{...}" />
-            <marker date="1499265364465" expanded="true" signature="908:982" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/handler/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <marker date="1499265378269" expanded="true" signature="44:350" ph="..." />
-            <marker date="1499265378269" expanded="true" signature="352:388" ph="/UseUtilityClass/" />
-            <marker date="1499265378269" expanded="true" signature="470:836" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <marker date="1499265419333" expanded="true" signature="56:331" ph="..." />
-            <marker date="1499265419333" expanded="true" signature="703:828" ph="{...}" />
-            <marker date="1499265419333" expanded="true" signature="964:1140" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityWebService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="28" column="60" lean-forward="false" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
-          <folding>
-            <marker date="1499265441813" expanded="false" signature="56:391" ph="..." />
-            <marker date="1499265441813" expanded="true" signature="673:774" ph="{...}" />
-            <marker date="1499265441813" expanded="true" signature="897:1560" ph="{...}" />
-            <marker date="1499265441813" expanded="true" signature="1328:1554" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <marker date="1499265441821" expanded="false" signature="43:214" ph="..." />
-            <marker date="1499265441821" expanded="true" signature="328:392" ph="{...}" />
-            <marker date="1499265441821" expanded="true" signature="460:510" ph="{...}" />
-            <marker date="1499265441821" expanded="true" signature="536:749" ph="{...}" />
-            <marker date="1499265441821" expanded="true" signature="774:985" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding>
-            <marker date="1499265854169" expanded="false" signature="55:381" ph="..." />
-            <marker date="1499265854169" expanded="true" signature="585:656" ph="{...}" />
-            <marker date="1499265854169" expanded="true" signature="662:702" ph="@{...}" />
-            <marker date="1499265854169" expanded="true" signature="662:716" ph="@{...}" />
-            <marker date="1499265854169" expanded="true" signature="833:1177" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="47" lean-forward="false" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-          <folding>
-            <marker date="1499265571021" expanded="false" signature="24:260" ph="..." />
-            <marker date="1499265571021" expanded="true" signature="480:564" ph="{...}" />
-            <marker date="1499265571021" expanded="true" signature="616:792" ph="{...}" />
-            <marker date="1499265571021" expanded="true" signature="842:976" ph="{...}" />
-            <marker date="1499265571021" expanded="true" signature="1040:1112" ph="{...}" />
-            <marker date="1499265571021" expanded="true" signature="1194:1272" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/ProductCheckUseCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <marker date="1499263109149" expanded="true" signature="29:278" ph="..." />
-            <marker date="1499263109149" expanded="true" signature="480:565" ph="{...}" />
-            <marker date="1499263109149" expanded="true" signature="672:1487" ph="{...}" />
-            <marker date="1499263109149" expanded="true" signature="1568:2019" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="70" column="38" lean-forward="false" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
-          <folding>
-            <marker date="1499264917453" expanded="false" signature="41:324" ph="..." />
-            <marker date="1499264917453" expanded="true" signature="776:851" ph="{...}" />
-            <marker date="1499264917453" expanded="true" signature="981:2118" ph="{...}" />
-            <marker date="1499264917453" expanded="true" signature="1825:1911" ph="//..." />
-            <marker date="1499264917453" expanded="true" signature="2205:3294" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/wiring/Wiring.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+        <state relative-caret-position="400">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <marker date="1499265789137" expanded="false" signature="24:940" ph="..." />
-            <marker date="1499265789137" expanded="true" signature="964:1000" ph="/UseUtilityClass/" />
-            <marker date="1499265789137" expanded="true" signature="1093:1164" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="1324:1398" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="1476:1528" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="1634:1695" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="1759:1818" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="1873:1949" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="2020:2151" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="2211:2284" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="2347:2448" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="2524:2646" ph="{...}" />
-            <marker date="1499265789137" expanded="true" signature="2729:2842" ph="{...}" />
+            <marker date="1500040230181" expanded="false" signature="964:1000" ph="/UseUtilityClass/" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="174" column="31" lean-forward="true" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>

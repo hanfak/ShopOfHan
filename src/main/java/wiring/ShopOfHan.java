@@ -1,6 +1,5 @@
 package wiring;
 
-import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
 import infrastructure.web.handler.Handler;
 import infrastructure.web.server.ShopOfHanServer;
@@ -19,7 +18,7 @@ public class ShopOfHan {
 
     public void startWebServer() throws Exception {
         logger.info("Starting Shop Of Han app");
-        Settings settings = loadSettings("localhost");
+        Settings settings = loadSettings();
         // TODO Webserver builder
         startServer(settings);
     }
@@ -31,8 +30,8 @@ public class ShopOfHan {
         server.start();
     }
 
-    private static Settings loadSettings(String propertyFile) {
-        return new Settings(new PropertiesReader(propertyFile));
+    private static Settings loadSettings() {
+        return Wiring.settings();
     }
 
     // INFO: For testsing only

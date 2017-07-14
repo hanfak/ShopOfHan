@@ -15,11 +15,7 @@ public class Settings implements DatabaseSettings, ServerSettings {
 
     @Override
     public String databaseURL() {
-        if (System.getProperty("os.name").contains(MAC)) {
-            return propertiesReader.readProperty("database.local.url");
-        } else {
-            return propertiesReader.readProperty("database.work.url");
-        }
+        return propertiesReader.readProperty("database.url");
     }
 
     @Override
