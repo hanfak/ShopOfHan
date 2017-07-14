@@ -64,6 +64,7 @@ public class CheckAmountOfProductInStockByIdTests extends TestState implements W
     }
 
     @Test
+    @Ignore
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
         when(weMakeAGetRequestTo(PATH + JOY_OF_JAVA_ID));
@@ -72,6 +73,7 @@ public class CheckAmountOfProductInStockByIdTests extends TestState implements W
     }
 
     @Test
+    @Ignore
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMakeAGetRequestTo(PATH + HARRY_POTTER));
         thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");

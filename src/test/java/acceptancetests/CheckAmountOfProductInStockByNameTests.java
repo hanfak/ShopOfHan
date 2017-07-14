@@ -33,7 +33,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CheckAmountOfProductInStockByNameTests extends TestState implements WithCustomResultListeners   {
 
     public static final String HARRY_POTTER = "Harry%20Potter";
-    public static final String PATH = "http://localhost:8081/productscheck?productName=";
+    public static final String PATH = "http://localhost:8081/productscheck/name/";
     public static final String JOY_OF_JAVA = "Joy%20Of%20Java";
     public static final String BAD_URL = "http://localhost:8081/a/bad/url";
     private ShopOfHan shopOfHan = new ShopOfHan();

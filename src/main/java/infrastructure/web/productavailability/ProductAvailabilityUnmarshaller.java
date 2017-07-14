@@ -12,12 +12,7 @@ public class ProductAvailabilityUnmarshaller implements Unmarshaller<ProductAvai
 
     @Override
     public ProductAvailabilityRequest unmarshall(HttpServletRequest request) throws IOException {
-        String productName = request.getParameter("productName");
-        String productId = request.getParameter("productId");
-        // TODO M001B avoid using null
-        if (productId == null) {
-            return productAvailabilityRequest(productName, "");
-        }
-        return productAvailabilityRequest("", productId);
+        String contextPath = request.getPathInfo().substring(1);
+        return productAvailabilityRequest(contextPath);
     }
 }

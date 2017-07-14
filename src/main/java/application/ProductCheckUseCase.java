@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 
 import java.util.Optional;
 
-import static domain.ProductId.productId;
 import static domain.ProductName.productName;
 
 public class ProductCheckUseCase {
@@ -31,10 +30,6 @@ public class ProductCheckUseCase {
             // TODO M001B pass object not primitive
             logger.info("checking stock by Name...");
             checkStock = stockRepository.checkStockByName(productToCheck.getProductName());
-        }
-        if (!productToCheck.getProductId().equals(productId(""))){
-            logger.info("checking stock by Id...");
-            checkStock = stockRepository.checkStockById(productToCheck.getProductId());
         }
         logger.info("Stock checked");
         return respondWithProduct(checkStock);
