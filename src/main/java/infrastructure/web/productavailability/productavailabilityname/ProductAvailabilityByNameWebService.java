@@ -1,4 +1,4 @@
-package infrastructure.web.productavailabilityname;
+package infrastructure.web.productavailability.productavailabilityname;
 
 import application.ProductCheckByNameUseCase;
 import domain.ProductStock;

@@ -1,4 +1,4 @@
-package infrastructure.web.productavailabilityname;
+package infrastructure.web.productavailability.productavailabilityname;
 
 import infrastructure.web.Unmarshaller;
 

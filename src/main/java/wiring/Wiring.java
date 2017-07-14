@@ -11,14 +11,13 @@ import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
 import infrastructure.web.Marshaller;
 import infrastructure.web.Unmarshaller;
-import infrastructure.web.productavailabilityById.ProductAvailabilityByIdMarshaller;
-import infrastructure.web.productavailabilityById.ProductAvailabilityByIdServlet;
-import infrastructure.web.productavailabilityById.ProductAvailabilityByIdUnmarshaller;
-import infrastructure.web.productavailabilityById.ProductAvailabilityByIdWebService;
-import infrastructure.web.productavailabilityname.ProductAvailabilityByNameMarshaller;
-import infrastructure.web.productavailabilityname.ProductAvailabilityByNameServlet;
-import infrastructure.web.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
-import infrastructure.web.productavailabilityname.ProductAvailabilityByNameWebService;
+import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
+import infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
+import infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdUnmarshaller;
+import infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdWebService;
+import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
+import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
+import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameWebService;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,12 +49,12 @@ public class Wiring {
         return new ProductAvailabilityByIdUnmarshaller();
     }
 
-    private static Marshaller productAvailabilityByNameMarshaller() {
-        return new ProductAvailabilityByNameMarshaller();
+    private static Marshaller productAvailabilityMarshaller() {
+        return new ProductAvailabilityMarshaller();
     }
 
     private static Marshaller productAvailabilityByIdMarshaller() {
-        return new ProductAvailabilityByIdMarshaller();
+        return new ProductAvailabilityMarshaller();
     }
 
     private static StockRepository stockRepository() {
@@ -83,7 +82,7 @@ public class Wiring {
     }
 
     private static ProductAvailabilityByNameWebService productAvailabilityByNameWebService() {
-        return new ProductAvailabilityByNameWebService(productCheckByNameUseCase(), productAvailabilityByNameMarshaller());
+        return new ProductAvailabilityByNameWebService(productCheckByNameUseCase(), productAvailabilityMarshaller());
     }
 
     public static ProductAvailabilityByIdServlet productAvailabilityByIdServlet() {

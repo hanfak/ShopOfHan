@@ -1,7 +1,7 @@
 package infrastructure.web.productavailability;
 
-import infrastructure.web.productavailabilityname.ProductAvailabilityByNameRequest;
-import infrastructure.web.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
+import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameRequest;
+import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
 import org.junit.Test;
 
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package infrastructure.web.productavailabilityById;
+package infrastructure.web.productavailability.productavailabilityById;
 
 import application.ProductCheckByIdUseCase;
 import domain.ProductStock;
