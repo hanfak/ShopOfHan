@@ -13,6 +13,11 @@ public class ProductAvailabilityUnmarshaller implements Unmarshaller<ProductAvai
     @Override
     public ProductAvailabilityRequest unmarshall(HttpServletRequest request) throws IOException {
         String contextPath = request.getPathInfo().substring(1);
-        return productAvailabilityRequest(contextPath);
+
+        return productAvailabilityRequest(extractName(contextPath));
+    }
+
+    private String extractName(String contextPath) {
+        return contextPath.split("/")[0];
     }
 }
