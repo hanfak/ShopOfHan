@@ -1,5 +1,7 @@
 package infrastructure.web.productavailability;
 
+import infrastructure.web.productavailabilityname.ProductAvailabilityByNameRequest;
+import infrastructure.web.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
 import org.junit.Test;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,11 +16,11 @@ public class ProductAvailabilityUnmarshallerTest {
     @Test
     public void pathParamsshouldIgnoreEverythingAfterSecondForwardSlash() throws Exception {
         when(request.getPathInfo()).thenReturn("/hello/bye");
-        ProductAvailabilityUnmarshaller productAvailabilityUnmarshaller = new ProductAvailabilityUnmarshaller();
+        ProductAvailabilityByNameUnmarshaller productAvailabilityUnmarshaller = new ProductAvailabilityByNameUnmarshaller();
 
-        ProductAvailabilityRequest unmarshall = productAvailabilityUnmarshaller.unmarshall(request);
+        ProductAvailabilityByNameRequest unmarshall = productAvailabilityUnmarshaller.unmarshall(request);
 
-        assertThat(unmarshall).isEqualTo(ProductAvailabilityRequest.productAvailabilityRequest("hello"));
+        assertThat(unmarshall).isEqualTo(ProductAvailabilityByNameRequest.productAvailabilityRequest("hello"));
     }
 
 }

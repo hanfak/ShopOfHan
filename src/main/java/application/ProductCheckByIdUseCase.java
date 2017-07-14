@@ -7,14 +7,12 @@ import org.slf4j.Logger;
 
 import java.util.Optional;
 
-import static domain.ProductName.productName;
-
-public class ProductCheckUseCase {
+public class ProductCheckByIdUseCase {
 
     private final StockRepository stockRepository;
     private final Logger logger;
 
-    public ProductCheckUseCase(StockRepository stockRepository, Logger logger) {
+    public ProductCheckByIdUseCase(StockRepository stockRepository, Logger logger) {
         this.stockRepository = stockRepository;
         this.logger = logger;
     }
@@ -26,11 +24,8 @@ public class ProductCheckUseCase {
         logger.info("checking stock...");
         Optional<ProductStock> checkStock = Optional.empty();
         // TODO M001B use optional instead of ""
-        if (!productToCheck.getProductName().equals(productName(""))){
-            // TODO M001B pass object not primitive
-            logger.info("checking stock by Name...");
-            checkStock = stockRepository.checkStockByName(productToCheck.getProductName());
-        }
+            logger.info("checking stock by Id...");
+            checkStock = stockRepository.checkStockById(productToCheck.getProductId());
         logger.info("Stock checked");
         return respondWithProduct(checkStock);
     }

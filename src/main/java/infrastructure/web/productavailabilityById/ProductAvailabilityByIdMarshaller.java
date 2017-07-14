@@ -1,4 +1,4 @@
-package infrastructure.web.productavailability;
+package infrastructure.web.productavailabilityById;
 
 import domain.ProductStock;
 import infrastructure.web.Marshaller;
@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import static java.lang.String.format;
 
-public class ProductAvailabilityMarshaller implements Marshaller<ProductStock> {
+public class ProductAvailabilityByIdMarshaller implements Marshaller<ProductStock> {
 
     private static final String EXPECTED_BODY_FORMAT = "{\"productName\": \"%s\"," +
                     "\"amountInStock\": \"%s\"}";

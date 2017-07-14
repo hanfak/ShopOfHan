@@ -34,7 +34,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CheckAmountOfProductInStockByIdTests extends TestState implements WithCustomResultListeners   {
 
     public static final String HARRY_POTTER = "HP1";
-    public static final String PATH = "http://localhost:8081/productscheck?productId=";
+    public static final String PATH = "http://localhost:8081/productscheck/id/";
     public static final String JOY_OF_JAVA_ID = "JOJ1";
 //    private static final String EXPECTED_RESPONSE =
 //            "{\"productName\": \"Joy Of Java\"," +
@@ -64,7 +64,7 @@ public class CheckAmountOfProductInStockByIdTests extends TestState implements W
     }
 
     @Test
-    @Ignore
+//    @Ignore
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
         when(weMakeAGetRequestTo(PATH + JOY_OF_JAVA_ID));

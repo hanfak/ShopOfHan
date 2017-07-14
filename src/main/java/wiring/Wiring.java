@@ -1,6 +1,7 @@
 package wiring;
 
-import application.ProductCheckUseCase;
+import application.ProductCheckByIdUseCase;
+import application.ProductCheckByNameUseCase;
 import domain.crosscutting.StockRepository;
 import infrastructure.database.JDBCDatabaseConnectionManager;
 import infrastructure.database.JDBCStockRepository;
@@ -10,10 +11,14 @@ import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
 import infrastructure.web.Marshaller;
 import infrastructure.web.Unmarshaller;
-import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
-import infrastructure.web.productavailability.ProductAvailabilityServlet;
-import infrastructure.web.productavailability.ProductAvailabilityUnmarshaller;
-import infrastructure.web.productavailability.ProductAvailabilityWebService;
+import infrastructure.web.productavailabilityById.ProductAvailabilityByIdMarshaller;
+import infrastructure.web.productavailabilityById.ProductAvailabilityByIdServlet;
+import infrastructure.web.productavailabilityById.ProductAvailabilityByIdUnmarshaller;
+import infrastructure.web.productavailabilityById.ProductAvailabilityByIdWebService;
+import infrastructure.web.productavailabilityname.ProductAvailabilityByNameMarshaller;
+import infrastructure.web.productavailabilityname.ProductAvailabilityByNameServlet;
+import infrastructure.web.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
+import infrastructure.web.productavailabilityname.ProductAvailabilityByNameWebService;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,12 +42,20 @@ public class Wiring {
     }
 
     // TODO Need to set generric here
-    private static Unmarshaller productAvailabilityUnmarshaller() {
-        return new ProductAvailabilityUnmarshaller();
+    private static Unmarshaller productAvailabilityByNameUnmarshaller() {
+        return new ProductAvailabilityByNameUnmarshaller();
     }
 
-    private static Marshaller productAvailabilityMarshaller() {
-        return new ProductAvailabilityMarshaller();
+    private static Unmarshaller productAvailabilityByIdUnmarshaller() {
+        return new ProductAvailabilityByIdUnmarshaller();
+    }
+
+    private static Marshaller productAvailabilityByNameMarshaller() {
+        return new ProductAvailabilityByNameMarshaller();
+    }
+
+    private static Marshaller productAvailabilityByIdMarshaller() {
+        return new ProductAvailabilityByIdMarshaller();
     }
 
     private static StockRepository stockRepository() {
@@ -57,15 +70,27 @@ public class Wiring {
         return new StatusProbeServlet(databaseConnectionProbe());
     }
 
-    private static ProductCheckUseCase productCheckUseCase() {
-        return new ProductCheckUseCase(stockRepository(), logger(ProductCheckUseCase.class));
+    private static ProductCheckByNameUseCase productCheckByNameUseCase() {
+        return new ProductCheckByNameUseCase(stockRepository(), logger(ProductCheckByNameUseCase.class));
     }
 
-    public static ProductAvailabilityServlet productAvailabilityServlet() {
-        return new ProductAvailabilityServlet(productAvailabilityUnmarshaller(), productAvailabilityWebService());
+    private static ProductCheckByIdUseCase productCheckByIdUseCase() {
+        return new ProductCheckByIdUseCase(stockRepository(), logger(ProductCheckByIdUseCase.class));
     }
 
-    private static ProductAvailabilityWebService productAvailabilityWebService() {
-        return new ProductAvailabilityWebService(productCheckUseCase(), productAvailabilityMarshaller());
+    public static ProductAvailabilityByNameServlet productAvailabilityByNameServlet() {
+        return new ProductAvailabilityByNameServlet(productAvailabilityByNameUnmarshaller(), productAvailabilityByNameWebService());
+    }
+
+    private static ProductAvailabilityByNameWebService productAvailabilityByNameWebService() {
+        return new ProductAvailabilityByNameWebService(productCheckByNameUseCase(), productAvailabilityByNameMarshaller());
+    }
+
+    public static ProductAvailabilityByIdServlet productAvailabilityByIdServlet() {
+        return new ProductAvailabilityByIdServlet(productAvailabilityByIdUnmarshaller(), productAvailabilityByIdWebService());
+    }
+
+    private static ProductAvailabilityByIdWebService productAvailabilityByIdWebService() {
+        return new ProductAvailabilityByIdWebService(productCheckByIdUseCase(), productAvailabilityByIdMarshaller());
     }
 }

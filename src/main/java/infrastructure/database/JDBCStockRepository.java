@@ -1,5 +1,6 @@
 package infrastructure.database;
 
+import domain.ProductId;
 import domain.ProductName;
 import domain.ProductStock;
 import domain.crosscutting.StockRepository;
@@ -43,6 +44,33 @@ public class JDBCStockRepository implements StockRepository {
                  // TODO if (resultSet.next) error
                  resultSet.close();
              }
+
+        } catch(Exception e) { // TODO be more specific with exception
+            System.out.println(e);
+        }
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<ProductStock> checkStockById(ProductId productId) {
+        try {
+            try (Connection dbConnection = databaseConnectionManager.getDBConnection();
+                 PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
+
+                stmt.setString(1, productId.value);
+
+                ResultSet resultSet = stmt.executeQuery();
+
+                // TODO multiple different stock checks will return first one only (new user story)
+                if (resultSet.next()) {
+                    return Optional.of(productStock(
+                            ProductName.productName(resultSet.getString("product_name")),
+                            resultSet.getInt("amount")));
+                }
+                // TODO  if (!resultSet.next) error
+                // TODO if (resultSet.next) error
+                resultSet.close();
+            }
 
         } catch(Exception e) { // TODO be more specific with exception
             System.out.println(e);

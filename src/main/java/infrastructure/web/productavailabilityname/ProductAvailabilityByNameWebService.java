@@ -1,6 +1,6 @@
-package infrastructure.web.productavailability;
+package infrastructure.web.productavailabilityname;
 
-import application.ProductCheckUseCase;
+import application.ProductCheckByNameUseCase;
 import domain.ProductStock;
 import infrastructure.web.Marshaller;
 import infrastructure.web.RenderedContent;
@@ -11,19 +11,19 @@ import static infrastructure.web.RenderedContent.errorContent;
 import static infrastructure.web.RenderedContent.jsonContent;
 import static java.lang.String.format;
 
-public class ProductAvailabilityWebService {
+public class ProductAvailabilityByNameWebService {
 
-    private final ProductCheckUseCase productCheckUseCase;
+    private final ProductCheckByNameUseCase productCheckByNameUseCase;
     private final Marshaller<ProductStock> marshaller;
 
-    public ProductAvailabilityWebService(ProductCheckUseCase productCheckUseCase, Marshaller<ProductStock> marshaller) {
-        this.productCheckUseCase = productCheckUseCase;
+    public ProductAvailabilityByNameWebService(ProductCheckByNameUseCase productCheckByNameUseCase, Marshaller<ProductStock> marshaller) {
+        this.productCheckByNameUseCase = productCheckByNameUseCase;
         this.marshaller = marshaller;
     }
 
-    public RenderedContent requestProductCheck(ProductAvailabilityRequest productAvailabilityRequest) throws IOException {
+    public RenderedContent requestProductCheck(ProductAvailabilityByNameRequest productAvailabilityRequest) throws IOException {
         try {
-            ProductStock productStock = productCheckUseCase.checkStock(productAvailabilityRequest);
+            ProductStock productStock = productCheckByNameUseCase.checkStock(productAvailabilityRequest);
             return jsonContent(marshaller.marshall(productStock));
         } catch (IllegalStateException e) {
             return errorContent(format("Product '%s' is not stocked %s", productAvailabilityRequest.getProductName().value, e.toString()));
