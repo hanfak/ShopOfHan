@@ -1,7 +1,7 @@
-package domain.crosscutting;
+package application.crosscutting;
 
-import domain.ProductId;
-import domain.ProductName;
+import domain.product.ProductId;
+import domain.product.ProductName;
 
 //TODO M001B change name of interface and method from get to by
 public interface ProductToCheck {

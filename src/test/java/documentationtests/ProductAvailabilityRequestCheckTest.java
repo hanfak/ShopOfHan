@@ -4,8 +4,8 @@
 //import com.googlecode.yatspec.junit.SpecRunner;
 //import domain.ProductName;
 //import domain.ProductStock;
-//import domain.crosscutting.ProductToCheck;
-//import domain.crosscutting.StockRepository;
+//import application.crosscutting.ProductToCheck;
+//import application.crosscutting.StockRepository;
 //import infrastructure.web.productavailability.ProductAvailabilityRequest;
 //import org.junit.Test;
 //import org.junit.runner.RunWith;

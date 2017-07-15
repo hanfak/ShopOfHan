@@ -1,8 +1,8 @@
 package wiring;
 
-import application.ProductCheckByIdUseCase;
-import application.ProductCheckByNameUseCase;
-import domain.crosscutting.StockRepository;
+import application.crosscutting.StockRepository;
+import application.productavailability.ProductCheckByIdUseCase;
+import application.productavailability.ProductCheckByNameUseCase;
 import infrastructure.database.JDBCDatabaseConnectionManager;
 import infrastructure.database.JDBCStockRepository;
 import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
@@ -26,8 +26,9 @@ import org.slf4j.LoggerFactory;
 public class Wiring {
 
     // TODO singleton pattern
+    // Change depending on machine
     public static Settings settings() {
-        return new Settings(new PropertiesReader("work"));
+        return new Settings(new PropertiesReader("localhost"));
     }
 
     // TODO singleton pattern

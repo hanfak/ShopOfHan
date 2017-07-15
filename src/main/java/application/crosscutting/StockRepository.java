@@ -1,8 +1,8 @@
-package domain.crosscutting;
+package application.crosscutting;
 
-import domain.ProductId;
-import domain.ProductName;
 import domain.ProductStock;
+import domain.product.ProductId;
+import domain.product.ProductName;
 
 import java.util.Optional;
 

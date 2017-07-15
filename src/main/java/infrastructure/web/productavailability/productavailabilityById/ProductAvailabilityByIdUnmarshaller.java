@@ -3,13 +3,13 @@ package infrastructure.web.productavailability.productavailabilityById;
 import infrastructure.web.Unmarshaller;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 
 public class ProductAvailabilityByIdUnmarshaller implements Unmarshaller<ProductAvailabilityByIdRequest> {
 
     @Override
-    public ProductAvailabilityByIdRequest unmarshall(HttpServletRequest request) throws IOException {
+    public ProductAvailabilityByIdRequest unmarshall(HttpServletRequest request) {
+        // validate request.getPathInfo() is size > 1
         String contextPath = request.getPathInfo().substring(1);
 
         return ProductAvailabilityByIdRequest.productAvailabilityRequest(extractName(contextPath));

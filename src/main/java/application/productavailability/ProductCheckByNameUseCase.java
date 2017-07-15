@@ -1,31 +1,25 @@
-package application;
+package application.productavailability;
 
+import application.crosscutting.ProductToCheck;
+import application.crosscutting.StockRepository;
 import domain.ProductStock;
-import domain.crosscutting.ProductToCheck;
-import domain.crosscutting.StockRepository;
 import org.slf4j.Logger;
 
 import java.util.Optional;
 
-public class ProductCheckByIdUseCase {
+public class ProductCheckByNameUseCase {
 
     private final StockRepository stockRepository;
     private final Logger logger;
 
-    public ProductCheckByIdUseCase(StockRepository stockRepository, Logger logger) {
+    public ProductCheckByNameUseCase(StockRepository stockRepository, Logger logger) {
         this.stockRepository = stockRepository;
         this.logger = logger;
     }
 
-    // TODO REturn rendered content???
     public ProductStock checkStock(ProductToCheck productToCheck) {
-
-        // TODO M001B throw illegal argument here if both getters are ""
-        logger.info("checking stock...");
-        Optional<ProductStock> checkStock = Optional.empty();
-        // TODO M001B use optional instead of ""
-            logger.info("checking stock by Id...");
-            checkStock = stockRepository.checkStockById(productToCheck.getProductId());
+        logger.info("checking stock by Name...");
+        Optional<ProductStock> checkStock = stockRepository.checkStockByName(productToCheck.getProductName());
         logger.info("Stock checked");
         return respondWithProduct(checkStock);
     }

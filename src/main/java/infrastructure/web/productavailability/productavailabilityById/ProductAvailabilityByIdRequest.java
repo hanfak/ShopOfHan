@@ -1,9 +1,9 @@
 package infrastructure.web.productavailability.productavailabilityById;
 
-import domain.ProductId;
-import domain.ProductName;
-import domain.crosscutting.ProductToCheck;
+import application.crosscutting.ProductToCheck;
 import domain.crosscutting.ValueType;
+import domain.product.ProductId;
+import domain.product.ProductName;
 
 public class ProductAvailabilityByIdRequest extends ValueType implements ProductToCheck {
     private final ProductId productId;

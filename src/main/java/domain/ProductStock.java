@@ -1,6 +1,7 @@
 package domain;
 
 import domain.crosscutting.ValueType;
+import domain.product.ProductName;
 
 public class ProductStock extends ValueType {
     public final ProductName productName;

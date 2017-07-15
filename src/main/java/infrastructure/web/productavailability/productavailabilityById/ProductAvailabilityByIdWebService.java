@@ -1,11 +1,9 @@
 package infrastructure.web.productavailability.productavailabilityById;
 
-import application.ProductCheckByIdUseCase;
+import application.productavailability.ProductCheckByIdUseCase;
 import domain.ProductStock;
 import infrastructure.web.Marshaller;
 import infrastructure.web.RenderedContent;
-
-import java.io.IOException;
 
 import static infrastructure.web.RenderedContent.errorContent;
 import static infrastructure.web.RenderedContent.jsonContent;
@@ -21,7 +19,7 @@ public class ProductAvailabilityByIdWebService {
         this.marshaller = marshaller;
     }
 
-    public RenderedContent requestProductCheck(ProductAvailabilityByIdRequest productAvailabilityRequest) throws IOException {
+    public RenderedContent requestProductCheck(ProductAvailabilityByIdRequest productAvailabilityRequest) {
         try {
             ProductStock productStock = productCheckByIdUseCase.checkStock(productAvailabilityRequest);
             return jsonContent(marshaller.marshall(productStock));

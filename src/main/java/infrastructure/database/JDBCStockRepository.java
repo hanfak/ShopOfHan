@@ -1,9 +1,9 @@
 package infrastructure.database;
 
-import domain.ProductId;
-import domain.ProductName;
+import application.crosscutting.StockRepository;
 import domain.ProductStock;
-import domain.crosscutting.StockRepository;
+import domain.product.ProductId;
+import domain.product.ProductName;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

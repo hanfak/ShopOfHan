@@ -3,8 +3,6 @@ package infrastructure.web.productavailability;
 import domain.ProductStock;
 import infrastructure.web.Marshaller;
 
-import java.io.IOException;
-
 import static java.lang.String.format;
 //TODO change for specific endpoint
 public class ProductAvailabilityMarshaller implements Marshaller<ProductStock> {
@@ -13,7 +11,7 @@ public class ProductAvailabilityMarshaller implements Marshaller<ProductStock> {
                     "\"amountInStock\": \"%s\"}";
 
     @Override
-    public String marshall(ProductStock productStock) throws IOException {
+    public String marshall(ProductStock productStock) {
         return toJson(productStock);
     }
     private String toJson(ProductStock productStock) {
