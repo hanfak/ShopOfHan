@@ -5,5 +5,5 @@ sudo: false
 before_install:
   - pip install --user codecov
 after_succes:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 script:  mvn install

@@ -25,7 +25,6 @@
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <list id="d61528c6-70b0-4caa-83ef-ee074123d94b" name="change change properties lookup to two files instead of logic in code ignore external testing in pom" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,11 +38,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state relative-caret-position="163">
+              <caret line="304" column="31" lean-forward="false" selection-start-line="304" selection-start-column="25" selection-end-line="304" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -85,6 +84,7 @@
       <find>localh</find>
       <find>localhos</find>
       <find>localhost</find>
+      <find>source</find>
     </findStrings>
     <replaceStrings>
       <replace>\n</replace>
@@ -882,7 +882,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500132239390</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="codecov impl">
+      <created>1500132783483</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1500132783488</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1024,7 +1031,8 @@
     <MESSAGE value="search stock by id on different endpoint" />
     <MESSAGE value="tidying up, prep for new format for response of multiple items" />
     <MESSAGE value="tidy up" />
-    <option name="LAST_COMMIT_MESSAGE" value="tidy up" />
+    <MESSAGE value="codecov impl" />
+    <option name="LAST_COMMIT_MESSAGE" value="codecov impl" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1564,62 +1572,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="180" column="12" lean-forward="false" selection-start-line="180" selection-start-column="12" selection-end-line="180" selection-end-column="12" />
+        <state relative-caret-position="126">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
-            <marker date="1500132691000" expanded="true" signature="89:12976" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="427:837" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="849:9293" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="867:9280" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="888:1514" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="1077:1492" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="1160:1459" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="1195:1428" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="1535:1868" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="1731:1846" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="1889:2859" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="2041:2837" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="2073:2807" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="2105:2188" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="2275:2774" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="2375:2506" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="2544:2733" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="2587:2694" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="8511:9261" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="8701:9239" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="8733:8940" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="8819:8907" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="8972:9209" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="9095:9176" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="9313:12800" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="9334:9503" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="9525:9695" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="9717:9861" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="9958:10107" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="10188:10352" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="10418:10575" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="10675:10829" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="10851:10998" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="11019:11170" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="11254:11432" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="11454:11624" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="11646:11830" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="11852:12037" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="12059:12248" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="12269:12488" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="12509:12779" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="12820:12964" ph="..." />
-            <marker date="1500132691000" expanded="true" signature="12841:12944" ph="..." />
+            <marker date="1500132822000" expanded="true" signature="11:15" ph="java" />
+            <marker date="1500132822000" expanded="true" signature="16:35" ph="jdk: &lt;1 item&gt;" />
+            <marker date="1500132822000" expanded="true" signature="25:35" ph="oraclejdk8" />
+            <marker date="1500132822000" expanded="true" signature="42:47" ph="false" />
+            <marker date="1500132822000" expanded="true" signature="48:94" ph="before_install: &lt;1 item&gt;" />
+            <marker date="1500132822000" expanded="true" signature="68:94" ph="pip insta…er codecov" />
+            <marker date="1500132822000" expanded="true" signature="95:152" ph="after_succes: &lt;1 item&gt;" />
+            <marker date="1500132822000" expanded="true" signature="113:152" ph="bash &lt;(cu…v.io/bash)" />
+            <marker date="1500132822000" expanded="true" signature="162:173" ph="mvn install" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        <state relative-caret-position="163">
+          <caret line="304" column="31" lean-forward="false" selection-start-line="304" selection-start-column="25" selection-end-line="304" selection-end-column="31" />
           <folding />
         </state>
       </provider>
