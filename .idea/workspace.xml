@@ -22,32 +22,10 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="tidying up, prep for new format for response of multiple items">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/application/ProductCheckByIdUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/application/productavailability/ProductCheckByIdUseCase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/application/ProductCheckByNameUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/application/productavailability/ProductCheckByNameUseCase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductId.java" afterPath="$PROJECT_DIR$/src/main/java/domain/product/ProductId.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductName.java" afterPath="$PROJECT_DIR$/src/main/java/domain/product/ProductName.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/ProductToCheck.java" afterPath="$PROJECT_DIR$/src/main/java/application/crosscutting/ProductToCheck.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/StockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/application/crosscutting/StockRepository.java" />
+    <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShopOfHanSQL/priming.sql" afterPath="$PROJECT_DIR$/ShopOfHanSQL/priming.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/prime-database.sh" afterPath="$PROJECT_DIR$/scripts/prime-database.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductStock.java" afterPath="$PROJECT_DIR$/src/main/java/domain/ProductStock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/Marshaller.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/Marshaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/Unmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/Unmarshaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityMarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityMarshaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdRequest.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdWebService.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdWebService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameRequest.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameUnmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameUnmarshaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameWebService.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameWebService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java" afterPath="$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/domain/ProductIdTest.java" afterPath="$PROJECT_DIR$/src/test/java/domain/ProductIdTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <list id="d61528c6-70b0-4caa-83ef-ee074123d94b" name="change change properties lookup to two files instead of logic in code ignore external testing in pom" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,15 +39,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="90">
-                <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,7 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshallerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshaller.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityByNameUnmarshaller.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/name/ProductAvailabilityByNameWebService.java" />
@@ -163,7 +137,6 @@
         <option value="$PROJECT_DIR$/src/main/java/domain/crosscutting/StockRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java" />
         <option value="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByIdTests.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/application/ProductCheckByNameUseCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/Marshaller.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameWebService.java" />
@@ -186,6 +159,8 @@
         <option value="$PROJECT_DIR$/ShopOfHanSQL/priming.sql" />
         <option value="$PROJECT_DIR$/scripts/prime-database.sh" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -900,7 +875,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500050579264</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="tidy up">
+      <created>1500132239389</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1500132239390</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1041,7 +1023,8 @@
     <MESSAGE value="unmarshaller extracts the name from url before next /" />
     <MESSAGE value="search stock by id on different endpoint" />
     <MESSAGE value="tidying up, prep for new format for response of multiple items" />
-    <option name="LAST_COMMIT_MESSAGE" value="tidying up, prep for new format for response of multiple items" />
+    <MESSAGE value="tidy up" />
+    <option name="LAST_COMMIT_MESSAGE" value="tidy up" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1257,67 +1240,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="179" column="28" lean-forward="false" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="28" />
-          <folding>
-            <marker date="1500130014000" expanded="true" signature="89:12124" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="427:837" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="849:8441" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="867:8428" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="888:1514" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="1077:1492" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="1160:1459" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="1195:1428" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="1535:1868" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="1731:1846" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="1889:2859" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="2041:2837" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="2073:2807" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="2105:2188" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="2275:2774" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="2375:2506" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="2544:2733" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="2587:2694" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="8461:11948" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="8482:8651" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="8673:8843" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="8865:9009" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="9106:9255" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="9336:9500" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="9566:9723" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="9823:9977" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="9999:10146" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="10167:10318" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="10402:10580" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="10602:10772" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="10794:10978" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="11000:11185" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="11207:11396" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="11417:11636" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="11657:11927" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="11968:12112" ph="..." />
-            <marker date="1500130014000" expanded="true" signature="11989:12092" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="56" column="32" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
           <folding>
-            <marker date="1500131273000" expanded="false" signature="41:375" ph="..." />
-            <marker date="1500131273000" expanded="true" signature="488:613" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1500131273000" expanded="true" signature="668:799" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1500131273000" expanded="true" signature="967:1042" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="1172:1695" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="1781:2299" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="2454:3017" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="2874:2951" ph="//..." />
-            <marker date="1500131273000" expanded="true" signature="3139:3700" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="3557:3634" ph="//..." />
+            <marker date="1500132233000" expanded="false" signature="41:375" ph="..." />
+            <marker date="1500132233000" expanded="true" signature="488:613" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1500132233000" expanded="true" signature="668:799" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1500132233000" expanded="true" signature="967:1042" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="1172:1695" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="1781:2299" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="2454:3017" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="2874:2951" ph="//..." />
+            <marker date="1500132233000" expanded="true" signature="3139:3700" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="3557:3634" ph="//..." />
           </folding>
         </state>
       </provider>
@@ -1347,7 +1284,7 @@
         <state relative-caret-position="144">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <marker date="1500131273000" expanded="false" signature="37:103" ph="..." />
+            <marker date="1500132233000" expanded="false" signature="37:75" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1369,10 +1306,10 @@
         <state relative-caret-position="162">
           <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <marker date="1500131272000" expanded="false" signature="80:187" ph="..." />
-            <marker date="1500131272000" expanded="true" signature="393:620" ph="{...}" />
-            <marker date="1500131272000" expanded="false" signature="672:683" ph=" { " />
-            <marker date="1500131272000" expanded="false" signature="716:722" ph=" }" />
+            <marker date="1500132233000" expanded="false" signature="80:159" ph="..." />
+            <marker date="1500132233000" expanded="true" signature="365:592" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="644:655" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="688:694" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1382,10 +1319,10 @@
         <state relative-caret-position="162">
           <caret line="12" column="53" lean-forward="false" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
           <folding>
-            <marker date="1500131273000" expanded="false" signature="80:187" ph="..." />
-            <marker date="1500131273000" expanded="true" signature="400:629" ph="{...}" />
-            <marker date="1500131273000" expanded="false" signature="681:692" ph=" { " />
-            <marker date="1500131273000" expanded="false" signature="725:731" ph=" }" />
+            <marker date="1500132233000" expanded="false" signature="80:159" ph="..." />
+            <marker date="1500132233000" expanded="true" signature="372:601" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="653:664" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="697:703" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1433,7 +1370,7 @@
         <state relative-caret-position="72">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
-            <marker date="1500131273000" expanded="false" signature="42:158" ph="..." />
+            <marker date="1500132233000" expanded="false" signature="42:158" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1510,10 +1447,10 @@
         <state relative-caret-position="72">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <marker date="1500131273000" expanded="false" signature="49:219" ph="..." />
-            <marker date="1500131273000" expanded="true" signature="429:514" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="582:829" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="910:1361" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="49:219" ph="..." />
+            <marker date="1500132233000" expanded="true" signature="429:514" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="582:829" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="910:1361" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1523,10 +1460,10 @@
         <state relative-caret-position="72">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <marker date="1500131273000" expanded="false" signature="49:219" ph="..." />
-            <marker date="1500131273000" expanded="true" signature="433:518" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="586:839" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="920:1371" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="49:219" ph="..." />
+            <marker date="1500132233000" expanded="true" signature="433:518" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="586:839" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="920:1371" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1536,30 +1473,30 @@
         <state relative-caret-position="108">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <marker date="1500131273000" expanded="false" signature="24:1439" ph="..." />
-            <marker date="1500131273000" expanded="false" signature="1463:1499" ph="/UseUtilityClass/" />
-            <marker date="1500131273000" expanded="false" signature="1625:1636" ph=" { " />
-            <marker date="1500131273000" expanded="false" signature="1691:1697" ph=" }" />
-            <marker date="1500131273000" expanded="true" signature="1858:1932" ph="{...}" />
-            <marker date="1500131273000" expanded="false" signature="2009:2020" ph=" { " />
-            <marker date="1500131273000" expanded="false" signature="2056:2062" ph=" }" />
-            <marker date="1500131273000" expanded="true" signature="2174:2241" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="2313:2378" ph="{...}" />
-            <marker date="1500131273000" expanded="false" signature="2441:2452" ph=" { " />
-            <marker date="1500131273000" expanded="false" signature="2495:2501" ph=" }" />
-            <marker date="1500131273000" expanded="false" signature="2568:2579" ph=" { " />
-            <marker date="1500131273000" expanded="false" signature="2622:2628" ph=" }" />
-            <marker date="1500131273000" expanded="false" signature="2682:2693" ph=" { " />
-            <marker date="1500131273000" expanded="false" signature="2753:2759" ph=" }" />
-            <marker date="1500131273000" expanded="true" signature="2830:2961" ph="{...}" />
-            <marker date="1500131273000" expanded="false" signature="3020:3031" ph=" { " />
-            <marker date="1500131273000" expanded="false" signature="3088:3094" ph=" }" />
-            <marker date="1500131273000" expanded="true" signature="3169:3282" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="3353:3462" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="3550:3690" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="3785:3910" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="3994:4128" ph="{...}" />
-            <marker date="1500131273000" expanded="true" signature="4219:4344" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="24:1439" ph="..." />
+            <marker date="1500132233000" expanded="false" signature="1463:1499" ph="/UseUtilityClass/" />
+            <marker date="1500132233000" expanded="false" signature="1625:1636" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="1691:1697" ph=" }" />
+            <marker date="1500132233000" expanded="true" signature="1858:1932" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="2009:2020" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="2056:2062" ph=" }" />
+            <marker date="1500132233000" expanded="true" signature="2174:2241" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="2313:2378" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="2441:2452" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="2495:2501" ph=" }" />
+            <marker date="1500132233000" expanded="false" signature="2568:2579" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="2622:2628" ph=" }" />
+            <marker date="1500132233000" expanded="false" signature="2682:2693" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="2753:2759" ph=" }" />
+            <marker date="1500132233000" expanded="true" signature="2830:2961" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="3020:3031" ph=" { " />
+            <marker date="1500132233000" expanded="false" signature="3088:3094" ph=" }" />
+            <marker date="1500132233000" expanded="true" signature="3169:3282" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="3353:3462" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="3550:3690" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="3785:3910" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="3994:4128" ph="{...}" />
+            <marker date="1500132233000" expanded="true" signature="4219:4344" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1569,10 +1506,10 @@
         <state relative-caret-position="180">
           <caret line="15" column="53" lean-forward="false" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
           <folding>
-            <marker date="1500131301000" expanded="false" signature="56:183" ph="..." />
-            <marker date="1500131301000" expanded="true" signature="505:516" ph=" { " />
-            <marker date="1500131301000" expanded="true" signature="544:550" ph=" }" />
-            <marker date="1500131301000" expanded="true" signature="604:710" ph="{...}" />
+            <marker date="1500132233000" expanded="false" signature="56:154" ph="..." />
+            <marker date="1500132233000" expanded="true" signature="476:487" ph=" { " />
+            <marker date="1500132233000" expanded="true" signature="515:521" ph=" }" />
+            <marker date="1500132233000" expanded="true" signature="575:681" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1616,27 +1553,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1500130014000" expanded="true" signature="11:15" ph="java" />
-            <marker date="1500130014000" expanded="true" signature="16:35" ph="jdk: &lt;1 item&gt;" />
-            <marker date="1500130014000" expanded="true" signature="25:35" ph="oraclejdk8" />
-            <marker date="1500130014000" expanded="true" signature="45:56" ph="mvn install" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="90">
+          <first_editor relative-caret-position="80">
             <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="180" column="12" lean-forward="false" selection-start-line="180" selection-start-column="12" selection-end-line="180" selection-end-column="12" />
+          <folding>
+            <marker date="1500132691000" expanded="true" signature="89:12976" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="427:837" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="849:9293" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="867:9280" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="888:1514" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="1077:1492" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="1160:1459" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="1195:1428" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="1535:1868" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="1731:1846" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="1889:2859" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="2041:2837" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="2073:2807" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="2105:2188" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="2275:2774" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="2375:2506" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="2544:2733" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="2587:2694" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="8511:9261" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="8701:9239" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="8733:8940" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="8819:8907" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="8972:9209" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="9095:9176" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="9313:12800" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="9334:9503" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="9525:9695" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="9717:9861" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="9958:10107" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="10188:10352" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="10418:10575" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="10675:10829" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="10851:10998" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="11019:11170" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="11254:11432" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="11454:11624" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="11646:11830" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="11852:12037" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="12059:12248" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="12269:12488" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="12509:12779" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="12820:12964" ph="..." />
+            <marker date="1500132691000" expanded="true" signature="12841:12944" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
