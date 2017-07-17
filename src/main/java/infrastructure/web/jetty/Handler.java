@@ -1,4 +1,4 @@
-package infrastructure.web.handler;
+package infrastructure.web.jetty;
 
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;

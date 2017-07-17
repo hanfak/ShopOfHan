@@ -11,6 +11,7 @@ import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
 import infrastructure.web.Marshaller;
 import infrastructure.web.Unmarshaller;
+import infrastructure.web.jetty.JettyWebserverBuilder;
 import infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
 import infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdUnmarshaller;
@@ -18,6 +19,7 @@ import infrastructure.web.productavailability.productavailabilityById.ProductAva
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameWebService;
+import infrastructure.web.server.WebServerBuilder;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +30,7 @@ public class Wiring {
     // TODO singleton pattern
     // Change depending on machine
     public static Settings settings() {
-        return new Settings(new PropertiesReader("localhost"));
+        return new Settings(new PropertiesReader("work"));
     }
 
     // TODO singleton pattern
@@ -92,5 +94,9 @@ public class Wiring {
 
     private static ProductAvailabilityByIdWebService productAvailabilityByIdWebService() {
         return new ProductAvailabilityByIdWebService(productCheckByIdUseCase(), productAvailabilityByIdMarshaller());
+    }
+
+    public static WebServerBuilder webserverBuilder(Settings settings) {
+        return new JettyWebserverBuilder(settings) ;
     }
 }

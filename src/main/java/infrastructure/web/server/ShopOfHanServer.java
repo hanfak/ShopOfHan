@@ -6,7 +6,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 
 import static java.lang.String.format;
 
-public class ShopOfHanServer {
+public class ShopOfHanServer implements WebServer {
 
     private final Server server;
 
@@ -14,10 +14,12 @@ public class ShopOfHanServer {
         this.server = new Server(settings.serverPort());
     }
 
-    public void withContext(ServletContextHandler servletHandler) {
+    public ShopOfHanServer withContext(ServletContextHandler servletHandler) {
         server.setHandler(servletHandler);
+        return this;
     }
 
+    @Override
     public void start() {
         try {
             server.start();
@@ -26,6 +28,7 @@ public class ShopOfHanServer {
         }
     }
 
+    @Override
     public void stop() {
         try {
             server.stop();
