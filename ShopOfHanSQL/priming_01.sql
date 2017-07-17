@@ -13,5 +13,5 @@ ID INT UNSIGNED NOT NULL AUTO_INCREMENT,
 );
 
 INSERT INTO stock (product_name, product_id, amount) VALUES
-(''Joy OF JAVA '', ''JOJ1'', 4),
-('' SQL THE sequel'', ''STS1'', 0);
+('Joy OF JAVA ', 'JOJ1', 4),
+('SQL THE sequel', 'STS1', 0);
