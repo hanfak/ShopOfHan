@@ -24,12 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/AbstractAcceptanceTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/Handler.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/ShopOfHanServer.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/ShopOfHanServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/JettyWebserverBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/JettyWebserverBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/WebServerBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/WebServerBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByIdTests.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByIdTests.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByNameTests.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/CheckAmountOfProductInStockByNameTests.java" />
     </list>
@@ -1312,7 +1307,7 @@
       <workItem from="1498653257800" duration="16985000" />
       <workItem from="1500049980506" duration="3963000" />
       <workItem from="1500309826610" duration="2961000" />
-      <workItem from="1500396150494" duration="2497000" />
+      <workItem from="1500396150494" duration="2529000" />
     </task>
     <task id="LOCAL-00001" summary="static anaylsis test example created">
       <created>1498583541325</created>
@@ -1440,7 +1435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500312584002</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added status page to webserver builder, edited">
+      <created>1500398673750</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1500398673750</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1476,7 +1478,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46454000" />
+    <option name="totallyTimeSpent" value="46486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-28" width="1920" height="1228" extended-state="6" />
@@ -1585,7 +1587,8 @@
     <MESSAGE value="tidy up" />
     <MESSAGE value="codecov impl" />
     <MESSAGE value="builder for server, easily add endpoints and servlets" />
-    <option name="LAST_COMMIT_MESSAGE" value="builder for server, easily add endpoints and servlets" />
+    <MESSAGE value="Added status page to webserver builder, edited" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added status page to webserver builder, edited" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1822,6 +1825,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <marker date="1500311930745" expanded="false" signature="43:188" ph="..." />
+            <marker date="1500311930745" expanded="true" signature="423:532" ph="{...}" />
+            <marker date="1500311930745" expanded="true" signature="604:684" ph="{...}" />
+            <marker date="1500311930745" expanded="true" signature="731:794" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
