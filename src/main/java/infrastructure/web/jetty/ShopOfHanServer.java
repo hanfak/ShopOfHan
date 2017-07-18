@@ -1,12 +1,13 @@
-package infrastructure.web.server;
+package infrastructure.web.jetty;
 
 import infrastructure.properties.Settings;
+import infrastructure.web.server.WebServer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 
 import static java.lang.String.format;
 
-public class ShopOfHanServer implements WebServer {
+public class    ShopOfHanServer implements WebServer {
 
     private final Server server;
 

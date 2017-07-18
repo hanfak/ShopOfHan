@@ -7,8 +7,7 @@ import infrastructure.web.server.WebServerBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static wiring.ShopOfHanURLs.PRODUCT_AVAILABILITY_BY_ID;
-import static wiring.ShopOfHanURLs.PRODUCT_AVAILABILITY_BY_NAME;
+import static wiring.ShopOfHanURLs.*;
 import static wiring.Wiring.*;
 
 public class ShopOfHan {
@@ -30,6 +29,7 @@ public class ShopOfHan {
         webserver = webServerBuilder
                 .registerProductAvailabilityByNameEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_NAME), productAvailabilityByNameServlet())
                 .registerProductAvailabilityByIdEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_ID), productAvailabilityByIdServlet())
+                .registerStatusProbeEndPoint(EndPoint.get(STATUS_PAGE), statusProbeServlet())
                 .build();
         webserver.start();
     }

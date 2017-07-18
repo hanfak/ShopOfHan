@@ -4,8 +4,8 @@ import infrastructure.properties.Settings;
 import infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
 import infrastructure.web.server.EndPoint;
-import infrastructure.web.server.ShopOfHanServer;
 import infrastructure.web.server.WebServerBuilder;
+import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
@@ -20,14 +20,20 @@ public class JettyWebserverBuilder implements WebServerBuilder {
     }
 
     @Override
-    public JettyWebserverBuilder registerProductAvailabilityByNameEndPoint(EndPoint endPoint, ProductAvailabilityByNameServlet productAvailabilityByNameServlet) {
+    public WebServerBuilder registerProductAvailabilityByNameEndPoint(EndPoint endPoint, ProductAvailabilityByNameServlet productAvailabilityByNameServlet) {
         addServlet(productAvailabilityByNameServlet, endPoint);
         return this;
     }
 
     @Override
-    public JettyWebserverBuilder registerProductAvailabilityByIdEndPoint(EndPoint endPoint, ProductAvailabilityByIdServlet productAvailabilityByIdServlet) {
+    public WebServerBuilder registerProductAvailabilityByIdEndPoint(EndPoint endPoint, ProductAvailabilityByIdServlet productAvailabilityByIdServlet) {
         addServlet(productAvailabilityByIdServlet, endPoint);
+        return this;
+    }
+
+    @Override
+    public WebServerBuilder registerStatusProbeEndPoint(EndPoint endPoint, StatusProbeServlet statusProbeServlet) {
+        addServlet(statusProbeServlet, endPoint);
         return this;
     }
 
