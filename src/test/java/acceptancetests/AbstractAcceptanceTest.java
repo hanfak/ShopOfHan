@@ -1,5 +1,6 @@
 package acceptancetests;
 
+import acceptancetests.thens.Thens;
 import acceptancetests.whens.Whens;
 import com.googlecode.yatspec.junit.SpecResultListener;
 import com.googlecode.yatspec.junit.WithCustomResultListeners;
@@ -19,6 +20,7 @@ public abstract class AbstractAcceptanceTest extends TestState implements WithCu
     private ShopOfHan shopOfHan = new ShopOfHan();
     protected final acceptancetests.TestState testState = new acceptancetests.TestState();
     protected final Whens weMake = new Whens(testState);
+    protected final Thens the = new Thens(testState, capturedInputAndOutputs); // TODO rename
 
     @Before
     public void setUp() throws Exception {
