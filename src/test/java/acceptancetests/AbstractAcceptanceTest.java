@@ -1,14 +1,13 @@
 package acceptancetests;
 
+import acceptancetests.whens.Whens;
 import com.googlecode.yatspec.junit.SpecResultListener;
 import com.googlecode.yatspec.junit.WithCustomResultListeners;
-import com.googlecode.yatspec.plugin.sequencediagram.ByNamingConventionMessageProducer;
 import com.googlecode.yatspec.plugin.sequencediagram.SequenceDiagramGenerator;
 import com.googlecode.yatspec.plugin.sequencediagram.SvgWrapper;
 import com.googlecode.yatspec.rendering.html.DontHighlightRenderer;
 import com.googlecode.yatspec.rendering.html.HtmlResultRenderer;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
-import httpclient.Response;
 import org.junit.After;
 import org.junit.Before;
 import wiring.ShopOfHan;
@@ -16,8 +15,10 @@ import wiring.ShopOfHan;
 import static java.util.Collections.singletonList;
 
 public abstract class AbstractAcceptanceTest extends TestState implements WithCustomResultListeners {
+    public static final String APPLICATION_NAME = "Shop Of Han app";
     private ShopOfHan shopOfHan = new ShopOfHan();
-    private Response domainResponse;
+    protected final acceptancetests.TestState testState = new acceptancetests.TestState();
+    protected final Whens weMake = new Whens(testState);
 
     @Before
     public void setUp() throws Exception {
