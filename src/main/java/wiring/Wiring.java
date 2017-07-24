@@ -30,7 +30,7 @@ public class Wiring {
     // TODO singleton pattern
     // Change depending on machine
     public static Settings settings() {
-        return new Settings(new PropertiesReader("work"));
+        return new Settings(new PropertiesReader("localhost"));
     }
 
     // TODO singleton pattern

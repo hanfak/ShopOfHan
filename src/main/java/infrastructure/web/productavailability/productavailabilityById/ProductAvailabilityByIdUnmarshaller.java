@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 public class ProductAvailabilityByIdUnmarshaller implements Unmarshaller<ProductAvailabilityByIdRequest> {
-
+    // TODO try returning string of JSON in request body
     @Override
     public ProductAvailabilityByIdRequest unmarshall(HttpServletRequest request) {
         // validate request.getPathInfo() is size > 1

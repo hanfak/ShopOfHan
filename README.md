@@ -4,6 +4,11 @@
 
 [![codecov](https://codecov.io/gh/hanfak/ShopOfHan/branch/master/graph/badge.svg)](https://codecov.io/gh/hanfak/ShopOfHan)
 
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/hanfak/ShopOfHan?branch=master)](https://bettercodehub.com/)
+
+https://bettercodehub.com/
+
 A domain driven example of a shop to help learn the technologies used at work.
 
 http://localhost:8081/productscheck?productName=Joy%20Of%20Java
@@ -37,3 +42,10 @@ Connect to mysql
 copy and paste sql file (/home/dev/Documents/HAN/ShopOfHan/ShopOfHanSQL/priming.sql)
 
 // TODO: script to run via docker bash
+
+
+## address in use
+
+lsof -i tcp:8081
+
+kill -9 <pid>

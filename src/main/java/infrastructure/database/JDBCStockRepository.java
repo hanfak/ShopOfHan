@@ -15,16 +15,19 @@ import static domain.ProductStock.productStock;
 
 public class JDBCStockRepository implements StockRepository {
 
-    public static final String SQL_STATEMENT = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?";
-    public static final String SQL_STATEMENT_TWO = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
+    private static final String SQL_STATEMENT = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?";
+    private static final String SQL_STATEMENT_TWO = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
 
     private final JDBCDatabaseConnectionManager databaseConnectionManager;
 
+    // TODO extract a reader and inject, which handles the connection and making the call
+    // pass into reader.getProductStock the sql
     public JDBCStockRepository(JDBCDatabaseConnectionManager databaseConnectionManager) {
         this.databaseConnectionManager = databaseConnectionManager;
     }
 
     // TODO M001B Extract duplication
+
     @Override
     public Optional<ProductStock> checkStockByName(ProductName productName) {
         try {
