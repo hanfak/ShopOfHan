@@ -18,4 +18,6 @@ public class ProductAvailabilityByNameUnmarshaller implements Unmarshaller<Produ
     private String extractName(String contextPath) {
         return contextPath.split("/")[0];
     }
+
+
 }

@@ -13,6 +13,7 @@ import java.util.Optional;
 
 import static domain.ProductStock.productStock;
 
+@SuppressWarnings("Duplicates")
 public class JDBCStockRepository implements StockRepository {
 
     private static final String SQL_STATEMENT = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?";
@@ -20,8 +21,7 @@ public class JDBCStockRepository implements StockRepository {
 
     private final JDBCDatabaseConnectionManager databaseConnectionManager;
 
-    // TODO extract a reader and inject, which handles the connection and making the call
-    // pass into reader.getProductStock the sql
+    // TODO extract a reader and inject, which handles the connection and making the call pass into reader.getProductStock the sql
     public JDBCStockRepository(JDBCDatabaseConnectionManager databaseConnectionManager) {
         this.databaseConnectionManager = databaseConnectionManager;
     }
@@ -34,11 +34,11 @@ public class JDBCStockRepository implements StockRepository {
              try (Connection dbConnection = databaseConnectionManager.getDBConnection();
                   PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
 
-                 Optional<ProductStock> resultSet = getProductStockByName(productName, stmt);
+                 Optional<ProductStock> resultSet = getProductStock(productName.value, stmt);
                  if (resultSet.isPresent()) return resultSet;
              }
 
-        } catch(Exception e) { // TODO be more specific with exception
+        } catch(Exception e) {
             System.out.println(e);
         }
         return Optional.empty();
@@ -50,19 +50,18 @@ public class JDBCStockRepository implements StockRepository {
             try (Connection dbConnection = databaseConnectionManager.getDBConnection();
                  PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
 
-                Optional<ProductStock> resultSet = getProductStockById(productId, stmt);
+                Optional<ProductStock> resultSet = getProductStock(productId.value, stmt);
                 if (resultSet.isPresent()) return resultSet;
             }
 
-        } catch(Exception e) { // TODO be more specific with exception
+        } catch(Exception e) {
             System.out.println(e);
         }
         return Optional.empty();
     }
 
-    // TODO Remove dupliat
-    private Optional<ProductStock> getProductStockByName(ProductName productName, PreparedStatement stmt) throws SQLException {
-        stmt.setString(1, productName.value);
+    private Optional<ProductStock> getProductStock(String productIdentifier, PreparedStatement stmt) throws SQLException {
+        stmt.setString(1, productIdentifier);
 
         ResultSet resultSet = stmt.executeQuery();
 
@@ -72,25 +71,7 @@ public class JDBCStockRepository implements StockRepository {
                     ProductName.productName(resultSet.getString("product_name")),
                     resultSet.getInt("amount")));
         }
-        // TODO  if (!resultSet.next) error
-        // TODO if (resultSet.next) error
-        resultSet.close();
-        return Optional.empty();
-    }
 
-    private Optional<ProductStock> getProductStockById(ProductId productId, PreparedStatement stmt) throws SQLException {
-        stmt.setString(1, productId.value);
-
-        ResultSet resultSet = stmt.executeQuery();
-
-        // TODO multiple different stock checks will return first one only (new user story)
-        if (resultSet.next()) {
-            return Optional.of(productStock(
-                    ProductName.productName(resultSet.getString("product_name")),
-                    resultSet.getInt("amount")));
-        }
-        // TODO  if (!resultSet.next) error
-        // TODO if (resultSet.next) error
         resultSet.close();
         return Optional.empty();
     }

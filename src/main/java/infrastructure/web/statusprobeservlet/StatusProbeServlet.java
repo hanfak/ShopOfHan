@@ -26,8 +26,6 @@ public class StatusProbeServlet extends HttpServlet {
         String name = probe.name;
         ProbeStatus status = probe.status;
 
-        // TODO render to json object containing all fields
         response.getWriter().write(description);
-//        RenderedContent.jsonContent();
     }
 }

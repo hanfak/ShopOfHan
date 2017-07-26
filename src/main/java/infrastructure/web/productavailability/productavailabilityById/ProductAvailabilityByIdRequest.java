@@ -8,7 +8,6 @@ import domain.product.ProductName;
 public class ProductAvailabilityByIdRequest extends ValueType implements ProductToCheck {
     private final ProductId productId;
 
-    // TODO use only one field 'productQuery'??
     private ProductAvailabilityByIdRequest(ProductId productId) {
         this.productId = productId;
     }

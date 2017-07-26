@@ -10,7 +10,6 @@ import static domain.product.ProductName.productName;
 public class ProductAvailabilityByNameRequest extends ValueType implements ProductToCheck {
     private final ProductName productName;
 
-    // TODO use only one field 'productQuery'??
     private ProductAvailabilityByNameRequest(ProductName productName) {
         this.productName = productName;
     }

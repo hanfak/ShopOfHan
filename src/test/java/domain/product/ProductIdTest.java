@@ -1,6 +1,5 @@
-package domain;
+package domain.product;
 
-import domain.product.ProductId;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

@@ -28,12 +28,10 @@ import org.slf4j.LoggerFactory;
 public class Wiring {
 
     // TODO singleton pattern
-    // Change depending on machine
     public static Settings settings() {
-        return new Settings(new PropertiesReader("localhost"));
+        return new Settings(new PropertiesReader("work"));
     }
 
-    // TODO singleton pattern
     // TODO Extract to separate wiring for database
     private static JDBCDatabaseConnectionManager databaseConnectionManager() {
         return new MySqlJDBCDatabaseConnectionManager(settings());
@@ -43,7 +41,6 @@ public class Wiring {
         return LoggerFactory.getLogger(cls);
     }
 
-    // TODO Need to set generric here
     private static Unmarshaller productAvailabilityByNameUnmarshaller() {
         return new ProductAvailabilityByNameUnmarshaller();
     }

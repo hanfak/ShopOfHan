@@ -15,7 +15,6 @@ public class ShopOfHan {
     private static WebServer webserver;
 
     public static void main(String... arguments) throws Exception {
-        // TODO initialize wiring
         new ShopOfHan().startWebServer();
     }
 

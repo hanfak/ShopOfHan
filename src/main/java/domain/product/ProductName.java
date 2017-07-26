@@ -9,7 +9,16 @@ public class ProductName extends SingleValueType<String> {
     }
 
     public static ProductName productName(String productName) {
-        //TODO: validation
-        return new ProductName(productName);
+        if (validate(productName)) {
+            return new ProductName(productName);
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
+
+    private static boolean validate(String productName) {
+        return productName.length() > 3;
+    }
+
+
 }

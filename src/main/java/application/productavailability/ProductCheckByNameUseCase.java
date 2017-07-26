@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 
 import java.util.Optional;
 
+@SuppressWarnings("Duplicates")
 public class ProductCheckByNameUseCase {
 
     private final StockRepository stockRepository;
