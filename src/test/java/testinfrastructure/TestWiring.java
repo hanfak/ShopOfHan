@@ -1,10 +1,9 @@
-package wiring;
+package testinfrastructure;
 
 import application.crosscutting.StockRepository;
 import application.productavailability.ProductCheckByIdUseCase;
 import application.productavailability.ProductCheckByNameUseCase;
 import infrastructure.database.JDBCDatabaseConnectionManager;
-import infrastructure.database.JDBCStockRepository;
 import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
 import infrastructure.monitoring.DatabaseConnectionProbe;
 import infrastructure.properties.PropertiesReader;
@@ -23,75 +22,74 @@ import infrastructure.web.server.WebServerBuilder;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import wiring.Wiring;
 
-// TODO make singleton
-@SuppressWarnings("UseUtilityClass")
-public class Wiring {
 
+// interface for both wiring and TestWiring
+public class TestWiring extends Wiring {
     // TODO singleton pattern
-    public Settings settings() {
+    public  Settings settings() {
         return new Settings(new PropertiesReader("work"));
     }
 
     // TODO Extract to separate wiring for database
-    private JDBCDatabaseConnectionManager databaseConnectionManager() {
+    private  JDBCDatabaseConnectionManager databaseConnectionManager() {
         return new MySqlJDBCDatabaseConnectionManager(settings());
     }
-
     // TODO singleton pattern
-    private Logger logger(Class<?> cls) {
+    private  Logger logger(Class<?> cls) {
         return LoggerFactory.getLogger(cls);
     }
 
-    private Unmarshaller productAvailabilityByNameUnmarshaller() {
+    private  Unmarshaller productAvailabilityByNameUnmarshaller() {
         return new ProductAvailabilityByNameUnmarshaller();
     }
 
-    private Unmarshaller productAvailabilityByIdUnmarshaller() {
+    private  Unmarshaller productAvailabilityByIdUnmarshaller() {
         return new ProductAvailabilityByIdUnmarshaller();
     }
 
-    private Marshaller productAvailabilityMarshaller() {
+    private  Marshaller productAvailabilityMarshaller() {
         return new ProductAvailabilityMarshaller();
     }
 
-    private Marshaller productAvailabilityByIdMarshaller() {
+    private  Marshaller productAvailabilityByIdMarshaller() {
         return new ProductAvailabilityMarshaller();
     }
 
-    private StockRepository stockRepository() {
-        return new JDBCStockRepository(databaseConnectionManager());
+    private  StockRepository stockRepository() {
+        return new TestStockRepository();
     }
 
-    private DatabaseConnectionProbe databaseConnectionProbe() {
+    private  DatabaseConnectionProbe databaseConnectionProbe() {
         return new DatabaseConnectionProbe(logger(DatabaseConnectionProbe.class), settings(), databaseConnectionManager());
     }
 
-    public StatusProbeServlet statusProbeServlet() {
+    public  StatusProbeServlet statusProbeServlet() {
         return new StatusProbeServlet(databaseConnectionProbe());
     }
 
-    private ProductCheckByNameUseCase productCheckByNameUseCase() {
+    private  ProductCheckByNameUseCase productCheckByNameUseCase() {
         return new ProductCheckByNameUseCase(stockRepository(), logger(ProductCheckByNameUseCase.class));
     }
 
-    private ProductCheckByIdUseCase productCheckByIdUseCase() {
+    private  ProductCheckByIdUseCase productCheckByIdUseCase() {
         return new ProductCheckByIdUseCase(stockRepository(), logger(ProductCheckByIdUseCase.class));
     }
 
-    public ProductAvailabilityByNameServlet productAvailabilityByNameServlet() {
+    public  ProductAvailabilityByNameServlet productAvailabilityByNameServlet() {
         return new ProductAvailabilityByNameServlet(productAvailabilityByNameUnmarshaller(), productAvailabilityByNameWebService());
     }
 
-    private ProductAvailabilityByNameWebService productAvailabilityByNameWebService() {
+    private  ProductAvailabilityByNameWebService productAvailabilityByNameWebService() {
         return new ProductAvailabilityByNameWebService(productCheckByNameUseCase(), productAvailabilityMarshaller());
     }
 
-    public ProductAvailabilityByIdServlet productAvailabilityByIdServlet() {
+    public  ProductAvailabilityByIdServlet productAvailabilityByIdServlet() {
         return new ProductAvailabilityByIdServlet(productAvailabilityByIdUnmarshaller(), productAvailabilityByIdWebService());
     }
 
-    private ProductAvailabilityByIdWebService productAvailabilityByIdWebService() {
+    private  ProductAvailabilityByIdWebService productAvailabilityByIdWebService() {
         return new ProductAvailabilityByIdWebService(productCheckByIdUseCase(), productAvailabilityByIdMarshaller());
     }
 
