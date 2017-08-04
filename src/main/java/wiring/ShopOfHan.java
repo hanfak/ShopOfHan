@@ -7,13 +7,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static wiring.ShopOfHanURLs.*;
+import static wiring.Wiring.wiring;
 
 public class ShopOfHan {
     private final static Logger logger = LoggerFactory.getLogger(ShopOfHan.class);
     private static WebServer webserver;
 
     public static void main(String... arguments) throws Exception {
-        new ShopOfHan().startWebServer(loadSettings(new Wiring()), new Wiring());
+        new ShopOfHan().startWebServer(loadSettings(wiring()), wiring());
     }
 
     public void startWebServer(Settings settings, Wiring wiring) throws Exception {

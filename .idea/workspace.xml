@@ -26,12 +26,10 @@
     <list id="d61528c6-70b0-4caa-83ef-ee074123d94b" name="change change properties lookup to two files instead of logic in code ignore external testing in pom" comment="" />
     <list id="1e826025-1346-4ae8-bcfa-b3973c5aa76d" name="do not commit" comment="" />
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="Used a Stub for the database, TestStockRepository, instead of having to setup real database">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/AbstractAcceptanceTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/AbstractAcceptanceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" afterPath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,12 +41,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CheckAmountOfProductInStockByNameTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTests.java">
+      <file leaf-file-name="JDBCStockRepository.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="648">
+              <caret line="47" column="71" lean-forward="true" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+              <folding>
+                <marker date="1501777970529" expanded="true" signature="377:408" ph="/Duplicates/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,10 +93,12 @@
       <find>TOD</find>
       <find>TODO</find>
       <find>static</find>
+      <find>private</find>
     </findStrings>
     <replaceStrings>
       <replace>\n</replace>
       <replace>productName</replace>
+      <replace>public</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/test/java/infrastructure/properties</dir>
@@ -146,7 +148,6 @@
         <option value="$PROJECT_DIR$/src/test/java/acceptancetests/Thens.java" />
         <option value="$PROJECT_DIR$/src/test/java/httpclient/Request.java" />
         <option value="$PROJECT_DIR$/src/test/java/acceptancetests/thens/Thens.java" />
-        <option value="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/acceptancetests/whens/Whens.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshaller.java" />
@@ -165,11 +166,12 @@
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/ProductStock.java" />
         <option value="$PROJECT_DIR$/src/main/resources/test.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" />
+        <option value="$PROJECT_DIR$/src/test/java/acceptancetests/AbstractAcceptanceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" />
         <option value="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" />
         <option value="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" />
-        <option value="$PROJECT_DIR$/src/test/java/acceptancetests/AbstractAcceptanceTest.java" />
       </list>
     </option>
   </component>
@@ -186,11 +188,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1176" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="y" value="-4" />
+    <option name="width" value="1920" />
+    <option name="height" value="1204" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -208,6 +210,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,6 +266,31 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="productavailability" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopOfHan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopOfHan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopOfHan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopOfHan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopOfHan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopOfHan" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShopOfHan" type="b2602c69:ProjectViewProjectNode" />
@@ -326,9 +354,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -858,7 +885,8 @@
       <workItem from="1500916698849" duration="413000" />
       <workItem from="1501071299396" duration="7000" />
       <workItem from="1501075706814" duration="2254000" />
-      <workItem from="1501777998066" duration="4867000" />
+      <workItem from="1501777998066" duration="4931000" />
+      <workItem from="1501863752251" duration="2083000" />
     </task>
     <task id="LOCAL-00001" summary="static anaylsis test example created">
       <created>1498583541325</created>
@@ -1014,25 +1042,17 @@
       <option name="project" value="LOCAL" />
       <updated>1500880383836</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Used a Stub for the database, TestStockRepository, instead of having to setup real database">
+      <created>1501782875139</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1501782875139</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CheckAmountOfProductInStockByNameTests - 2017.08.03 at 18h 39m 24s.xml">
-      <configuration name="CheckAmountOfProductInStockByNameTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.03 at 18h 39m 36s.xml">
-      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.03 at 18h 39m 48s.xml">
-      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.03 at 18h 41m 35s.xml">
-      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.03 at 18h 43m 53s.xml">
-      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.03 at 18h 44m 12s.xml">
       <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
     </history-entry>
@@ -1048,17 +1068,32 @@
     <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.03 at 18h 54m 17s.xml">
       <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.04 at 17h 25m 48s.xml">
+      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.04 at 17h 26m 22s.xml">
+      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.04 at 17h 26m 28s.xml">
+      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.04 at 17h 27m 06s.xml">
+      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CheckAmountOfProductInStockByNameTests_shouldReturnStockAmountForItem - 2017.08.04 at 17h 27m 18s.xml">
+      <configuration name="CheckAmountOfProductInStockByNameTests.shouldReturnStockAmountForItem" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63970000" />
+    <option name="totallyTimeSpent" value="66117000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1176" extended-state="0" />
+    <frame x="1920" y="-4" width="1920" height="1204" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33012047" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34246576" sideWeight="0.50193477" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1068,7 +1103,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39823875" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39809525" sideWeight="0.49713877" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681018" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1076,10 +1111,9 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39334637" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30919766" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3432282" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2819237" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3172542" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30857143" sideWeight="0.49198452" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.49806523" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27534685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1096,6 +1130,7 @@
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3172542" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1163,7 +1198,8 @@
     <MESSAGE value="Extracted out duplication of acceptance test to superclass" />
     <MESSAGE value="Extracted when to new class" />
     <MESSAGE value="Use bettercode to anaylze code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use bettercode to anaylze code" />
+    <MESSAGE value="Used a Stub for the database, TestStockRepository, instead of having to setup real database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Used a Stub for the database, TestStockRepository, instead of having to setup real database" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1225,12 +1261,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/wiring/Wiring.java</url>
-          <line>32</line>
+          <line>38</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="53" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1239,13 +1287,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/monitoring/ProbeStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/monitoring/StatusProbe.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1264,11 +1305,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1501777970529" expanded="true" signature="168:197" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="261:431" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="489:537" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1331,7 +1367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,7 +1374,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,7 +1388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1362,7 +1395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1370,7 +1402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1459,7 +1490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1486,38 +1516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <marker date="1501777970529" expanded="true" signature="0:44" ph="DROP DATABAS... " />
-            <marker date="1501777970529" expanded="true" signature="47:97" ph="CREATE DATAB... IF" />
-            <marker date="1501777970529" expanded="true" signature="127:378" ph="CREATE TABLE... product" />
-            <marker date="1501777970529" expanded="true" signature="381:709" ph="CREATE TABLE... stock" />
-            <marker date="1501777970529" expanded="true" signature="712:844" ph="INSERT INTO product... " />
-            <marker date="1501777970529" expanded="true" signature="847:980" ph="INSERT INTO stock... " />
-            <marker date="1501777970529" expanded="true" signature="983:1047" ph="SELECT * FRO... product" />
-            <marker date="1501777970529" expanded="true" signature="1018:1046" ph="SELECT produ... stock" />
-            <marker date="1501777970529" expanded="true" signature="1050:1187" ph="SELECT produ... product" />
-            <marker date="1501777970529" expanded="true" signature="1189:1341" ph="SELECT produ... product" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="66" lean-forward="true" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="44:277" ph="..." />
-            <marker date="1501777970529" expanded="true" signature="466:795" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="869:1142" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1148:1165" ph="@{...}" />
-            <marker date="1501777970529" expanded="true" signature="1245:1348" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1397:1509" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1599:1687" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1777:1865" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1932:1967" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="2044:2085" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="2159:2194" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1543,61 +1541,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/crosscutting/StockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="42:158" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="41:375" ph="..." />
-            <marker date="1501777970529" expanded="true" signature="377:408" ph="/Duplicates/" />
-            <marker date="1501777970529" expanded="true" signature="1132:1207" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1338:1821" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1907:2387" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="2510:2988" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <marker date="1473236412813" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1473236412813" expanded="false" signature="147:326" ph="..." />
-            <marker date="1473236412813" expanded="true" signature="476:685" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="717:752" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="852:1077" ph="{...}" />
-            <marker date="1473236412813" expanded="false" signature="870:964" ph="runReflectiveCall() → {" />
-            <marker date="1473236412813" expanded="false" signature="1048:1063" ph="}" />
-            <marker date="1473236412813" expanded="true" signature="1107:1152" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="1236:1469" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="1548:2081" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="2116:2166" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="2204:2255" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="2287:2331" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="2373:2428" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="2501:2586" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="2643:3127" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="3167:3289" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="3317:3363" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="3369:3387" ph="/**...*/" />
-            <marker date="1473236412813" expanded="true" signature="3447:3595" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="3640:3695" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="3738:3790" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="3867:3932" ph="{...}" />
-            <marker date="1473236412813" expanded="true" signature="3963:4009" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1605,89 +1552,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="80:281" ph="..." />
-            <marker date="1501777970529" expanded="true" signature="489:536" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="636:722" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="778:813" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="865:893" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/productavailability/ProductCheckByNameUseCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="49:219" ph="..." />
-            <marker date="1501777970529" expanded="false" signature="221:252" ph="/Duplicates/" />
-            <marker date="1501777970529" expanded="true" signature="465:550" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="618:871" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="952:1403" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/test.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/test.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="43:132" ph="..." />
-            <marker date="1501777970529" expanded="true" signature="289:407" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="452:503" ph="{...}" />
-            <marker date="1501777970529" expanded="false" signature="509:548" ph="/PreserveStackTrace/" />
-            <marker date="1501777970529" expanded="true" signature="583:894" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="936:996" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding>
-            <marker date="1501782250881" expanded="true" signature="36:1579" ph="..." />
-            <marker date="1501782250881" expanded="true" signature="1729:1795" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="1920:1994" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2066:2118" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2186:2253" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2319:2384" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2442:2501" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2563:2622" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2671:2720" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2785:2916" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="2970:3043" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="3112:3225" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="3290:3399" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="3481:3621" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="3710:3835" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="3913:4047" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="4132:4257" ph="{...}" />
-            <marker date="1501782250881" expanded="true" signature="4323:4382" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <marker date="1501782362089" expanded="true" signature="36:201" ph="..." />
-            <marker date="1501782362089" expanded="true" signature="404:509" ph="{...}" />
-            <marker date="1501782362089" expanded="true" signature="595:623" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1695,15 +1567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="42:586" ph="..." />
-            <marker date="1501777970529" expanded="true" signature="829:870" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1042:1134" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1300:1390" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1520:1598" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1649:1730" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="1804:1893" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1711,13 +1574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <marker date="1501777970529" expanded="false" signature="42:257" ph="..." />
-            <marker date="1501777970529" expanded="true" signature="395:459" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="538:609" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="649:862" ph="{...}" />
-            <marker date="1501777970529" expanded="true" signature="901:1112" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1726,7 +1582,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="268">
             <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="40" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1736,7 +1591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1744,57 +1598,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/Wiring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <marker date="1501782362065" expanded="false" signature="24:1545" ph="..." />
-            <marker date="1501782362065" expanded="false" signature="1570:1606" ph="/UseUtilityClass/" />
-            <marker date="1501782362065" expanded="true" signature="1691:1757" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="1881:1955" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2027:2079" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2146:2213" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2278:2343" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2400:2459" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2520:2579" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2627:2703" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2767:2898" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="2951:3024" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="3092:3205" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="3269:3378" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="3459:3599" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="3687:3812" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="3889:4023" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="4107:4232" ph="{...}" />
-            <marker date="1501782362065" expanded="true" signature="4298:4357" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <marker date="1501782838545" expanded="false" signature="24:242" ph="..." />
-            <marker date="1501782838545" expanded="true" signature="459:548" ph="{...}" />
-            <marker date="1501782838545" expanded="true" signature="632:727" ph="{...}" />
-            <marker date="1501782838545" expanded="true" signature="792:1293" ph="{...}" />
-            <marker date="1501782838545" expanded="true" signature="1351:1392" ph="{...}" />
-            <marker date="1501782838545" expanded="true" signature="1474:1555" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/AbstractAcceptanceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="20" column="61" lean-forward="false" selection-start-line="20" selection-start-column="61" selection-end-line="20" selection-end-column="61" />
+        <state relative-caret-position="252">
+          <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="68" />
           <folding>
             <marker date="1501782838557" expanded="false" signature="33:761" ph="..." />
             <marker date="1501782838557" expanded="true" signature="1341:1420" ph="{...}" />
@@ -1806,11 +1616,158 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/MySqlJDBCDatabaseConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <marker date="1501777970529" expanded="false" signature="41:136" ph="..." />
+            <marker date="1501777970529" expanded="true" signature="493:534" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="590:966" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="66" lean-forward="true" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
+          <folding>
+            <marker date="1501777970529" expanded="false" signature="44:277" ph="..." />
+            <marker date="1501777970529" expanded="true" signature="466:795" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="869:1142" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="1148:1165" ph="@{...}" />
+            <marker date="1501777970529" expanded="true" signature="1245:1348" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="1397:1509" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="1599:1687" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="1777:1865" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="1932:1967" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="2044:2085" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="2159:2194" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="-106">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1501782914521" expanded="false" signature="44:252" ph="..." />
+            <marker date="1501782914521" expanded="true" signature="443:743" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="817:1099" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="1157:1250" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="1299:1412" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="1502:1590" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="1680:1768" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="1835:1870" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="1947:1988" ph="{...}" />
+            <marker date="1501782914521" expanded="true" signature="2062:2097" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <marker date="1501864041705" expanded="true" signature="36:201" ph="..." />
+            <marker date="1501864041705" expanded="true" signature="404:509" ph="{...}" />
+            <marker date="1501864041705" expanded="true" signature="595:623" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding>
+            <marker date="1501864798449" expanded="true" signature="36:250" ph="..." />
+            <marker date="1501864798449" expanded="true" signature="415:481" ph="{...}" />
+            <marker date="1501864798449" expanded="true" signature="554:606" ph="{...}" />
+            <marker date="1501864798449" expanded="true" signature="669:718" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/Wiring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <marker date="1501865637457" expanded="false" signature="24:1545" ph="..." />
+            <marker date="1501865637457" expanded="false" signature="1570:1606" ph="/UseUtilityClass/" />
+            <marker date="1501865637457" expanded="true" signature="1650:1657" ph="{}" />
+            <marker date="1501865637457" expanded="true" signature="1693:1729" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="1792:1858" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="1981:2055" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="2126:2178" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="2244:2311" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="2375:2440" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="2496:2555" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="2615:2674" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="2721:2797" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="2860:2991" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="3044:3117" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="3184:3297" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="3360:3469" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="3550:3690" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="3777:3902" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="3979:4113" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="4196:4321" ph="{...}" />
+            <marker date="1501865637457" expanded="true" signature="4387:4446" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="16" column="67" lean-forward="true" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+          <folding>
+            <marker date="1501865637469" expanded="false" signature="24:278" ph="..." />
+            <marker date="1501865637469" expanded="true" signature="495:576" ph="{...}" />
+            <marker date="1501865637469" expanded="true" signature="660:755" ph="{...}" />
+            <marker date="1501865637469" expanded="true" signature="820:1321" ph="{...}" />
+            <marker date="1501865637469" expanded="true" signature="1379:1420" ph="{...}" />
+            <marker date="1501865637469" expanded="true" signature="1502:1583" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/productavailability/ProductCheckByNameUseCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="74" lean-forward="false" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+          <folding>
+            <marker date="1501777970529" expanded="false" signature="49:219" ph="..." />
+            <marker date="1501777970529" expanded="false" signature="221:252" ph="/Duplicates/" />
+            <marker date="1501777970529" expanded="true" signature="465:550" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="618:871" ph="{...}" />
+            <marker date="1501777970529" expanded="true" signature="952:1403" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/crosscutting/StockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <marker date="1501777970529" expanded="false" signature="42:158" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/infrastructure/database/JDBCStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="47" column="71" lean-forward="true" selection-start-line="47" selection-start-column="71" selection-end-line="47" selection-end-column="71" />
+          <folding>
+            <marker date="1501777970529" expanded="true" signature="377:408" ph="/Duplicates/" />
+          </folding>
         </state>
       </provider>
     </entry>

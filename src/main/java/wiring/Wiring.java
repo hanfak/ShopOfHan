@@ -27,6 +27,12 @@ import org.slf4j.LoggerFactory;
 // TODO make singleton
 @SuppressWarnings("UseUtilityClass")
 public class Wiring {
+    private Wiring() {
+    }
+
+    public static Wiring wiring() {
+        return new Wiring();
+    }
 
     // TODO singleton pattern
     public Settings settings() {
@@ -34,36 +40,36 @@ public class Wiring {
     }
 
     // TODO Extract to separate wiring for database
-    private JDBCDatabaseConnectionManager databaseConnectionManager() {
+    public JDBCDatabaseConnectionManager databaseConnectionManager() {
         return new MySqlJDBCDatabaseConnectionManager(settings());
     }
 
     // TODO singleton pattern
-    private Logger logger(Class<?> cls) {
+    public Logger logger(Class<?> cls) {
         return LoggerFactory.getLogger(cls);
     }
 
-    private Unmarshaller productAvailabilityByNameUnmarshaller() {
+    public Unmarshaller productAvailabilityByNameUnmarshaller() {
         return new ProductAvailabilityByNameUnmarshaller();
     }
 
-    private Unmarshaller productAvailabilityByIdUnmarshaller() {
+    public Unmarshaller productAvailabilityByIdUnmarshaller() {
         return new ProductAvailabilityByIdUnmarshaller();
     }
 
-    private Marshaller productAvailabilityMarshaller() {
+    public Marshaller productAvailabilityMarshaller() {
         return new ProductAvailabilityMarshaller();
     }
 
-    private Marshaller productAvailabilityByIdMarshaller() {
+    public Marshaller productAvailabilityByIdMarshaller() {
         return new ProductAvailabilityMarshaller();
     }
 
-    private StockRepository stockRepository() {
+    public StockRepository stockRepository() {
         return new JDBCStockRepository(databaseConnectionManager());
     }
 
-    private DatabaseConnectionProbe databaseConnectionProbe() {
+    public DatabaseConnectionProbe databaseConnectionProbe() {
         return new DatabaseConnectionProbe(logger(DatabaseConnectionProbe.class), settings(), databaseConnectionManager());
     }
 
@@ -71,11 +77,11 @@ public class Wiring {
         return new StatusProbeServlet(databaseConnectionProbe());
     }
 
-    private ProductCheckByNameUseCase productCheckByNameUseCase() {
+    public ProductCheckByNameUseCase productCheckByNameUseCase() {
         return new ProductCheckByNameUseCase(stockRepository(), logger(ProductCheckByNameUseCase.class));
     }
 
-    private ProductCheckByIdUseCase productCheckByIdUseCase() {
+    public ProductCheckByIdUseCase productCheckByIdUseCase() {
         return new ProductCheckByIdUseCase(stockRepository(), logger(ProductCheckByIdUseCase.class));
     }
 
@@ -83,7 +89,7 @@ public class Wiring {
         return new ProductAvailabilityByNameServlet(productAvailabilityByNameUnmarshaller(), productAvailabilityByNameWebService());
     }
 
-    private ProductAvailabilityByNameWebService productAvailabilityByNameWebService() {
+    public ProductAvailabilityByNameWebService productAvailabilityByNameWebService() {
         return new ProductAvailabilityByNameWebService(productCheckByNameUseCase(), productAvailabilityMarshaller());
     }
 
@@ -91,7 +97,7 @@ public class Wiring {
         return new ProductAvailabilityByIdServlet(productAvailabilityByIdUnmarshaller(), productAvailabilityByIdWebService());
     }
 
-    private ProductAvailabilityByIdWebService productAvailabilityByIdWebService() {
+    public ProductAvailabilityByIdWebService productAvailabilityByIdWebService() {
         return new ProductAvailabilityByIdWebService(productCheckByIdUseCase(), productAvailabilityByIdMarshaller());
     }
 
