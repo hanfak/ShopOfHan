@@ -121,7 +121,7 @@
                     <!--<verbose>true</verbose>-->
                     <!--<printFailingErrors>true</printFailingErrors>-->
                     <!--<rulesets>-->
-                        <!--<ruleset>${project.basedir}/pmd/pmd-ruleset.xml</ruleset>-->
+                        <!--<ruleset>**/pmd/pmd-ruleset.xml</ruleset>-->
                     <!--</rulesets>-->
                 <!--</configuration>-->
                 <!--<executions>-->

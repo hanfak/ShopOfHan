@@ -61,7 +61,7 @@ public class CheckAmountOfProductInStockByIdTest extends AbstractAcceptanceTest 
     }
 
     private static final String HARRY_POTTER = "HP1";
-    private static final String PATH = "http://localhost:8081/productscheck/id/";
+    private static final String PATH = "http://localhost:8082/productscheck/id/";
     private static final String JOY_OF_JAVA_ID = "JOJ1";
     private static final String EXPECTED_RESPONSE =
             "{\"productName\": \"Joy Of Java\"," +

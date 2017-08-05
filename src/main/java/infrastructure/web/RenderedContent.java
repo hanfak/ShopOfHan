@@ -22,6 +22,7 @@ public class RenderedContent {
     public static RenderedContent jsonContent(String body) {
         return renderedContent(body, "application/json", 200);
     }
+
     public static RenderedContent errorContent(String body) {
         return renderedContent(body, "text/plain", 404);
     }

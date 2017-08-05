@@ -17,25 +17,25 @@ public class ProductCheckByIdUseCase {
         this.stockRepository = stockRepository;
         this.logger = logger;
     }
-
+// TODO more details in logs ie product details etc
+    //TODO test when name passes instead of
     public ProductStock checkStock(ProductToCheck productToCheck) {
         logger.info("checking stock by Id...");
         Optional<ProductStock> checkStock = stockRepository.checkStockById(productToCheck.getProductId());
         logger.info("Stock checked");
-        return respondWithProduct(checkStock);
+
+        /*
+        * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
+        * if statement here
+        **/
+        ProductStock productStock = checkStock.orElseThrow(this::illegalStateException);
+        logger.info("Stock is there");
+
+        return productStock;
     }
 
-    private ProductStock respondWithProduct(Optional<ProductStock> checkStock) {
-        if (checkStock.isPresent()) {
-            logger.info("Stock is there");
-            return checkStock.get();
-        } else {
-            /*
-            * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
-            * if statement here
-            * */
-            logger.warn("Stock not there");
-            throw new IllegalStateException("Product is not found");
-        }
+    private IllegalStateException illegalStateException() {
+        logger.warn("Stock not there");
+        return new IllegalStateException("Product is not found");
     }
 }

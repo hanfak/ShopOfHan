@@ -21,6 +21,7 @@ public class CheckAmountOfProductInStockByNameTest extends AbstractAcceptanceTes
     @Test
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
+        thenItReturnsAStatusCodeOf(404);
         thenTheResponseCodeIs404AndTheBodyIs("Product 'Harry Potter' is not stocked java.lang.IllegalStateException: Product is not found");
         andThenContentTypeIs("Content-Type: text/plain;charset=iso-8859-1");
     }
@@ -59,7 +60,7 @@ public class CheckAmountOfProductInStockByNameTest extends AbstractAcceptanceTes
     }
 
     private static final String HARRY_POTTER = "Harry%20Potter";
-    private static final String PATH = "http://localhost:8081/productscheck/name/";
+    private static final String PATH = "http://localhost:8082/productscheck/name/";
     private static final String JOY_OF_JAVA = "Joy%20Of%20Java";
-    private static final String BAD_URL = "http://localhost:8081/a/bad/url";
+    private static final String BAD_URL = "http://localhost:8082/a/bad/url";
 }

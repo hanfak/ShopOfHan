@@ -31,7 +31,7 @@ public class Wiring {
 
     // TODO singleton pattern
     public Settings settings() {
-        return new Settings(new PropertiesReader("local"));
+        return new Settings(new PropertiesReader("localhost"));
     }
 
     // TODO Extract to separate wiring for database

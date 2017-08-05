@@ -22,20 +22,20 @@ public class ProductCheckByNameUseCase {
         logger.info("checking stock by Name...");
         Optional<ProductStock> checkStock = stockRepository.checkStockByName(productToCheck.getProductName());
         logger.info("Stock checked");
-        return respondWithProduct(checkStock);
+
+        /*
+        * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
+        * if statement here
+        **/
+        ProductStock productStock = checkStock.orElseThrow(this::illegalStateException);
+
+        logger.info("Stock is there");
+
+        return productStock;
     }
 
-    private ProductStock respondWithProduct(Optional<ProductStock> checkStock) {
-        if (checkStock.isPresent()) {
-            logger.info("Stock is there");
-            return checkStock.get();
-        } else {
-            /*
-            * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
-            * if statement here
-            * */
-            logger.warn("Stock not there");
-            throw new IllegalStateException("Product is not found");
-        }
+    private IllegalStateException illegalStateException() {
+        logger.warn("Stock not there");
+        return new IllegalStateException("Product is not found");
     }
 }
