@@ -30,7 +30,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>infrastructure.wiring.ShopOfHan</mainClass>
+                            <mainClass>infrastructure.ShopOfHan</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -45,29 +45,29 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-assembly-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<goals>-->
-                            <!--<goal>attached</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>package</phase>-->
-                        <!--<configuration>-->
-                            <!--<finalName>App</finalName>-->
-                            <!--<descriptorRefs>-->
-                                <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
-                            <!--</descriptorRefs>-->
-                            <!--<archive>-->
-                                <!--<manifest>-->
-                                    <!--<mainClass>App</mainClass>-->
-                                <!--</manifest>-->
-                            <!--</archive>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>attached</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <finalName>App</finalName>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <mainClass>wiring/ShopOfHan</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
             <!-- FindBugs -->
             <!--<plugin>-->

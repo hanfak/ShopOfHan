@@ -10,3 +10,10 @@ https://stackoverflow.com/questions/4389744/is-there-a-way-to-tell-surefire-to-s
 run pmd
 
 mvn verify
+
+docker 
+
+docker build -t myapp ./
+
+
+docker run -d -p 8081:8081 myapp

@@ -38,6 +38,7 @@ Start mysql
 
 Connect to mysql
 `mysql -h"172.17.0.3" -P"3306" -uroot -p `
+`mysql -h"127.0.0.1" -P"3306" -uroot -p `
 
 copy and paste sql file (/home/dev/Documents/HAN/ShopOfHan/ShopOfHanSQL/priming.sql)
 
