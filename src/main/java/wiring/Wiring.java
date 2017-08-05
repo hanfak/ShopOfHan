@@ -24,19 +24,14 @@ import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// TODO find way of not making all methods public
 // TODO make singleton
 @SuppressWarnings("UseUtilityClass")
 public class Wiring {
-    private Wiring() {
-    }
-
-    public static Wiring wiring() {
-        return new Wiring();
-    }
 
     // TODO singleton pattern
     public Settings settings() {
-        return new Settings(new PropertiesReader("work"));
+        return new Settings(new PropertiesReader("local"));
     }
 
     // TODO Extract to separate wiring for database

@@ -13,6 +13,7 @@ import java.util.Optional;
 
 import static domain.ProductStock.productStock;
 
+// TODO Module test to test database is working
 @SuppressWarnings("Duplicates")
 public class JDBCStockRepository implements StockRepository {
 
