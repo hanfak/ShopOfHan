@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SpecRunner.class)
-public class CheckAmountOfProductInStockByNameTests extends AbstractAcceptanceTest {
+public class CheckAmountOfProductInStockByNameTest extends AbstractAcceptanceTest {
 
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
