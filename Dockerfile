@@ -8,13 +8,11 @@ WORKDIR /code
 
 ADD pom.xml /code/pom.xml
 RUN ["mvn", "dependency:resolve"]
-RUN ["mvn", "verify"]
+RUN ["mvn", "verify", "-q"]
 
 #ADD ShopOfHanSQL /code/ShopOfHanSQL
 ADD src /code/src
-RUN ["mvn", "package"]
-
-#ENV MAIN_CLASS_NAME App
+RUN ["mvn", "package", "-q"]
 
 EXPOSE 8081
 CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/App-jar-with-dependencies.jar"]

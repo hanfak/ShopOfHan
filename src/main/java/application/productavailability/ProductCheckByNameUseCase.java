@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 
 import java.util.Optional;
 
+import static java.lang.String.format;
+
 @SuppressWarnings("Duplicates")
 public class ProductCheckByNameUseCase {
 
@@ -19,9 +21,9 @@ public class ProductCheckByNameUseCase {
     }
 
     public ProductStock checkStock(ProductToCheck productToCheck) {
-        logger.info("checking stock by Name...");
+        logger.info(format("checking stock by Name '%s'", productToCheck.getProductName()));
         Optional<ProductStock> checkStock = stockRepository.checkStockByName(productToCheck.getProductName());
-        logger.info("Stock checked");
+        logResultOfStockCheck(checkStock);
 
         /*
         * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
@@ -34,8 +36,16 @@ public class ProductCheckByNameUseCase {
         return productStock;
     }
 
+    private void logResultOfStockCheck(Optional<ProductStock> checkStock) {
+        if (checkStock.isPresent()) {
+            logger.info(format("Stock checked and returned '%s'", checkStock.get()));
+        } else {
+            logger.info("Stock checked and returned nothing");
+        }
+    }
+
     private IllegalStateException illegalStateException() {
-        logger.warn("Stock not there");
+        logger.info("Stock not there");
         return new IllegalStateException("Product is not found");
     }
 }

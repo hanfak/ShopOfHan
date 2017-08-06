@@ -16,8 +16,12 @@ http://localhost:8081/productscheck?productName=Joy%20Of%20Java
 
 ## Running mySql via docker
 
+docker network create --driver=bridge --subnet=192.168.127.0/24 --gateway=192.168.127.1 --ip-range=192.168.127.128/25 mybridge1
+
+
 From scratch
 `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=password -d mysql`
+`docker run --name --net=mybridge mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:tag`
 
 // docker run -it --link some-mysql:mysql --rm mysql sh -c 'exec  mysql -h"172.17.0.3" -P"3306" -uroot -p' 
 
@@ -31,7 +35,7 @@ Check if working
 `docker ps`
 
 start bash in container
-`docker exec -it   <container name>  /bin/bash `
+`docker exec -it  <container name>  /bin/bash `
 
 Start mysql
 `mysql -u root -p` 

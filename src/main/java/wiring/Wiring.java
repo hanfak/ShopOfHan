@@ -36,7 +36,7 @@ public class Wiring {
 
     // TODO Extract to separate wiring for database
     public JDBCDatabaseConnectionManager databaseConnectionManager() {
-        return new MySqlJDBCDatabaseConnectionManager(settings());
+        return new MySqlJDBCDatabaseConnectionManager(settings(), logger(MySqlJDBCDatabaseConnectionManager.class));
     }
 
     // TODO singleton pattern
@@ -61,7 +61,7 @@ public class Wiring {
     }
 
     public StockRepository stockRepository() {
-        return new JDBCStockRepository(databaseConnectionManager());
+        return new JDBCStockRepository(logger(JDBCStockRepository.class), databaseConnectionManager());
     }
 
     public DatabaseConnectionProbe databaseConnectionProbe() {

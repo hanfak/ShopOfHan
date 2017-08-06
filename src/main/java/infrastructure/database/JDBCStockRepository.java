@@ -4,6 +4,7 @@ import application.crosscutting.StockRepository;
 import domain.ProductStock;
 import domain.product.ProductId;
 import domain.product.ProductName;
+import org.slf4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,11 +20,12 @@ public class JDBCStockRepository implements StockRepository {
 
     private static final String SQL_STATEMENT = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?";
     private static final String SQL_STATEMENT_TWO = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
-
+    private final Logger logger;
     private final JDBCDatabaseConnectionManager databaseConnectionManager;
 
     // TODO extract a reader and inject, which handles the connection and making the call pass into reader.getProductStock the sql
-    public JDBCStockRepository(JDBCDatabaseConnectionManager databaseConnectionManager) {
+    public JDBCStockRepository(Logger logger, JDBCDatabaseConnectionManager databaseConnectionManager) {
+        this.logger = logger;
         this.databaseConnectionManager = databaseConnectionManager;
     }
 
@@ -40,6 +42,7 @@ public class JDBCStockRepository implements StockRepository {
              }
 
         } catch(Exception e) {
+            logger.error("error " + e);
             System.out.println(e);
         }
         return Optional.empty();
@@ -56,7 +59,7 @@ public class JDBCStockRepository implements StockRepository {
             }
 
         } catch(Exception e) {
-            System.out.println(e);
+            logger.error("error "  + e);
         }
         return Optional.empty();
     }

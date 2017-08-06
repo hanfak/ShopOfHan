@@ -11,9 +11,12 @@ run pmd
 
 mvn verify
 
+SHOW VARIABLES WHERE Variable_name = 'hostname'
+
 docker 
 
 docker build -t myapp ./
 
-
 docker run -d -p 8081:8081 myapp
+
+docker run --name shop-han --net=mybridge -e -p 8081:8080 -d -it myapp
