@@ -20,7 +20,9 @@ docker network create --driver=bridge --subnet=192.168.127.0/24 --gateway=192.16
 
 
 From scratch
-`docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=password -d mysql`
+`docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql`
+
+
 `docker run --name --net=mybridge mysql -e MYSQL_ROOT_PASSWORD=password -d mysql:tag`
 
 // docker run -it --link some-mysql:mysql --rm mysql sh -c 'exec  mysql -h"172.17.0.3" -P"3306" -uroot -p' 
@@ -47,6 +49,9 @@ Connect to mysql
 copy and paste sql file (/home/dev/Documents/HAN/ShopOfHan/ShopOfHanSQL/priming.sql)
 
 // TODO: script to run via docker bash
+
+
+mysql -h localhost -P 3306 --protocol=tcp -uroot -p
 
 
 ## address in use
