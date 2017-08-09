@@ -33,6 +33,7 @@ If already pulled image
 Check containers that are not running
 `docker ps -a`
 
+
 Check if working
 `docker ps`
 
