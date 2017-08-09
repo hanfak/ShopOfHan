@@ -2,6 +2,7 @@ package infrastructure.web.productavailability.productavailabilityById;
 
 import application.productavailability.ProductCheckByIdUseCase;
 import domain.ProductStock;
+import domain.product.ProductId;
 import infrastructure.web.Marshaller;
 import infrastructure.web.RenderedContent;
 
@@ -19,12 +20,12 @@ public class ProductAvailabilityByIdWebService {
         this.marshaller = marshaller;
     }
 
-    public RenderedContent requestProductCheck(ProductAvailabilityByIdRequest productAvailabilityRequest) {
+    public RenderedContent requestProductCheck(ProductId productId) {
         try {
-            ProductStock productStock = productCheckByIdUseCase.checkStock(productAvailabilityRequest);
+            ProductStock productStock = productCheckByIdUseCase.checkStock(productId);
             return jsonContent(marshaller.marshall(productStock));
         } catch (IllegalStateException e) {
-            return errorContent(format("Product '%s' is not stocked %s", productAvailabilityRequest.getProductId().value, e.toString()));
+            return errorContent(format("Product '%s' is not stocked %s", productId.value, e.toString()));
         }
     }
 

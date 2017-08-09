@@ -49,7 +49,7 @@ public class Wiring {
     }
 
     public Unmarshaller productAvailabilityByIdUnmarshaller() {
-        return new ProductAvailabilityByIdUnmarshaller();
+        return new ProductAvailabilityByIdUnmarshaller(logger(ProductAvailabilityByIdUnmarshaller.class));
     }
 
     public Marshaller productAvailabilityMarshaller() {

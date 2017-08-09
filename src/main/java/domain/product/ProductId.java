@@ -11,11 +11,11 @@ public class ProductId extends SingleValueType<String> {
         if (validate(productId)) {
             return new ProductId(productId);
         } else {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("illegal product id");
         }
     }
 
     private static boolean validate(String productId) {
-        return productId.length() < 10;
+        return productId.length() < 10 && !productId.contains(" ");
     }
 }

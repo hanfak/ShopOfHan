@@ -2,7 +2,6 @@ package infrastructure.web.productavailability.productavailabilityname;
 
 import application.crosscutting.ProductToCheck;
 import domain.crosscutting.ValueType;
-import domain.product.ProductId;
 import domain.product.ProductName;
 
 import static domain.product.ProductName.productName;
@@ -21,10 +20,5 @@ public class ProductAvailabilityByNameRequest extends ValueType implements Produ
     @Override
     public ProductName getProductName() {
         return productName;
-    }
-
-    @Override
-    public ProductId getProductId() {
-        return null;
     }
 }

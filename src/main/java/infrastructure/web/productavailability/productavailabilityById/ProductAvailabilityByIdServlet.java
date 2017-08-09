@@ -1,5 +1,6 @@
 package infrastructure.web.productavailability.productavailabilityById;
 
+import domain.product.ProductId;
 import infrastructure.web.RenderedContent;
 import infrastructure.web.Unmarshaller;
 
@@ -11,10 +12,10 @@ import java.io.IOException;
 
 public class ProductAvailabilityByIdServlet extends HttpServlet {
 
-    private final Unmarshaller<ProductAvailabilityByIdRequest> unmarshaller;
+    private final Unmarshaller<ProductId> unmarshaller;
     private final ProductAvailabilityByIdWebService productAvailabilityByIdWebService;
 
-    public ProductAvailabilityByIdServlet(Unmarshaller<ProductAvailabilityByIdRequest> unmarshaller, ProductAvailabilityByIdWebService productAvailabilityByIdWebService) {
+    public ProductAvailabilityByIdServlet(Unmarshaller<ProductId> unmarshaller, ProductAvailabilityByIdWebService productAvailabilityByIdWebService) {
         this.unmarshaller = unmarshaller;
         this.productAvailabilityByIdWebService = productAvailabilityByIdWebService;
     }

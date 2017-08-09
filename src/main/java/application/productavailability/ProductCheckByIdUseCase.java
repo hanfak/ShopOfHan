@@ -1,8 +1,8 @@
 package application.productavailability;
 
-import application.crosscutting.ProductToCheck;
 import application.crosscutting.StockRepository;
 import domain.ProductStock;
+import domain.product.ProductId;
 import org.slf4j.Logger;
 
 import java.util.Optional;
@@ -21,9 +21,9 @@ public class ProductCheckByIdUseCase {
     }
     // TODO more details in logs ie product details etc
     //TODO test when name passes instead of
-    public ProductStock checkStock(ProductToCheck productToCheck) {
-        logger.info(format("checking stock by Id '%s'", productToCheck.getProductId()));
-        Optional<ProductStock> checkStock = stockRepository.checkStockById(productToCheck.getProductId());
+    public ProductStock checkStock(ProductId productId) {
+        logger.info(format("checking stock by Id '%s'", productId));
+        Optional<ProductStock> checkStock = stockRepository.checkStockById(productId);
         logResultOfStockCheck(checkStock);
 
         /*
