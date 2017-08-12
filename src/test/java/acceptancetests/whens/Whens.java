@@ -10,7 +10,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
 
-import static acceptancetests.AbstractAcceptanceTest.APPLICATION_NAME;
+import static acceptancetests.AcceptanceTest.APPLICATION_NAME;
 import static java.lang.String.format;
 
 public class Whens {

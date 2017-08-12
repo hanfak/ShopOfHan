@@ -29,7 +29,7 @@ public class DatabaseConnectionProbe implements StatusProbe {
 
     @Override
     public ProbeResult probe() {
-        try (Connection connection = connectionProvider.getDBConnection();
+        try (Connection connection = connectionProvider.getDBConnection().get();
              PreparedStatement statement = connection.prepareStatement("SELECT 1 FROM DUAL");
              ResultSet resultSet = statement.executeQuery()) {
             if (resultSet.next() && resultSet.getInt(1) == 1) {

@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class ByNamingConventionMessageProducer {
     private final static Pattern FULLY_QUALIFIED_MESSAGE_SEND_REGEXP =  Pattern.compile("(.*) from (.*) to (.*)");
 
-    public List<SequenceDiagramMessage> messages(CapturedInputAndOutputs inputAndOutputs) {
+    List<SequenceDiagramMessage> messages(CapturedInputAndOutputs inputAndOutputs) {
         List<SequenceDiagramMessage> result = new ArrayList<>();
         Map<String, Object> types = inputAndOutputs.getTypes();
         Set<String> keys = types.keySet();

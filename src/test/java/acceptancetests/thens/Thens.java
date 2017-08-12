@@ -4,12 +4,9 @@ import acceptancetests.TestState;
 import com.googlecode.yatspec.state.givenwhenthen.CapturedInputAndOutputs;
 import com.googlecode.yatspec.state.givenwhenthen.StateExtractor;
 import httpclient.Response;
+import org.assertj.core.api.WithAssertions;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-//import org.apache.http.HttpResponse;
-
-public class Thens {
+public class Thens implements WithAssertions {
 
     private TestState testState;
     private final CapturedInputAndOutputs capturedInputAndOutputs;

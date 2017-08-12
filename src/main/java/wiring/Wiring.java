@@ -5,7 +5,7 @@ import application.productavailability.ProductCheckByIdUseCase;
 import application.productavailability.ProductCheckByNameUseCase;
 import infrastructure.database.JDBCDatabaseConnectionManager;
 import infrastructure.database.JDBCStockRepository;
-import infrastructure.database.MySqlJDBCDatabaseConnectionManager;
+import infrastructure.database.connection.PoolingJDBCDatabasConnectionManager;
 import infrastructure.monitoring.DatabaseConnectionProbe;
 import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
@@ -30,13 +30,14 @@ import org.slf4j.LoggerFactory;
 public class Wiring {
 
     // TODO singleton pattern
-    public Settings settings() {
-        return new Settings(new PropertiesReader("work"));
+    public static Settings settings() {
+        return new Settings(new PropertiesReader("localhost"));
     }
 
     // TODO Extract to separate wiring for database
     public JDBCDatabaseConnectionManager databaseConnectionManager() {
-        return new MySqlJDBCDatabaseConnectionManager(settings(), logger(MySqlJDBCDatabaseConnectionManager.class));
+//        return new MySqlJDBCDatabaseConnectionManager(settings(), logger(MySqlJDBCDatabaseConnectionManager.class));
+        return new PoolingJDBCDatabasConnectionManager(logger(PoolingJDBCDatabasConnectionManager.class));
     }
 
     // TODO singleton pattern

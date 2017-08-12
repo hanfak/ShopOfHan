@@ -11,7 +11,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class ProductAvailabilityUnmarshallerTest {
-    HttpServletRequest request = mock(HttpServletRequest.class);
+    private final HttpServletRequest request = mock(HttpServletRequest.class);
 
     @Test
     public void pathParamsshouldIgnoreEverythingAfterSecondForwardSlash() throws Exception {
@@ -22,5 +22,4 @@ public class ProductAvailabilityUnmarshallerTest {
 
         assertThat(unmarshall).isEqualTo(ProductAvailabilityByNameRequest.productAvailabilityRequest("hello"));
     }
-
 }

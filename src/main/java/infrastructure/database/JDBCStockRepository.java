@@ -33,15 +33,20 @@ public class JDBCStockRepository implements StockRepository {
 
     @Override
     public Optional<ProductStock> checkStockByName(ProductName productName) {
+        // TODO: tidy this up
         try {
-             try (Connection dbConnection = databaseConnectionManager.getDBConnection();
-                  PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
+            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
+            if (connection.isPresent()) {
 
-                 Optional<ProductStock> resultSet = getProductStock(productName.value, stmt);
-                 if (resultSet.isPresent()) return resultSet;
-             }
+                try (Connection dbConnection = connection.get();
+                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
 
-        } catch(Exception e) {
+                    Optional<ProductStock> resultSet = getProductStock(productName.value, stmt);
+                    if (resultSet.isPresent()) return resultSet;
+                }
+            }
+
+        } catch (Exception e) {
             logger.error("error " + e);
             System.out.println(e);
         }
@@ -51,15 +56,17 @@ public class JDBCStockRepository implements StockRepository {
     @Override
     public Optional<ProductStock> checkStockById(ProductId productId) {
         try {
-            try (Connection dbConnection = databaseConnectionManager.getDBConnection();
-                 PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
+            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
+            if (connection.isPresent()) {
+                try (Connection dbConnection = connection.get(); //TODO change to the above
+                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
 
-                Optional<ProductStock> resultSet = getProductStock(productId.value, stmt);
-                if (resultSet.isPresent()) return resultSet;
+                    Optional<ProductStock> resultSet = getProductStock(productId.value, stmt);
+                    if (resultSet.isPresent()) return resultSet;
+                }
             }
-
-        } catch(Exception e) {
-            logger.error("error "  + e);
+        } catch (Exception e) {
+            logger.error("error " + e);
         }
         return Optional.empty();
     }
@@ -71,6 +78,7 @@ public class JDBCStockRepository implements StockRepository {
 
         // TODO multiple different stock checks will return first one only (new user story)
         if (resultSet.next()) {
+            logger.info("Gettting data from database and storing in java pojo");
             return Optional.of(productStock(
                     ProductName.productName(resultSet.getString("product_name")),
                     resultSet.getInt("amount")));

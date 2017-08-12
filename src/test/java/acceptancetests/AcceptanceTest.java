@@ -17,7 +17,7 @@ import wiring.ShopOfHan;
 
 import static java.util.Collections.singletonList;
 
-public abstract class AbstractAcceptanceTest extends TestState implements WithCustomResultListeners {
+public abstract class AcceptanceTest extends TestState implements WithCustomResultListeners {
     public static final String APPLICATION_NAME = "Shop Of Han app";
     private final ShopOfHan shopOfHan = new ShopOfHan();
     private final acceptancetests.TestState testState = new acceptancetests.TestState();

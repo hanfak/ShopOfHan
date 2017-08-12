@@ -1,11 +1,16 @@
-package infrastructure.database;
+package infrastructure.database.connection;
 
+import infrastructure.database.JDBCDatabaseConnectionManager;
 import infrastructure.properties.Settings;
 import org.slf4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Optional;
 
+// TODO: Redundent delete
+// Good example of open/closed principle. change database connection using new class instead of changing this one
+// example of using straight up connection
 public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectionManager {
 
     private static final String DATABASE_NAME = "shop_of_han_database";
@@ -21,22 +26,20 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
     }
 
     @Override
-    public Connection getDBConnection() {
+    public Optional<Connection> getDBConnection() {
         try {
             Connection connection = DriverManager.getConnection(
                     settings.databaseURL() + DATABASE_NAME + DATABASE_FLAGS,
                     settings.databaseUsername(),
                     settings.databasePassword());
             logger.info("db url " + settings.databaseURL());
-            return connection;
+
+            return Optional.of(connection);
         } catch(Exception e) {
             logger.info("db url " + settings.databaseURL());
             logger.error("exception in connection " + e);
             logger.error(e.getMessage());
         }
-        return null;
+        return Optional.empty();
     }
 }
-
-
-/// Database pooling???

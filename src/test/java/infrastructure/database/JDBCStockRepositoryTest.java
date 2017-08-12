@@ -15,18 +15,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class JDBCStockRepositoryTest  {
-
-    private Logger logger = mock(Logger.class);
-    private JDBCDatabaseConnectionManager databaseConnectionManager = mock(JDBCDatabaseConnectionManager.class);
-    private JDBCStockRepository jdbcStockRepository = new JDBCStockRepository(logger, databaseConnectionManager);
-    private Connection connection = mock(Connection.class);
-    private PreparedStatement statement = mock(PreparedStatement.class);
-    private ResultSet resultSet = mock(ResultSet.class);
+public class JDBCStockRepositoryTest {
 
     @Test
     public void returnProductById() throws Exception {
-        when(databaseConnectionManager.getDBConnection()).thenReturn(connection);
+        when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
         when(connection.prepareStatement("SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?")).thenReturn(statement);
         when(statement.executeQuery()).thenReturn(resultSet);
         when(resultSet.getString("product_name")).thenReturn("A Product");
@@ -40,7 +33,7 @@ public class JDBCStockRepositoryTest  {
 
     @Test
     public void returnProductByName() throws Exception {
-        when(databaseConnectionManager.getDBConnection()).thenReturn(connection);
+        when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
         when(connection.prepareStatement("SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?")).thenReturn(statement);
         when(statement.executeQuery()).thenReturn(resultSet);
         when(resultSet.getString("product_name")).thenReturn("A Product");
@@ -52,4 +45,10 @@ public class JDBCStockRepositoryTest  {
         assertThat(result.get()).isEqualTo(ProductStock.productStock(ProductName.productName("A Product"), 5));
     }
 
+    private final Logger logger = mock(Logger.class);
+    private final JDBCDatabaseConnectionManager databaseConnectionManager = mock(JDBCDatabaseConnectionManager.class);
+    private final Connection connection = mock(Connection.class);
+    private final PreparedStatement statement = mock(PreparedStatement.class);
+    private final ResultSet resultSet = mock(ResultSet.class);
+    private final JDBCStockRepository jdbcStockRepository = new JDBCStockRepository(logger, databaseConnectionManager);
 }

@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -27,7 +28,7 @@ public class DatabaseConnectionProbeTest implements WithAssertions {
     @Test
     public void failsOnSQLException() throws Exception {
         SQLException sqlException = new SQLException("message");
-        when(connectionProvider.getDBConnection()).thenReturn(connection);
+        when(connectionProvider.getDBConnection()).thenReturn(Optional.of(connection));
         when(connection.prepareStatement("SELECT 1 FROM DUAL")).thenThrow(sqlException);
 
         DatabaseConnectionProbe databaseConnectionProbe = new DatabaseConnectionProbe(logger, settings, connectionProvider);
@@ -41,7 +42,7 @@ public class DatabaseConnectionProbeTest implements WithAssertions {
 
     @Test
     public void failsWhenTestQueryHasNoResult() throws Exception {
-        when(connectionProvider.getDBConnection()).thenReturn(connection);
+        when(connectionProvider.getDBConnection()).thenReturn(Optional.of(connection));
         when(connection.prepareStatement("SELECT 1 FROM DUAL")).thenReturn(preparedStatement);
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(false);
@@ -56,7 +57,7 @@ public class DatabaseConnectionProbeTest implements WithAssertions {
 
     @Test
     public void failsWhenTestQueryHasBadResult() throws Exception {
-        when(connectionProvider.getDBConnection()).thenReturn(connection);
+        when(connectionProvider.getDBConnection()).thenReturn(Optional.of(connection));
         when(connection.prepareStatement("SELECT 1 FROM DUAL")).thenReturn(preparedStatement);
         when(preparedStatement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true);

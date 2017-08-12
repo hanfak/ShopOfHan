@@ -1,13 +1,13 @@
 package acceptancetests.stockcheck;
 
-import acceptancetests.AbstractAcceptanceTest;
+import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SpecRunner.class)
-public class CheckAmountOfProductInStockByNameTest extends AbstractAcceptanceTest {
+public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
 
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
