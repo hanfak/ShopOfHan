@@ -60,3 +60,7 @@ mysql -h localhost -P 3306 --protocol=tcp -uroot -p
 lsof -i tcp:8081
 
 kill -9 <pid>
+
+#### Hikari db pooling
+
+not working with docker at the momentc

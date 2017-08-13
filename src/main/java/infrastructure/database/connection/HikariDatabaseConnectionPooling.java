@@ -3,24 +3,22 @@ package infrastructure.database.connection;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import infrastructure.properties.PropertiesReader;
 import infrastructure.properties.Settings;
-import wiring.Wiring;
 
 import javax.sql.DataSource;
 
+
+// TODO: working on local, need to fix so it works via docker
 public class HikariDatabaseConnectionPooling {
-//    private final Settings settings;
     private static final String DATABASE_NAME = "shop_of_han_database";
-    private static final Settings settings = Wiring.settings();
+//    private static final Settings settings = Wiring.settings();
     private static DataSource datasource;
 
-//    public HikariDatabaseConnectionPooling(Settings settings) {
-//        this.settings = settings;
-//    }
 
     static DataSource getDataSource() {
         // TODO: How to avoid new up settings here? How to new up this object? Does method need to be static?
-//        Settings settings = new Settings(new PropertiesReader("localhost"));
+        Settings settings = new Settings(new PropertiesReader("localhost"));
         // TODO: Is using static for settings correct way
         if (datasource == null) {
             HikariConfig config = new HikariConfig();
@@ -36,6 +34,7 @@ public class HikariDatabaseConnectionPooling {
             config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
             config.addDataSourceProperty("verifyServerCertificate", "false");
             config.addDataSourceProperty("useSSL", "true");
+            config.addDataSourceProperty("connectTimeout", "3000");
 
             datasource = new HikariDataSource(config);
         }

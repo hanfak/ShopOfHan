@@ -10,7 +10,8 @@ import wiring.Wiring;
 public class TestWiring extends Wiring {
     // TODO singleton pattern
 
-    public static Settings settings() {
+    @Override
+    public  Settings settings() {
         return new Settings(new PropertiesReader("test"));
     }
 
