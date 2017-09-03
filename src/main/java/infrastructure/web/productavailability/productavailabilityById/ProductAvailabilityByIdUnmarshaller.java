@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
+import static domain.product.ProductId.productId;
+
 
 public class ProductAvailabilityByIdUnmarshaller implements Unmarshaller<ProductId> {
 
@@ -22,14 +24,10 @@ public class ProductAvailabilityByIdUnmarshaller implements Unmarshaller<Product
         String contextPath = request.getPathInfo().substring(1);
 
         try {
-            return ProductId.productId(contextPath);
+            return productId(contextPath);
         } catch (Exception e) {
             logger.error("Bad product id argument");
             throw e;
         }
-    }
-
-    private String extractName(String contextPath) {
-        return contextPath.split("/")[0];
     }
 }

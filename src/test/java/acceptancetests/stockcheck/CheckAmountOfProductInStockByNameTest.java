@@ -23,7 +23,7 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
         thenItReturnsAStatusCodeOf(404);
         thenTheResponseCodeIs404AndTheBodyIs("Product 'Harry Potter' is not stocked java.lang.IllegalStateException: Product is not found");
-        andThenContentTypeIs("Content-Type: text/plain;charset=iso-8859-1");
+        andThenContentTypeIs("Content-Type: text/plain");
     }
 
     @Test

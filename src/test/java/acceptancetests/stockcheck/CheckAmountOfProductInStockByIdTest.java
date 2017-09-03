@@ -23,7 +23,7 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
         thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");
-        andThenContentTypeIs("Content-Type: text/plain;charset=iso-8859-1");
+        andThenContentTypeIs("Content-Type: text/plain");
     }
 
     @Test

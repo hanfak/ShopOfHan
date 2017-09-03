@@ -5,8 +5,6 @@ import com.google.common.annotations.VisibleForTesting;
 import java.util.Arrays;
 import java.util.List;
 
-import static java.util.Collections.emptyList;
-
 public class EndPoint {
     public final String method;
     public final String path;
@@ -23,7 +21,7 @@ public class EndPoint {
         return new EndPoint("GET", path, Arrays.asList(parameterNames));
     }
 
-    public static EndPoint post(String path) {
-        return new EndPoint("POST", path, emptyList());
-    }
+//    public static EndPoint post(String path) {
+//        return new EndPoint("POST", path, emptyList());
+//    }
 }

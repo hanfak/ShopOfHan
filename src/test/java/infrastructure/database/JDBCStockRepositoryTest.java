@@ -2,7 +2,6 @@ package infrastructure.database;
 
 import domain.ProductStock;
 import domain.product.ProductId;
-import domain.product.ProductName;
 import org.junit.Test;
 import org.slf4j.Logger;
 
@@ -11,9 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Optional;
 
+import static domain.product.ProductName.productName;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class JDBCStockRepositoryTest {
 
@@ -28,7 +27,19 @@ public class JDBCStockRepositoryTest {
 
         Optional<ProductStock> result = jdbcStockRepository.checkStockById(ProductId.productId("abc1"));
 
-        assertThat(result.get()).isEqualTo(ProductStock.productStock(ProductName.productName("A Product"), 5));
+        assertThat(result.get()).isEqualTo(ProductStock.productStock(productName("A Product"), 5));
+    }
+
+    @Test
+    public void returnNoProductByIdIfNothingInTheDatabase() throws Exception {
+        when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
+        when(connection.prepareStatement("SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?")).thenReturn(statement);
+        when(statement.executeQuery()).thenReturn(resultSet);
+        when(resultSet.next()).thenReturn(false);
+
+        Optional<ProductStock> result = jdbcStockRepository.checkStockById(ProductId.productId("abc1"));
+
+        assertThat(result).isEqualTo(Optional.empty());
     }
 
     @Test
@@ -40,9 +51,31 @@ public class JDBCStockRepositoryTest {
         when(resultSet.getInt("amount")).thenReturn(5);
         when(resultSet.next()).thenReturn(true);
 
-        Optional<ProductStock> result = jdbcStockRepository.checkStockByName(ProductName.productName("A product name"));
+        Optional<ProductStock> result = jdbcStockRepository.checkStockByName(productName("A product name"));
 
-        assertThat(result.get()).isEqualTo(ProductStock.productStock(ProductName.productName("A Product"), 5));
+        assertThat(result.get()).isEqualTo(ProductStock.productStock(productName("A Product"), 5));
+    }
+
+    @Test
+    public void throwDatabaseErrorForName() throws Exception {
+        when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
+        when(connection.prepareStatement("sql statement")).thenThrow(new RuntimeException());
+
+
+        Optional<ProductStock> productStock = jdbcStockRepository.checkStockByName(productName("A product name"));
+
+        verify(logger).error("error java.lang.NullPointerException");
+    }
+
+    @Test
+    public void throwDatabaseErrorForId() throws Exception {
+        when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
+        when(connection.prepareStatement("sql statement")).thenThrow(new RuntimeException());
+
+
+        Optional<ProductStock> productStock = jdbcStockRepository.checkStockById(ProductId.productId("abc1"));
+
+        verify(logger).error("error java.lang.NullPointerException");
     }
 
     private final Logger logger = mock(Logger.class);

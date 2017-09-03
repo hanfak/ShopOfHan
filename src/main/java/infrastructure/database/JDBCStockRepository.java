@@ -37,7 +37,6 @@ public class JDBCStockRepository implements StockRepository {
         try {
             Optional<Connection> connection = databaseConnectionManager.getDBConnection();
             if (connection.isPresent()) {
-
                 try (Connection dbConnection = connection.get();
                      PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
 
@@ -45,10 +44,8 @@ public class JDBCStockRepository implements StockRepository {
                     if (resultSet.isPresent()) return resultSet;
                 }
             }
-
         } catch (Exception e) {
             logger.error("error " + e);
-            System.out.println(e);
         }
         return Optional.empty();
     }
@@ -83,7 +80,6 @@ public class JDBCStockRepository implements StockRepository {
                     ProductName.productName(resultSet.getString("product_name")),
                     resultSet.getInt("amount")));
         }
-
         resultSet.close();
         return Optional.empty();
     }

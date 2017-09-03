@@ -16,8 +16,8 @@ public class ProductIdTest {
     }
 
     @Test
-    public void productIdThrowsExceptionIfMoreThan10Characters() throws Exception {
-        Throwable thrown = catchThrowable(() -> {  ProductId.productId("abcdefghijklmno"); });
+    public void productIdThrowsExceptionIfThereIsASpace() throws Exception {
+        Throwable thrown = catchThrowable(() -> {  ProductId.productId("abc def"); });
         assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
     }
 }
