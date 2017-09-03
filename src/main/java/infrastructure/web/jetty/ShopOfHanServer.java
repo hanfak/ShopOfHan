@@ -7,7 +7,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 
 import static java.lang.String.format;
 
-public class    ShopOfHanServer implements WebServer {
+public class ShopOfHanServer implements WebServer {
 
     private final Server server;
 

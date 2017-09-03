@@ -6,10 +6,19 @@ import infrastructure.web.productavailability.productavailabilityname.ProductAva
 import infrastructure.web.server.EndPoint;
 import infrastructure.web.server.WebServerBuilder;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
+import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.zalando.logbook.DefaultHttpLogWriter;
+import org.zalando.logbook.Logbook;
+import org.zalando.logbook.servlet.LogbookFilter;
 
 import javax.servlet.http.HttpServlet;
+import java.util.EnumSet;
+
+import static javax.servlet.DispatcherType.*;
+import static org.slf4j.LoggerFactory.getLogger;
+import static org.zalando.logbook.DefaultHttpLogWriter.Level.INFO;
 
 public class JettyWebserverBuilder implements WebServerBuilder {
     private final Settings settings;
@@ -39,10 +48,19 @@ public class JettyWebserverBuilder implements WebServerBuilder {
 
     @Override
     public ShopOfHanServer build() {
+        addLoggingFilter();
         return new ShopOfHanServer(settings).withContext(servletHandler);
     }
 
     private void addServlet(HttpServlet httpServlet, EndPoint endPoint) {
         servletHandler.addServlet(new ServletHolder(httpServlet), endPoint.path);
+    }
+
+    private void addLoggingFilter() {
+        Logbook logbook = Logbook.builder()
+                .writer(new DefaultHttpLogWriter(getLogger(JettyWebserverBuilder.class), INFO))
+                .build();
+        FilterHolder filterHolder = new FilterHolder(new LogbookFilter(logbook));
+        servletHandler.addFilter(filterHolder, "/*", EnumSet.of(REQUEST, ASYNC, ERROR));
     }
 }
