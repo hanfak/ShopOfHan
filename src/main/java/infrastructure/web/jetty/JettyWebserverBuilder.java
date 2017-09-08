@@ -3,6 +3,7 @@ package infrastructure.web.jetty;
 import infrastructure.properties.Settings;
 import infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
+import infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdServlet;
 import infrastructure.web.server.EndPoint;
 import infrastructure.web.server.WebServerBuilder;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
@@ -43,6 +44,12 @@ public class JettyWebserverBuilder implements WebServerBuilder {
     @Override
     public WebServerBuilder registerStatusProbeEndPoint(EndPoint endPoint, StatusProbeServlet statusProbeServlet) {
         addServlet(statusProbeServlet, endPoint);
+        return this;
+    }
+
+    @Override
+    public WebServerBuilder registerproductStockCheckByIdEndPoint(EndPoint endPoint, ProductStockCheckByIdServlet productStockCheckByIdServlet) {
+        addServlet(productStockCheckByIdServlet, endPoint);
         return this;
     }
 

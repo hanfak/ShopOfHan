@@ -19,6 +19,7 @@ import infrastructure.web.productavailability.productavailabilityById.ProductAva
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameWebService;
+import infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdServlet;
 import infrastructure.web.server.WebServerBuilder;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class Wiring {
 
     // TODO singleton pattern
     public Settings settings() {
-        return new Settings(new PropertiesReader("localhost"));
+        return new Settings(new PropertiesReader("work"));
     }
 
     // TODO Extract to separate wiring for database
@@ -99,5 +100,9 @@ public class Wiring {
 
     WebServerBuilder webserverBuilder(Settings settings) {
         return new JettyWebserverBuilder(settings);
+    }
+
+    public ProductStockCheckByIdServlet productStockCheckByIdServlet() {
+        return new ProductStockCheckByIdServlet(unmarshaller, productStockCheckByIdWebService);
     }
 }

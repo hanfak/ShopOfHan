@@ -60,7 +60,7 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
     }
 
     private static final String HARRY_POTTER = "Harry%20Potter";
-    private static final String PATH = "http://localhost:8082/productscheck/name/";
+    private static final String PATH = "http://localhost:8081/productscheck/name/";
     private static final String JOY_OF_JAVA = "Joy%20Of%20Java";
-    private static final String BAD_URL = "http://localhost:8082/a/bad/url";
+    private static final String BAD_URL = "http://localhost:8081/a/bad/url";
 }

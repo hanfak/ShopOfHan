@@ -8,14 +8,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SpecRunner.class)
-public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
+public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends AcceptanceTest {
 
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
         when(weMake.aGetRequestTo(PATH + JOY_OF_JAVA_ID));
-        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\",\"amountInStock\": \"4\"}");
-        andThenContentTypeIs("application/json");
+        thenTheResponseCodeIs200AndTheBodyIs(EXPECTED_RESPONSE);
+//        andThenContentTypeIs("application/json");
     }
 
     @Test
@@ -60,6 +60,18 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
     }
 
     private static final String HARRY_POTTER = "HP1";
-    private static final String PATH = "http://localhost:8081/productscheck/id/";
+    private static final String PATH = "http://localhost:8081/fullProductStockCheck/id/";
     private static final String JOY_OF_JAVA_ID = "JOJ1";
+    private static final String EXPECTED_RESPONSE =
+            "{\"productName\": \"Joy Of Java\"," +
+                    "\"productId\": \"JOJ1\"," +
+//                    "\"productDescription\": \"blah blah\",s" +
+                    "\"stock\":" +
+                    "[" +
+                    "{" +
+                    "\"stockId\": \"1\"," +
+                    "\"amountInStock\": \"4\"," +
+//                    "\"stockDescription\": \"blah\"" +
+                    "}" +
+                    "]}";
 }

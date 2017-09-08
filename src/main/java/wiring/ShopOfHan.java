@@ -26,6 +26,7 @@ public class ShopOfHan {
         webserver = wiring.webserverBuilder(settings)
                 .registerProductAvailabilityByNameEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_NAME), wiring.productAvailabilityByNameServlet())
                 .registerProductAvailabilityByIdEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_ID), wiring.productAvailabilityByIdServlet())
+                .registerproductStockCheckByIdEndPoint(EndPoint.get(PRODUCT_STOCK_CHECK_BY_ID), wiring.productStockCheckByIdServlet())
                 .registerStatusProbeEndPoint(EndPoint.get(STATUS_PAGE), wiring.statusProbeServlet())
                 .build();
         webserver.start();
