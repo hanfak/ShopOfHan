@@ -2,6 +2,7 @@ package testinfrastructure;
 
 import application.crosscutting.StockRepository;
 import domain.ProductStock;
+import domain.ProductStockList;
 import domain.product.ProductId;
 import domain.product.ProductName;
 
@@ -35,6 +36,11 @@ public class TestStockRepository implements StockRepository {
                 .filter(stock -> getProductId(stock).equals(productId))
                 .findFirst()
                 .map(getStockProductStockFunction());
+    }
+
+    @Override
+    public Optional<ProductStockList> blah(ProductId productId) {
+        return null;
     }
 
     private void populateStock() {

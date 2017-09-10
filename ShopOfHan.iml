@@ -11,10 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.zalando:logbook-core:1.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.zalando:logbook-api:1.4.0" level="project" />
-    <orderEntry type="library" name="Maven: org.zalando:logbook-servlet:1.4.0" level="project" />
-    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.6.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.googlecode.yatspec:yatspec:1.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.googlecode.yatspec:yatspec:1.6" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-server:9.4.4.v20170414" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />

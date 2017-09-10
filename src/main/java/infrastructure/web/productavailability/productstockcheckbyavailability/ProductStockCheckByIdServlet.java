@@ -20,10 +20,8 @@ public class ProductStockCheckByIdServlet extends HttpServlet {
         this.productStockCheckByIdWebService = productStockCheckByIdWebService;
     }
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        response.getWriter().write("{\"productName\": \"Joy Of Java\",\"productId\": \"JOJ1\",\"stock\":[{\"stockId\": \"1\",\"amountInStock\": \"4\",}]}");
         RenderedContent renderedContent = productStockCheckByIdWebService.requestProductCheck(unmarshaller.unmarshall(request));
         renderedContent.render(response);
     }

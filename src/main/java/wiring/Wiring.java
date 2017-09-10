@@ -3,6 +3,7 @@ package wiring;
 import application.crosscutting.StockRepository;
 import application.productavailability.ProductCheckByIdUseCase;
 import application.productavailability.ProductCheckByNameUseCase;
+import application.productavailability.ProductStockCheckByIdUseCase;
 import infrastructure.database.JDBCDatabaseConnectionManager;
 import infrastructure.database.JDBCStockRepository;
 import infrastructure.database.connection.MySqlJDBCDatabaseConnectionManager;
@@ -19,7 +20,10 @@ import infrastructure.web.productavailability.productavailabilityById.ProductAva
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameUnmarshaller;
 import infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameWebService;
+import infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdMarshaller;
 import infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdServlet;
+import infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdUnmarshaller;
+import infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdWebService;
 import infrastructure.web.server.WebServerBuilder;
 import infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
@@ -32,7 +36,7 @@ public class Wiring {
 
     // TODO singleton pattern
     public Settings settings() {
-        return new Settings(new PropertiesReader("work"));
+        return new Settings(new PropertiesReader("localhost"));
     }
 
     // TODO Extract to separate wiring for database
@@ -103,6 +107,7 @@ public class Wiring {
     }
 
     public ProductStockCheckByIdServlet productStockCheckByIdServlet() {
-        return new ProductStockCheckByIdServlet(unmarshaller, productStockCheckByIdWebService);
+        return new ProductStockCheckByIdServlet(new ProductStockCheckByIdUnmarshaller(), new ProductStockCheckByIdWebService(new ProductStockCheckByIdMarshaller(), new ProductStockCheckByIdUseCase(stockRepository(), logger(ProductStockCheckByIdUseCase.class))));
     }
+//
 }

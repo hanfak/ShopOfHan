@@ -13,12 +13,13 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
-        when(weMake.aGetRequestTo(PATH + JOY_OF_JAVA_ID));
+        when(weMake.aGetRequestTo(PATH + SQL_THE_SEQUEL));
         thenTheResponseCodeIs200AndTheBodyIs(EXPECTED_RESPONSE);
 //        andThenContentTypeIs("application/json");
     }
 
     @Test
+    @Ignore
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
         thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");
@@ -62,15 +63,22 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     private static final String HARRY_POTTER = "HP1";
     private static final String PATH = "http://localhost:8081/fullProductStockCheck/id/";
     private static final String JOY_OF_JAVA_ID = "JOJ1";
+    private static final String SQL_THE_SEQUEL = "STS1";
+
     private static final String EXPECTED_RESPONSE =
-            "{\"productName\": \"Joy Of Java\"," +
-                    "\"productId\": \"JOJ1\"," +
+            "{\"productName\": \"SQL the sequel\"," +
+                    "\"productId\": \"STS1\"," +
 //                    "\"productDescription\": \"blah blah\",s" +
                     "\"stock\":" +
                     "[" +
                     "{" +
-                    "\"stockId\": \"1\"," +
-                    "\"amountInStock\": \"4\"," +
+                    "\"stockId\": \"STD1\"," +
+                    "\"amountInStock\": \"0\"" +
+//                    "\"stockDescription\": \"blah\"" +
+                    "}," +
+                    "{" +
+                    "\"stockId\": \"STD2\"," +
+                    "\"amountInStock\": \"3\"" +
 //                    "\"stockDescription\": \"blah\"" +
                     "}" +
                     "]}";
