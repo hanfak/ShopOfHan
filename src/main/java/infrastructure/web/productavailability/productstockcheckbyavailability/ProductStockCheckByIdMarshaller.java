@@ -1,7 +1,7 @@
 package infrastructure.web.productavailability.productstockcheckbyavailability;
 
 import domain.ProductStockList;
-import domain.Stock;
+import domain.stock.Stock;
 import infrastructure.web.Marshaller;
 
 import java.util.List;
@@ -30,12 +30,12 @@ public class ProductStockCheckByIdMarshaller implements Marshaller<ProductStockL
     }
 
     private String toJson(ProductStockList productStockList) {
-        return format(EXPECTED_BODY_FORMAT, productStockList.productName, productStockList.productId, productStockList.productDescription, listStockfill(productStockList.stock));
+        return format(EXPECTED_BODY_FORMAT, productStockList.product.productName, productStockList.product.productId, productStockList.product.productDescription, listStockfill(productStockList.stock));
     }
 
     private String listStockfill(List<Stock> stock) {
         return stock.stream()
-                .map(aStock -> format(EXPECTED_STOCK_FORMAT, aStock.stockId, aStock.amount, aStock.stockDescription))
+                .map(aStock -> format(EXPECTED_STOCK_FORMAT, aStock.stockId, aStock.amount.value, aStock.stockDescription))
                 .collect(Collectors.joining(","));
     }
 }

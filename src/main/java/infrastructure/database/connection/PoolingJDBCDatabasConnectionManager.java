@@ -1,6 +1,6 @@
 package infrastructure.database.connection;
 
-import infrastructure.database.JDBCDatabaseConnectionManager;
+import infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import org.slf4j.Logger;
 
 import javax.sql.DataSource;

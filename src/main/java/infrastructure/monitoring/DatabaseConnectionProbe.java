@@ -4,7 +4,7 @@ package infrastructure.monitoring;
 
 import domain.monitoring.ProbeResult;
 import domain.monitoring.StatusProbe;
-import infrastructure.database.JDBCDatabaseConnectionManager;
+import infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import infrastructure.properties.Settings;
 import org.slf4j.Logger;
 

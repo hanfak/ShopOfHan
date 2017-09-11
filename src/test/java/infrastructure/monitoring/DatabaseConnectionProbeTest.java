@@ -3,7 +3,7 @@ package infrastructure.monitoring;
 import domain.crosscutting.Logger;
 import domain.monitoring.ProbeResult;
 import domain.monitoring.ProbeStatus;
-import infrastructure.database.JDBCDatabaseConnectionManager;
+import infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import infrastructure.properties.Settings;
 import org.assertj.core.api.WithAssertions;
 import org.junit.Test;
@@ -14,7 +14,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class DatabaseConnectionProbeTest implements WithAssertions {
 

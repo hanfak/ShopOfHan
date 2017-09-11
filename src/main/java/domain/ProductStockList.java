@@ -1,26 +1,22 @@
 package domain;
 
 import domain.crosscutting.ValueType;
-import domain.product.ProductDescription;
-import domain.product.ProductId;
-import domain.product.ProductName;
+import domain.product.Product;
+import domain.stock.Stock;
 
 import java.util.List;
 
 public class ProductStockList extends ValueType {
-    public final ProductName productName;
-    public final ProductId productId;
-    public final ProductDescription productDescription;
+    // TODO extract Product object
+    public final Product product;
     public final List<Stock> stock;
 
-    private ProductStockList(ProductName productName, ProductId productId, ProductDescription productDescription, List<Stock> stock) {
-        this.productName = productName;
-        this.productId = productId;
-        this.productDescription = productDescription;
+    private ProductStockList(Product product, List<Stock> stock) {
+        this.product = product;
         this.stock = stock;
     }
 
-    public static ProductStockList productStockList(ProductName productName, ProductId productId, ProductDescription productDescription, List<Stock> stock){
-        return new ProductStockList(productName, productId, productDescription, stock);
+    public static ProductStockList productStockList(Product product, List<Stock> stock) {
+        return new ProductStockList(product, stock);
     }
 }

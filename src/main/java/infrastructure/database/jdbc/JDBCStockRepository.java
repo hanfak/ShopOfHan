@@ -1,12 +1,15 @@
-package infrastructure.database;
+package infrastructure.database.jdbc;
 
 import application.crosscutting.StockRepository;
 import domain.ProductStock;
 import domain.ProductStockList;
-import domain.Stock;
+import domain.product.Product;
 import domain.product.ProductDescription;
 import domain.product.ProductId;
 import domain.product.ProductName;
+import domain.stock.Stock;
+import domain.stock.StockAmount;
+import domain.stock.StockDescription;
 import org.slf4j.Logger;
 
 import java.sql.Connection;
@@ -19,9 +22,11 @@ import java.util.Optional;
 
 import static domain.ProductStock.productStock;
 import static domain.ProductStockList.productStockList;
-import static domain.Stock.stock;
+import static domain.product.Product.product;
 import static domain.product.ProductId.productId;
 import static domain.product.ProductName.productName;
+import static domain.stock.Stock.stock;
+import static domain.stock.StockId.stockId;
 
 // TODO Module test to test database is working
 @SuppressWarnings("Duplicates")
@@ -110,13 +115,14 @@ public class JDBCStockRepository implements StockRepository {
             productName = productName(resultSet.getString("product_name"));
             productIdRetrieved = Optional.of(productId(resultSet.getString("product_id")));
             productDescription = ProductDescription.productDescription(resultSet.getString("product_description"));
-            stock.add(stock(resultSet.getInt("amount"), resultSet.getString("stock_id"), resultSet.getString("stock_description")));
+            stock.add(stock(StockAmount.stockAmount(resultSet.getInt("amount")), stockId(resultSet.getString("stock_id")), StockDescription.stockDescription(resultSet.getString("stock_description"))));
         }
 
         resultSet.close();
 
         if (productIdRetrieved.isPresent()) {
-            return Optional.of(productStockList(productName, productIdRetrieved.get(), productDescription, stock));
+            Product product = product(productDescription, productIdRetrieved.get(), productName);
+            return Optional.of(productStockList(product, stock));
         }
         return Optional.empty();
 

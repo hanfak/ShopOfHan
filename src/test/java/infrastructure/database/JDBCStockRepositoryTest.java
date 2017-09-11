@@ -2,6 +2,8 @@ package infrastructure.database;
 
 import domain.ProductStock;
 import domain.product.ProductId;
+import infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
+import infrastructure.database.jdbc.JDBCStockRepository;
 import org.junit.Test;
 import org.slf4j.Logger;
 
@@ -12,7 +14,9 @@ import java.util.Optional;
 
 import static domain.product.ProductName.productName;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 public class JDBCStockRepositoryTest {
 

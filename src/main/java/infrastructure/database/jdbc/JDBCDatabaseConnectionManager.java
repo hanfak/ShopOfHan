@@ -1,4 +1,4 @@
-package infrastructure.database;
+package infrastructure.database.jdbc;
 
 import java.sql.Connection;
 import java.util.Optional;
