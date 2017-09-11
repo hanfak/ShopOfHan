@@ -26,17 +26,18 @@ CREATE TABLE stock
 ) ENGINE=INNODB;
 
 INSERT INTO product (product_name, product_description, product_id) VALUES
-('Joy Of Java','', 'JOJ1'),
-('SQL the sequel','', 'STS1');
+('Joy Of Java','Book about java', 'JOJ1'),
+('SQL the sequel','Book about SQL', 'STS1'),
+('Scala the mountian','Book about Scala', 'SCM1');
 
 INSERT INTO stock (product_id, stock_id, stock_description, amount) VALUES
-(1, 'STD1', '', 4),
-(2, 'STD1', '', 0),
-(2, 'STD2', '', 3);
+(1, 'STD1', 'Single Pack', 4),
+(2, 'STD1', 'Single Pack', 0),
+(2, 'STD2', 'Multi Pack', 3);
 
 SELECT * FROM product WHERE id IN (SELECT product_id FROM stock);
 SELECT * FROM stock WHERE id IN (SELECT product_id FROM stock);
 
 SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name='Joy Of Java';
 SELECT product.product_name, stock.amount, stock.stock_id FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id='STS1';
-SELECT product.product_name, product.product_id, stock.amount, stock.stock_id FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id='STS1';
+SELECT product.product_name, product.product_id, product.product_description, stock.amount, stock.stock_id, stock.stock_description FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id='STS1';

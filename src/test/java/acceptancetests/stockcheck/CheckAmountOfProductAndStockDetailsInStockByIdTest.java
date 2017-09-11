@@ -3,7 +3,6 @@ package acceptancetests.stockcheck;
 import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -25,12 +24,7 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
         andThenContentTypeIs("Content-Type: text/plain");
     }
 
-    @Test
-    @Ignore
-    public void shouldReturnMultipleStockTypesForOneProduct() throws Exception {
-        given(theSystemIsRunning());
-        when(weMake.aGetRequestTo(PATH + JOY_OF_JAVA_ID));
-    }
+    // Todo: test if product is there but no stock
 
     private GivensBuilder theSystemIsRunning() {
         testState().interestingGivens.add("productName","Joy Of Java");
@@ -67,18 +61,18 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     private static final String EXPECTED_RESPONSE =
             "{\"productName\": \"SQL the sequel\"," +
                     "\"productId\": \"STS1\"," +
-//                    "\"productDescription\": \"findListOfProductStock findListOfProductStock\",s" +
+                    "\"productDescription\": \"Book about SQL\"," +
                     "\"stock\":" +
                     "[" +
                     "{" +
                     "\"stockId\": \"STD1\"," +
-                    "\"amountInStock\": \"0\"" +
-//                    "\"stockDescription\": \"findListOfProductStock\"" +
+                    "\"amountInStock\": \"0\"," +
+                    "\"stockDescription\": \"Single Pack\"" +
                     "}," +
                     "{" +
                     "\"stockId\": \"STD2\"," +
-                    "\"amountInStock\": \"3\"" +
-//                    "\"stockDescription\": \"findListOfProductStock\"" +
+                    "\"amountInStock\": \"3\"," +
+                    "\"stockDescription\": \"Multi Pack\"" +
                     "}" +
                     "]}";
 }

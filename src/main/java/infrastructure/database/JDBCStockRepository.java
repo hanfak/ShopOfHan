@@ -4,6 +4,7 @@ import application.crosscutting.StockRepository;
 import domain.ProductStock;
 import domain.ProductStockList;
 import domain.Stock;
+import domain.product.ProductDescription;
 import domain.product.ProductId;
 import domain.product.ProductName;
 import org.slf4j.Logger;
@@ -28,7 +29,7 @@ public class JDBCStockRepository implements StockRepository {
 
     private static final String SQL_STATEMENT = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?";
     private static final String SQL_STATEMENT_TWO = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
-    private static final String SQL_STATEMENT_THREE = "SELECT product.product_name, product.product_id, stock.amount, stock.stock_id FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
+    private static final String SQL_STATEMENT_THREE = "SELECT product.product_name, product.product_id, product.product_description, stock.amount, stock.stock_id, stock.stock_description FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
     private final Logger logger;
     private final JDBCDatabaseConnectionManager databaseConnectionManager;
 
@@ -102,18 +103,20 @@ public class JDBCStockRepository implements StockRepository {
 
         List<Stock> stock = new ArrayList<>();
         ProductName productName = null;
+        ProductDescription productDescription = null;
         Optional<ProductId> productIdRetrieved = Optional.empty();
         while (resultSet.next()) {
             logger.info("Getting data from database and storing in java pojo"); // TODO test
             productName = productName(resultSet.getString("product_name"));
             productIdRetrieved = Optional.of(productId(resultSet.getString("product_id")));
-            stock.add(stock(resultSet.getInt("amount"), resultSet.getString("stock_id")));
+            productDescription = ProductDescription.productDescription(resultSet.getString("product_description"));
+            stock.add(stock(resultSet.getInt("amount"), resultSet.getString("stock_id"), resultSet.getString("stock_description")));
         }
 
         resultSet.close();
 
         if (productIdRetrieved.isPresent()) {
-            return Optional.of(productStockList(productName, productIdRetrieved.get(), stock));
+            return Optional.of(productStockList(productName, productIdRetrieved.get(), productDescription, stock));
         }
         return Optional.empty();
 
