@@ -1,30 +1,30 @@
 package testinfrastructure;
 
-import application.crosscutting.StockRepository;
-import domain.ProductStock;
-import domain.ProductStockList;
-import domain.product.Product;
-import domain.product.ProductId;
-import domain.product.ProductName;
-import domain.stock.Stock;
-import domain.stock.StockAmount;
-import domain.stock.StockDescription;
-import domain.stock.StockId;
+import hanfak.shopofhan.application.crosscutting.StockRepository;
+import hanfak.shopofhan.domain.ProductStock;
+import hanfak.shopofhan.domain.ProductStockList;
+import hanfak.shopofhan.domain.product.Product;
+import hanfak.shopofhan.domain.product.ProductId;
+import hanfak.shopofhan.domain.product.ProductName;
+import hanfak.shopofhan.domain.stock.Stock;
+import hanfak.shopofhan.domain.stock.StockAmount;
+import hanfak.shopofhan.domain.stock.StockDescription;
+import hanfak.shopofhan.domain.stock.StockId;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 
-import static domain.ProductStock.productStock;
-import static domain.ProductStockList.productStockList;
-import static domain.product.Product.product;
-import static domain.product.ProductDescription.productDescription;
-import static domain.product.ProductId.productId;
-import static domain.product.ProductName.productName;
-import static domain.stock.Stock.stock;
-import static domain.stock.StockAmount.stockAmount;
-import static domain.stock.StockId.stockId;
+import static hanfak.shopofhan.domain.ProductStock.productStock;
+import static hanfak.shopofhan.domain.ProductStockList.productStockList;
+import static hanfak.shopofhan.domain.product.Product.product;
+import static hanfak.shopofhan.domain.product.ProductDescription.productDescription;
+import static hanfak.shopofhan.domain.product.ProductId.productId;
+import static hanfak.shopofhan.domain.product.ProductName.productName;
+import static hanfak.shopofhan.domain.stock.Stock.stock;
+import static hanfak.shopofhan.domain.stock.StockAmount.stockAmount;
+import static hanfak.shopofhan.domain.stock.StockId.stockId;
 import static java.util.Arrays.asList;
 
 public class TestStockRepository implements StockRepository {

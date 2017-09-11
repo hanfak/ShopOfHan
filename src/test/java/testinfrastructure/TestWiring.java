@@ -1,9 +1,9 @@
 package testinfrastructure;
 
-import wiring.Wiring;
+import hanfak.shopofhan.wiring.Wiring;
 
 
-// interface for both wiring and TestWiring
+// interface for both hanfak.shopofhan.wiring and TestWiring
 public class TestWiring extends Wiring {
     // TODO singleton pattern
 //

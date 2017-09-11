@@ -13,8 +13,8 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
         when(weMake.aGetRequestTo(PATH + JOY_OF_JAVA_ID));
-        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\",\"amountInStock\": \"4\"}");
-        andThenContentTypeIs("application/json");
+        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\", \"amountInStock\": \"4\"}");
+        andThenContentTypeIs("hanfak/shopofhan/application/json");
     }
 
     @Test
@@ -23,6 +23,8 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
         thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");
         andThenContentTypeIs("Content-Type: text/plain");
     }
+
+    // TODO multiple different stock checks will return first one only (new user story)
 
     private GivensBuilder theSystemIsRunning() {
         testState().interestingGivens.add("productName","Joy Of Java");

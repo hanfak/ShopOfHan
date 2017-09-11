@@ -23,7 +23,7 @@ public class Whens {
 
     public ActionUnderTest aGetRequestTo(String uri) {
         //TODO Add builder to build request
-        // hydra/src/test/java/sky/sns/hydra/infrastructure/httpclient/TrackingApacheHttpClientFactoryTest.java:38
+        // hydra/src/test/java/sky/sns/hydra/hanfak.shopofhan.infrastructure/httpclient/TrackingApacheHttpClientFactoryTest.java:38
 //        Request request = new RequestBuilder().url(uri).method("GET").body("").build();
         return (interestingGivens, capturedInputAndOutputs) -> whenWeMakeARequestTo(capturedInputAndOutputs, new HttpGet(uri));
     }

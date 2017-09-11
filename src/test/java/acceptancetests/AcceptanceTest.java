@@ -9,11 +9,11 @@ import com.googlecode.yatspec.plugin.sequencediagram.SvgWrapper;
 import com.googlecode.yatspec.rendering.html.DontHighlightRenderer;
 import com.googlecode.yatspec.rendering.html.HtmlResultRenderer;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
-import infrastructure.properties.Settings;
+import hanfak.shopofhan.infrastructure.properties.Settings;
+import hanfak.shopofhan.wiring.ShopOfHan;
 import org.junit.After;
 import org.junit.Before;
 import testinfrastructure.TestWiring;
-import wiring.ShopOfHan;
 
 import static java.util.Collections.singletonList;
 

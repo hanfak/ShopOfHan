@@ -1,12 +1,12 @@
 //package documentationtests;
 //
-//import application.ProductCheckUseCase;
+//import hanfak.shopofhan.application.ProductCheckUseCase;
 //import com.googlecode.yatspec.junit.SpecRunner;
-//import domain.ProductName;
-//import domain.ProductStock;
-//import application.crosscutting.ProductToCheck;
-//import application.crosscutting.StockRepository;
-//import infrastructure.web.productavailability.ProductAvailabilityRequest;
+//import hanfak.shopofhan.domain.ProductName;
+//import hanfak.shopofhan.domain.ProductStock;
+//import hanfak.shopofhan.application.crosscutting.ProductToCheck;
+//import hanfak.shopofhan.application.crosscutting.StockRepository;
+//import hanfak.shopofhan.infrastructure.web.productavailability.ProductAvailabilityRequest;
 //import org.junit.Test;
 //import org.junit.runner.RunWith;
 //import org.slf4j.Logger;

@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <root.package>hanfak.shopofhan</root.package>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <skipTests>false</skipTests>
         <sonar.language>java</sonar.language>
@@ -30,7 +31,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>infrastructure.ShopOfHan</mainClass>
+                            <mainClass>hanfak.shopofhan.infrastructure.ShopOfHan</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -61,7 +62,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>wiring/ShopOfHan</mainClass>
+                                    <mainClass>hanfak.shopofhan.wiring/ShopOfHan</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
@@ -161,15 +162,22 @@
                     <!--<parseSurefireConfig>false</parseSurefireConfig>-->
                     <!--<exportLineCoverage>true</exportLineCoverage>-->
                     <!--<targetClasses>-->
-                        <!--<targetClass>${project.basedir}.*</targetClass>-->
+                        <!--<targetClass>${root.package}.*</targetClass>-->
                     <!--</targetClasses>-->
                     <!--<targetTests>-->
-                        <!--<targetTest>${project.basedir}.*</targetTest>-->
+                        <!--<targetTest>${root.package}.*</targetTest>-->
                         <!--<targetTest>acceptancetests.*</targetTest>-->
                         <!--&lt;!&ndash;<targetTest>moduletests.*</targetTest>&ndash;&gt;-->
                         <!--&lt;!&ndash;<targetTest>pacttests.*</targetTest>&ndash;&gt;-->
                         <!--&lt;!&ndash;<targetTest>documentation.*</targetTest>&ndash;&gt;-->
                     <!--</targetTests>-->
+                    <!--<excludedClasses>-->
+
+                        <!--<excludedClass>hanfak.shopofhan.wiring</excludedClass>-->
+                        <!--&lt;!&ndash;<excludedClass></excludedClass>&ndash;&gt;-->
+
+                    <!--</excludedClasses>-->
+
                 <!--</configuration>-->
                 <!--<executions>-->
                     <!--<execution>-->
@@ -180,6 +188,8 @@
                     <!--</execution>-->
                 <!--</executions>-->
             <!--</plugin>-->
+
+
 
             <!-- Code coverage (used to integrate with https://codecov.io/) -->
             <plugin>

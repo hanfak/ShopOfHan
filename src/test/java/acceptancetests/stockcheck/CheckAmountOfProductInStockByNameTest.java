@@ -14,8 +14,8 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
         given(theSystemIsRunning());
         when(weMake.aGetRequestTo(PATH + JOY_OF_JAVA));
         thenItReturnsAStatusCodeOf(200);
-        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\",\"amountInStock\": \"4\"}");
-        andThenContentTypeIs("application/json");
+        thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\", \"amountInStock\": \"4\"}");
+        andThenContentTypeIs("hanfak/shopofhan/application/json");
     }
 
     @Test
@@ -31,6 +31,9 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
         when(weMake.aGetRequestTo(BAD_URL));
         thenItReturnsAStatusCodeOf(404);
     }
+
+    // TODO multiple different stock checks will return first one only (new user story)
+
 
     private GivensBuilder theSystemIsRunning() {
         testState().interestingGivens.add("productName", "Joy Of Java");

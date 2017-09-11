@@ -14,7 +14,7 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
         given(theSystemIsRunning());
         when(weMake.aGetRequestTo(PATH + SQL_THE_SEQUEL));
         thenTheResponseCodeIs200AndTheBodyIs(EXPECTED_RESPONSE);
-        andThenContentTypeIs("application/json");
+        andThenContentTypeIs("hanfak/shopofhan/application/json");
     }
 
     @Test
