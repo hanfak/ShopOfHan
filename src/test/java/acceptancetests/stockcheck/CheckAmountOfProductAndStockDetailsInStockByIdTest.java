@@ -55,7 +55,6 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
 
     private static final String HARRY_POTTER = "HP1";
     private static final String PATH = "http://localhost:8081/fullProductStockCheck/id/";
-    private static final String JOY_OF_JAVA_ID = "JOJ1";
     private static final String SQL_THE_SEQUEL = "STS1";
 
     private static final String EXPECTED_RESPONSE =

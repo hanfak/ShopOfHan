@@ -3,6 +3,7 @@ package testinfrastructure;
 import application.crosscutting.StockRepository;
 import domain.ProductStock;
 import domain.ProductStockList;
+import domain.Stock;
 import domain.product.ProductId;
 import domain.product.ProductName;
 
@@ -12,76 +13,59 @@ import java.util.Optional;
 import java.util.function.Function;
 
 import static domain.ProductStock.productStock;
+import static domain.ProductStockList.productStockList;
+import static domain.Stock.stock;
+import static domain.product.ProductDescription.productDescription;
 import static domain.product.ProductId.productId;
 import static domain.product.ProductName.productName;
+import static java.util.Arrays.asList;
 
 public class TestStockRepository implements StockRepository {
 
     @SuppressWarnings("WeakerAccess")
     public TestStockRepository() {
-        populateStock();
+        populateProductStockLists();
     }
 
     @Override
     public Optional<ProductStock> checkStockByName(ProductName productName) {
-        return stock.stream()
-                .filter(stock -> getProductName(stock).equals(productName))
+        return productStockLists.stream()
+                .filter(product -> product.productName.equals(productName))
                 .findFirst()
-                .map(getStockProductStockFunction());
+                .map(getProductStock());
     }
 
     @Override
     public Optional<ProductStock> checkStockById(ProductId productId) {
-        return stock.stream()
-                .filter(stock -> getProductId(stock).equals(productId))
+        return productStockLists.stream()
+                .filter(product -> product.productId.equals(productId))
                 .findFirst()
-                .map(getStockProductStockFunction());
+                .map(getProductStock());
     }
 
     @Override
     public Optional<ProductStockList> findListOfProductStock(ProductId productId) {
-        return null;
+        return productStockLists.stream()
+                .filter(product -> product.productId.equals(productId))
+                .findFirst();
     }
 
-    private void populateStock() {
-        stock.add(JOY_OF_JAVA);
-        stock.add(SQL_THE_SEQUEL);
+    private Function<ProductStockList, ProductStock> getProductStock() {
+        return productStockList -> productStock(productStockList.productName, getAmountFromFirstProductStockList(productStockList));
     }
 
-    private Function<Stock, ProductStock> getStockProductStockFunction() {
-        return requiredStock -> productStock(getProductName(requiredStock), requiredStock.amount);
+    private Integer getAmountFromFirstProductStockList(ProductStockList productStockList) {
+        return productStockList.stock.stream().findFirst().get().amount;
     }
 
-    private ProductId getProductId(Stock stock) {
-        return stock.product.productId;
+    private void populateProductStockLists() {
+        productStockLists.add(JOY_OF_JAVA);
+        productStockLists.add(SQL_THE_SEQUEL);
     }
 
-    private ProductName getProductName(Stock requiredStock) {
-        return requiredStock.product.productName;
-    }
-
-    private static final List<ProductStock> productStocks = new ArrayList<>();
-    private static final List<Stock> stock = new ArrayList<>();
-    private static final Stock JOY_OF_JAVA = new Stock(new Product(productId("JOJ1"), productName("Joy Of Java")), 4);
-    private static final Stock SQL_THE_SEQUEL = new Stock(new Product(productId("STS1"), productName("SQL the sequel")), 0);
-
-    static class Stock {
-        Product product;
-        Integer amount;
-
-        Stock(Product product, Integer amount) {
-            this.product = product;
-            this.amount = amount;
-        }
-    }
-
-    static class Product {
-        ProductId productId;
-        ProductName productName;
-
-        Product(ProductId productId, ProductName productName) {
-            this.productId = productId;
-            this.productName = productName;
-        }
-    }
+    private static final List<ProductStockList> productStockLists = new ArrayList<>();
+    private static final List<Stock> JOY_OF_JAVA_STOCK = new ArrayList<>(asList(stock(4, "STD1", "Single Pack")));
+    private static final ProductStockList JOY_OF_JAVA = productStockList(productName("Joy Of Java"), productId("JOJ1"), productDescription("Book about java"), JOY_OF_JAVA_STOCK);
+    private static final List<Stock> SQL_THE_SEQUEL_STOCK = new ArrayList<>(asList(stock(0, "STD1", "Single Pack"), stock(3, "STD2", "Multi Pack")));
+    private static final ProductStockList SQL_THE_SEQUEL = productStockList(productName("SQL the sequel"), productId("STS1"), productDescription("Book about SQL"), SQL_THE_SEQUEL_STOCK);
 }

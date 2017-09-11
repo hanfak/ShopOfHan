@@ -3,7 +3,6 @@ package acceptancetests.stockcheck;
 import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -23,13 +22,6 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
         thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");
         andThenContentTypeIs("Content-Type: text/plain");
-    }
-
-    @Test
-    @Ignore
-    public void shouldReturnMultipleStockTypesForOneProduct() throws Exception {
-        given(theSystemIsRunning());
-        when(weMake.aGetRequestTo(PATH + JOY_OF_JAVA_ID));
     }
 
     private GivensBuilder theSystemIsRunning() {
