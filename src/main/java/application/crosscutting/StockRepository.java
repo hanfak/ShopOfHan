@@ -12,5 +12,5 @@ public interface StockRepository {
 
     Optional<ProductStock> checkStockById(ProductId productId);
 
-    Optional<ProductStockList> blah(ProductId productId);
+    Optional<ProductStockList> findListOfProductStock(ProductId productId);
 }

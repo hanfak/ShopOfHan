@@ -20,9 +20,9 @@ public class ProductStockCheckByIdUseCase {
 
     public ProductStockList checkStock(ProductId productId) {
         logger.info(format("checking stock by Id '%s'", productId)); // TODO test
-        Optional<ProductStockList> checkStock = stockRepository.blah(productId);
+        Optional<ProductStockList> checkStock = stockRepository.findListOfProductStock(productId);
 //        logResultOfStockCheck(checkStock);
-//        ProductStockList productStock = checkStock.orElseThrow(this::illegalStateException);
+        ProductStockList productStock = checkStock.orElseThrow(this::illegalStateException);
 //        logger.info("Stock is there");
 
         return checkStock.get();
@@ -36,8 +36,8 @@ public class ProductStockCheckByIdUseCase {
 //        }
 //    }
 //
-//    private IllegalStateException illegalStateException() {
-//        logger.info("Stock not there");
-//        return new IllegalStateException("Product is not found");
-//    }
+    private IllegalStateException illegalStateException() {
+        logger.info("Stock not there");
+        return new IllegalStateException("Product is not found");
+    }
 }

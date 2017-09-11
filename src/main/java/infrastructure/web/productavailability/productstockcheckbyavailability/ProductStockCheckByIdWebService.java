@@ -6,7 +6,9 @@ import domain.product.ProductId;
 import infrastructure.web.Marshaller;
 import infrastructure.web.RenderedContent;
 
+import static infrastructure.web.RenderedContent.errorContent;
 import static infrastructure.web.RenderedContent.jsonContent;
+import static java.lang.String.format;
 
 public class ProductStockCheckByIdWebService {
     private final ProductStockCheckByIdUseCase productStockCheckByIdUseCase;
@@ -18,7 +20,11 @@ public class ProductStockCheckByIdWebService {
     }
 
     public RenderedContent requestProductCheck(ProductId productId) {
-        ProductStockList productStockList = productStockCheckByIdUseCase.checkStock(productId);
-        return jsonContent(marshaller.marshall(productStockList));
+        try {
+            ProductStockList productStockList = productStockCheckByIdUseCase.checkStock(productId);
+            return jsonContent(marshaller.marshall(productStockList));
+        } catch (IllegalStateException e) {
+            return errorContent(format("Product '%s' is not stocked %s", productId.value, e.toString()));
+        }
     }
 }

@@ -39,7 +39,7 @@ public class TestStockRepository implements StockRepository {
     }
 
     @Override
-    public Optional<ProductStockList> blah(ProductId productId) {
+    public Optional<ProductStockList> findListOfProductStock(ProductId productId) {
         return null;
     }
 

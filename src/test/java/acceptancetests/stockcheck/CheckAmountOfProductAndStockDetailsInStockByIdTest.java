@@ -15,11 +15,10 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
         given(theSystemIsRunning());
         when(weMake.aGetRequestTo(PATH + SQL_THE_SEQUEL));
         thenTheResponseCodeIs200AndTheBodyIs(EXPECTED_RESPONSE);
-//        andThenContentTypeIs("application/json");
+        andThenContentTypeIs("application/json");
     }
 
     @Test
-    @Ignore
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
         thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");
@@ -68,18 +67,18 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     private static final String EXPECTED_RESPONSE =
             "{\"productName\": \"SQL the sequel\"," +
                     "\"productId\": \"STS1\"," +
-//                    "\"productDescription\": \"blah blah\",s" +
+//                    "\"productDescription\": \"findListOfProductStock findListOfProductStock\",s" +
                     "\"stock\":" +
                     "[" +
                     "{" +
                     "\"stockId\": \"STD1\"," +
                     "\"amountInStock\": \"0\"" +
-//                    "\"stockDescription\": \"blah\"" +
+//                    "\"stockDescription\": \"findListOfProductStock\"" +
                     "}," +
                     "{" +
                     "\"stockId\": \"STD2\"," +
                     "\"amountInStock\": \"3\"" +
-//                    "\"stockDescription\": \"blah\"" +
+//                    "\"stockDescription\": \"findListOfProductStock\"" +
                     "}" +
                     "]}";
 }
