@@ -1,15 +1,14 @@
-package hanfak.shopofhan.infrastructure.database;
+package hanfak.shopofhan.infrastructure.database.jdbc;
 
 import hanfak.shopofhan.domain.ProductStock;
 import hanfak.shopofhan.domain.product.ProductId;
-import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
-import hanfak.shopofhan.infrastructure.database.jdbc.JDBCStockRepository;
 import org.junit.Test;
 import org.slf4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Optional;
 
 import static hanfak.shopofhan.domain.product.ProductName.productName;
@@ -23,7 +22,7 @@ public class JDBCStockRepositoryTest {
     @Test
     public void returnProductById() throws Exception {
         when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
-        when(connection.prepareStatement("SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?")).thenReturn(statement);
+        when(connection.prepareStatement(QUERY_PRODUCT_ID)).thenReturn(statement);
         when(statement.executeQuery()).thenReturn(resultSet);
         when(resultSet.getString("product_name")).thenReturn("A Product");
         when(resultSet.getInt("amount")).thenReturn(5);
@@ -37,7 +36,7 @@ public class JDBCStockRepositoryTest {
     @Test
     public void returnNoProductByIdIfNothingInTheDatabase() throws Exception {
         when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
-        when(connection.prepareStatement("SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?")).thenReturn(statement);
+        when(connection.prepareStatement(QUERY_PRODUCT_ID)).thenReturn(statement);
         when(statement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(false);
 
@@ -49,7 +48,7 @@ public class JDBCStockRepositoryTest {
     @Test
     public void returnProductByName() throws Exception {
         when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
-        when(connection.prepareStatement("SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?")).thenReturn(statement);
+        when(connection.prepareStatement(QUERY_PRODUCT_NAME)).thenReturn(statement);
         when(statement.executeQuery()).thenReturn(resultSet);
         when(resultSet.getString("product_name")).thenReturn("A Product");
         when(resultSet.getInt("amount")).thenReturn(5);
@@ -61,12 +60,23 @@ public class JDBCStockRepositoryTest {
     }
 
     @Test
+    public void returnNoProductByNameIfNothingInTheDatabase() throws Exception {
+        when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
+        when(connection.prepareStatement(QUERY_PRODUCT_NAME)).thenReturn(statement);
+        when(statement.executeQuery()).thenReturn(resultSet);
+        when(resultSet.next()).thenReturn(false);
+
+        Optional<ProductStock> result = jdbcStockRepository.checkStockByName(productName("A product name"));
+
+        assertThat(result).isEqualTo(Optional.empty());
+    }
+
+    @Test
     public void throwDatabaseErrorForName() throws Exception {
         when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
-        when(connection.prepareStatement("sql statement")).thenThrow(new RuntimeException());
+        when(connection.prepareStatement("sql statement")).thenThrow(new SQLException());
 
-
-        Optional<ProductStock> productStock = jdbcStockRepository.checkStockByName(productName("A product name"));
+        jdbcStockRepository.checkStockByName(productName("A product name"));
 
         verify(logger).error("error java.lang.NullPointerException");
     }
@@ -74,24 +84,16 @@ public class JDBCStockRepositoryTest {
     @Test
     public void throwDatabaseErrorForId() throws Exception {
         when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
-        when(connection.prepareStatement("sql statement")).thenThrow(new RuntimeException());
+        when(connection.prepareStatement("sql statement")).thenThrow(new SQLException());
 
 
-        Optional<ProductStock> productStock = jdbcStockRepository.checkStockById(ProductId.productId("abc1"));
-
-        verify(logger).error("error java.lang.NullPointerException");
-    }
-
-    @Test
-    public void throwDatabaseErrorForProductAndStockById() throws Exception {
-        when(databaseConnectionManager.getDBConnection()).thenReturn(Optional.of(connection));
-        when(connection.prepareStatement("sql statement")).thenThrow(new RuntimeException());
-
-
-        jdbcStockRepository.findListOfProductStock(ProductId.productId("abc1"));
+        jdbcStockRepository.checkStockById(ProductId.productId("abc1"));
 
         verify(logger).error("error java.lang.NullPointerException");
     }
+
+    private static final String QUERY_PRODUCT_ID = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
+    private static final String QUERY_PRODUCT_NAME = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?";
 
     private final Logger logger = mock(Logger.class);
     private final JDBCDatabaseConnectionManager databaseConnectionManager = mock(JDBCDatabaseConnectionManager.class);

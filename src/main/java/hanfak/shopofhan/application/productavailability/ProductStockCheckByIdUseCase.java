@@ -1,6 +1,6 @@
 package hanfak.shopofhan.application.productavailability;
 
-import hanfak.shopofhan.application.crosscutting.StockRepository;
+import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.domain.ProductStockList;
 import hanfak.shopofhan.domain.product.ProductId;
 import org.slf4j.Logger;
@@ -10,10 +10,10 @@ import java.util.Optional;
 import static java.lang.String.format;
 
 public class ProductStockCheckByIdUseCase {
-    private final StockRepository stockRepository;
+    private final ProductStockRepository stockRepository;
     private final Logger logger;
 
-    public ProductStockCheckByIdUseCase(StockRepository stockRepository, Logger logger) {
+    public ProductStockCheckByIdUseCase(ProductStockRepository stockRepository, Logger logger) {
         this.stockRepository = stockRepository;
         this.logger = logger;
     }

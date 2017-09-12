@@ -18,6 +18,7 @@ public class ProductIdTest {
     @Test
     public void productIdThrowsExceptionIfThereIsASpace() throws Exception {
         Throwable thrown = catchThrowable(() -> {  ProductId.productId("abc def"); });
-        assertThat(thrown).isInstanceOf(IllegalArgumentException.class);
+        assertThat(thrown).isInstanceOf(IllegalArgumentException.class)
+                            .hasMessage("illegal product id: contains a space or more than 10 characters");
     }
 }

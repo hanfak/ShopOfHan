@@ -11,7 +11,7 @@ public class ProductId extends SingleValueType<String> {
         if (validate(productId)) {
             return new ProductId(productId);
         } else {
-            throw new IllegalArgumentException("illegal product id");
+            throw new IllegalArgumentException("illegal product id: contains a space or more than 10 characters");
         }
     }
 

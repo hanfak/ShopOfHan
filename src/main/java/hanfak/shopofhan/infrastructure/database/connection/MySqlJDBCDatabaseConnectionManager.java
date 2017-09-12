@@ -28,7 +28,7 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
     @Override
     public Optional<Connection> getDBConnection() {
         try {
-            Connection connection = DriverManager.getConnection(
+            Connection connection = DriverManager.getConnection( // tODOTry with resuorces
                     settings.databaseURL() + DATABASE_NAME + DATABASE_FLAGS,
                     settings.databaseUsername(),
                     settings.databasePassword());

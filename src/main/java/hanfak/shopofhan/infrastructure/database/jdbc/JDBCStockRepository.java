@@ -2,31 +2,18 @@ package hanfak.shopofhan.infrastructure.database.jdbc;
 
 import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.domain.ProductStock;
-import hanfak.shopofhan.domain.ProductStockList;
-import hanfak.shopofhan.domain.product.Product;
-import hanfak.shopofhan.domain.product.ProductDescription;
 import hanfak.shopofhan.domain.product.ProductId;
 import hanfak.shopofhan.domain.product.ProductName;
-import hanfak.shopofhan.domain.stock.Stock;
-import hanfak.shopofhan.domain.stock.StockAmount;
-import hanfak.shopofhan.domain.stock.StockDescription;
 import org.slf4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import static hanfak.shopofhan.domain.ProductStock.productStock;
-import static hanfak.shopofhan.domain.ProductStockList.productStockList;
-import static hanfak.shopofhan.domain.product.Product.product;
-import static hanfak.shopofhan.domain.product.ProductId.productId;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
-import static hanfak.shopofhan.domain.stock.Stock.stock;
-import static hanfak.shopofhan.domain.stock.StockId.stockId;
 
 // TODO Module test to test database is working
 @SuppressWarnings("Duplicates")
@@ -44,36 +31,25 @@ public class JDBCStockRepository implements StockRepository {
         this.databaseConnectionManager = databaseConnectionManager;
     }
 
-    // TODO M001B Extract duplication
-
     @Override
     public Optional<ProductStock> checkStockByName(ProductName productName) {
-        // TODO: tidy this up
-        try {
-            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
-            if (connection.isPresent()) {
-                try (Connection dbConnection = connection.get();
-                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT)) {
-
-                    Optional<ProductStock> resultSet = readProductStock(productName.value, stmt);
-                    if (resultSet.isPresent()) return resultSet;
-                }
-            }
-        } catch (Exception e) {
-            logger.error("error " + e);
-        }
-        return Optional.empty();
+        return executeSql(productName.value, SQL_STATEMENT);
     }
 
     @Override
     public Optional<ProductStock> checkStockById(ProductId productId) {
+        return executeSql(productId.value, SQL_STATEMENT_TWO);
+    }
+
+    private Optional<ProductStock> executeSql(String queryParameter, String sqlStatement) {
+        // TODO tidy up
         try {
             Optional<Connection> connection = databaseConnectionManager.getDBConnection();
             if (connection.isPresent()) {
                 try (Connection dbConnection = connection.get(); //TODO change to the above
-                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_TWO)) {
+                     PreparedStatement stmt = dbConnection.prepareStatement(sqlStatement)) {
 
-                    Optional<ProductStock> resultSet = readProductStock(productId.value, stmt);
+                    Optional<ProductStock> resultSet = readProductStock(queryParameter, stmt);
                     if (resultSet.isPresent()) return resultSet;
                 }
             }
@@ -83,50 +59,6 @@ public class JDBCStockRepository implements StockRepository {
         return Optional.empty();
     }
 
-    //TODO better method name
-    @Override
-    public Optional<ProductStockList> findListOfProductStock(ProductId productId) {
-        try {
-            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
-            if (connection.isPresent()) {
-                try (Connection dbConnection = connection.get(); //TODO change to the above
-                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_STATEMENT_THREE)) {
-
-                    Optional<ProductStockList> resultSet = lookUpAllStock(productId.value, stmt);
-                    if (resultSet.isPresent()) return resultSet;
-                }
-            }
-        } catch (Exception e) {
-            logger.error("error " + e);
-        }
-        return Optional.empty();
-    }
-
-    private Optional<ProductStockList> lookUpAllStock(String productId, PreparedStatement stmt) throws SQLException {
-        stmt.setString(1, productId);
-        ResultSet resultSet = stmt.executeQuery();
-
-        List<Stock> stock = new ArrayList<>();
-        ProductName productName = null;
-        ProductDescription productDescription = null;
-        Optional<ProductId> productIdRetrieved = Optional.empty();
-        while (resultSet.next()) {
-            logger.info("Getting data from database and storing in java pojo"); // TODO test
-            productName = productName(resultSet.getString("product_name"));
-            productIdRetrieved = Optional.of(productId(resultSet.getString("product_id")));
-            productDescription = ProductDescription.productDescription(resultSet.getString("product_description"));
-            stock.add(stock(StockAmount.stockAmount(resultSet.getInt("amount")), stockId(resultSet.getString("stock_id")), StockDescription.stockDescription(resultSet.getString("stock_description"))));
-        }
-
-        resultSet.close();
-
-        if (productIdRetrieved.isPresent()) {
-            Product product = product(productDescription, productIdRetrieved.get(), productName);
-            return Optional.of(productStockList(product, stock));
-        }
-        return Optional.empty();
-
-    }
 
     private Optional<ProductStock> readProductStock(String productIdentifier, PreparedStatement stmt) throws SQLException {
         stmt.setString(1, productIdentifier);

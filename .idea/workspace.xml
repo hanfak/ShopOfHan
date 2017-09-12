@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java" line="113" mnemonic="1" />
-  </component>
   <component name="BuildServerSettings">
     <option name="LOGIN" value="" />
     <option name="SERVER_URL" value="http://buildserver" />
@@ -37,81 +34,20 @@
     <list id="d61528c6-70b0-4caa-83ef-ee074123d94b" name="change change properties lookup to two files instead of logic in code ignore external testing in pom" comment="" />
     <list id="1e826025-1346-4ae8-bcfa-b3973c5aa76d" name="do not commit" comment="" />
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/application/crosscutting/ProductToCheck.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/ProductToCheck.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/application/crosscutting/StockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/StockRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/application/productavailability/ProductCheckByIdUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductCheckByIdUseCase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/application/productavailability/ProductCheckByNameUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductCheckByNameUseCase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/application/productavailability/ProductStockCheckByIdUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductStockCheckByIdUseCase.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductStock.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/ProductStock.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/ProductStockList.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/ProductStockList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/Logger.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/crosscutting/Logger.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/SingleValueType.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/crosscutting/SingleValueType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/crosscutting/ValueType.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/crosscutting/ValueType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/monitoring/ProbeResult.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/monitoring/ProbeResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/monitoring/ProbeStatus.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/monitoring/ProbeStatus.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/monitoring/StatusProbe.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/monitoring/StatusProbe.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/product/Product.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/Product.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/product/ProductDescription.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductDescription.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/product/ProductId.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductId.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/product/ProductName.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductName.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/stock/Stock.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/stock/Stock.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/stock/StockAmount.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/stock/StockAmount.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/stock/StockDescription.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/stock/StockDescription.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/domain/stock/StockId.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/stock/StockId.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/connection/HikariDatabaseConnectionPooling.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/HikariDatabaseConnectionPooling.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/connection/PoolingJDBCDatabasConnectionManager.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/PoolingJDBCDatabasConnectionManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/jdbc/JDBCDatabaseConnectionManager.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCDatabaseConnectionManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/database/jdbc/JDBCStockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/monitoring/DatabaseConnectionProbe.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/monitoring/DatabaseConnectionProbe.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/DatabaseSettings.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/properties/DatabaseSettings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/PropertiesReader.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/properties/PropertiesReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/ServerSettings.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/properties/ServerSettings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/properties/Settings.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/properties/Settings.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/Marshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/Marshaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/RenderedContent.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/RenderedContent.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/Unmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/Unmarshaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/JettyWebserverBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/JettyWebserverBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/ShopOfHanServer.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/ShopOfHanServer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityMarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/ProductAvailabilityMarshaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdServlet.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdWebService.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdWebService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameRequest.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameServlet.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameUnmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameUnmarshaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameWebService.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameWebService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdServlet.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdUnmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdUnmarshaller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdWebService.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdWebService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/EndPoint.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/EndPoint.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/WebServer.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/WebServer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/server/WebServerBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/WebServerBuilder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/statusprobeservlet/StatusProbeServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHan.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/wiring/ShopOfHanURLs.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHanURLs.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/domain/product/ProductIdTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/domain/product/ProductIdTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/domain/product/ProductNameTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/domain/product/ProductNameTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/database/JDBCStockRepositoryTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/JDBCStockRepositoryTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/monitoring/DatabaseConnectionProbeTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/monitoring/DatabaseConnectionProbeTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/settings/PropertiesReaderTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/settings/SettingsTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/settings/SettingsTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/web/productavailability/ProductAvailabilityUnmarshallerTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/web/productavailability/ProductAvailabilityUnmarshallerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/infrastructure/web/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/web/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/wiring/ShopOfHanURLsTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/wiring/ShopOfHanURLsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/ProductStockRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepositoryTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestProductStockRepository.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/JDBCStockRepositoryTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepositoryTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductAndStockDetailsInStockByIdTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductAndStockDetailsInStockByIdTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/whens/Whens.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/whens/Whens.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java" afterPath="$PROJECT_DIR$/src/test/java/documentationtests/ProductAvailabilityRequestCheckTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/httpclient/Response.java" afterPath="$PROJECT_DIR$/src/test/java/httpclient/Response.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/StockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/StockRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductStockCheckByIdUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductStockCheckByIdUseCase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductId.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductId.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/domain/product/ProductIdTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/domain/product/ProductIdTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java" afterPath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" afterPath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" />
     </list>
@@ -127,18 +63,7 @@
     <SUITE FILE_PATH="coverage/ShopOfHan$ShopOfHanServerTest_throwsExceptionWhenAttemptingToStartServer.coverage" NAME="ShopOfHanServerTest.throwsExceptionWhenAttemptingToStartServer Coverage Results" MODIFIED="1505124121271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>infrastructure.web.jetty.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ShopOfHan$All_in_ShopOfHan.coverage" NAME="All in ShopOfHan Coverage Results" MODIFIED="1505145159950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>application.*</FILTER>
-      <FILTER>infrastructure.properties.*</FILTER>
-      <FILTER>infrastructure.settings.*</FILTER>
-      <FILTER>infrastructure.web.productavailability.*</FILTER>
-      <FILTER>infrastructure.database.jdbc.*</FILTER>
-      <FILTER>domain.ProductStockList</FILTER>
-      <FILTER>domain.ProductStock</FILTER>
-      <FILTER>domain.crosscutting.*</FILTER>
-      <FILTER>domain.product.*</FILTER>
-      <FILTER>domain.stock.Stock</FILTER>
-    </SUITE>
+    <SUITE FILE_PATH="coverage/ShopOfHan$All_in_ShopOfHan.coverage" NAME="All in ShopOfHan Coverage Results" MODIFIED="1505223499776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExportToHTMLSettings">
@@ -147,12 +72,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="TestWiring.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="189" column="25" lean-forward="false" selection-start-line="138" selection-start-column="16" selection-end-line="189" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="227">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#515#516#0" expanded="true" />
+                <element signature="e#580#581#0" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+                <element signature="e#690#691#0" expanded="true" />
+                <element signature="e#766#767#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
+                <marker date="1505223946000" expanded="true" signature="296:334" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,9 +96,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -230,21 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/notes.md" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/connection/HikariDatabaseConnectionPooling.java" />
-        <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/ShopOfHanServer.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/log/log4j-application.log" />
-        <option value="$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/infrastructure/settings/SettingsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/server/EndPoint.java" />
-        <option value="$PROJECT_DIR$/src/test/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/domain/product/ProductIdTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/test.properties" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_14.json" />
-        <option value="$PROJECT_DIR$/src/main/java/wiring/ShopOfHanURLs.java" />
-        <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/server/WebServerBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/jetty/JettyWebserverBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/ProductStockCheckByIdUseCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/crosscutting/StockRepository.java" />
@@ -263,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/web/jetty/ShopOfHanServerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/web/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/jdbc/JDBCDatabaseConnectionManager.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/stock/StockAmount.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/product/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/ProductStockList.java" />
@@ -271,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/main/java/domain/stock/StockId.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/stock/StockDescription.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/stock/Stock.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshaller.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/ProductAvailabilityMarshaller.java" />
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/database/JDBCStockRepositoryTest.java" />
@@ -281,6 +198,23 @@
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/settings/PropertiesReaderTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductStockCheckByIdUseCase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/ProductStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestProductStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/JDBCStockRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/domain/product/ProductIdTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductId.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/StockRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java" />
       </list>
     </option>
   </component>
@@ -341,6 +275,130 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testinfrastructure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shopofhan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shopofhan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infrastructure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shopofhan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infrastructure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jdbc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -428,6 +486,78 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shopofhan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infrastructure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jdbc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shopofhan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infrastructure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShopOfHan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ShopOfHanSQL" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -457,39 +587,39 @@
       <recent name="infrastructure.web.jetty" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="hanfak.shopofhan.infrastructure.database.jdbc" />
       <recent name="infrastructure.web.jetty" />
       <recent name="infrastructure.web.productavailability.productavailabilityById" />
       <recent name="wiring" />
       <recent name="domain.product" />
-      <recent name="infrastructure.web.productavailability" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="hanfak.shopofhan.infrastructure.database.jdbc" />
       <recent name="hanfak.shopofhan.domain" />
       <recent name="hanfak.shopofhan" />
       <recent name="" />
       <recent name="domain.product" />
-      <recent name="infrastructure.web.productavailability" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="testinfrastructure" />
+      <recent name="hanfak.shopofhan.infrastructure.database.jdbc" />
       <recent name="domain.stock" />
       <recent name="infrastructure.web.productavailabilityById" />
       <recent name="acceptancetests.stockcheck" />
-      <recent name="" />
-      <recent name="acceptancetests" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailabilityById" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="hanfak.shopofhan.application.crosscutting" />
       <recent name="domain.stock" />
       <recent name="domain.product" />
       <recent name="domain" />
       <recent name="infrastructure.web.productavailability.productstockcheckbyavailability" />
-      <recent name="application" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -504,60 +634,45 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in ShopOfHan">
+  <component name="RunManager" selected="JUnit.JDBCProductStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase">
     <configuration default="false" name="All in ShopOfHan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ShopOfHan" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="JDBCStockRepositoryTest.returnProductByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.properties.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.settings.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.web.productavailability.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
           <option name="PATTERN" value="hanfak.shopofhan.infrastructure.database.jdbc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.ProductStockList" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.ProductStock" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.crosscutting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.stock.Stock" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ShopOfHan" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc" />
+      <option name="MAIN_CLASS_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc.JDBCStockRepositoryTest" />
+      <option name="METHOD_NAME" value="returnProductByName" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -570,15 +685,15 @@
     <configuration default="false" name="JDBCStockRepositoryTest.throwDatabaseErrorForId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.database.*" />
+          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.database.jdbc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ShopOfHan" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hanfak.shopofhan.infrastructure.database" />
-      <option name="MAIN_CLASS_NAME" value="hanfak.shopofhan.infrastructure.database.JDBCStockRepositoryTest" />
+      <option name="PACKAGE_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc" />
+      <option name="MAIN_CLASS_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc.JDBCStockRepositoryTest" />
       <option name="METHOD_NAME" value="throwDatabaseErrorForId" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -593,111 +708,49 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="JDBCStockRepositoryTest.throwDatabaseErrorForProductAndStockById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="JDBCStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ShopOfHan" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="hanfak.shopofhan.infrastructure.database" />
-      <option name="MAIN_CLASS_NAME" value="hanfak.shopofhan.infrastructure.database.JDBCStockRepositoryTest" />
-      <option name="METHOD_NAME" value="throwDatabaseErrorForProductAndStockById" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CheckAmountOfProductInStockByIdTest.shouldReturnStockAmountForItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="acceptancetests.stockcheck.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ShopOfHan" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="acceptancetests.stockcheck" />
-      <option name="MAIN_CLASS_NAME" value="acceptancetests.stockcheck.CheckAmountOfProductInStockByIdTest" />
-      <option name="METHOD_NAME" value="shouldReturnStockAmountForItem" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="CheckAmountOfProductInStockByNameTest.shouldReturnStockAmountForItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.application.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.properties.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.settings.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.web.productavailability.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
         <pattern>
           <option name="PATTERN" value="hanfak.shopofhan.infrastructure.database.jdbc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+      </extension>
+      <module name="ShopOfHan" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc" />
+      <option name="MAIN_CLASS_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc.JDBCStockRepositoryTest" />
+      <option name="METHOD_NAME" value="returnNoProductByNameIfNothingInTheDatabase" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="JDBCProductStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.ProductStockList" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.ProductStock" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.crosscutting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="hanfak.shopofhan.domain.stock.Stock" />
+          <option name="PATTERN" value="hanfak.shopofhan.infrastructure.database.jdbc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="ShopOfHan" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="acceptancetests.stockcheck" />
-      <option name="MAIN_CLASS_NAME" value="acceptancetests.stockcheck.CheckAmountOfProductInStockByNameTest" />
-      <option name="METHOD_NAME" value="shouldReturnStockAmountForItem" />
+      <option name="PACKAGE_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc" />
+      <option name="MAIN_CLASS_NAME" value="hanfak.shopofhan.infrastructure.database.jdbc.JDBCProductStockRepositoryTest" />
+      <option name="METHOD_NAME" value="returnNoProductByNameIfNothingInTheDatabase" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
@@ -1001,18 +1054,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in ShopOfHan" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.throwDatabaseErrorForId" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.throwDatabaseErrorForProductAndStockById" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.CheckAmountOfProductInStockByIdTest.shouldReturnStockAmountForItem" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.CheckAmountOfProductInStockByNameTest.shouldReturnStockAmountForItem" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.returnProductByName" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.throwDatabaseErrorForId" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.JDBCProductStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in ShopOfHan" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.CheckAmountOfProductInStockByNameTest.shouldReturnStockAmountForItem" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.CheckAmountOfProductInStockByIdTest.shouldReturnStockAmountForItem" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.throwDatabaseErrorForProductAndStockById" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.throwDatabaseErrorForId" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.JDBCProductStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in ShopOfHan" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.throwDatabaseErrorForId" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.JDBCStockRepositoryTest.returnProductByName" />
       </list>
     </recent_temporary>
   </component>
@@ -1288,39 +1341,46 @@
       <option name="project" value="LOCAL" />
       <updated>1505130705922</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Changed package structure for pitest (still issues) added test for intellij coverage">
+      <created>1505147929295</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1505147929295</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_ShopOfHan - 2017.09.11 at 12h 50m 44s.xml">
+    <history-entry file="All_in_ShopOfHan - 2017.09.12 at 14h 38m 34s.xml">
       <configuration name="All in ShopOfHan" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ShopOfHan - 2017.09.11 at 16h 52m 50s.xml">
+    <history-entry file="All_in_ShopOfHan - 2017.09.12 at 14h 43m 31s.xml">
       <configuration name="All in ShopOfHan" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ShopOfHan - 2017.09.11 at 16h 53m 55s.xml">
-      <configuration name="All in ShopOfHan" configurationId="JUnit" />
+    <history-entry file="JDBCProductStockRepositoryTest_returnNoProductByNameIfNothingInTheDatabase - 2017.09.12 at 14h 44m 56s.xml">
+      <configuration name="JDBCProductStockRepositoryTest.returnNoProductByNameIfNothingInTheDatabase" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_ShopOfHan - 2017.09.11 at 17h 19m 37s.xml">
-      <configuration name="All in ShopOfHan" configurationId="JUnit" />
+    <history-entry file="JDBCProductStockRepositoryTest_returnProductStockById - 2017.09.12 at 14h 33m 08s.xml">
+      <configuration name="JDBCProductStockRepositoryTest.returnProductStockById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CheckAmountOfProductInStockByIdTest_shouldReturnStockAmountForItem - 2017.09.11 at 16h 53m 10s.xml">
-      <configuration name="CheckAmountOfProductInStockByIdTest.shouldReturnStockAmountForItem" configurationId="JUnit" />
+    <history-entry file="JDBCStockRepositoryTest_returnProductById - 2017.09.12 at 14h 31m 52s.xml">
+      <configuration name="JDBCStockRepositoryTest.returnProductById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CheckAmountOfProductInStockByNameTest_shouldReturnStockAmountForItem - 2017.09.11 at 16h 54m 18s.xml">
-      <configuration name="CheckAmountOfProductInStockByNameTest.shouldReturnStockAmountForItem" configurationId="JUnit" />
+    <history-entry file="JDBCStockRepositoryTest_returnProductById - 2017.09.12 at 14h 32m 01s.xml">
+      <configuration name="JDBCStockRepositoryTest.returnProductById" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JDBCStockRepositoryTest_throwDatabaseErrorForId - 2017.09.11 at 16h 52m 29s.xml">
+    <history-entry file="JDBCStockRepositoryTest_returnProductById - 2017.09.12 at 14h 32m 36s.xml">
+      <configuration name="JDBCStockRepositoryTest.returnProductById" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JDBCStockRepositoryTest_returnProductByName - 2017.09.12 at 14h 40m 13s.xml">
+      <configuration name="JDBCStockRepositoryTest.returnProductByName" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JDBCStockRepositoryTest_returnProductByName - 2017.09.12 at 14h 40m 49s.xml">
+      <configuration name="JDBCStockRepositoryTest.returnProductByName" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JDBCStockRepositoryTest_throwDatabaseErrorForId - 2017.09.12 at 14h 42m 23s.xml">
       <configuration name="JDBCStockRepositoryTest.throwDatabaseErrorForId" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JDBCStockRepositoryTest_throwDatabaseErrorForName - 2017.09.11 at 16h 49m 56s.xml">
-      <configuration name="JDBCStockRepositoryTest.throwDatabaseErrorForName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JDBCStockRepositoryTest_throwDatabaseErrorForName - 2017.09.11 at 16h 51m 02s.xml">
-      <configuration name="JDBCStockRepositoryTest.throwDatabaseErrorForName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="JDBCStockRepositoryTest_throwDatabaseErrorForProductAndStockById - 2017.09.11 at 16h 52m 26s.xml">
-      <configuration name="JDBCStockRepositoryTest.throwDatabaseErrorForProductAndStockById" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -1337,6 +1397,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1362,10 +1423,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3698795" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37108433" sideWeight="0.48640916" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37108433" sideWeight="0.48640916" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37982833" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42409638" sideWeight="0.48640916" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23676682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42409638" sideWeight="0.48640916" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34120172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31686747" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1428,7 +1489,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Setup pmd(style guide testing) and sorted some of the failures" />
     <MESSAGE value="use different property files to define environments instead of logic, one place to alter details" />
     <MESSAGE value="separate end point for check stock by name, instead of query params use path params" />
     <MESSAGE value="unmarshaller extracts the name from url before next /" />
@@ -1453,7 +1513,8 @@
     <MESSAGE value="Added description for stock and product" />
     <MESSAGE value="Refactored testRepository stub for old functions and add new function for new endpoint acceptance tests" />
     <MESSAGE value="Wrapped domain objects refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wrapped domain objects refactoring" />
+    <MESSAGE value="Changed package structure for pitest (still issues) added test for intellij coverage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed package structure for pitest (still issues) added test for intellij coverage" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1473,7 +1534,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java</url>
-          <line>38</line>
+          <line>39</line>
           <properties />
           <option name="timeStamp" value="76" />
         </line-breakpoint>
@@ -1484,40 +1545,40 @@
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java</url>
-          <line>91</line>
+          <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdWebService.java</url>
+          <line>23</line>
           <properties />
-          <option name="timeStamp" value="96" />
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepository.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java</url>
-          <line>105</line>
+          <line>63</line>
           <properties />
-          <option name="timeStamp" value="98" />
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/ShopOfHanServer.java</url>
-          <line>25</line>
+          <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepository.java</url>
+          <line>56</line>
           <properties />
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="100" />
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHanURLs.java</url>
           <line>3</line>
-          <properties field="PRODUCT_AVAILABILITY_BY_NAME" class="wiring.ShopOfHanURLs" />
+          <properties field="PRODUCT_AVAILABILITY_BY_NAME" class="hanfak.shopofhan.wiring.ShopOfHanURLs" />
           <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="101" />
+      <option name="time" value="115" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1526,282 +1587,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductDescription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <marker date="1505146755000" expanded="false" signature="214:225" ph=" { " />
-            <marker date="1505146755000" expanded="false" signature="238:244" ph=" }" />
-            <marker date="1505146755000" expanded="true" signature="329:399" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <marker date="1505146755000" expanded="false" signature="98:464" ph="..." />
-            <marker date="1505146755000" expanded="false" signature="105:464" ph="..." />
-            <marker date="1505146755000" expanded="true" signature="814:943" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="1079:1257" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdWebService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="26" column="105" lean-forward="false" selection-start-line="26" selection-start-column="105" selection-end-line="26" selection-end-column="105" />
-          <folding>
-            <marker date="1505146754000" expanded="false" signature="122:596" ph="..." />
-            <marker date="1505146754000" expanded="false" signature="240:397" ph="..." />
-            <marker date="1505146754000" expanded="true" signature="925:1044" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="1114:1466" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming_01.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1504951614000" expanded="true" signature="0:45" ph=" DROP statement" />
-            <marker date="1504951614000" expanded="true" signature="47:98" ph=" CREATE statement" />
-            <marker date="1504951614000" expanded="true" signature="127:159" ph=" CREATE statement" />
-            <marker date="1504951614000" expanded="true" signature="312:399" ph=" INSERT statement (STOCK)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <marker date="1505121170000" expanded="true" signature="0:45" ph=" DROP statement" />
-            <marker date="1505121170000" expanded="true" signature="47:98" ph=" CREATE statement" />
-            <marker date="1505121170000" expanded="true" signature="127:147" ph=" CREATE statement" />
-            <marker date="1505121170000" expanded="true" signature="381:399" ph=" CREATE statement" />
-            <marker date="1505121170000" expanded="true" signature="712:828" ph=" INSERT statement (PRODUCT)" />
-            <marker date="1505121170000" expanded="true" signature="927:1031" ph=" INSERT statement (STOCK)" />
-            <marker date="1505121170000" expanded="true" signature="1095:1160" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505121170000" expanded="true" signature="1161:1224" ph=" SELECT statement (STOCK)" />
-            <marker date="1505121170000" expanded="true" signature="1226:1364" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505121170000" expanded="true" signature="1365:1518" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505121170000" expanded="true" signature="1519:1746" ph=" SELECT statement (PRODUCT, STOCK)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-util/9.4.4.v20170414/jetty-util-9.4.4.v20170414.jar!/org/eclipse/jetty/util/component/AbstractLifeCycle.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-          <folding>
-            <marker date="1495519400000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1495519400000" expanded="false" signature="156:519" ph="..." />
-            <marker date="1495519400000" expanded="false" signature="1483:1611" ph="lifeCycleFailure(lifecycle, cause) → {" />
-            <marker date="1495519400000" expanded="false" signature="1765:1776" ph="}" />
-            <marker date="1495519400000" expanded="true" signature="1810:1817" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="1865:1872" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="1919:1926" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="1975:2408" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="2456:2888" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="2921:3002" ph="{...}" />
-            <marker date="1495519400000" expanded="false" signature="3034:3045" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="3069:3075" ph=" }" />
-            <marker date="1495519400000" expanded="false" signature="3108:3119" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="3143:3149" ph=" }" />
-            <marker date="1495519400000" expanded="false" signature="3182:3193" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="3217:3223" ph=" }" />
-            <marker date="1495519400000" expanded="false" signature="3255:3266" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="3290:3296" ph=" }" />
-            <marker date="1495519400000" expanded="false" signature="3327:3338" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="3363:3369" ph=" }" />
-            <marker date="1495519400000" expanded="false" signature="3426:3437" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="3467:3473" ph=" }" />
-            <marker date="1495519400000" expanded="false" signature="3533:3544" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="3577:3583" ph=" }" />
-            <marker date="1495519400000" expanded="true" signature="3589:3690" ph="@{...}" />
-            <marker date="1495519400000" expanded="true" signature="3720:4041" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="4091:4233" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="4265:4636" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="4669:5002" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="5035:5368" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="5400:5737" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="5780:6115" ph="{...}" />
-            <marker date="1495519400000" expanded="false" signature="6207:6218" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="6243:6249" ph=" }" />
-            <marker date="1495519400000" expanded="false" signature="6299:6310" ph=" { " />
-            <marker date="1495519400000" expanded="false" signature="6342:6348" ph=" }" />
-            <marker date="1495519400000" expanded="true" signature="6429:6845" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="6474:6485" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="6558:6569" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="6625:6636" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="6693:6704" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="6760:6771" ph="{...}" />
-            <marker date="1495519400000" expanded="true" signature="6828:6839" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/web/productavailability/ProductAvailabilityUnmarshallerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <marker date="1505146662000" expanded="false" signature="90:521" ph="..." />
-            <marker date="1505146662000" expanded="true" signature="755:1170" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="72" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1505146663000" expanded="false" signature="97:337" ph="..." />
-            <marker date="1505146663000" expanded="true" signature="618:1044" ph="{...}" />
-            <marker date="1505146663000" expanded="true" signature="859:897" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/JettyWebserverBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="63" column="5" lean-forward="false" selection-start-line="61" selection-start-column="72" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <marker date="1505146662000" expanded="false" signature="76:1201" ph="..." />
-            <marker date="1505146662000" expanded="false" signature="1443:1454" ph=" { " />
-            <marker date="1505146662000" expanded="false" signature="1479:1485" ph=" }" />
-            <marker date="1505146662000" expanded="true" signature="1657:1749" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="1915:2005" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="2135:2213" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="2373:2461" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="2512:2621" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="2695:2784" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="2822:3166" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/infrastructure/web/jetty/ShopOfHanServerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/web/productavailabilityById/ProductAvailabilityByIdUnmarshallerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding>
-            <marker date="1505146662000" expanded="false" signature="94:441" ph="..." />
-            <marker date="1505146662000" expanded="true" signature="722:1148" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="963:1001" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/EndPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <marker date="1505146662000" expanded="false" signature="60:157" ph="..." />
-            <marker date="1505146662000" expanded="true" signature="392:501" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="573:653" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="655:769" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCDatabaseConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <marker date="1505146663000" expanded="false" signature="63:110" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/ShopOfHanServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <marker date="1505146662000" expanded="false" signature="76:308" ph="..." />
-            <marker date="1505146662000" expanded="false" signature="442:453" ph=" { " />
-            <marker date="1505146662000" expanded="false" signature="501:507" ph=" }" />
-            <marker date="1505146662000" expanded="true" signature="586:657" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="697:910" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="949:1160" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="54" />
-          <folding>
-            <marker date="1505146754000" expanded="false" signature="196:207" ph=" { " />
-            <marker date="1505146754000" expanded="false" signature="220:226" ph=" }" />
-            <marker date="1505146754000" expanded="true" signature="284:468" ph="{...}" />
-            <marker date="1505146754000" expanded="false" signature="523:534" ph=" { " />
-            <marker date="1505146754000" expanded="false" signature="593:599" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
-          <folding>
-            <marker date="1505146754000" expanded="true" signature="98:141" ph="/**...*/" />
-            <marker date="1505146754000" expanded="true" signature="425:562" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="683:762" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-          <folding>
-            <marker date="1505146724000" expanded="true" signature="122:345" ph="..." />
-            <marker date="1505146724000" expanded="false" signature="1012:1023" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="1055:1061" ph=" }" />
-            <marker date="1505146724000" expanded="true" signature="1124:1334" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1388:1600" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/stock/StockAmount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <marker date="1505146723000" expanded="false" signature="200:211" ph=" { " />
-            <marker date="1505146723000" expanded="false" signature="224:230" ph=" }" />
-            <marker date="1505146723000" expanded="false" signature="289:300" ph=" { " />
-            <marker date="1505146723000" expanded="false" signature="331:337" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/stock/StockId.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1824,41 +1609,6 @@
             <marker date="1505146724000" expanded="false" signature="232:238" ph=" }" />
             <marker date="1505146724000" expanded="false" signature="306:317" ph=" { " />
             <marker date="1505146724000" expanded="false" signature="353:359" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="60" column="140" lean-forward="true" selection-start-line="60" selection-start-column="140" selection-end-line="60" selection-end-column="140" />
-          <folding>
-            <marker date="1505146755000" expanded="false" signature="53:1299" ph="..." />
-            <marker date="1505146755000" expanded="false" signature="1368:1401" ph="/WeakerAccess/" />
-            <marker date="1505146755000" expanded="false" signature="1434:1445" ph=" { " />
-            <marker date="1505146755000" expanded="false" signature="1473:1479" ph=" }" />
-            <marker date="1505146755000" expanded="true" signature="1571:1792" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="1878:2095" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="2193:2370" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="2443:2591" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="2683:2806" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="2853:2951" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="24" column="82" lean-forward="false" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
-          <folding>
-            <marker date="1505146724000" expanded="false" signature="33:795" ph="..." />
-            <marker date="1505146724000" expanded="true" signature="1367:1446" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1503:1629" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1723:1972" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="2094:2247" ph="{...}" />
-            <marker date="1505146724000" expanded="false" signature="2289:2300" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="2325:2331" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1952,39 +1702,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/whens/Whens.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-          <folding>
-            <marker date="1505146663000" expanded="false" signature="39:528" ph="..." />
-            <marker date="1505146663000" expanded="false" signature="676:687" ph=" { " />
-            <marker date="1505146663000" expanded="false" signature="714:720" ph=" }" />
-            <marker date="1505146663000" expanded="true" signature="775:1176" ph="{...}" />
-            <marker date="1505146663000" expanded="true" signature="785:1042" ph="//..." />
-            <marker date="1505146663000" expanded="true" signature="1320:2013" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/HikariDatabaseConnectionPooling.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="21" column="11" lean-forward="false" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <marker date="1505146662000" expanded="false" signature="86:317" ph="..." />
-            <marker date="1505146662000" expanded="true" signature="319:501" ph="//..." />
-            <marker date="1505146662000" expanded="true" signature="968:1039" ph="{...}" />
-            <marker date="1505146662000" expanded="true" signature="1105:1708" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2061,107 +1783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding>
-            <marker date="1505146724000" expanded="true" signature="29:67" ph="..." />
-            <marker date="1505146724000" expanded="true" signature="176:444" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductAndStockDetailsInStockByIdTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <marker date="1505146724000" expanded="false" signature="44:244" ph="..." />
-            <marker date="1505146724000" expanded="true" signature="439:674" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="748:1002" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1103:1215" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1305:1393" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1483:1571" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1638:1673" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1750:1791" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="1865:1900" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="16" column="81" lean-forward="false" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
-          <folding>
-            <marker date="1505146723000" expanded="true" signature="44:244" ph="..." />
-            <marker date="1505146723000" expanded="true" signature="426:744" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="818:1122" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="1180:1273" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="1412:1525" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="1615:1703" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="1793:1881" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="1948:1983" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="2060:2101" ph="{...}" />
-            <marker date="1505146723000" expanded="true" signature="2175:2210" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/JDBCStockRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding>
-            <marker date="1505146754000" expanded="false" signature="75:721" ph="..." />
-            <marker date="1505146754000" expanded="true" signature="826:1577" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="965:1096" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505146754000" expanded="true" signature="1666:2243" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="1805:1936" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505146754000" expanded="true" signature="2310:3059" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="2449:2574" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505146754000" expanded="true" signature="3132:3516" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="3587:3967" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="4055:4405" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="99" column="40" lean-forward="false" selection-start-line="99" selection-start-column="40" selection-end-line="99" selection-end-column="40" />
-          <folding>
-            <marker date="1505146754000" expanded="false" signature="80:1255" ph="..." />
-            <marker date="1505146754000" expanded="false" signature="1305:1336" ph="/Duplicates/" />
-            <marker date="1505146754000" expanded="true" signature="1449:1574" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505146754000" expanded="true" signature="1630:1761" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505146754000" expanded="true" signature="1819:2039" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505146754000" expanded="true" signature="1819:2040" ph=" SELECT statement (PRODUCT, STOCK)" />
-            <marker date="1505146754000" expanded="true" signature="2387:2492" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="2623:3277" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="3363:4016" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="4144:4801" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="4919:6131" ph="{...}" />
-            <marker date="1505146754000" expanded="true" signature="6255:6708" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductStockCheckByIdUseCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="21" column="72" lean-forward="false" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
-          <folding>
-            <marker date="1505146755000" expanded="false" signature="83:316" ph="..." />
-            <marker date="1505146755000" expanded="true" signature="535:620" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="682:1083" ph="{...}" />
-            <marker date="1505146755000" expanded="true" signature="1460:1573" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-274">
@@ -2186,63 +1807,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <marker date="1505146724000" expanded="true" signature="0:4415" ph="/.../" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/Optional.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="285" column="35" lean-forward="false" selection-start-line="285" selection-start-column="35" selection-end-line="285" selection-end-column="35" />
-          <folding>
-            <marker date="1459498892000" expanded="false" signature="0:215" ph="/.../" />
-            <marker date="1459498892000" expanded="false" signature="243:380" ph="..." />
-            <marker date="1459498892000" expanded="true" signature="382:1219" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="1257:1312" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="1381:1462" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="1495:1654" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="1677:1688" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="1706:1712" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="1718:2204" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="2246:2355" ph="{...}" />
-            <marker date="1459498892000" expanded="false" signature="2256:2286" ph="/unchecked/" />
-            <marker date="1459498892000" expanded="true" signature="2361:2539" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="2569:2580" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="2623:2629" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="2635:2951" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="2997:3008" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="3037:3043" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="3049:3431" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="3485:3496" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="3539:3545" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="3551:3870" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="3890:4024" ph="{...}" />
-            <marker date="1459498892000" expanded="true" signature="4030:4210" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="4241:4252" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="4273:4279" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="4285:4566" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="4623:4693" ph="{...}" />
-            <marker date="1459498892000" expanded="true" signature="4699:5224" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="5287:5460" ph="{...}" />
-            <marker date="1459498892000" expanded="true" signature="5466:6911" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="6983:7170" ph="{...}" />
-            <marker date="1459498892000" expanded="true" signature="7176:8084" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="8160:8350" ph="{...}" />
-            <marker date="1459498892000" expanded="true" signature="8356:8598" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="8627:8638" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="8675:8681" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="8687:9088" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="9140:9151" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="9194:9200" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="9206:9870" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="9968:10100" ph="{...}" />
-            <marker date="1459498892000" expanded="true" signature="10106:10604" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="10657:10904" ph="{...}" />
-            <marker date="1459498892000" expanded="true" signature="10910:11116" ph="/**...*/" />
-            <marker date="1459498892000" expanded="false" signature="11156:11167" ph=" { " />
-            <marker date="1459498892000" expanded="false" signature="11198:11204" ph=" }" />
-            <marker date="1459498892000" expanded="true" signature="11210:11677" ph="/**...*/" />
-            <marker date="1459498892000" expanded="true" signature="11721:11840" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2355,49 +1919,641 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="31" />
+        <state relative-caret-position="-382">
+          <caret line="189" column="25" lean-forward="false" selection-start-line="138" selection-start-column="16" selection-end-line="189" selection-end-column="25" />
           <folding>
-            <marker date="1505146724000" expanded="false" signature="41:2537" ph="..." />
-            <marker date="1505146724000" expanded="false" signature="58:2537" ph="..." />
-            <marker date="1505146724000" expanded="true" signature="2539:2611" ph="//..." />
-            <marker date="1505146724000" expanded="false" signature="2612:2648" ph="/UseUtilityClass/" />
-            <marker date="1505146724000" expanded="false" signature="2732:2743" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="2798:2804" ph=" }" />
-            <marker date="1505146724000" expanded="true" signature="2945:3178" ph="{...}" />
-            <marker date="1505146724000" expanded="false" signature="3248:3259" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="3295:3301" ph=" }" />
-            <marker date="1505146724000" expanded="false" signature="3367:3378" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="3429:3435" ph=" }" />
-            <marker date="1505146724000" expanded="true" signature="3500:3614" ph="{...}" />
-            <marker date="1505146724000" expanded="false" signature="3670:3681" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="3724:3730" ph=" }" />
-            <marker date="1505146724000" expanded="false" signature="3790:3801" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="3844:3850" ph=" }" />
-            <marker date="1505146724000" expanded="true" signature="3897:4008" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="4072:4203" ph="{...}" />
-            <marker date="1505146724000" expanded="false" signature="4248:4259" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="4316:4322" ph=" }" />
-            <marker date="1505146724000" expanded="true" signature="4390:4503" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="4567:4676" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="4750:4890" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="4978:5103" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="5173:5307" ph="{...}" />
-            <marker date="1505146724000" expanded="true" signature="5391:5516" ph="{...}" />
-            <marker date="1505146724000" expanded="false" signature="5574:5585" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="5628:5634" ph=" }" />
-            <marker date="1505146724000" expanded="true" signature="5707:5977" ph="{...}" />
+            <marker date="1505147852000" expanded="true" signature="89:13953" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="427:891" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="903:9719" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="979:9706" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="1000:1664" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="1189:1642" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="1272:1609" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="1307:1578" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="1685:2018" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="1881:1996" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2039:3039" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2191:3017" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2223:2987" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2255:2338" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2425:2954" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2525:2656" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2694:2913" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="2737:2874" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="8937:9687" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9127:9665" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9159:9366" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9245:9333" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9398:9635" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9521:9602" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9739:13777" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9760:9929" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="9951:10121" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="10143:10287" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="10309:10461" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="10482:10637" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="10692:10839" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="10936:11085" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="11166:11330" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="11396:11553" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="11653:11807" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="11829:11976" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="11997:12148" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="12232:12410" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="12432:12602" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="12624:12808" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="12830:13015" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="13037:13225" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="13246:13465" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="13486:13756" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="13797:13941" ph="..." />
+            <marker date="1505147852000" expanded="true" signature="13818:13921" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCDatabaseConnectionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="189" column="25" lean-forward="false" selection-start-line="138" selection-start-column="16" selection-end-line="189" selection-end-column="25" />
+        <state relative-caret-position="90">
+          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <marker date="1505146663000" expanded="false" signature="63:110" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="30" column="72" lean-forward="false" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+          <folding>
+            <marker date="1505201244000" expanded="false" signature="69:317" ph="..." />
+            <marker date="1505201244000" expanded="false" signature="86:317" ph="..." />
+            <marker date="1505201244000" expanded="true" signature="319:501" ph="//..." />
+            <marker date="1505201244000" expanded="true" signature="968:1039" ph="{...}" />
+            <marker date="1505201244000" expanded="true" signature="1105:1734" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/ProductStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1505201451000" expanded="true" signature="59:178" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/whens/Whens.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding>
+            <marker date="1505146663000" expanded="false" signature="39:528" ph="..." />
+            <marker date="1505146663000" expanded="false" signature="676:687" ph=" { " />
+            <marker date="1505146663000" expanded="false" signature="714:720" ph=" }" />
+            <marker date="1505146663000" expanded="true" signature="775:1176" ph="{...}" />
+            <marker date="1505146663000" expanded="true" signature="785:1042" ph="//..." />
+            <marker date="1505146663000" expanded="true" signature="1320:2013" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding>
+            <marker date="1505218449000" expanded="false" signature="33:579" ph="..." />
+            <marker date="1505218449000" expanded="true" signature="1480:1586" ph="{...}" />
+            <marker date="1505218449000" expanded="true" signature="1643:1769" ph="{...}" />
+            <marker date="1505218449000" expanded="false" signature="1815:1826" ph=" { " />
+            <marker date="1505218449000" expanded="false" signature="1623:1629" ph=" }" />
+            <marker date="1505218449000" expanded="true" signature="1723:1972" ph="{...}" />
+            <marker date="1505218449000" expanded="true" signature="2094:2247" ph="{...}" />
+            <marker date="1505218449000" expanded="false" signature="2289:2300" ph=" { " />
+            <marker date="1505218449000" expanded="false" signature="2325:2331" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <marker date="1505146723000" expanded="true" signature="44:244" ph="..." />
+            <marker date="1505146723000" expanded="true" signature="426:744" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="818:1122" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="1180:1273" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="1412:1525" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="1615:1703" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="1793:1881" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="1948:1983" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="2060:2101" ph="{...}" />
+            <marker date="1505146723000" expanded="true" signature="2175:2210" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding>
+            <marker date="1505201098000" expanded="false" signature="41:2691" ph="..." />
+            <marker date="1505201098000" expanded="false" signature="131:2691" ph="..." />
+            <marker date="1505201098000" expanded="true" signature="2693:2765" ph="//..." />
+            <marker date="1505201098000" expanded="false" signature="2766:2802" ph="/UseUtilityClass/" />
+            <marker date="1505201098000" expanded="false" signature="2886:2897" ph=" { " />
+            <marker date="1505201098000" expanded="false" signature="2952:2958" ph=" }" />
+            <marker date="1505201098000" expanded="true" signature="3099:3332" ph="{...}" />
+            <marker date="1505201098000" expanded="false" signature="3402:3413" ph=" { " />
+            <marker date="1505201098000" expanded="false" signature="3449:3455" ph=" }" />
+            <marker date="1505201098000" expanded="false" signature="3521:3532" ph=" { " />
+            <marker date="1505201098000" expanded="false" signature="3583:3589" ph=" }" />
+            <marker date="1505201098000" expanded="true" signature="3654:3768" ph="{...}" />
+            <marker date="1505201098000" expanded="false" signature="3824:3835" ph=" { " />
+            <marker date="1505201098000" expanded="false" signature="3878:3884" ph=" }" />
+            <marker date="1505201098000" expanded="false" signature="3944:3955" ph=" { " />
+            <marker date="1505201098000" expanded="false" signature="3998:4004" ph=" }" />
+            <marker date="1505201098000" expanded="true" signature="4051:4162" ph="{...}" />
+            <marker date="1505201098000" expanded="true" signature="4223:4348" ph="{...}" />
+            <marker date="1505201098000" expanded="true" signature="4412:4543" ph="{...}" />
+            <marker date="1505201098000" expanded="false" signature="4588:4599" ph=" { " />
+            <marker date="1505201098000" expanded="false" signature="4656:4662" ph=" }" />
+            <marker date="1505201098000" expanded="true" signature="4730:4843" ph="{...}" />
+            <marker date="1505201098000" expanded="true" signature="4907:5016" ph="{...}" />
+            <marker date="1505201098000" expanded="true" signature="5090:5230" ph="{...}" />
+            <marker date="1505201098000" expanded="true" signature="5318:5443" ph="{...}" />
+            <marker date="1505201098000" expanded="true" signature="5513:5647" ph="{...}" />
+            <marker date="1505201098000" expanded="true" signature="5731:5856" ph="{...}" />
+            <marker date="1505201098000" expanded="false" signature="5914:5925" ph=" { " />
+            <marker date="1505201098000" expanded="false" signature="5968:5974" ph=" }" />
+            <marker date="1505201098000" expanded="true" signature="6047:6324" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductAndStockDetailsInStockByIdTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-528">
+          <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding>
+            <marker date="1505146724000" expanded="false" signature="44:244" ph="..." />
+            <marker date="1505146724000" expanded="true" signature="439:674" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="748:1002" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1103:1215" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1305:1393" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1483:1571" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1638:1673" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1750:1791" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1865:1900" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/Marshaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <marker date="1505218738000" expanded="false" signature="105:345" ph="..." />
+            <marker date="1505218738000" expanded="true" signature="122:345" ph="..." />
+            <marker date="1505218738000" expanded="true" signature="1012:1023" ph=" { " />
+            <marker date="1505218738000" expanded="true" signature="1055:1061" ph=" }" />
+            <marker date="1505218738000" expanded="true" signature="1124:1400" ph="{...}" />
+            <marker date="1505218738000" expanded="true" signature="1454:1666" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/ShopOfHanServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <marker date="1505146662000" expanded="false" signature="59:308" ph="..." />
+            <marker date="1505146662000" expanded="false" signature="76:308" ph="..." />
+            <marker date="1505146662000" expanded="false" signature="442:453" ph=" { " />
+            <marker date="1505146662000" expanded="false" signature="501:507" ph=" }" />
+            <marker date="1505146662000" expanded="true" signature="586:657" ph="{...}" />
+            <marker date="1505146662000" expanded="true" signature="697:910" ph="{...}" />
+            <marker date="1505146662000" expanded="true" signature="949:1160" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <marker date="1505146754000" expanded="true" signature="98:141" ph="/**...*/" />
+            <marker date="1505146754000" expanded="true" signature="425:562" ph="{...}" />
+            <marker date="1505146754000" expanded="true" signature="683:762" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdWebService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1505146754000" expanded="false" signature="105:596" ph="..." />
+            <marker date="1505146754000" expanded="false" signature="122:596" ph="..." />
+            <marker date="1505146754000" expanded="false" signature="240:397" ph="..." />
+            <marker date="1505146754000" expanded="true" signature="925:1044" ph="{...}" />
+            <marker date="1505146754000" expanded="true" signature="1114:1466" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductStockCheckByIdUseCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" column="87" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="98" />
+          <folding>
+            <marker date="1505201034000" expanded="false" signature="66:389" ph="..." />
+            <marker date="1505201034000" expanded="false" signature="156:389" ph="..." />
+            <marker date="1505201034000" expanded="true" signature="622:707" ph="{...}" />
+            <marker date="1505201034000" expanded="true" signature="769:1170" ph="{...}" />
+            <marker date="1505201034000" expanded="true" signature="1547:1660" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestProductStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <marker date="1505219267000" expanded="false" signature="36:1409" ph="..." />
+            <marker date="1505219267000" expanded="false" signature="1492:1525" ph="/WeakerAccess/" />
+            <marker date="1505219267000" expanded="false" signature="1565:1576" ph=" { " />
+            <marker date="1505219267000" expanded="false" signature="1604:1610" ph=" }" />
+            <marker date="1505219267000" expanded="true" signature="1708:1922" ph="{...}" />
+            <marker date="1505219267000" expanded="true" signature="2015:2111" ph="{...}" />
+            <marker date="1505219267000" expanded="true" signature="2158:2256" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShopOfHanSQL/priming.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="32" column="66" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="66" />
+          <folding>
+            <marker date="1505121170000" expanded="true" signature="0:45" ph=" DROP statement" />
+            <marker date="1505121170000" expanded="true" signature="47:98" ph=" CREATE statement" />
+            <marker date="1505121170000" expanded="true" signature="127:147" ph=" CREATE statement" />
+            <marker date="1505121170000" expanded="true" signature="381:399" ph=" CREATE statement" />
+            <marker date="1505121170000" expanded="true" signature="712:828" ph=" INSERT statement (PRODUCT)" />
+            <marker date="1505121170000" expanded="true" signature="927:1031" ph=" INSERT statement (STOCK)" />
+            <marker date="1505121170000" expanded="true" signature="1095:1160" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505121170000" expanded="true" signature="1161:1224" ph=" SELECT statement (STOCK)" />
+            <marker date="1505121170000" expanded="true" signature="1226:1364" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505121170000" expanded="true" signature="1365:1518" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505121170000" expanded="true" signature="1519:1746" ph=" SELECT statement (PRODUCT, STOCK)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/domain/product/ProductIdTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="104" />
+          <folding>
+            <marker date="1505220270000" expanded="false" signature="49:185" ph="..." />
+            <marker date="1505220270000" expanded="true" signature="298:524" ph="{...}" />
+            <marker date="1505220270000" expanded="true" signature="611:885" ph="{...}" />
+            <marker date="1505220270000" expanded="true" signature="661:697" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/domain/product/ProductId.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="111" lean-forward="false" selection-start-line="13" selection-start-column="111" selection-end-line="13" selection-end-column="111" />
+          <folding>
+            <marker date="1505220270000" expanded="false" signature="196:207" ph=" { " />
+            <marker date="1505220270000" expanded="false" signature="220:226" ph=" }" />
+            <marker date="1505220270000" expanded="true" signature="284:513" ph="{...}" />
+            <marker date="1505220270000" expanded="false" signature="568:579" ph=" { " />
+            <marker date="1505220270000" expanded="false" signature="638:644" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/Optional.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding>
+            <marker date="1459498892000" expanded="false" signature="0:215" ph="/.../" />
+            <marker date="1459498892000" expanded="false" signature="243:380" ph="..." />
+            <marker date="1459498892000" expanded="true" signature="382:1219" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="1257:1312" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="1381:1462" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="1495:1654" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="1677:1688" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="1706:1712" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="1718:2204" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="2246:2355" ph="{...}" />
+            <marker date="1459498892000" expanded="false" signature="2256:2286" ph="/unchecked/" />
+            <marker date="1459498892000" expanded="true" signature="2361:2539" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="2569:2580" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="2623:2629" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="2635:2951" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="2997:3008" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="3037:3043" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="3049:3431" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="3485:3496" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="3539:3545" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="3551:3870" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="3890:4024" ph="{...}" />
+            <marker date="1459498892000" expanded="true" signature="4030:4210" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="4241:4252" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="4273:4279" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="4285:4566" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="4623:4693" ph="{...}" />
+            <marker date="1459498892000" expanded="true" signature="4699:5224" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="5287:5460" ph="{...}" />
+            <marker date="1459498892000" expanded="true" signature="5466:6911" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="6983:7170" ph="{...}" />
+            <marker date="1459498892000" expanded="true" signature="7176:8084" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="8160:8350" ph="{...}" />
+            <marker date="1459498892000" expanded="true" signature="8356:8598" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="8627:8638" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="8675:8681" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="8687:9088" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="9140:9151" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="9194:9200" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="9206:9870" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="9968:10100" ph="{...}" />
+            <marker date="1459498892000" expanded="true" signature="10106:10604" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="10657:10904" ph="{...}" />
+            <marker date="1459498892000" expanded="true" signature="10910:11116" ph="/**...*/" />
+            <marker date="1459498892000" expanded="false" signature="11156:11167" ph=" { " />
+            <marker date="1459498892000" expanded="false" signature="11198:11204" ph=" }" />
+            <marker date="1459498892000" expanded="true" signature="11210:11677" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="11721:11840" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <marker date="1459498886000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1459498886000" expanded="false" signature="135:249" ph="..." />
+            <marker date="1459498886000" expanded="false" signature="467:478" ph=" { " />
+            <marker date="1459498886000" expanded="false" signature="497:503" ph=" }" />
+            <marker date="1459498886000" expanded="true" signature="617:1157" ph="{...}" />
+            <marker date="1459498886000" expanded="false" signature="1212:1223" ph=" { " />
+            <marker date="1459498886000" expanded="false" signature="1242:1248" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/StockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="12" column="63" lean-forward="false" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+          <folding>
+            <marker date="1505221761000" expanded="false" signature="59:275" ph="..." />
+            <marker date="1505221761000" expanded="false" signature="76:275" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+          <folding>
+            <marker date="1505221788000" expanded="false" signature="36:1299" ph="..." />
+            <marker date="1505221788000" expanded="false" signature="53:1299" ph="..." />
+            <marker date="1505221788000" expanded="false" signature="1368:1401" ph="/WeakerAccess/" />
+            <marker date="1505221788000" expanded="false" signature="1434:1445" ph=" { " />
+            <marker date="1505221788000" expanded="false" signature="1473:1479" ph=" }" />
+            <marker date="1505221788000" expanded="true" signature="1571:1869" ph="{...}" />
+            <marker date="1505221788000" expanded="true" signature="1955:2172" ph="{...}" />
+            <marker date="1505221788000" expanded="true" signature="2245:2393" ph="{...}" />
+            <marker date="1505221788000" expanded="true" signature="2485:2608" ph="{...}" />
+            <marker date="1505221788000" expanded="true" signature="2655:2753" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mockito/mockito-all/1.10.19/mockito-all-1.10.19.jar!/org/mockito/internal/creation/cglib/MethodInterceptorFilter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <marker date="1495520350000" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1495520350000" expanded="false" signature="159:949" ph="..." />
+            <marker date="1495520350000" expanded="true" signature="1487:1568" ph="{...}" />
+            <marker date="1495520350000" expanded="true" signature="1684:2624" ph="{...}" />
+            <marker date="1495520350000" expanded="false" signature="2661:2672" ph=" { " />
+            <marker date="1495520350000" expanded="false" signature="2692:2698" ph=" }" />
+            <marker date="1495520350000" expanded="false" signature="2744:2755" ph=" { " />
+            <marker date="1495520350000" expanded="false" signature="2792:2798" ph=" }" />
+            <marker date="1495520350000" expanded="true" signature="2880:3054" ph="{...}" />
+            <marker date="1495520350000" expanded="true" signature="3116:3251" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/monitoring/DatabaseConnectionProbeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding>
+            <marker date="1505146724000" expanded="false" signature="60:696" ph="..." />
+            <marker date="1505146724000" expanded="true" signature="820:1073" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1140:1772" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1337:1355" ph=" SELECT statement (DUAL)" />
+            <marker date="1505146724000" expanded="true" signature="1849:2544" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="1981:1999" ph=" SELECT statement (DUAL)" />
+            <marker date="1505146724000" expanded="true" signature="2622:3367" ph="{...}" />
+            <marker date="1505146724000" expanded="true" signature="2754:2772" ph=" SELECT statement (DUAL)" />
+            <marker date="1505146724000" expanded="true" signature="3401:3546" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <marker date="1505221761000" expanded="false" signature="63:1383" ph="..." />
+            <marker date="1505221761000" expanded="false" signature="80:1383" ph="..." />
+            <marker date="1505221761000" expanded="false" signature="1433:1464" ph="/Duplicates/" />
+            <marker date="1505221761000" expanded="true" signature="1577:1702" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505221761000" expanded="true" signature="1758:1889" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505221761000" expanded="true" signature="1947:2167" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505221761000" expanded="true" signature="1947:2168" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505221761000" expanded="true" signature="2515:2620" ph="{...}" />
+            <marker date="1505221761000" expanded="true" signature="2712:2780" ph="{...}" />
+            <marker date="1505221761000" expanded="true" signature="2866:2936" ph="{...}" />
+            <marker date="1505221761000" expanded="true" signature="3028:3699" ph="{...}" />
+            <marker date="1505221761000" expanded="true" signature="3824:4277" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="36" column="58" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="277" />
+          <folding>
+            <marker date="1505222840000" expanded="false" signature="63:1456" ph="..." />
+            <marker date="1505222840000" expanded="false" signature="136:1456" ph="..." />
+            <marker date="1505222840000" expanded="false" signature="1506:1537" ph="/Duplicates/" />
+            <marker date="1505222840000" expanded="true" signature="1670:1891" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505222840000" expanded="true" signature="2245:2350" ph="{...}" />
+            <marker date="1505222840000" expanded="true" signature="2479:2551" ph="{...}" />
+            <marker date="1505222840000" expanded="true" signature="2647:3320" ph="{...}" />
+            <marker date="1505222840000" expanded="true" signature="3438:4602" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/sql/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="137" column="22" lean-forward="false" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+          <folding>
+            <marker date="1459498892000" expanded="false" signature="0:215" ph="/.../" />
+            <marker date="1459498892000" expanded="false" signature="243:302" ph="..." />
+            <marker date="1459498892000" expanded="true" signature="304:3008" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="3076:3946" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="4005:5675" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="5761:7248" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="7321:7891" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="7951:9767" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="9837:10202" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="10257:10845" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="10890:11451" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="11498:12214" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="12258:13141" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="13191:13289" ph="//..." />
+            <marker date="1459498892000" expanded="true" signature="13295:13907" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="13969:14472" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="14538:14909" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="14961:15958" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="16021:16338" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="16389:16466" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="16514:16910" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="16958:17193" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="17241:17718" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="17766:18336" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="18384:19599" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="19670:20385" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="20446:21315" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="21371:21784" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="21908:23392" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="23502:25206" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="25376:27059" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="27211:28293" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="28368:29558" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="29713:30681" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="30749:31303" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="31355:32163" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="32219:33122" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="33189:34005" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="34071:34789" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="34863:36673" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="36831:38908" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="39104:41137" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="41350:43754" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="43863:46323" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="46430:48876" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="48984:49740" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="49789:50513" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="50562:51323" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="51374:52119" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="52176:53513" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="53582:56932" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="57044:58673" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="58781:59917" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="60007:60773" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="60848:62479" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="62559:63305" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="63461:64276" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="64337:64669" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="64719:66545" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="66606:71460" ph="/**...*/" />
+            <marker date="1459498892000" expanded="true" signature="71552:72143" ph="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCStockRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <marker date="1505223891000" expanded="true" signature="63:598" ph="..." />
+            <marker date="1505223891000" expanded="false" signature="80:598" ph="..." />
+            <marker date="1505223891000" expanded="true" signature="703:1337" ph="{...}" />
+            <marker date="1505223891000" expanded="true" signature="1426:1886" ph="{...}" />
+            <marker date="1505223891000" expanded="true" signature="1953:2593" ph="{...}" />
+            <marker date="1505223891000" expanded="true" signature="2684:3150" ph="{...}" />
+            <marker date="1505223891000" expanded="true" signature="3223:3564" ph="{...}" />
+            <marker date="1505223891000" expanded="true" signature="3635:3973" ph="{...}" />
+            <marker date="1505223891000" expanded="true" signature="4027:4158" ph=" SELECT statement (PRODUCT, STOCK)" />
+            <marker date="1505223891000" expanded="true" signature="4215:4340" ph=" SELECT statement (PRODUCT, STOCK)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductStockRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="76" column="22" lean-forward="true" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+          <folding>
+            <marker date="1505223946000" expanded="true" signature="63:1620" ph="..." />
+            <marker date="1505223946000" expanded="true" signature="1763:2955" ph="{...}" />
+            <marker date="1505223946000" expanded="true" signature="3043:3390" ph="{...}" />
+            <marker date="1505223946000" expanded="true" signature="3484:3943" ph="{...}" />
+            <marker date="1505223946000" expanded="true" signature="3986:4207" ph=" SELECT statement (PRODUCT, STOCK)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testinfrastructure/TestWiring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <marker date="1505223946000" expanded="true" signature="296:334" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

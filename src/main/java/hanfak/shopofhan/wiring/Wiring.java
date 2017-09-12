@@ -1,11 +1,13 @@
 package hanfak.shopofhan.wiring;
 
+import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.application.productavailability.ProductCheckByIdUseCase;
 import hanfak.shopofhan.application.productavailability.ProductCheckByNameUseCase;
 import hanfak.shopofhan.application.productavailability.ProductStockCheckByIdUseCase;
 import hanfak.shopofhan.infrastructure.database.connection.MySqlJDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
+import hanfak.shopofhan.infrastructure.database.jdbc.JDBCProductStockRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCStockRepository;
 import hanfak.shopofhan.infrastructure.monitoring.DatabaseConnectionProbe;
 import hanfak.shopofhan.infrastructure.properties.PropertiesReader;
@@ -70,6 +72,10 @@ public class Wiring {
         return new JDBCStockRepository(logger(JDBCStockRepository.class), databaseConnectionManager());
     }
 
+    public ProductStockRepository productStockRepository() {
+        return new JDBCProductStockRepository(logger(JDBCProductStockRepository.class), databaseConnectionManager());
+    }
+
     private DatabaseConnectionProbe databaseConnectionProbe() {
         return new DatabaseConnectionProbe(logger(DatabaseConnectionProbe.class), settings(), databaseConnectionManager());
     }
@@ -107,7 +113,7 @@ public class Wiring {
     }
 
     public ProductStockCheckByIdServlet productStockCheckByIdServlet() {
-        return new ProductStockCheckByIdServlet(new ProductStockCheckByIdUnmarshaller(), new ProductStockCheckByIdWebService(new ProductStockCheckByIdMarshaller(), new ProductStockCheckByIdUseCase(stockRepository(), logger(ProductStockCheckByIdUseCase.class))));
+        return new ProductStockCheckByIdServlet(new ProductStockCheckByIdUnmarshaller(), new ProductStockCheckByIdWebService(new ProductStockCheckByIdMarshaller(), new ProductStockCheckByIdUseCase(productStockRepository(), logger(ProductStockCheckByIdUseCase.class))));
     }
 //
 }
