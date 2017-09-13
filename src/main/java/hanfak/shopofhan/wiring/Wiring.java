@@ -1,5 +1,6 @@
 package hanfak.shopofhan.wiring;
 
+import hanfak.shopofhan.application.createproduct.AddProductUseCase;
 import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.application.productavailability.ProductCheckByIdUseCase;
@@ -14,6 +15,9 @@ import hanfak.shopofhan.infrastructure.properties.PropertiesReader;
 import hanfak.shopofhan.infrastructure.properties.Settings;
 import hanfak.shopofhan.infrastructure.web.Marshaller;
 import hanfak.shopofhan.infrastructure.web.Unmarshaller;
+import hanfak.shopofhan.infrastructure.web.createproduct.AddProductServlet;
+import hanfak.shopofhan.infrastructure.web.createproduct.AddProductUnmarshaller;
+import hanfak.shopofhan.infrastructure.web.createproduct.AddProductWebService;
 import hanfak.shopofhan.infrastructure.web.jetty.JettyWebserverBuilder;
 import hanfak.shopofhan.infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import hanfak.shopofhan.infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
@@ -114,6 +118,10 @@ public class Wiring {
 
     public ProductStockCheckByIdServlet productStockCheckByIdServlet() {
         return new ProductStockCheckByIdServlet(new ProductStockCheckByIdUnmarshaller(), new ProductStockCheckByIdWebService(new ProductStockCheckByIdMarshaller(), new ProductStockCheckByIdUseCase(productStockRepository(), logger(ProductStockCheckByIdUseCase.class))));
+    }
+
+    public AddProductServlet addProductServlet() {
+        return new AddProductServlet(new AddProductUnmarshaller(), new AddProductWebService(new AddProductUseCase(productStockRepository(), logger(AddProductUseCase.class))));
     }
 //
 }

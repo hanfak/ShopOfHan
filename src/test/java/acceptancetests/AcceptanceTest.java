@@ -1,6 +1,7 @@
 package acceptancetests;
 
 import acceptancetests.thens.Thens;
+import acceptancetests.whens.WhenAPostIsMadeToShopOfHanToCreateANewProduct;
 import acceptancetests.whens.Whens;
 import com.googlecode.yatspec.junit.SpecResultListener;
 import com.googlecode.yatspec.junit.WithCustomResultListeners;
@@ -22,6 +23,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
     private final ShopOfHan shopOfHan = new ShopOfHan();
     private final acceptancetests.TestState testState = new acceptancetests.TestState();
     protected final Whens weMake = new Whens(testState);
+    protected final WhenAPostIsMadeToShopOfHanToCreateANewProduct whenAPostIsMadeToShopOfHanToCreateANewProduct = new WhenAPostIsMadeToShopOfHanToCreateANewProduct(testState);
     protected final Thens the = new Thens(testState, capturedInputAndOutputs); // TODO rename
     private final TestWiring wiring = new TestWiring();
 

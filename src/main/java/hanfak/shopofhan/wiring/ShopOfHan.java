@@ -6,6 +6,7 @@ import hanfak.shopofhan.infrastructure.web.server.WebServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static hanfak.shopofhan.wiring.ShopOfHanURLs.PRODUCTS;
 import static hanfak.shopofhan.wiring.ShopOfHanURLs.PRODUCT_AVAILABILITY_BY_ID;
 import static hanfak.shopofhan.wiring.ShopOfHanURLs.PRODUCT_AVAILABILITY_BY_NAME;
 import static hanfak.shopofhan.wiring.ShopOfHanURLs.PRODUCT_STOCK_CHECK_BY_ID;
@@ -30,6 +31,7 @@ public class ShopOfHan {
                 .registerProductAvailabilityByNameEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_NAME), wiring.productAvailabilityByNameServlet())
                 .registerProductAvailabilityByIdEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_ID), wiring.productAvailabilityByIdServlet())
                 .registerproductStockCheckByIdEndPoint(EndPoint.get(PRODUCT_STOCK_CHECK_BY_ID), wiring.productStockCheckByIdServlet())
+                .registerAddProductEndPoint(EndPoint.post(PRODUCTS), wiring.addProductServlet())
                 .registerStatusProbeEndPoint(EndPoint.get(STATUS_PAGE), wiring.statusProbeServlet())
                 .build();
         webserver.start();

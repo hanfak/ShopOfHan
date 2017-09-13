@@ -14,7 +14,7 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
         given(theSystemIsRunning());
         when(weMake.aGetRequestTo(PATH + JOY_OF_JAVA_ID));
         thenTheResponseCodeIs200AndTheBodyIs("{\"productName\": \"Joy Of Java\", \"amountInStock\": \"4\"}");
-        andThenContentTypeIs("hanfak/shopofhan/application/json");
+        andThenContentTypeIs("Content-Type: application/json");
     }
 
     @Test

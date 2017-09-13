@@ -20,11 +20,11 @@ public class RenderedContent {
     }
 
     public static RenderedContent jsonContent(String body) {
-        return renderedContent(body, "hanfak/shopofhan/application/json", 200);
+        return renderedContent(body, "application/json", HttpServletResponse.SC_OK);
     }
 
     public static RenderedContent errorContent(String body) {
-        return renderedContent(body, "text/plain", 404);
+        return renderedContent(body, "text/plain", HttpServletResponse.SC_NOT_FOUND);
     }
 
     public void render(HttpServletResponse response) throws IOException {
