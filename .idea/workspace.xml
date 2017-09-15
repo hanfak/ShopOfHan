@@ -33,30 +33,10 @@
     <list id="4023edd0-31b8-4ea2-af8e-9eeac9134eaa" name="Use bettercode to anaylze code" comment="" />
     <list id="d61528c6-70b0-4caa-83ef-ee074123d94b" name="change change properties lookup to two files instead of logic in code ignore external testing in pom" comment="" />
     <list id="1e826025-1346-4ae8-bcfa-b3973c5aa76d" name="do not commit" comment="" />
-    <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="Endpoint for post to add new product. WIP, passing, no business logic or mutating db.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/createproduct/AddProductUseCase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/createproduct/AddProductServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/createproduct/AddProductUnmarshaller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/createproduct/AddProductWebService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/AddProductTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/whens/WhenAPostIsMadeToShopOfHanToCreateANewProduct.java" />
+    <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/RenderedContent.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/RenderedContent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/Unmarshaller.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/Unmarshaller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/JettyWebserverBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/jetty/JettyWebserverBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/EndPoint.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/EndPoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/WebServerBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/server/WebServerBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHan.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHanURLs.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHanURLs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/Wiring.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/AcceptanceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductAndStockDetailsInStockByIdTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductAndStockDetailsInStockByIdTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByIdTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/CheckAmountOfProductInStockByNameTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/whens/Whens.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/whens/Whens.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/wiring/ShopOfHanURLsTest.java" afterPath="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/wiring/ShopOfHanURLsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/httpclient/Header.java" afterPath="$PROJECT_DIR$/src/test/java/httpclient/Header.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/httpclient/Request.java" afterPath="$PROJECT_DIR$/src/test/java/httpclient/Request.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,11 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AddProductTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/AddProductTest.java">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+            <state relative-caret-position="144">
+              <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -162,7 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/domain/ProductStockList.java" />
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/web/productavailability/productstockcheckbyavailability/ProductStockCheckByIdMarshaller.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/stock/StockId.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/stock/StockDescription.java" />
@@ -173,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/main/java/infrastructure/database/jdbc/JDBCStockRepository.java" />
         <option value="$PROJECT_DIR$/src/test/java/infrastructure/settings/PropertiesReaderTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/hanfak/shopofhan/infrastructure/settings/PropertiesReaderTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductStockCheckByIdUseCase.java" />
         <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/connection/MySqlJDBCDatabaseConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/ProductStockRepository.java" />
@@ -213,6 +191,8 @@
         <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/wiring/ShopOfHanURLs.java" />
         <option value="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/Unmarshaller.java" />
         <option value="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/AddProductTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -1627,7 +1607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505224092095</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Endpoint for post to add new product. WIP, passing, no business logic or mutating db.">
+      <created>1505312660375</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1505312660375</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1676,7 +1663,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1701,8 +1687,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3698795" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37108433" sideWeight="0.48640916" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3698795" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37108433" sideWeight="0.48640916" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37982833" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42409638" sideWeight="0.48640916" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34120172" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1768,7 +1754,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="separate end point for check stock by name, instead of query params use path params" />
     <MESSAGE value="unmarshaller extracts the name from url before next /" />
     <MESSAGE value="search stock by id on different endpoint" />
     <MESSAGE value="tidying up, prep for new format for response of multiple items" />
@@ -1793,8 +1778,8 @@
     <MESSAGE value="Wrapped domain objects refactoring" />
     <MESSAGE value="Changed package structure for pitest (still issues) added test for intellij coverage" />
     <MESSAGE value="Extracted ProductStock database repo from stockrepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted ProductStock database repo from stockrepository" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Endpoint for post to add new product. WIP, passing, no business logic or mutating db." />
+    <option name="LAST_COMMIT_MESSAGE" value="Endpoint for post to add new product. WIP, passing, no business logic or mutating db." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1878,53 +1863,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar!/org/apache/http/message/HeaderGroup.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="121" column="20" lean-forward="false" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
-          <folding>
-            <marker date="1495959460000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1495959460000" expanded="false" signature="147:438" ph="..." />
-            <marker date="1495959460000" expanded="true" signature="724:731" ph="{...}" />
-            <marker date="1495959460000" expanded="false" signature="756:767" ph=" { " />
-            <marker date="1495959460000" expanded="false" signature="788:794" ph=" }" />
-            <marker date="1495959460000" expanded="true" signature="837:921" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="967:1054" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="1100:1490" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="1537:1661" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="1713:2292" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="2338:2851" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="2899:3153" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="3200:3459" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="3496:3507" ph=" { " />
-            <marker date="1495959460000" expanded="true" signature="3578:3584" ph=" }" />
-            <marker date="1495959460000" expanded="true" signature="3633:3886" ph="{...}" />
-            <marker date="1495959460000" expanded="false" signature="3924:3935" ph=" { " />
-            <marker date="1495959460000" expanded="false" signature="3998:4004" ph=" }" />
-            <marker date="1495959460000" expanded="false" signature="4053:4064" ph=" { " />
-            <marker date="1495959460000" expanded="false" signature="4119:4125" ph=" }" />
-            <marker date="1495959460000" expanded="true" signature="4157:4277" ph="{...}" />
-            <marker date="1495959460000" expanded="true" signature="4339:4376" ph="{...}" />
-            <marker date="1495959460000" expanded="false" signature="4406:4417" ph=" { " />
-            <marker date="1495959460000" expanded="false" signature="4448:4454" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/ProductAvailabilityMarshaller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <marker date="1505146724000" expanded="false" signature="73:205" ph="..." />
-            <marker date="1505146724000" expanded="false" signature="90:205" ph="..." />
-            <marker date="1505146724000" expanded="false" signature="503:514" ph=" { " />
-            <marker date="1505146724000" expanded="false" signature="542:548" ph=" }" />
-            <marker date="1505146724000" expanded="true" signature="603:709" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/productavailability/productavailabilityname/ProductAvailabilityByNameWebService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -3029,6 +2967,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="58" lean-forward="false" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+          <folding>
+            <marker date="1505312394000" expanded="false" signature="44:244" ph="..." />
+            <marker date="1505312394000" expanded="true" signature="403:744" ph="{...}" />
+            <marker date="1505312394000" expanded="true" signature="640:738" ph="//..." />
+            <marker date="1505312394000" expanded="true" signature="751:788" ph="//..." />
+            <marker date="1505312394000" expanded="true" signature="837:1011" ph="{...}" />
+            <marker date="1505312394000" expanded="true" signature="839:972" ph="//..." />
+            <marker date="1505312394000" expanded="true" signature="1088:1129" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <folding>
+            <marker date="1505457587000" expanded="true" signature="89:14399" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="427:891" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="903:10165" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="979:10152" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="1000:1664" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="1189:1642" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="1272:1609" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="1307:1578" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="1685:2018" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="1881:1996" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2039:3039" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2191:3017" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2223:2987" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2255:2338" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2425:2954" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2525:2656" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2694:2913" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="2737:2874" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="3060:3485" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="3248:3463" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="3278:3400" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="9383:10133" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="9573:10111" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="9605:9812" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="9691:9779" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="9844:10081" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="9967:10048" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="10185:14223" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="10206:10375" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="10397:10567" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="10589:10733" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="10755:10907" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="10928:11083" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="11138:11285" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="11382:11531" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="11612:11776" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="11842:11999" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="12099:12253" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="12275:12422" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="12443:12594" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="12678:12856" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="12878:13048" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="13070:13254" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="13276:13461" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="13483:13671" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="13692:13911" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="13932:14202" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="14243:14387" ph="..." />
+            <marker date="1505457587000" expanded="true" signature="14264:14367" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding />
         </state>
       </provider>
