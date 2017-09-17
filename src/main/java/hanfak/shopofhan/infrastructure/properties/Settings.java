@@ -15,7 +15,7 @@ public class Settings implements DatabaseSettings, ServerSettings {
 
     @Override
     public String databaseURL() {
-        return propertiesReader.readProperty("database.url");
+        return propertiesReader.readProperty("database.shopOfHanUrl");
     }
 
     @Override

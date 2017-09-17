@@ -1,6 +1,7 @@
 package hanfak.shopofhan.wiring;
 
 import hanfak.shopofhan.application.createproduct.AddProductUseCase;
+import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.application.productavailability.ProductCheckByIdUseCase;
@@ -8,6 +9,7 @@ import hanfak.shopofhan.application.productavailability.ProductCheckByNameUseCas
 import hanfak.shopofhan.application.productavailability.ProductStockCheckByIdUseCase;
 import hanfak.shopofhan.infrastructure.database.connection.MySqlJDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
+import hanfak.shopofhan.infrastructure.database.jdbc.JDBCProductRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCProductStockRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCStockRepository;
 import hanfak.shopofhan.infrastructure.monitoring.DatabaseConnectionProbe;
@@ -40,13 +42,15 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("UseUtilityClass")
 public class Wiring {
 
+    public static final String ENVIRONMENT = "localhost";
+
     // TODO singleton pattern
     public Settings settings() {
-        return new Settings(new PropertiesReader("localhost"));
+        return new Settings(new PropertiesReader(ENVIRONMENT));
     }
 
     // TODO Extract to separate hanfak.shopofhan.wiring for database
-    private JDBCDatabaseConnectionManager databaseConnectionManager() {
+    public JDBCDatabaseConnectionManager databaseConnectionManager() {
         return new MySqlJDBCDatabaseConnectionManager(settings(), logger(MySqlJDBCDatabaseConnectionManager.class));
 //        return new PoolingJDBCDatabasConnectionManager(logger(PoolingJDBCDatabasConnectionManager.class));
     }
@@ -121,7 +125,10 @@ public class Wiring {
     }
 
     public AddProductServlet addProductServlet() {
-        return new AddProductServlet(new AddProductUnmarshaller(), new AddProductWebService(new AddProductUseCase(productStockRepository(), logger(AddProductUseCase.class))));
+        return new AddProductServlet(new AddProductUnmarshaller(), new AddProductWebService(new AddProductUseCase(productRepository(), logger(AddProductUseCase.class))));
     }
-//
+
+    public ProductRepository productRepository() {
+        return new JDBCProductRepository(logger(JDBCProductRepository.class), databaseConnectionManager());
+    }
 }

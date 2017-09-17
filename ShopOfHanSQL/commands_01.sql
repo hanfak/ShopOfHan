@@ -1,8 +1,6 @@
-DROP DATABASE IF EXISTS shop_of_han_database;
+drop table stock
 
-CREATE DATABASE IF NOT EXISTS shop_of_han_database;
-
-USE shop_of_han_database;
+drop table product
 
 CREATE TABLE product
 (
@@ -25,12 +23,6 @@ CREATE TABLE stock
   FOREIGN KEY       (product_id) REFERENCES product(id)
 ) ENGINE=INNODB;
 
-INSERT INTO product (product_name, product_description, product_id) VALUES
-('Joy Of Java','Book about java', 'JOJ1'),
-('SQL the sequel','Book about SQL', 'STS1'),
-('Scala the mountian','Book about Scala', 'SCM1');
+INSERT INTO product (product_name, product_description, product_id) VALUES ('Joy Of Java','Book about java', 'JOJ1'), ('SQL the sequel','Book about SQL', 'STS1'), ('Scala the mountian','Book about Scala', 'SCM1')
 
-INSERT INTO stock (product_id, stock_id, stock_description, amount) VALUES
-(1, 'STD1', 'Single Pack', 4),
-(2, 'STD1', 'Single Pack', 0),
-(2, 'STD2', 'Multi Pack', 3);
+INSERT INTO stock (product_id, stock_id, stock_description, amount) VALUES (1, 'STD1', 'Single Pack', 4), (2, 'STD1', 'Single Pack', 0), (2, 'STD2', 'Multi Pack', 3)

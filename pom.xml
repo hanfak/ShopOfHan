@@ -184,10 +184,7 @@
                         <!--&lt;!&ndash;<targetTest>documentation.*</targetTest>&ndash;&gt;-->
                     <!--</targetTests>-->
                     <!--<excludedClasses>-->
-
                         <!--<excludedClass>hanfak.shopofhan.wiring</excludedClass>-->
-                        <!--&lt;!&ndash;<excludedClass></excludedClass>&ndash;&gt;-->
-
                     <!--</excludedClasses>-->
 
                 <!--</configuration>-->
@@ -349,7 +346,6 @@
             <version>8039</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <repositories>

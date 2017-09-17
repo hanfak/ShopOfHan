@@ -7,7 +7,6 @@ import httpclient.Header;
 import httpclient.Request;
 import httpclient.RequestBuilder;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -19,30 +18,31 @@ import java.io.UnsupportedEncodingException;
 import static acceptancetests.AcceptanceTest.APPLICATION_NAME;
 import static httpclient.Header.APPLICATION_JSON;
 import static httpclient.Header.CONTENT_TYPE_KEY;
-import static httpclient.Header.TEXT_PLAIN;
-//import static httpclient.Headers.fromApacheHeaders;
 import static java.lang.String.format;
 
-public class WhenAPostIsMadeToShopOfHanToCreateANewProduct {
+public class ANewProductIsAdded {
     private static final String CALLER = "Shop User";
     private TestState testState;
 
-    public WhenAPostIsMadeToShopOfHanToCreateANewProduct(TestState testState) {
+    public ANewProductIsAdded(TestState testState) {
         this.testState = testState;
     }
 
-    public ActionUnderTest aPostRequestTo(String uri) {
+    public ActionUnderTest throughARequestTo(String uri, String id, String name, String description) {
         //TODO Add builder to build request
         // hydra/src/test/java/sky/sns/hydra/hanfak.shopofhan.infrastructure/httpclient/TrackingApacheHttpClientFactoryTest.java:38
-        Request request = new RequestBuilder()
+        return (interestingGivens, capturedInputAndOutputs) -> whenWeMakeARequestTo(capturedInputAndOutputs, buildRequest(uri, id, name, description));
+    }
+
+    private Request buildRequest(String uri, String id, String name, String description) {
+        return new RequestBuilder()
                 .url(uri)
                 .header(CONTENT_TYPE_KEY, APPLICATION_JSON)
                 .method("POST")
-                .body("{\"productName\" : \"Clojure the door\", " +
-                        "\"productId\" : \"CTD1\", " +
-                        "\"productDescription\" : \"Book about Clojure\"}")
+                .body(format("{\"productName\" : \"%s\", " +
+                        "\"productId\" : \"%s\", " +
+                        "\"productDescription\" : \"%s\"}", name, id, description))
                 .build();
-        return (interestingGivens, capturedInputAndOutputs) -> whenWeMakeARequestTo(capturedInputAndOutputs, request);
     }
 
     private CapturedInputAndOutputs whenWeMakeARequestTo(CapturedInputAndOutputs capturedInputAndOutputs, Request request) throws IOException {

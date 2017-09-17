@@ -24,7 +24,7 @@ public class SettingsTest implements WithAssertions {
         PropertiesReader properties = mock(PropertiesReader.class);
         Settings settings = new Settings(properties);
 
-        when(properties.readProperty("database.url")).thenReturn("jdbc:mysql://172.17.0.3:3306/");
+        when(properties.readProperty("database.shopOfHanUrl")).thenReturn("jdbc:mysql://172.17.0.3:3306/");
 
         assertThat(settings.databaseURL()).isEqualTo("jdbc:mysql://172.17.0.3:3306/");
     }

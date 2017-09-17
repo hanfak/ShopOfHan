@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-import static java.lang.String.format;
+import java.sql.SQLException;
 
 public class AddProductServlet extends HttpServlet {
     private Unmarshaller<Product> unmarshaller;
@@ -23,10 +22,13 @@ public class AddProductServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Product product = unmarshaller.unmarshall(request);
-        response.getWriter().write(format("New Product added: Product name: %s", product.productName));
-
-//        RenderedContent renderedContent = addProductWebService.addProduct(unmarshaller.product(request));
-//        renderedContent.render(response);
+        // TODO will be cleaned up when testing duplicate
+        RenderedContent renderedContent = null;
+        try {
+            renderedContent = addProductWebService.addProduct(unmarshaller.unmarshall(request));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        renderedContent.render(response);
     }
 }

@@ -6,8 +6,8 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class Response extends ValueType {
-    private final String body;
-    private final int statusCode;
+    public final String body;
+    public final int statusCode;
     private final String protocol;
     private final Headers headers;
 
@@ -31,7 +31,7 @@ public class Response extends ValueType {
         return headers.toString().split("\n")[3];
 //        String[] s = headers.toString().split("\n");
 //        return Arrays.stream(s)
-//                .filter(x -> "Content-Type: hanfak.shopofhan.application/json".equals(x))
+//                .filter(x -> "Content-Type: application/json".equals(x))
 //                .map(x -> x.split(" ")[1])
 //                .collect(Collectors.joining());
     }

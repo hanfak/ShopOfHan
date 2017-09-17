@@ -1,0 +1,46 @@
+package testinfrastructure;
+
+import hanfak.shopofhan.application.crosscutting.ProductRepository;
+import hanfak.shopofhan.domain.product.Product;
+import hanfak.shopofhan.domain.product.ProductId;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import static hanfak.shopofhan.domain.product.Product.product;
+import static hanfak.shopofhan.domain.product.ProductDescription.productDescription;
+import static hanfak.shopofhan.domain.product.ProductId.productId;
+import static hanfak.shopofhan.domain.product.ProductName.productName;
+
+public class TestProductRepository implements ProductRepository {
+
+    @SuppressWarnings("WeakerAccess")
+    public TestProductRepository() {
+        populateProductStockLists();
+    }
+
+    @Override
+    public Optional<Product> checkProductById(ProductId productId) {
+        return productLists.stream()
+                .filter(product -> product.productId.equals(productId))
+                .findFirst();
+    }
+
+    @Override
+    public void addProduct(Product product) throws SQLException {
+        productLists.add(product);
+    }
+
+    private void populateProductStockLists() {
+        productLists.add(JOY_OF_JAVA_PRODUCT);
+        productLists.add(SQL_THE_SEQUEL_PRODUCT);
+        productLists.add(CLOJURE_THE_DOOR_PRODUCT);
+    }
+
+    private static final List<Product> productLists = new ArrayList<>();
+    private static final Product  JOY_OF_JAVA_PRODUCT = product(productDescription("Book about java"), productId("JOJ1"), productName("Joy Of Java"));
+    private static final Product  SQL_THE_SEQUEL_PRODUCT = product(productDescription("Book about SQL"), productId("STS1"), productName("SQL the sequel"));
+    private static final Product  CLOJURE_THE_DOOR_PRODUCT = product(productDescription("Book about Clojure"), productId("CTD1"), productName("Clojure the door"));
+}

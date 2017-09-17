@@ -3,35 +3,60 @@ package acceptancetests.stockcheck;
 import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
+import hanfak.shopofhan.domain.product.ProductId;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.io.IOException;
 
 @RunWith(SpecRunner.class)
 public class AddProductTest extends AcceptanceTest {
 
+    private ProductId actualProductId;
+
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
-        when(whenAPostIsMadeToShopOfHanToCreateANewProduct.aPostRequestTo(PATH));
-        // TODO show key parts of JSON ie name, description and id
+        when(aNewProductIsAdded.throughARequestTo("http://localhost:8081/products", withProductId("CTD1"), withProductName("Clojure the door"), andProductDescription("Book about Clojure")));
         thenItReturnsAStatusCodeOf(200);
-        // TODO asssert on body stating what was added
-        // TODO assert on database contain new data
+        andTheResponseBodyIs("Product with id, 'CTD1', has been added.");
+        andTheDatabaseContainsAProductWithName("Clojure the door", withProductId("CTD1"), andProductDescription("Book about Clojure"));
     }
 
+    // TODO test cannot add the same product with same id twice
 
-    // SAD path
+    private void andTheDatabaseContainsAProductWithName(String name, String id, String description) {
+        the.database(actualProductId, name, id, description);
+    }
+
+    private String andProductDescription(String description) {
+        return description;
+    }
+
+    private String withProductName(String name) {
+        return name;
+    }
+
+    private String withProductId(String id) {
+        actualProductId = ProductId.productId(id);
+        return id;
+    }
+
+    // TODO SAD path
     // techinical failure
 
-    private GivensBuilder theSystemIsRunning() {
-//        testState().interestingGivens.add("productName", "Joy Of Java");
+    private GivensBuilder theSystemIsRunning() throws IOException {
+        testState().interestingGivens.add("productName", "Joy Of Java");
         // TODO add parts of products to interestinggivens
         return givens -> givens;
+    }
+
+    private void andTheResponseBodyIs(String expected) throws Exception {
+        the.body(expected);
     }
 
     private void thenItReturnsAStatusCodeOf(int expected) throws Exception {
         the.statusCode(expected);
     }
 
-    private static final String PATH = "http://localhost:8081/products";
 }
