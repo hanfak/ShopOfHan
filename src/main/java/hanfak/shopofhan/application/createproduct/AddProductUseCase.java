@@ -5,6 +5,9 @@ import hanfak.shopofhan.domain.product.Product;
 import org.slf4j.Logger;
 
 import java.sql.SQLException;
+import java.util.Optional;
+
+import static java.lang.String.format;
 
 public class AddProductUseCase {
     private ProductRepository productRepository;
@@ -16,17 +19,13 @@ public class AddProductUseCase {
     }
 
     public void addProduct(Product product) throws SQLException {
-        // TODO test this check
-//        Optional<Product> exisitingProduct = productRepository.checkProductById(product.productId);
-//        if (exisitingProduct.isPresent()) {
-//            String message = format("Product with id, '%s', has not been added, as it already exists.", exisitingProduct.get().productId);
-//            logger.error(message);
-//            throw new IllegalStateException(message);
-//        }
-        // Add product to repository
-
-        productRepository.addProduct(product);
-        // Return product
+        Optional<Product> storedProduct = productRepository.addProduct(product);
+        storedProduct.orElseThrow(this::illegalStateException);
+        logger.info(format("Product '%s' added", storedProduct.get().productId));
     }
 
+    private IllegalStateException illegalStateException() {
+        logger.info("Product was not added");
+        return new IllegalStateException("Product was not added");
+    }
 }

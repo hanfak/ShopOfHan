@@ -16,11 +16,11 @@ public class AddProductWebService {
     }
 
     public RenderedContent addProduct(Product product) throws SQLException {
-//        try {
+        try {
             addProductUseCase.addProduct(product);
             return RenderedContent.jsonContent(format("Product with id, '%s', has been added.", product.productId));
-//        } catch (Exception e) {
-//            return RenderedContent.errorContent(format("Product with id, '%s', has not been added, as it already exists.", product.productId));
-//        }
+        } catch (Exception e) {
+            return RenderedContent.errorContent(format("Product with id, '%s', has not been added, as it already exists.", product.productId));
+        }
     }
 }

@@ -29,18 +29,21 @@ public class TestProductRepository implements ProductRepository {
     }
 
     @Override
-    public void addProduct(Product product) throws SQLException {
+    public Optional<Product> addProduct(Product product) throws SQLException {
+        if (checkProductById(product.productId).isPresent()) {
+            return Optional.empty();
+        }
         productLists.add(product);
+        return Optional.of(product);
     }
 
     private void populateProductStockLists() {
         productLists.add(JOY_OF_JAVA_PRODUCT);
         productLists.add(SQL_THE_SEQUEL_PRODUCT);
-        productLists.add(CLOJURE_THE_DOOR_PRODUCT);
     }
 
     private static final List<Product> productLists = new ArrayList<>();
-    private static final Product  JOY_OF_JAVA_PRODUCT = product(productDescription("Book about java"), productId("JOJ1"), productName("Joy Of Java"));
-    private static final Product  SQL_THE_SEQUEL_PRODUCT = product(productDescription("Book about SQL"), productId("STS1"), productName("SQL the sequel"));
-    private static final Product  CLOJURE_THE_DOOR_PRODUCT = product(productDescription("Book about Clojure"), productId("CTD1"), productName("Clojure the door"));
+    private static final Product JOY_OF_JAVA_PRODUCT = product(productDescription("Book about java"), productId("JOJ1"), productName("Joy Of Java"));
+    private static final Product SQL_THE_SEQUEL_PRODUCT = product(productDescription("Book about SQL"), productId("STS1"), productName("SQL the sequel"));
+    private static final Product CLOJURE_THE_DOOR_PRODUCT = product(productDescription("Book about Clojure"), productId("CTD1"), productName("Clojure the door"));
 }

@@ -37,11 +37,11 @@ public class JDBCProductRepository implements ProductRepository {
     }
 
     @Override
-    public void addProduct(Product product) throws SQLException {
-        executeAddProduct(product, SQL_STATEMENT_1);
+    public Optional<Product> addProduct(Product product) throws SQLException {
+        return executeAddProduct(product, SQL_STATEMENT_1);
     }
 
-    private void executeAddProduct(Product queryParameter, String sqlStatement) throws SQLException {
+    private Optional<Product> executeAddProduct(Product queryParameter, String sqlStatement) throws SQLException {
         try {
             Optional<Connection> connection = databaseConnectionManager.getDBConnection();
             if (connection.isPresent()) {
@@ -51,14 +51,16 @@ public class JDBCProductRepository implements ProductRepository {
                     stmt.setString(1, queryParameter.productName.value);
                     stmt.setString(2, queryParameter.productDescription.value);
                     stmt.setString(3, queryParameter.productId.value);
-
+                    logger.info("Storing data from database");
                     stmt.execute();
+                    logger.info("Stored data from database");
+                    return Optional.of(queryParameter);
                 }
             }
         } catch (Exception e) {
             logger.error("error " + e);
-            throw e;
         }
+        return Optional.empty();
     }
 
     private Optional<Product> executeReadSql(String queryParameter, String sqlStatement) {
@@ -86,7 +88,7 @@ public class JDBCProductRepository implements ProductRepository {
         ResultSet resultSet = stmt.executeQuery();
 
         if (resultSet.next()) {
-            logger.info("Getting data from database and storing in java pojo");
+            logger.info("Getting data from database");
             return Optional.of(product(productDescription(resultSet.getString("product_description")),
                     ProductId.productId(resultSet.getString("product_id")),
                     ProductName.productName(resultSet.getString("product_name"))));

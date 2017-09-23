@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface ProductRepository {
     Optional<Product> checkProductById(ProductId productId);
 
-    void addProduct(Product product) throws SQLException;
+    Optional<Product> addProduct(Product product) throws SQLException;
 }
