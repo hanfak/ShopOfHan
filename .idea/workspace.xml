@@ -35,14 +35,8 @@
     <list id="1e826025-1346-4ae8-bcfa-b3973c5aa76d" name="do not commit" comment="" />
     <list default="true" id="ac3ee3f6-254c-4db8-95d4-d4e0164f08d3" name="Default" comment="add product: database and business logic defined, test database defined, reset database before each test">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/createproduct/AddProductUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/createproduct/AddProductUseCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/ProductRepository.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/crosscutting/ProductRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductCheckByIdUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductCheckByIdUseCase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductCheckByNameUseCase.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/application/productavailability/ProductCheckByNameUseCase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductRepository.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/database/jdbc/JDBCProductRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/createproduct/AddProductWebService.java" afterPath="$PROJECT_DIR$/src/main/java/hanfak/shopofhan/infrastructure/web/createproduct/AddProductWebService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/AddProductTest.java" afterPath="$PROJECT_DIR$/src/test/java/acceptancetests/stockcheck/AddProductTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestProductRepository.java" afterPath="$PROJECT_DIR$/src/test/java/testinfrastructure/TestProductRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1680,7 +1674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1505657272703</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add product: sad path, cannot add product already stored">
+      <created>1506183937823</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1506183937823</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1821,7 +1822,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="tidying up, prep for new format for response of multiple items" />
     <MESSAGE value="tidy up" />
     <MESSAGE value="codecov impl" />
     <MESSAGE value="builder for server, easily add endpoints and servlets" />
@@ -1846,7 +1846,9 @@
     <MESSAGE value="Endpoint for post to add new product. WIP, passing, no business logic or mutating db." />
     <MESSAGE value="codecov" />
     <MESSAGE value="add product: database and business logic defined, test database defined, reset database before each test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add product: database and business logic defined, test database defined, reset database before each test" />
+    <MESSAGE value="add product: sad path, cannot add product already stored" />
+    <option name="LAST_COMMIT_MESSAGE" value="add product: sad path, cannot add product already stored" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2529,21 +2531,21 @@
         <state relative-caret-position="451">
           <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
           <folding>
-            <marker date="1506182812000" expanded="true" signature="44:799" ph="..." />
-            <marker date="1506182812000" expanded="true" signature="998:1484" ph="{...}" />
-            <marker date="1506182812000" expanded="true" signature="1269:1351" ph="//..." />
-            <marker date="1506182812000" expanded="true" signature="1564:1972" ph="{...}" />
-            <marker date="1506182812000" expanded="true" signature="2044:2219" ph="{...}" />
-            <marker date="1506182812000" expanded="true" signature="2321:2390" ph="{...}" />
-            <marker date="1506182812000" expanded="false" signature="2452:2463" ph=" { " />
-            <marker date="1506182812000" expanded="false" signature="2482:2488" ph=" }" />
-            <marker date="1506182812000" expanded="false" signature="2537:2548" ph=" { " />
-            <marker date="1506182812000" expanded="false" signature="2560:2566" ph=" }" />
-            <marker date="1506182812000" expanded="true" signature="2612:2689" ph="{...}" />
-            <marker date="1506182812000" expanded="true" signature="2695:2737" ph="//..." />
-            <marker date="1506182812000" expanded="true" signature="2805:2977" ph="{...}" />
-            <marker date="1506182812000" expanded="true" signature="3051:3086" ph="{...}" />
-            <marker date="1506182812000" expanded="true" signature="3163:3204" ph="{...}" />
+            <marker date="1506183937000" expanded="true" signature="44:640" ph="..." />
+            <marker date="1506183937000" expanded="true" signature="839:1325" ph="{...}" />
+            <marker date="1506183937000" expanded="true" signature="1110:1192" ph="//..." />
+            <marker date="1506183937000" expanded="true" signature="1405:1813" ph="{...}" />
+            <marker date="1506183937000" expanded="true" signature="1885:2060" ph="{...}" />
+            <marker date="1506183937000" expanded="true" signature="2162:2231" ph="{...}" />
+            <marker date="1506183937000" expanded="false" signature="2293:2304" ph=" { " />
+            <marker date="1506183937000" expanded="false" signature="2323:2329" ph=" }" />
+            <marker date="1506183937000" expanded="false" signature="2378:2389" ph=" { " />
+            <marker date="1506183937000" expanded="false" signature="2401:2407" ph=" }" />
+            <marker date="1506183937000" expanded="true" signature="2453:2530" ph="{...}" />
+            <marker date="1506183937000" expanded="true" signature="2536:2578" ph="//..." />
+            <marker date="1506183937000" expanded="true" signature="2646:2818" ph="{...}" />
+            <marker date="1506183937000" expanded="true" signature="2892:2927" ph="{...}" />
+            <marker date="1506183937000" expanded="true" signature="3004:3045" ph="{...}" />
           </folding>
         </state>
       </provider>

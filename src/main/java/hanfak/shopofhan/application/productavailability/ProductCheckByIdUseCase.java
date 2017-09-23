@@ -24,28 +24,19 @@ public class ProductCheckByIdUseCase {
     public ProductStock checkStock(ProductId productId) {
         logger.info(format("checking stock by Id '%s'", productId));
         Optional<ProductStock> checkStock = stockRepository.checkStockById(productId);
-        logResultOfStockCheck(checkStock);
 
         /*
         * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
         * if statement here
         **/
         ProductStock productStock = checkStock.orElseThrow(this::illegalStateException);
-        logger.info("Stock is there");
+        logger.info(format("Stock checked and returned '%s'", checkStock.get()));
 
         return productStock;
     }
 
-    private void logResultOfStockCheck(Optional<ProductStock> checkStock) {
-        if (checkStock.isPresent()) {
-            logger.info(format("Stock checked and returned '%s'", checkStock.get()));
-        } else {
-            logger.info("Stock checked and returned nothing");
-        }
-    }
-
     private IllegalStateException illegalStateException() {
-        logger.info("Stock not there");
+        logger.info("Stock checked and returned nothing");
         return new IllegalStateException("Product is not found");
     }
 }

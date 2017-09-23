@@ -23,7 +23,6 @@ public class ProductCheckByNameUseCase {
     public ProductStock checkStock(ProductToCheck productToCheck) {
         logger.info(format("checking stock by Name '%s'", productToCheck.getProductName()));
         Optional<ProductStock> checkStock = stockRepository.checkStockByName(productToCheck.getProductName());
-        logResultOfStockCheck(checkStock);
 
         /*
         * Can throw error, or bubble up the optional to the webservice which will the decide on the response, thus no
@@ -31,21 +30,13 @@ public class ProductCheckByNameUseCase {
         **/
         ProductStock productStock = checkStock.orElseThrow(this::illegalStateException);
 
-        logger.info("Stock is there");
+        logger.info(format("Stock checked and returned '%s'", checkStock.get()));
 
         return productStock;
     }
 
-    private void logResultOfStockCheck(Optional<ProductStock> checkStock) {
-        if (checkStock.isPresent()) {
-            logger.info(format("Stock checked and returned '%s'", checkStock.get()));
-        } else {
-            logger.info("Stock checked and returned nothing");
-        }
-    }
-
     private IllegalStateException illegalStateException() {
-        logger.info("Stock not there");
+        logger.info("Stock checked and returned nothing");
         return new IllegalStateException("Product is not found");
     }
 }
