@@ -2,6 +2,7 @@ package hanfak.shopofhan.infrastructure.database.jdbc;
 
 import hanfak.shopofhan.domain.ProductStockList;
 import hanfak.shopofhan.domain.stock.Stock;
+import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductStockRepository;
 import org.assertj.core.api.WithAssertions;
 import org.junit.Test;
 import org.slf4j.Logger;

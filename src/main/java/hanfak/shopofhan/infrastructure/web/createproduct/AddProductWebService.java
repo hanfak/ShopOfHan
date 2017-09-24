@@ -6,6 +6,8 @@ import hanfak.shopofhan.infrastructure.web.RenderedContent;
 
 import java.sql.SQLException;
 
+import static hanfak.shopofhan.infrastructure.web.RenderedContent.errorContent;
+import static hanfak.shopofhan.infrastructure.web.RenderedContent.jsonContent;
 import static java.lang.String.format;
 
 public class AddProductWebService {
@@ -18,9 +20,9 @@ public class AddProductWebService {
     public RenderedContent addProduct(Product product) throws SQLException {
         try {
             addProductUseCase.addProduct(product);
-            return RenderedContent.jsonContent(format("Product with id, '%s', has been added.", product.productId));
+            return jsonContent(format("Product with id, '%s', has been added.", product.productId));
         } catch (Exception e) {
-            return RenderedContent.errorContent(format("Product with id, '%s', has not been added, as it already exists.", product.productId));
+            return errorContent(format("Product with id, '%s', has not been added, as it already exists.", product.productId));
         }
     }
 }

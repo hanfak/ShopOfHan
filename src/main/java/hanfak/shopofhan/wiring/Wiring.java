@@ -9,9 +9,10 @@ import hanfak.shopofhan.application.productavailability.ProductCheckByNameUseCas
 import hanfak.shopofhan.application.productavailability.ProductStockCheckByIdUseCase;
 import hanfak.shopofhan.infrastructure.database.connection.MySqlJDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
-import hanfak.shopofhan.infrastructure.database.jdbc.JDBCProductRepository;
-import hanfak.shopofhan.infrastructure.database.jdbc.JDBCProductStockRepository;
-import hanfak.shopofhan.infrastructure.database.jdbc.JDBCStockRepository;
+import hanfak.shopofhan.infrastructure.database.jdbc.JdbcRecordReaderFactory;
+import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductRepository;
+import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductStockRepository;
+import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCStockRepository;
 import hanfak.shopofhan.infrastructure.monitoring.DatabaseConnectionProbe;
 import hanfak.shopofhan.infrastructure.properties.PropertiesReader;
 import hanfak.shopofhan.infrastructure.properties.Settings;
@@ -77,7 +78,7 @@ public class Wiring {
     }
 
     public StockRepository stockRepository() {
-        return new JDBCStockRepository(logger(JDBCStockRepository.class), databaseConnectionManager());
+        return new JDBCStockRepository(logger(JDBCStockRepository.class), databaseConnectionManager(), new JdbcRecordReaderFactory(logger(JdbcRecordReaderFactory.class), databaseConnectionManager()));
     }
 
     public ProductStockRepository productStockRepository() {

@@ -1,9 +1,10 @@
-package hanfak.shopofhan.infrastructure.database.jdbc;
+package hanfak.shopofhan.infrastructure.database.jdbc.repositories;
 
 import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.domain.product.Product;
 import hanfak.shopofhan.domain.product.ProductId;
 import hanfak.shopofhan.domain.product.ProductName;
+import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import org.slf4j.Logger;
 
 import java.sql.Connection;
