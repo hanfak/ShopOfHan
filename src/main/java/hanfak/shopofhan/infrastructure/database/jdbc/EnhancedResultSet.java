@@ -7,11 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.ZonedDateTime;
 
-import static hanfak.shopofhan.infrastructure.database.jdbc.OracleColumnAdapters.adaptFromEmptyStringRepresentation;
-import static hanfak.shopofhan.infrastructure.database.jdbc.OracleColumnAdapters.adaptIntToBoolean;
 import static hanfak.shopofhan.infrastructure.database.jdbc.OracleColumnAdapters.adaptTimeStampToZonedDateTime;
 
-// TODO test
+// TODO implement interface for different databases
 public class EnhancedResultSet extends ValueType {
 
     private final ResultSet resultSet;
@@ -33,10 +31,10 @@ public class EnhancedResultSet extends ValueType {
     }
 
     public String getString(String columnName) throws SQLException {
-        return adaptFromEmptyStringRepresentation(resultSet.getString(columnName));
+        return resultSet.getString(columnName);
     }
 
     public boolean getBoolean(String columnName) throws SQLException {
-        return adaptIntToBoolean(resultSet.getInt(columnName));
+        return resultSet.getBoolean(columnName);
     }
 }
