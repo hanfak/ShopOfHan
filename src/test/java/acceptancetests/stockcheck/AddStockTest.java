@@ -1,11 +1,9 @@
 package acceptancetests.stockcheck;
 
 import acceptancetests.AcceptanceTest;
-import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
 import hanfak.shopofhan.domain.product.ProductId;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,27 +13,24 @@ import static hanfak.shopofhan.domain.product.ProductDescription.productDescript
 import static hanfak.shopofhan.domain.product.ProductId.productId;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
 
-@RunWith(SpecRunner.class)
-public class AddProductTest extends AcceptanceTest {
-
-    private ProductId actualProductId;
+public class AddStockTest extends AcceptanceTest {
 
     @Test
-    public void shouldReturnStockAmountForItem() throws Exception {
-        given(theSystemIsRunning());
-        when(aNewProductIsAdded.throughARequestTo("http://localhost:8081/products", withProductId("CTD1"), withProductName("Clojure the door"), andProductDescription("Book about Clojure")));
-        thenItReturnsAStatusCodeOf(200);
-        andTheResponseBodyIs("Product with id, 'CTD1', has been added.");
-        andTheDatabaseContainsAProductWithName("Clojure the door", withProductId("CTD1"), andProductDescription("Book about Clojure"));
-    }
-
-    @Test
-    public void shouldReturnProductAlreadyExists() throws Exception {
+    public void shouldReturn200WhenStoringNewStock() throws Exception {
         given(theSystemIsRunning());
         and(aProductAlreadyExists());
-        when(aNewProductIsAdded.throughARequestTo("http://localhost:8081/products", withProductId("STS1"), withProductName("SQL the sequel"), andProductDescription("Book about SQL")));
-        thenItReturnsAStatusCodeOf(404);
-        andTheResponseBodyIs("Product with id, 'STS1', has not been added, as it already exists.");
+        when(stockIsAdded.throughARequestTo("http://localhost:8081/stock", withProductName("Clojure the door"), withProductId("CTD1"), withStockId("Clojure the door"), withStockDescription("Book about Clojure"), andAmount(5)));
+        thenItReturnsAStatusCodeOf(200);
+        andTheResponseBodyIs("Product with id, 'CTD1', has been added.");
+//        andTheDatabaseContainsAStockWithStockId("Clojure the door", withProductId("CTD1"), withStockDescription("Book about Clojure"), 5L);
+    }
+
+    private String withProductName(String productName) {
+        return productName;
+    }
+
+    private long andAmount(long amount) {
+        return amount;
     }
 
     private GivensBuilder aProductAlreadyExists() throws SQLException {
@@ -43,15 +38,15 @@ public class AddProductTest extends AcceptanceTest {
         return givens -> givens;
     }
 
-    private void andTheDatabaseContainsAProductWithName(String name, String id, String description) {
-        the.productDatabase(actualProductId, name, id, description);
+    private void andTheDatabaseContainsAStockWithStockId(String stockID, String productId, String stockDescription, long amount) {
+        the.stockDatabase(stockID, productId, stockDescription, amount);
     }
 
-    private String andProductDescription(String description) {
+    private String withStockDescription(String description) {
         return description;
     }
 
-    private String withProductName(String name) {
+    private String withStockId(String name) {
         return name;
     }
 
@@ -60,14 +55,12 @@ public class AddProductTest extends AcceptanceTest {
         return id;
     }
 
-    // TODO SAD path
-    // techinical failure
-
     private GivensBuilder theSystemIsRunning() throws IOException {
         testState().interestingGivens.add("productName", "Joy Of Java");
         // TODO add parts of products to interestinggivens
         return givens -> givens;
     }
+
 
     private void andTheResponseBodyIs(String expected) throws Exception {
         the.body(expected);
@@ -77,4 +70,5 @@ public class AddProductTest extends AcceptanceTest {
         the.statusCode(expected);
     }
 
+    private ProductId actualProductId;
 }

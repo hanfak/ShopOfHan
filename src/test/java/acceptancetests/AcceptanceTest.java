@@ -2,6 +2,7 @@ package acceptancetests;
 
 import acceptancetests.thens.Thens;
 import acceptancetests.whens.ANewProductIsAdded;
+import acceptancetests.whens.StockIsAdded;
 import acceptancetests.whens.Whens;
 import com.googlecode.yatspec.junit.SpecResultListener;
 import com.googlecode.yatspec.junit.WithCustomResultListeners;
@@ -27,7 +28,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.lang.String.format;
 import static java.util.Collections.singletonList;
 import static testinfrastructure.TestWiring.ENVIRONMENT;
 
@@ -37,6 +37,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
     private final acceptancetests.TestState testState = new acceptancetests.TestState();
     protected final Whens weMake = new Whens(testState); // TODO naming of these
     protected final ANewProductIsAdded aNewProductIsAdded = new ANewProductIsAdded(testState);
+    protected final StockIsAdded stockIsAdded = new StockIsAdded(testState);
     protected final Thens the = new Thens(testState, capturedInputAndOutputs); // TODO rename
     private static final TestWiring TEST_WIRING = new TestWiring();
     public static final ProductRepository productRepository = TEST_WIRING.productRepository();

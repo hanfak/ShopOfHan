@@ -1,4 +1,4 @@
-package hanfak.shopofhan.infrastructure.database.jdbc;
+package hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary;
 
 import java.sql.SQLException;
 

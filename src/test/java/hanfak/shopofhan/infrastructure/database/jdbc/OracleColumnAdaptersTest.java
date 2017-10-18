@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-import static hanfak.shopofhan.infrastructure.database.jdbc.OracleColumnAdapters.adaptTimeStampToZonedDateTime;
+import static hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.OracleColumnAdapters.adaptTimeStampToZonedDateTime;
 
 public class OracleColumnAdaptersTest implements WithAssertions {
     @Test

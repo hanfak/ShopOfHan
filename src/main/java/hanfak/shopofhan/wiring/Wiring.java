@@ -9,7 +9,7 @@ import hanfak.shopofhan.application.productavailability.ProductCheckByNameUseCas
 import hanfak.shopofhan.application.productavailability.ProductStockCheckByIdUseCase;
 import hanfak.shopofhan.infrastructure.database.connection.MySqlJDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
-import hanfak.shopofhan.infrastructure.database.jdbc.JdbcRecordReaderFactory;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductStockRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCStockRepository;
@@ -21,6 +21,7 @@ import hanfak.shopofhan.infrastructure.web.Unmarshaller;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductServlet;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductUnmarshaller;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductWebService;
+import hanfak.shopofhan.infrastructure.web.createstock.AddStockServlet;
 import hanfak.shopofhan.infrastructure.web.jetty.JettyWebserverBuilder;
 import hanfak.shopofhan.infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import hanfak.shopofhan.infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
@@ -131,5 +132,9 @@ public class Wiring {
 
     public ProductRepository productRepository() {
         return new JDBCProductRepository(logger(JDBCProductRepository.class), databaseConnectionManager());
+    }
+
+    public AddStockServlet addStockServlet() {
+        return new AddStockServlet();
     }
 }

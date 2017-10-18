@@ -1,5 +1,6 @@
-package hanfak.shopofhan.infrastructure.database.jdbc;
+package hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary;
 
+import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import org.slf4j.Logger;
 
 public class JdbcRecordReaderFactory {

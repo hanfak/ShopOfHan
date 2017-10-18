@@ -1,7 +1,8 @@
-package hanfak.shopofhan.infrastructure.database.jdbc;
+package hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary;
 
 //import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
+import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import org.slf4j.Logger;
 
 import java.sql.Connection;

@@ -4,12 +4,13 @@ import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.domain.ProductStock;
 import hanfak.shopofhan.domain.product.ProductId;
 import hanfak.shopofhan.domain.product.ProductName;
-import hanfak.shopofhan.infrastructure.database.jdbc.*;
+import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.EnhancedPreparedStatement;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.EnhancedResultSet;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReader;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
 import org.slf4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -48,40 +49,6 @@ public class JDBCStockRepository implements StockRepository {
         return productStockByProductIdReader.readRecord(productId);
     }
 
-    private Optional<ProductStock> executeSql(String queryParameter, String sqlStatement) {
-        // TODO tidy up
-        try {
-            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
-            if (connection.isPresent()) {
-                try (Connection dbConnection = connection.get(); //TODO change to the above
-                     PreparedStatement stmt = dbConnection.prepareStatement(sqlStatement)) {
-
-                    Optional<ProductStock> resultSet = readProductStock(queryParameter, stmt);
-                    if (resultSet.isPresent()) return resultSet;
-                }
-            }
-        } catch (Exception e) {
-            logger.error("error " + e);
-        }
-        return Optional.empty();
-    }
-
-
-    private Optional<ProductStock> readProductStock(String productIdentifier, PreparedStatement stmt) throws SQLException {
-        stmt.setString(1, productIdentifier);
-
-        ResultSet resultSet = stmt.executeQuery();
-
-        if (resultSet.next()) {
-            logger.info("Getting data from database and storing in java pojo");
-            return Optional.of(productStock(
-                    productName(resultSet.getString("product_name")),
-                    resultSet.getInt("amount")));
-        }
-        resultSet.close();
-        return Optional.empty();
-    }
-
     protected ProductStock extractResultSet(EnhancedResultSet enhancedResultSet) throws SQLException {
         return productStock(
                 productName(enhancedResultSet.getString("product_name")),
@@ -95,4 +62,39 @@ public class JDBCStockRepository implements StockRepository {
     private void setSelectByProductNameParameters(EnhancedPreparedStatement enhancedPreparedStatement, ProductName productName) throws SQLException {
         enhancedPreparedStatement.setString(productName.value);
     }
+//    private Optional<ProductStock> executeSql(String queryParameter, String sqlStatement) {
+//        // TODO tidy up
+//        try {
+//            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
+//            if (connection.isPresent()) {
+//                try (Connection dbConnection = connection.get(); //TODO change to the above
+//                     PreparedStatement stmt = dbConnection.prepareStatement(sqlStatement)) {
+//
+//                    Optional<ProductStock> resultSet = readProductStock(queryParameter, stmt);
+//                    if (resultSet.isPresent()) return resultSet;
+//                }
+//            }
+//        } catch (Exception e) {
+//            logger.error("error " + e);
+//        }
+//        return Optional.empty();
+//    }
+//
+//
+//    private Optional<ProductStock> readProductStock(String productIdentifier, PreparedStatement stmt) throws SQLException {
+//        stmt.setString(1, productIdentifier);
+//
+//        ResultSet resultSet = stmt.executeQuery();
+//
+//        if (resultSet.next()) {
+//            logger.info("Getting data from database and storing in java pojo");
+//            return Optional.of(productStock(
+//                    productName(resultSet.getString("product_name")),
+//                    resultSet.getInt("amount")));
+//        }
+//        resultSet.close();
+//        return Optional.empty();
+//    }
+//
+
 }

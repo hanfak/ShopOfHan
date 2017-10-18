@@ -43,14 +43,18 @@ public class Thens implements WithAssertions {
     }
 
     //TODO naming of method for readbility in yatspec output
-    public void database(ProductId actualProductId, String name, String id, String description) {
+    public void productDatabase(ProductId actualProductId, String name, String id, String description) {
         Optional<Product> product = productRepository.checkProductById(actualProductId);
         if (product.isPresent()) {
             assertThat(product.get().productName).isEqualTo(productName(name));
             assertThat(product.get().productId).isEqualTo(ProductId.productId(id));
             assertThat(product.get().productDescription).isEqualTo(productDescription(description));
         } else {
-            fail("Nothing matches in the database");
+            fail("Nothing matches in the productDatabase");
         }
+    }
+
+    public void stockDatabase(String stockID, String productId, String stockDescription, long amount) {
+        // TODO: add to test db which inherits from JDBCStockRepository and returns the stock using the parameters
     }
 }

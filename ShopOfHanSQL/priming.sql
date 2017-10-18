@@ -13,6 +13,7 @@ CREATE TABLE product
   PRIMARY KEY           (id)
 ) ENGINE=INNODB;
 
+--add price
 CREATE TABLE stock
 (
   id                INT AUTO_INCREMENT,

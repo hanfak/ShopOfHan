@@ -1,5 +1,6 @@
 package hanfak.shopofhan.infrastructure.database.jdbc;
 
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.EnhancedResultSet;
 import org.assertj.core.api.WithAssertions;
 import org.junit.Test;
 
@@ -7,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
-import static hanfak.shopofhan.infrastructure.database.jdbc.OracleColumnAdapters.adaptTimeStampToZonedDateTime;
+import static hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.OracleColumnAdapters.adaptTimeStampToZonedDateTime;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 

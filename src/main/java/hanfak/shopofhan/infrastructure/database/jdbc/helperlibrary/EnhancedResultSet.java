@@ -1,4 +1,4 @@
-package hanfak.shopofhan.infrastructure.database.jdbc;
+package hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary;
 
 
 import hanfak.shopofhan.domain.crosscutting.ValueType;
@@ -6,8 +6,6 @@ import hanfak.shopofhan.domain.crosscutting.ValueType;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.ZonedDateTime;
-
-import static hanfak.shopofhan.infrastructure.database.jdbc.OracleColumnAdapters.adaptTimeStampToZonedDateTime;
 
 // TODO implement interface for different databases
 public class EnhancedResultSet extends ValueType {
@@ -27,7 +25,7 @@ public class EnhancedResultSet extends ValueType {
     }
 
     public ZonedDateTime getZonedDateTime(String columnName) throws SQLException {
-        return adaptTimeStampToZonedDateTime(resultSet.getTimestamp(columnName));
+        return OracleColumnAdapters.adaptTimeStampToZonedDateTime(resultSet.getTimestamp(columnName));
     }
 
     public String getString(String columnName) throws SQLException {

@@ -2,6 +2,7 @@ package hanfak.shopofhan.infrastructure.database.jdbc;
 
 import hanfak.shopofhan.domain.ProductStock;
 import hanfak.shopofhan.domain.product.ProductId;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCStockRepository;
 import org.junit.Ignore;
 import org.junit.Test;

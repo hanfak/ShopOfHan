@@ -1,4 +1,4 @@
-package hanfak.shopofhan.infrastructure.database.jdbc;
+package hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary;
 
 
 import hanfak.shopofhan.domain.crosscutting.ValueType;
