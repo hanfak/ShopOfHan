@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class AddProductServlet extends HttpServlet {
-    private Unmarshaller<Product> unmarshaller;
-    private AddProductWebService addProductWebService;
+    private final Unmarshaller<Product> unmarshaller;
+    private final AddProductWebService addProductWebService;
 
     public AddProductServlet(Unmarshaller<Product> unmarshaller, AddProductWebService addProductWebService) {
         this.unmarshaller = unmarshaller;

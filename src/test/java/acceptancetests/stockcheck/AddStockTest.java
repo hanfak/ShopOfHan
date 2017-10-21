@@ -19,26 +19,24 @@ public class AddStockTest extends AcceptanceTest {
     public void shouldReturn200WhenStoringNewStock() throws Exception {
         given(theSystemIsRunning());
         and(aProductAlreadyExists());
-        when(stockIsAdded.throughARequestTo("http://localhost:8081/stock", withProductName("Clojure the door"), withProductId("CTD1"), withStockId("Clojure the door"), withStockDescription("Book about Clojure"), andAmount(5)));
+        when(stockIsAdded.throughARequestTo("http://localhost:8081/stock", withProductId("CTD1"), withStockId("STD1"), withStockDescription("Single Pack"), andAmount(5)));
         thenItReturnsAStatusCodeOf(200);
-        andTheResponseBodyIs("Product with id, 'CTD1', has been added.");
-//        andTheDatabaseContainsAStockWithStockId("Clojure the door", withProductId("CTD1"), withStockDescription("Book about Clojure"), 5L);
+        andTheResponseBodyIs("Product with id, 'CTD1', has been added.Stock of '5' items for Product with id, 'CTD1', has been added.");
+        andTheDatabaseContainsAStockWithStockId("STD1", withProductId("CTD1"), withStockDescription("Single Pack"), 5);
     }
 
-    private String withProductName(String productName) {
-        return productName;
-    }
+    // TODO test stock cannot be added if product is not in database
 
     private long andAmount(long amount) {
         return amount;
     }
 
     private GivensBuilder aProductAlreadyExists() throws SQLException {
-        productRepository.addProduct(product(productDescription("Book about SQL"), productId("STS1"), productName("SQL the sequel")));
+        productRepository.addProduct(product(productDescription("Book about clojure"), productId("CTD1"), productName("CLojure the door")));
         return givens -> givens;
     }
 
-    private void andTheDatabaseContainsAStockWithStockId(String stockID, String productId, String stockDescription, long amount) {
+    private void andTheDatabaseContainsAStockWithStockId(String stockID, String productId, String stockDescription, int amount) {
         the.stockDatabase(stockID, productId, stockDescription, amount);
     }
 

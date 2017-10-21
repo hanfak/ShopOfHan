@@ -16,6 +16,7 @@ import hanfak.shopofhan.infrastructure.properties.Settings;
 import hanfak.shopofhan.wiring.ShopOfHan;
 import org.junit.After;
 import org.junit.Before;
+import testinfrastructure.TestStockRepository;
 import testinfrastructure.TestWiring;
 
 import java.io.IOException;
@@ -41,6 +42,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
     protected final Thens the = new Thens(testState, capturedInputAndOutputs); // TODO rename
     private static final TestWiring TEST_WIRING = new TestWiring();
     public static final ProductRepository productRepository = TEST_WIRING.productRepository();
+    public static final TestStockRepository stockRepository = new TestStockRepository();
 
     @Before
     public void setUp() throws Exception {

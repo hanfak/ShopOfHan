@@ -70,7 +70,7 @@ public class JDBCProductStockRepository implements ProductStockRepository {
     private Optional<ProductStockList> lookUpAllStock(String productId, PreparedStatement stmt) throws SQLException {
         stmt.setString(1, productId);
         ResultSet resultSet = stmt.executeQuery();
-
+        // TODO change nulls
         List<Stock> stock = new ArrayList<>();
         ProductName productName = null;
         ProductDescription productDescription = null;
@@ -80,7 +80,10 @@ public class JDBCProductStockRepository implements ProductStockRepository {
             productName = productName(resultSet.getString("product_name"));
             productIdRetrieved = Optional.of(productId(resultSet.getString("product_id")));
             productDescription = productDescription(resultSet.getString("product_description"));
-            stock.add(stock(stockAmount(resultSet.getInt("amount")), stockId(resultSet.getString("stock_id")), stockDescription(resultSet.getString("stock_description"))));
+            stock.add(stock(stockAmount(resultSet.getInt("amount")),
+                    stockId(resultSet.getString("stock_id")),
+                    stockDescription(resultSet.getString("stock_description")),
+                    productId(resultSet.getString("product_id"))));
         }
 
         resultSet.close();

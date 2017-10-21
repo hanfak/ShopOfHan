@@ -45,7 +45,7 @@ public class JDBCProductStockRepositoryTest implements WithAssertions {
         Optional<ProductStockList> result = jdbcProductStockRepository.findListOfProductStock(productId("abc1"));
 
         List<Stock> stock = new ArrayList<>();
-        stock.add((stock(stockAmount(5), stockId("SID"), stockDescription("stock description"))));
+        stock.add((stock(stockAmount(5), stockId("SID"), stockDescription("stock description"), productId("abc1"))));
         ProductStockList expectedResult = productStockList(product(productDescription("blah"), productId("abc1"), productName("A Product")), stock);
         assertThat(result.get()).isEqualTo(expectedResult);
     }

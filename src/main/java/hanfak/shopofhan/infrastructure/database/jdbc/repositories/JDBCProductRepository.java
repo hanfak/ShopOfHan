@@ -3,7 +3,6 @@ package hanfak.shopofhan.infrastructure.database.jdbc.repositories;
 import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.domain.product.Product;
 import hanfak.shopofhan.domain.product.ProductId;
-import hanfak.shopofhan.domain.product.ProductName;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import org.slf4j.Logger;
 
@@ -15,6 +14,8 @@ import java.util.Optional;
 
 import static hanfak.shopofhan.domain.product.Product.product;
 import static hanfak.shopofhan.domain.product.ProductDescription.productDescription;
+import static hanfak.shopofhan.domain.product.ProductId.productId;
+import static hanfak.shopofhan.domain.product.ProductName.productName;
 
 // TODO Module test to test database is working
 @SuppressWarnings("Duplicates")
@@ -91,8 +92,8 @@ public class JDBCProductRepository implements ProductRepository {
         if (resultSet.next()) {
             logger.info("Getting data from database");
             return Optional.of(product(productDescription(resultSet.getString("product_description")),
-                    ProductId.productId(resultSet.getString("product_id")),
-                    ProductName.productName(resultSet.getString("product_name"))));
+                    productId(resultSet.getString("product_id")),
+                    productName(resultSet.getString("product_name"))));
         }
         resultSet.close();
         return Optional.empty();

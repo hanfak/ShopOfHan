@@ -19,7 +19,7 @@ public class AddProductUseCase {
     }
 
     public void addProduct(Product product) throws SQLException {
-        Optional<Product> storedProduct = productRepository.addProduct(product);
+        Optional<Product> storedProduct = productRepository.addProduct(product); // TODO make this void return
         storedProduct.orElseThrow(this::illegalStateException);
         logger.info(format("Product '%s' added", storedProduct.get().productId));
     }

@@ -20,6 +20,7 @@ public class AddProductWebService {
     public RenderedContent addProduct(Product product) throws SQLException {
         try {
             addProductUseCase.addProduct(product);
+            // TODO change to different rendered content
             return jsonContent(format("Product with id, '%s', has been added.", product.productId));
         } catch (Exception e) {
             return errorContent(format("Product with id, '%s', has not been added, as it already exists.", product.productId));

@@ -5,12 +5,14 @@ import com.googlecode.yatspec.state.givenwhenthen.CapturedInputAndOutputs;
 import com.googlecode.yatspec.state.givenwhenthen.StateExtractor;
 import hanfak.shopofhan.domain.product.Product;
 import hanfak.shopofhan.domain.product.ProductId;
+import hanfak.shopofhan.domain.stock.Stock;
 import httpclient.Response;
 import org.assertj.core.api.WithAssertions;
 
 import java.util.Optional;
 
 import static acceptancetests.AcceptanceTest.productRepository;
+import static acceptancetests.AcceptanceTest.stockRepository;
 import static hanfak.shopofhan.domain.product.ProductDescription.productDescription;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
 
@@ -54,7 +56,10 @@ public class Thens implements WithAssertions {
         }
     }
 
-    public void stockDatabase(String stockID, String productId, String stockDescription, long amount) {
+    public void stockDatabase(String stockId, String productId, String stockDescription, int amount) {
         // TODO: add to test db which inherits from JDBCStockRepository and returns the stock using the parameters
+        Stock stock = stockRepository.checkStock(stockId, productId);
+        assertThat(stock.amount.value).isEqualTo(amount);
+        assertThat(stock.stockDescription.value).isEqualTo(stockDescription);
     }
 }

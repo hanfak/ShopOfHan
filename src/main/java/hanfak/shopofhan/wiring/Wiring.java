@@ -1,6 +1,7 @@
 package hanfak.shopofhan.wiring;
 
 import hanfak.shopofhan.application.createproduct.AddProductUseCase;
+import hanfak.shopofhan.application.createstock.AddStockUseCase;
 import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.application.crosscutting.StockRepository;
@@ -10,6 +11,7 @@ import hanfak.shopofhan.application.productavailability.ProductStockCheckByIdUse
 import hanfak.shopofhan.infrastructure.database.connection.MySqlJDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcWriterFactory;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductStockRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCStockRepository;
@@ -22,6 +24,8 @@ import hanfak.shopofhan.infrastructure.web.createproduct.AddProductServlet;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductUnmarshaller;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductWebService;
 import hanfak.shopofhan.infrastructure.web.createstock.AddStockServlet;
+import hanfak.shopofhan.infrastructure.web.createstock.AddStockUnmarshaller;
+import hanfak.shopofhan.infrastructure.web.createstock.AddStockWebService;
 import hanfak.shopofhan.infrastructure.web.jetty.JettyWebserverBuilder;
 import hanfak.shopofhan.infrastructure.web.productavailability.ProductAvailabilityMarshaller;
 import hanfak.shopofhan.infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
@@ -79,7 +83,7 @@ public class Wiring {
     }
 
     public StockRepository stockRepository() {
-        return new JDBCStockRepository(logger(JDBCStockRepository.class), databaseConnectionManager(), new JdbcRecordReaderFactory(logger(JdbcRecordReaderFactory.class), databaseConnectionManager()));
+        return new JDBCStockRepository(logger(JDBCStockRepository.class), new JdbcRecordReaderFactory(logger(JdbcRecordReaderFactory.class), databaseConnectionManager()), new JdbcWriterFactory(logger(JdbcWriterFactory.class), databaseConnectionManager()));
     }
 
     public ProductStockRepository productStockRepository() {
@@ -135,6 +139,6 @@ public class Wiring {
     }
 
     public AddStockServlet addStockServlet() {
-        return new AddStockServlet();
+        return new AddStockServlet(new AddStockUnmarshaller(), new AddStockWebService(new AddStockUseCase(productRepository(), stockRepository())));
     }
 }

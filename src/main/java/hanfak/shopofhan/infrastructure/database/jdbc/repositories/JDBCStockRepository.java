@@ -4,11 +4,8 @@ import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.domain.ProductStock;
 import hanfak.shopofhan.domain.product.ProductId;
 import hanfak.shopofhan.domain.product.ProductName;
-import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
-import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.EnhancedPreparedStatement;
-import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.EnhancedResultSet;
-import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReader;
-import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
+import hanfak.shopofhan.domain.stock.Stock;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.*;
 import org.slf4j.Logger;
 
 import java.sql.SQLException;
@@ -18,41 +15,49 @@ import static hanfak.shopofhan.domain.ProductStock.productStock;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
 
 // TODO Module test to test database is working
-@SuppressWarnings("Duplicates")
 public class JDBCStockRepository implements StockRepository {
 
     private static final String SQL_STATEMENT = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product_name=?";
     private static final String SQL_STATEMENT_TWO = "SELECT product.product_name, stock.amount FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
-    private static final String SQL_STATEMENT_THREE = "SELECT product.product_name, product.product_id, product.product_description, stock.amount, stock.stock_id, stock.stock_description FROM product INNER JOIN stock ON stock.product_id = product.id WHERE product.product_id=?";
+    private static final String SQL_INSERT_STOCK = "INSERT INTO stock (product_id, stock_id, stock_description, amount) VALUES (?, ?, ?, ?)";
     private final Logger logger;
-    private final JDBCDatabaseConnectionManager databaseConnectionManager;
     private final JdbcRecordReader<ProductId, ProductStock> productStockByProductIdReader;
     private final JdbcRecordReader<ProductName, ProductStock> productStockByProductNameReader;
+    private final JdbcWriter<Stock> stockWriter;
 
-    // TODO extract a reader and inject, which handles the connection and making the call pass into reader.readProductStock the sql
-    public JDBCStockRepository(Logger logger, JDBCDatabaseConnectionManager databaseConnectionManager, JdbcRecordReaderFactory jdbcRecordReaderFactory) {
+    public JDBCStockRepository(Logger logger, JdbcRecordReaderFactory jdbcRecordReaderFactory, JdbcWriterFactory jdbcWriterFactory) {
         this.logger = logger;
-        this.databaseConnectionManager = databaseConnectionManager;
         this.productStockByProductIdReader = jdbcRecordReaderFactory.create(SQL_STATEMENT_TWO, this::extractResultSet, this::setSelectByProductIdParameters, ProductStock.class);
         this.productStockByProductNameReader = jdbcRecordReaderFactory.create(SQL_STATEMENT, this::extractResultSet, this::setSelectByProductNameParameters, ProductStock.class);
+        this.stockWriter = jdbcWriterFactory.create(SQL_INSERT_STOCK, this::setInsertParameters);
     }
 
     @Override
     public Optional<ProductStock> checkStockByName(ProductName productName) {
-//        return executeSql(productName.value, SQL_STATEMENT);
         return productStockByProductNameReader.readRecord(productName);
     }
 
     @Override
     public Optional<ProductStock> checkStockById(ProductId productId) {
-//        return executeSql(productId.value, SQL_STATEMENT_TWO);
         return productStockByProductIdReader.readRecord(productId);
+    }
+
+    @Override
+    public void addStock(Stock stock) {
+        stockWriter.write(stock);
     }
 
     protected ProductStock extractResultSet(EnhancedResultSet enhancedResultSet) throws SQLException {
         return productStock(
                 productName(enhancedResultSet.getString("product_name")),
                 enhancedResultSet.getInt("amount"));
+    }
+
+    public void setInsertParameters(EnhancedPreparedStatement enhancedPreparedStatement, Stock stock) throws SQLException {
+        enhancedPreparedStatement.setString(stock.productId.value);
+        enhancedPreparedStatement.setString(stock.stockDescription.value);
+        enhancedPreparedStatement.setString(stock.stockId.value);
+        enhancedPreparedStatement.setInt(stock.amount.value);
     }
 
     private void setSelectByProductIdParameters(EnhancedPreparedStatement enhancedPreparedStatement, ProductId productId) throws SQLException {
@@ -62,39 +67,4 @@ public class JDBCStockRepository implements StockRepository {
     private void setSelectByProductNameParameters(EnhancedPreparedStatement enhancedPreparedStatement, ProductName productName) throws SQLException {
         enhancedPreparedStatement.setString(productName.value);
     }
-//    private Optional<ProductStock> executeSql(String queryParameter, String sqlStatement) {
-//        // TODO tidy up
-//        try {
-//            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
-//            if (connection.isPresent()) {
-//                try (Connection dbConnection = connection.get(); //TODO change to the above
-//                     PreparedStatement stmt = dbConnection.prepareStatement(sqlStatement)) {
-//
-//                    Optional<ProductStock> resultSet = readProductStock(queryParameter, stmt);
-//                    if (resultSet.isPresent()) return resultSet;
-//                }
-//            }
-//        } catch (Exception e) {
-//            logger.error("error " + e);
-//        }
-//        return Optional.empty();
-//    }
-//
-//
-//    private Optional<ProductStock> readProductStock(String productIdentifier, PreparedStatement stmt) throws SQLException {
-//        stmt.setString(1, productIdentifier);
-//
-//        ResultSet resultSet = stmt.executeQuery();
-//
-//        if (resultSet.next()) {
-//            logger.info("Getting data from database and storing in java pojo");
-//            return Optional.of(productStock(
-//                    productName(resultSet.getString("product_name")),
-//                    resultSet.getInt("amount")));
-//        }
-//        resultSet.close();
-//        return Optional.empty();
-//    }
-//
-
 }

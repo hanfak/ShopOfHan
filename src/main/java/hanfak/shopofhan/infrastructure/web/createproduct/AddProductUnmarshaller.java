@@ -18,13 +18,11 @@ import static hanfak.shopofhan.domain.product.ProductDescription.productDescript
 import static hanfak.shopofhan.domain.product.ProductId.productId;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
 
-public class AddProductUnmarshaller implements Unmarshaller<Product>{
+public class AddProductUnmarshaller implements Unmarshaller<Product> {
     public Product unmarshall(HttpServletRequest request) throws IOException {
         JSONObject jsonObject = new JSONObject(readInputStream(request.getInputStream()));
         // TODO Add validation
-        Product product = getProduct(jsonObject);
-        System.out.println("product = " + product);
-        return product;
+        return getProduct(jsonObject);
     }
 
     private Product getProduct(JSONObject jsonObject) {

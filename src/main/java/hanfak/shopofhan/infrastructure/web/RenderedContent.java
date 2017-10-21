@@ -27,6 +27,10 @@ public class RenderedContent {
         return renderedContent(body, "text/plain", HttpServletResponse.SC_NOT_FOUND);
     }
 
+    public static RenderedContent successfullyAddedStock(String body) {
+        return renderedContent(body, "text/plain", HttpServletResponse.SC_OK);
+    }
+
     public void render(HttpServletResponse response) throws IOException {
         response.setStatus(statusCode);
         response.setContentType(contentType);

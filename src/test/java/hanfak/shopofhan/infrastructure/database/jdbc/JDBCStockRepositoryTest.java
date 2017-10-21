@@ -3,6 +3,7 @@ package hanfak.shopofhan.infrastructure.database.jdbc;
 import hanfak.shopofhan.domain.ProductStock;
 import hanfak.shopofhan.domain.product.ProductId;
 import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcWriterFactory;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCStockRepository;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -116,5 +117,6 @@ public class JDBCStockRepositoryTest {
     private final ResultSet resultSet = mock(ResultSet.class);
 //    private final JdbcRecordReader jdbcRecordReader = mock
     private final JdbcRecordReaderFactory jdbcRecordReaderFactory = mock(JdbcRecordReaderFactory.class);
-    private final JDBCStockRepository jdbcStockRepository = new JDBCStockRepository(logger, databaseConnectionManager, jdbcRecordReaderFactory);
+    private final JdbcWriterFactory jdbcWriterFactory = mock(JdbcWriterFactory.class);
+    private final JDBCStockRepository jdbcStockRepository = new JDBCStockRepository(logger, jdbcRecordReaderFactory, jdbcWriterFactory);
 }

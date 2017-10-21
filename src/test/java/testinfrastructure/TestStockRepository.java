@@ -51,6 +51,18 @@ public class TestStockRepository implements StockRepository {
                 .map(getProductStock());
     }
 
+    @Override
+    public void addStock(Stock stock) {
+        stockList.add(stock);
+    }
+
+    // TODO create a real one of these
+    public Stock checkStock(String stockId, String productId) {
+        return stockList.stream()
+                .filter(stock -> stock.stockId.value.equals(stockId) && stock.productId.value.equals(productId)).findFirst().get();
+    }
+
+
     private Function<ProductStockList, ProductStock> getProductStock() {
         return productStockList -> productStock(productStockList.product.productName, getAmountFromFirstProductStockList(productStockList));
     }
@@ -66,10 +78,15 @@ public class TestStockRepository implements StockRepository {
     }
 
     private static final List<ProductStockList> productStockLists = new ArrayList<>();
-    private static final List<Stock> JOY_OF_JAVA_STOCK = new ArrayList<>(asList(stock(stockAmount(4), stockId("STD1"), StockDescription.stockDescription("Single Pack"))));
+    private static final List<Stock> JOY_OF_JAVA_STOCK = new ArrayList<>(asList(stock(stockAmount(4), stockId("STD1"), StockDescription.stockDescription("Single Pack"), null)));
     private static final Product  JOY_OF_JAVA_PRODUCT = product(productDescription("Book about java"), productId("JOJ1"), productName("Joy Of Java"));
     private static final ProductStockList JOY_OF_JAVA = productStockList(JOY_OF_JAVA_PRODUCT, JOY_OF_JAVA_STOCK);
-    private static final List<Stock> SQL_THE_SEQUEL_STOCK = new ArrayList<>(asList(stock(stockAmount(0), stockId("STD1"), StockDescription.stockDescription("Single Pack")), stock(stockAmount(3), StockId.stockId("STD2"), StockDescription.stockDescription("Multi Pack"))));
+    private static final List<Stock> SQL_THE_SEQUEL_STOCK = new ArrayList<>(asList(stock(stockAmount(0), stockId("STD1"), StockDescription.stockDescription("Single Pack"), null), stock(stockAmount(3), StockId.stockId("STD2"), StockDescription.stockDescription("Multi Pack"),null)));
     private static final Product  SQL_THE_SEQUEL_PRODUCT = product(productDescription("SQL the sequel"), productId("STS1"), productName("Book about SQL"));
     private static final ProductStockList SQL_THE_SEQUEL = productStockList(SQL_THE_SEQUEL_PRODUCT, SQL_THE_SEQUEL_STOCK);
+
+
+    private static final List<Stock> stockList = new ArrayList<>();
+//    private static final
+
 }
