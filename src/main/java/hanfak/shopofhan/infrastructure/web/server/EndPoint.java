@@ -27,4 +27,9 @@ public class EndPoint {
     public static EndPoint post(String path) {
         return new EndPoint("POST", path, emptyList());
     }
+
+    // TODO test
+    public static EndPoint delete(String path) {
+        return new EndPoint("DELETE", path, emptyList());
+    }
 }

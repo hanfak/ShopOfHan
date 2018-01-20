@@ -38,6 +38,7 @@ import hanfak.shopofhan.infrastructure.web.productavailability.productstockcheck
 import hanfak.shopofhan.infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdServlet;
 import hanfak.shopofhan.infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdUnmarshaller;
 import hanfak.shopofhan.infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdWebService;
+import hanfak.shopofhan.infrastructure.web.removeproduct.RemoveProductServlet;
 import hanfak.shopofhan.infrastructure.web.server.WebServerBuilder;
 import hanfak.shopofhan.infrastructure.web.statusprobeservlet.StatusProbeServlet;
 import org.slf4j.Logger;
@@ -140,5 +141,9 @@ public class Wiring {
 
     public AddStockServlet addStockServlet() {
         return new AddStockServlet(new AddStockUnmarshaller(), new AddStockWebService(new AddStockUseCase(productRepository(), stockRepository())));
+    }
+
+    public RemoveProductServlet removeProductServlet() {
+        return new RemoveProductServlet();
     }
 }

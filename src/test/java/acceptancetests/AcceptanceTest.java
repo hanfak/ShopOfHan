@@ -1,6 +1,6 @@
 package acceptancetests;
 
-import acceptancetests.thens.Thens;
+import acceptancetests.thens.Then;
 import acceptancetests.whens.ANewProductIsAdded;
 import acceptancetests.whens.StockIsAdded;
 import acceptancetests.whens.Whens;
@@ -35,13 +35,13 @@ import static testinfrastructure.TestWiring.ENVIRONMENT;
 public abstract class AcceptanceTest extends TestState implements WithCustomResultListeners {
     public static final String APPLICATION_NAME = "Shop Of Han app";
     private final ShopOfHan shopOfHan = new ShopOfHan();
-    private final acceptancetests.TestState testState = new acceptancetests.TestState();
+    protected final acceptancetests.TestState testState = new acceptancetests.TestState();
 
     protected final Whens weMake = new Whens(testState); // TODO naming of these
     protected final ANewProductIsAdded aNewProductIsAdded = new ANewProductIsAdded(testState);
     protected final StockIsAdded stockIsAdded = new StockIsAdded(testState);
 
-    protected final Thens then = new Thens(testState, capturedInputAndOutputs);
+    protected final Then then = new Then(testState, capturedInputAndOutputs);
     private static final TestWiring TEST_WIRING = new TestWiring();
     public static final ProductRepository productRepository = TEST_WIRING.productRepository();
     public static final TestStockRepository stockRepository = new TestStockRepository();
@@ -77,7 +77,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
 // TODO reset primings for all tests in @Before
     public void resetDatabaseContents() throws IOException {
         //https://stackoverflow.com/questions/10929369/how-to-execute-multiple-sql-statements-from-java
-        // get each command, store as  separate sql stmt and use batch command in execute
+        // get each command, store as  separate sql stmt and use batch command in isDeleted
         List<String> sqlCommands = Arrays.stream(readSqlPriming().split("\n\n")).collect(Collectors.toList());
         executeSQL(sqlCommands.get(0));
         executeSQL(sqlCommands.get(1));

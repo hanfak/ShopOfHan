@@ -6,6 +6,7 @@ import hanfak.shopofhan.infrastructure.web.jetty.ShopOfHanServer;
 import hanfak.shopofhan.infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
 import hanfak.shopofhan.infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
 import hanfak.shopofhan.infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdServlet;
+import hanfak.shopofhan.infrastructure.web.removeproduct.RemoveProductServlet;
 import hanfak.shopofhan.infrastructure.web.statusprobeservlet.StatusProbeServlet;
 
 public interface WebServerBuilder {
@@ -14,7 +15,8 @@ public interface WebServerBuilder {
     WebServerBuilder registerStatusProbeEndPoint(EndPoint endPoint, StatusProbeServlet statusProbeServlet);
     WebServerBuilder registerproductStockCheckByIdEndPoint(EndPoint endPoint, ProductStockCheckByIdServlet productStockCheckByIdServlet);
     WebServerBuilder registerAddProductEndPoint(EndPoint endPoint, AddProductServlet addProductServlet);
-    WebServerBuilder registerAddStockEndPoint(EndPoint post, AddStockServlet addStockServlet);
+    WebServerBuilder registerAddStockEndPoint(EndPoint endPoint, AddStockServlet addStockServlet);
+    WebServerBuilder registerDeleteProductEndPoint(EndPoint endPoint, RemoveProductServlet removeProductServlet);
 
     ShopOfHanServer build();
 }

@@ -19,7 +19,7 @@ public class ANewProductIsAdded extends WhenShopOfHanIsCalled {
     public ActionUnderTest throughARequestTo(String uri, String id, String name, String description) {
         //TODO Add builder to build request
         // hydra/src/test/java/sky/sns/hydra/hanfak.shopofhan.infrastructure/httpclient/TrackingApacheHttpClientFactoryTest.java:38
-        return (interestingGivens, capturedInputAndOutputs) -> whenWeMakeARequestTo(capturedInputAndOutputs, buildRequest(uri, id, name, description));
+        return (interestingGivens, capturedInputAndOutputs) -> whenWeMakeAPostRequestTo(capturedInputAndOutputs, buildRequest(uri, id, name, description));
     }
 
     private Request buildRequest(String uri, String id, String name, String description) {
@@ -31,5 +31,11 @@ public class ANewProductIsAdded extends WhenShopOfHanIsCalled {
                         "\"productId\" : \"%s\", " +
                         "\"productDescription\" : \"%s\"}", name, id, description))
                 .build();
+    }
+
+    // Ignored but using a different way instead of builder to create request
+    @Override
+    protected Request buildRequest() {
+        return null;
     }
 }

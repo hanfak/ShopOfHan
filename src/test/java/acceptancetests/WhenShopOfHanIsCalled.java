@@ -4,6 +4,7 @@ import com.googlecode.yatspec.state.givenwhenthen.CapturedInputAndOutputs;
 import httpclient.Header;
 import httpclient.Request;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -24,7 +25,7 @@ public abstract class WhenShopOfHanIsCalled {
         this.testState = testState;
     }
 
-    protected CapturedInputAndOutputs whenWeMakeARequestTo(CapturedInputAndOutputs capturedInputAndOutputs, Request request) throws IOException {
+    protected CapturedInputAndOutputs whenWeMakeAPostRequestTo(CapturedInputAndOutputs capturedInputAndOutputs, Request request) throws IOException {
         capturedInputAndOutputs.add(format("Request from %s to %s",CALLER, APPLICATION_NAME), request);
         testState.add("request", request.body); //Need???
         System.out.println(request.toString());
@@ -42,4 +43,24 @@ public abstract class WhenShopOfHanIsCalled {
         httpPost.setHeader(new BasicHeader(Header.CONTENT_TYPE_KEY, Header.APPLICATION_JSON));
         return httpPost;
     }
+
+    protected CapturedInputAndOutputs whenWeMakeADeleteRequestTo(CapturedInputAndOutputs capturedInputAndOutputs, Request request) throws IOException {
+        capturedInputAndOutputs.add(format("Request from %s to %s",CALLER, APPLICATION_NAME), request);
+        testState.add("request", request.body); //Need???
+        System.out.println(request.toString());
+        HttpDelete httpDelete = setDeleteRequest(request);
+        CloseableHttpResponse execute = HttpClientBuilder.create().build().execute(httpDelete);
+        httpclient.Response domainResponse = httpclient.Response.fromApacheResponse(execute);
+        testState.add("response", domainResponse);
+        capturedInputAndOutputs.add(format("Response from %s to %s", APPLICATION_NAME, CALLER), domainResponse);
+        return capturedInputAndOutputs;
+    }
+
+    private HttpDelete setDeleteRequest(Request request) throws UnsupportedEncodingException {
+        return new HttpDelete(request.url);
+    }
+
+    protected abstract Request buildRequest();
+
+
 }

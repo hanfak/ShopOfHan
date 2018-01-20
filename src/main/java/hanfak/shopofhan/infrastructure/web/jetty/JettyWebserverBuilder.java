@@ -6,6 +6,7 @@ import hanfak.shopofhan.infrastructure.web.createstock.AddStockServlet;
 import hanfak.shopofhan.infrastructure.web.productavailability.productavailabilityById.ProductAvailabilityByIdServlet;
 import hanfak.shopofhan.infrastructure.web.productavailability.productavailabilityname.ProductAvailabilityByNameServlet;
 import hanfak.shopofhan.infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdServlet;
+import hanfak.shopofhan.infrastructure.web.removeproduct.RemoveProductServlet;
 import hanfak.shopofhan.infrastructure.web.server.EndPoint;
 import hanfak.shopofhan.infrastructure.web.server.WebServerBuilder;
 import hanfak.shopofhan.infrastructure.web.statusprobeservlet.StatusProbeServlet;
@@ -66,6 +67,12 @@ public class JettyWebserverBuilder implements WebServerBuilder {
     @Override
     public WebServerBuilder registerAddStockEndPoint(EndPoint endPoint, AddStockServlet addStockServlet) {
         addServlet(addStockServlet, endPoint);
+        return this;
+    }
+
+    @Override
+    public WebServerBuilder registerDeleteProductEndPoint(EndPoint endPoint, RemoveProductServlet removeProductServlet) {
+        addServlet(removeProductServlet, endPoint);
         return this;
     }
 
