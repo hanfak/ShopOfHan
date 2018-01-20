@@ -36,10 +36,12 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
     public static final String APPLICATION_NAME = "Shop Of Han app";
     private final ShopOfHan shopOfHan = new ShopOfHan();
     private final acceptancetests.TestState testState = new acceptancetests.TestState();
+
     protected final Whens weMake = new Whens(testState); // TODO naming of these
     protected final ANewProductIsAdded aNewProductIsAdded = new ANewProductIsAdded(testState);
     protected final StockIsAdded stockIsAdded = new StockIsAdded(testState);
-    protected final Thens the = new Thens(testState, capturedInputAndOutputs); // TODO rename
+
+    protected final Thens then = new Thens(testState, capturedInputAndOutputs);
     private static final TestWiring TEST_WIRING = new TestWiring();
     public static final ProductRepository productRepository = TEST_WIRING.productRepository();
     public static final TestStockRepository stockRepository = new TestStockRepository();
@@ -63,7 +65,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
                 .withCustomRenderer(SvgWrapper.class, new DontHighlightRenderer<>()));
     }
 
-    //Need to show body of response and queries of request in diagrams
+    //Need to show theBodyIs of response and queries of request in diagrams
     private SvgWrapper generateSequenceDiagram() {
         return new SequenceDiagramGenerator().generateSequenceDiagram(new ByNamingConventionMessageProducer().messages(capturedInputAndOutputs));
     }

@@ -4,7 +4,6 @@ import org.apache.http.client.methods.HttpGet;
 
 import java.net.MalformedURLException;
 
-
 import static httpclient.Headers.fromApacheHeaders;
 
 public class Request extends ValueType {
@@ -31,7 +30,7 @@ public class Request extends ValueType {
 
             return new Request(request.getURI().toURL().toString(), request.getMethod(), fromApacheHeaders(request.getAllHeaders()), QueryParameters.empty(), "");
         } catch (MalformedURLException exception) {
-            throw new RuntimeException("TODO make sure that the request has a proper format", exception);
+            throw new RuntimeException("TODO make sure that then request has a proper format", exception);
         }
     }
 

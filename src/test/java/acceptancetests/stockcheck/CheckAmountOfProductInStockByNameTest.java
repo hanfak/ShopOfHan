@@ -51,15 +51,15 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
     }
 
     private void andThenContentTypeIs(String s) throws Exception {
-        the.contentType(s);
+        then.theContentTypeIs(s);
     }
 
     private void thenItReturnsAStatusCodeOf(int expected) throws Exception {
-        the.statusCode(expected);
+        then.theStatusCodeIs(expected);
     }
 
     private void andTheResponseBodyIs(String expected) throws Exception {
-        the.body(expected);
+        then.theBodyIs(expected);
     }
 
     private static final String HARRY_POTTER = "Harry%20Potter";

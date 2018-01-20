@@ -42,15 +42,15 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     }
 
     private void andThenContentTypeIs(String s) throws Exception {
-        the.contentType(s);
+        then.theContentTypeIs(s);
     }
 
     private void thenItReturnsAStatusCodeOf(int expected) throws Exception {
-        the.statusCode(expected);
+        then.theStatusCodeIs(expected);
     }
 
     private void andTheResponseBodyIs(String expected) throws Exception {
-        the.body(expected);
+        then.theBodyIs(expected);
     }
 
     private static final String HARRY_POTTER = "HP1";
@@ -58,7 +58,7 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     private static final String SQL_THE_SEQUEL = "STS1";
 
     private static final String EXPECTED_RESPONSE =
-            "{\"productName\": \"SQL the sequel\"," +
+            "{\"productName\": \"SQL then sequel\"," +
                     "\"productId\": \"STS1\"," +
                     "\"productDescription\": \"Book about SQL\"," +
                     "\"stock\":" +

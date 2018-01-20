@@ -44,5 +44,5 @@ public class TestProductRepository implements ProductRepository {
 
     private static final List<Product> productLists = new ArrayList<>();
     private static final Product JOY_OF_JAVA_PRODUCT = product(productDescription("Book about java"), productId("JOJ1"), productName("Joy Of Java"));
-    private static final Product SQL_THE_SEQUEL_PRODUCT = product(productDescription("Book about SQL"), productId("STS1"), productName("SQL the sequel"));
+    private static final Product SQL_THE_SEQUEL_PRODUCT = product(productDescription("Book about SQL"), productId("STS1"), productName("SQL then sequel"));
 }

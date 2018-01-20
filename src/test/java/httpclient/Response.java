@@ -40,7 +40,7 @@ public class Response extends ValueType {
         try {
             return new Response(EntityUtils.toString(response.getEntity()), response.getStatusLine().getStatusCode(), response.getProtocolVersion().toString(), Headers.fromApacheHeaders(response.getAllHeaders()));
         } catch (IOException exception) {
-            throw new RuntimeException("TODO make sure that the response has a proper format", exception);
+            throw new RuntimeException("TODO make sure that then response has a proper format", exception);
         }
     }
 

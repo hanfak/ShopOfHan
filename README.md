@@ -64,3 +64,15 @@ kill -9 <pid>
 #### Hikari db pooling
 
 not working with docker at the momentc
+
+## TODOs
+
+- Delete a product given a product id and rest of the stock
+- Update a product given a product id
+- Update stock
+- Show all products
+- Show all products and stock
+- Use a test db instead of stub
+- use wriemock and 3rd party service
+- refactor arg passed to use case to only needed not request
+- Validation for unmarshalling

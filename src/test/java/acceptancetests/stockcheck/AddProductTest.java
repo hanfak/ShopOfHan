@@ -23,28 +23,28 @@ public class AddProductTest extends AcceptanceTest {
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
-        when(aNewProductIsAdded.throughARequestTo("http://localhost:8081/products", withProductId("CTD1"), withProductName("Clojure the door"), andProductDescription("Book about Clojure")));
+        when(aNewProductIsAdded.throughARequestTo("http://localhost:8081/products", withProductId("CTD1"), withProductName("Clojure then door"), andProductDescription("Book about Clojure")));
         thenItReturnsAStatusCodeOf(200);
         andTheResponseBodyIs("Product with id, 'CTD1', has been added.");
-        andTheDatabaseContainsAProductWithName("Clojure the door", withProductId("CTD1"), andProductDescription("Book about Clojure"));
+        andTheDatabaseContainsAProductWithName("Clojure then door", withProductId("CTD1"), andProductDescription("Book about Clojure"));
     }
 
     @Test
     public void shouldReturnProductAlreadyExists() throws Exception {
         given(theSystemIsRunning());
         and(aProductAlreadyExists());
-        when(aNewProductIsAdded.throughARequestTo("http://localhost:8081/products", withProductId("STS1"), withProductName("SQL the sequel"), andProductDescription("Book about SQL")));
+        when(aNewProductIsAdded.throughARequestTo("http://localhost:8081/products", withProductId("STS1"), withProductName("SQL then sequel"), andProductDescription("Book about SQL")));
         thenItReturnsAStatusCodeOf(404);
         andTheResponseBodyIs("Product with id, 'STS1', has not been added, as it already exists.");
     }
 
     private GivensBuilder aProductAlreadyExists() throws SQLException {
-        productRepository.addProduct(product(productDescription("Book about SQL"), productId("STS1"), productName("SQL the sequel")));
+        productRepository.addProduct(product(productDescription("Book about SQL"), productId("STS1"), productName("SQL then sequel")));
         return givens -> givens;
     }
 
     private void andTheDatabaseContainsAProductWithName(String name, String id, String description) {
-        the.productDatabase(actualProductId, name, id, description);
+        then.theProductDatabaseHasA(actualProductId, name, id, description);
     }
 
     private String andProductDescription(String description) {
@@ -70,11 +70,11 @@ public class AddProductTest extends AcceptanceTest {
     }
 
     private void andTheResponseBodyIs(String expected) throws Exception {
-        the.body(expected);
+        then.theBodyIs(expected);
     }
 
     private void thenItReturnsAStatusCodeOf(int expected) throws Exception {
-        the.statusCode(expected);
+        then.theStatusCodeIs(expected);
     }
 
 }

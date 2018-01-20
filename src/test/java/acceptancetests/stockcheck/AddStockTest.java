@@ -1,9 +1,11 @@
 package acceptancetests.stockcheck;
 
 import acceptancetests.AcceptanceTest;
+import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
 import hanfak.shopofhan.domain.product.ProductId;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -13,13 +15,16 @@ import static hanfak.shopofhan.domain.product.ProductDescription.productDescript
 import static hanfak.shopofhan.domain.product.ProductId.productId;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
 
+@RunWith(SpecRunner.class)
 public class AddStockTest extends AcceptanceTest {
 
     @Test
     public void shouldReturn200WhenStoringNewStock() throws Exception {
         given(theSystemIsRunning());
         and(aProductAlreadyExists());
+
         when(stockIsAdded.throughARequestTo("http://localhost:8081/stock", withProductId("CTD1"), withStockId("STD1"), withStockDescription("Single Pack"), andAmount(5)));
+
         thenItReturnsAStatusCodeOf(200);
         andTheResponseBodyIs("Product with id, 'CTD1', has been added.Stock of '5' items for Product with id, 'CTD1', has been added.");
         andTheDatabaseContainsAStockWithStockId("STD1", withProductId("CTD1"), withStockDescription("Single Pack"), 5);
@@ -32,12 +37,12 @@ public class AddStockTest extends AcceptanceTest {
     }
 
     private GivensBuilder aProductAlreadyExists() throws SQLException {
-        productRepository.addProduct(product(productDescription("Book about clojure"), productId("CTD1"), productName("CLojure the door")));
+        productRepository.addProduct(product(productDescription("Book about clojure"), productId("CTD1"), productName("CLojure then door")));
         return givens -> givens;
     }
 
     private void andTheDatabaseContainsAStockWithStockId(String stockID, String productId, String stockDescription, int amount) {
-        the.stockDatabase(stockID, productId, stockDescription, amount);
+        then.theStockDatabaseHasA(stockID, productId, stockDescription, amount);
     }
 
     private String withStockDescription(String description) {
@@ -61,11 +66,11 @@ public class AddStockTest extends AcceptanceTest {
 
 
     private void andTheResponseBodyIs(String expected) throws Exception {
-        the.body(expected);
+        then.theBodyIs(expected);
     }
 
     private void thenItReturnsAStatusCodeOf(int expected) throws Exception {
-        the.statusCode(expected);
+        then.theStatusCodeIs(expected);
     }
 
     private ProductId actualProductId;
