@@ -11,7 +11,7 @@ import static hanfak.shopofhan.infrastructure.web.RenderedContent.jsonContent;
 import static java.lang.String.format;
 
 public class AddProductWebService {
-    private AddProductUseCase addProductUseCase;
+    private final AddProductUseCase addProductUseCase;
 
     public AddProductWebService(AddProductUseCase addProductUseCase) {
         this.addProductUseCase = addProductUseCase;

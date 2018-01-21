@@ -68,8 +68,15 @@ not working with docker at the momentc
 ## TODOs
 
 - Delete a product given a product id and rest of the stock
-- Update a product given a product id
-- Update stock
+- Not found page
+- No servlet found
+- Use a test db instead of stubs or prod db
+- Test http client
+- Update a product given a json
+    - use parse json to return jsonObject when unmarshalling  json
+- Update stock given productid and xml
+
+- delete specific stock given stock id and product id
 - Show all products
 - Show all products and stock
 - Use a test db instead of stub

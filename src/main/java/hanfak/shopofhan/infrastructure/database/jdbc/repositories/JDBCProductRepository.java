@@ -16,6 +16,7 @@ import static hanfak.shopofhan.domain.product.Product.product;
 import static hanfak.shopofhan.domain.product.ProductDescription.productDescription;
 import static hanfak.shopofhan.domain.product.ProductId.productId;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
+import static java.lang.String.format;
 
 // TODO Module test to test database is working
 @SuppressWarnings("Duplicates")
@@ -23,6 +24,7 @@ public class JDBCProductRepository implements ProductRepository {
 
     private static final String SQL_STATEMENT = "SELECT product_name, product_id, product_description FROM product WHERE product_id=?";
     private static final String SQL_STATEMENT_1 = "INSERT INTO product (product_name, product_description, product_id) VALUES (?,?,?)";
+    private static final String SQL_REMOVE_PRODUCT = "DELETE FROM product WHERE product_id = ?";
     private final Logger logger;
     private final JDBCDatabaseConnectionManager databaseConnectionManager;
 
@@ -41,6 +43,30 @@ public class JDBCProductRepository implements ProductRepository {
     @Override
     public Optional<Product> addProduct(Product product) throws SQLException {
         return executeAddProduct(product, SQL_STATEMENT_1);
+    }
+
+    @Override
+    public void removeProduct(ProductId productid) {
+        executeRemoveProduct(productid, SQL_REMOVE_PRODUCT);
+    }
+
+    private void executeRemoveProduct(ProductId productid, String sqlRemoveProduct) {
+        try {
+            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
+            if (connection.isPresent()) {
+                try (Connection dbConnection = connection.get();
+                     PreparedStatement stmt = dbConnection.prepareStatement(sqlRemoveProduct)) {
+
+                    stmt.setString(1, productid.value);
+
+                    logger.info(format("Removing product %s from database", productid.value));
+                    stmt.execute();
+                    logger.info(format("Removed product %s from database", productid.value));
+                }
+            }
+        } catch (Exception e) {
+            logger.error("error " + e);
+        }
     }
 
     private Optional<Product> executeAddProduct(Product queryParameter, String sqlStatement) throws SQLException {

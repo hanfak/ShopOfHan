@@ -5,14 +5,12 @@ import hanfak.shopofhan.domain.product.ProductId;
 import hanfak.shopofhan.domain.stock.StockAmount;
 import hanfak.shopofhan.domain.stock.StockDescription;
 import hanfak.shopofhan.domain.stock.StockId;
+import hanfak.shopofhan.infrastructure.web.InputStreamReader;
 import hanfak.shopofhan.infrastructure.web.Unmarshaller;
 import org.json.JSONObject;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
 
 import static hanfak.shopofhan.domain.AddStockRequest.addStockRequest;
 import static hanfak.shopofhan.domain.product.ProductId.productId;
@@ -25,7 +23,7 @@ public class AddStockUnmarshaller implements Unmarshaller<AddStockRequest> {
 
     @Override
     public AddStockRequest unmarshall(HttpServletRequest request) throws IOException {
-        JSONObject jsonObject = new JSONObject(readInputStream(request.getInputStream()));
+        JSONObject jsonObject = new JSONObject(InputStreamReader.readInputStream(request.getInputStream()));
         return getStockRequest(jsonObject);
     }
 
@@ -35,14 +33,6 @@ public class AddStockUnmarshaller implements Unmarshaller<AddStockRequest> {
         StockDescription stockDescription = stockDescription(jsonObject.getString("stockDescription"));
         ProductId productId = productId(jsonObject.getString("productId"));
         return addStockRequest(stock(amount, stockId, stockDescription, productId), productId);
-    }
-
-    // TODO Extract to helper class static
-    public String readInputStream(InputStream inputStream) {
-        // not reading body
-        try (Scanner scanner = new Scanner(inputStream, StandardCharsets.UTF_8.toString()).useDelimiter("\\A")) {
-            return scanner.hasNext() ? scanner.next() : "";
-        }
     }
 }
 

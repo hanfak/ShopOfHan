@@ -16,6 +16,6 @@ public class AddStockWebService {
 
     public RenderedContent addStock(AddStockRequest request) {
         addStockUseCase.addStock(request);
-        return RenderedContent.successfullyAddedStock(format("Product with id, '%s', has been added.Stock of '%s' items for Product with id, '%s', has been added.", request.productId, request.stock.amount, request.productId));
+        return RenderedContent.successContent(format("Product with id, '%s', has been added.Stock of '%s' items for Product with id, '%s', has been added.", request.productId, request.stock.amount, request.productId));
     }
 }

@@ -37,7 +37,6 @@ public class Then implements WithAssertions {
         StateExtractor<String> contentTypeExtractor = capturedInputAndOutputs ->
                 ((Response) testState.get("response")).body;
         String execute = contentTypeExtractor.execute(capturedInputAndOutputs);
-        System.out.println("blah " + execute);
         assertThat(execute).isEqualTo(expected);
     }
 
@@ -69,7 +68,7 @@ public class Then implements WithAssertions {
         assertThat(stock.stockDescription.value).isEqualTo(stockDescription);
     }
 
-    public void theProductDatabaseDoesnotHave(String productName, String productId) {
+    public void theProductDatabaseDoesnotHave(String productId) {
         Optional<Product> product = productRepository.checkProductById(productId(productId));
         assertThat(product).isEmpty();
     }

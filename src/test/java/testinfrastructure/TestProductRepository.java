@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static hanfak.shopofhan.domain.product.Product.product;
 import static hanfak.shopofhan.domain.product.ProductDescription.productDescription;
@@ -35,6 +36,14 @@ public class TestProductRepository implements ProductRepository {
         }
         productLists.add(product);
         return Optional.of(product);
+    }
+
+    @Override
+    public void removeProduct(ProductId productid) {
+        List<Product> productToBeRemoved = productLists.stream()
+                .filter(product -> product.productId.value.equals(productid.value))
+                .collect(Collectors.toList());
+        productLists.remove(productToBeRemoved.get(0));
     }
 
     private void populateProductStockLists() {
