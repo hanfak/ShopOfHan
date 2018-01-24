@@ -10,6 +10,7 @@ import hanfak.shopofhan.infrastructure.web.removeproduct.RemoveProductServlet;
 import hanfak.shopofhan.infrastructure.web.server.EndPoint;
 import hanfak.shopofhan.infrastructure.web.server.WebServerBuilder;
 import hanfak.shopofhan.infrastructure.web.statusprobeservlet.StatusProbeServlet;
+import hanfak.shopofhan.infrastructure.web.updateproduct.UpdateProductServlet;
 import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -73,6 +74,12 @@ public class JettyWebserverBuilder implements WebServerBuilder {
     @Override
     public WebServerBuilder registerDeleteProductEndPoint(EndPoint endPoint, RemoveProductServlet removeProductServlet) {
         addServlet(removeProductServlet, endPoint);
+        return this;
+    }
+
+    @Override
+    public WebServerBuilder registerUpdateProductEndPoint(EndPoint endPoint, UpdateProductServlet updateProductServlet) {
+        addServlet(updateProductServlet, endPoint);
         return this;
     }
 

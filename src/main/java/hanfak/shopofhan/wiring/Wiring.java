@@ -9,6 +9,7 @@ import hanfak.shopofhan.application.productavailability.ProductCheckByIdUseCase;
 import hanfak.shopofhan.application.productavailability.ProductCheckByNameUseCase;
 import hanfak.shopofhan.application.productavailability.ProductStockCheckByIdUseCase;
 import hanfak.shopofhan.application.removeproduct.RemoveProductUseCase;
+import hanfak.shopofhan.application.updateproduct.UpdateProductUseCase;
 import hanfak.shopofhan.infrastructure.database.connection.MySqlJDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.JDBCDatabaseConnectionManager;
 import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
@@ -43,6 +44,8 @@ import hanfak.shopofhan.infrastructure.web.removeproduct.RemoveProductServlet;
 import hanfak.shopofhan.infrastructure.web.removeproduct.RemoveProductUnmarshaller;
 import hanfak.shopofhan.infrastructure.web.server.WebServerBuilder;
 import hanfak.shopofhan.infrastructure.web.statusprobeservlet.StatusProbeServlet;
+import hanfak.shopofhan.infrastructure.web.updateproduct.UpdateProductServlet;
+import hanfak.shopofhan.infrastructure.web.updateproduct.UpdateProductUnmarshaller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -147,5 +150,9 @@ public class Wiring {
 
     public RemoveProductServlet removeProductServlet() {
         return new RemoveProductServlet(new RemoveProductUnmarshaller(), new RemoveProductUseCase(logger(RemoveProductUseCase.class), productRepository()));
+    }
+
+    public UpdateProductServlet updateProductServlet() {
+        return new UpdateProductServlet(new UpdateProductUnmarshaller(), new UpdateProductUseCase(productRepository(), logger(UpdateProductUseCase.class)));
     }
 }

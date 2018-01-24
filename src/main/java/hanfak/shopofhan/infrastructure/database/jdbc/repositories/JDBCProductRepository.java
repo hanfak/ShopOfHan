@@ -25,6 +25,7 @@ public class JDBCProductRepository implements ProductRepository {
     private static final String SQL_STATEMENT = "SELECT product_name, product_id, product_description FROM product WHERE product_id=?";
     private static final String SQL_STATEMENT_1 = "INSERT INTO product (product_name, product_description, product_id) VALUES (?,?,?)";
     private static final String SQL_REMOVE_PRODUCT = "DELETE FROM product WHERE product_id = ?";
+    private static final String SQL_UPDATE_PRODUCT = "UPDATE product SET product_name = ?, product_description = ? WHERE product_id = ?";
     private final Logger logger;
     private final JDBCDatabaseConnectionManager databaseConnectionManager;
 
@@ -49,6 +50,31 @@ public class JDBCProductRepository implements ProductRepository {
     public void removeProduct(ProductId productid) {
         executeRemoveProduct(productid, SQL_REMOVE_PRODUCT);
     }
+
+    //TODO unit test log, verify order
+    @Override
+    public void updateProduct(Product product) {
+        try {
+            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
+            if (connection.isPresent()) {
+                try (Connection dbConnection = connection.get();
+                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_UPDATE_PRODUCT)) {
+                    String productId = product.productId.value;
+                    stmt.setString(1, product.productName.value);
+                    stmt.setString(2, product.productDescription.value);
+                    stmt.setString(3, productId);
+
+                    logger.info(format("Updating product %s from database", productId));
+                    stmt.executeUpdate();
+//                    dbConnection.commit();
+                    logger.info(format("Updated product %s from database", productId));
+                }
+            }
+        } catch (Exception e) {
+            logger.error("error " + e);
+        }
+    }
+
 
     private void executeRemoveProduct(ProductId productid, String sqlRemoveProduct) {
         try {

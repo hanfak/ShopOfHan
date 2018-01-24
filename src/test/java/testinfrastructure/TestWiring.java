@@ -1,6 +1,5 @@
 package testinfrastructure;
 
-import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.infrastructure.properties.PropertiesReader;
@@ -28,8 +27,8 @@ public class TestWiring extends Wiring {
         return new TestProductStockRepository();
     }
 
-    @Override
-    public ProductRepository productRepository() {
-        return new TestProductRepository();
-    }
+//    @Override
+//    public ProductRepository productRepository() {
+//        return new TestProductRepository();
+//    }
 }

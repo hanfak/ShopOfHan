@@ -30,6 +30,7 @@ public class ShopOfHan {
                 .registerAddProductEndPoint(EndPoint.post(PRODUCTS), wiring.addProductServlet())
                 .registerAddStockEndPoint(EndPoint.post(STOCK), wiring.addStockServlet())
                 .registerDeleteProductEndPoint(EndPoint.delete(PRODUCT), wiring.removeProductServlet())
+                .registerUpdateProductEndPoint(EndPoint.post(UPDATE_PRODUCT), wiring.updateProductServlet())
                 .registerStatusProbeEndPoint(EndPoint.get(STATUS_PAGE), wiring.statusProbeServlet())
                 .build();
         webserver.start();

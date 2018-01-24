@@ -8,6 +8,7 @@ import hanfak.shopofhan.infrastructure.web.productavailability.productavailabili
 import hanfak.shopofhan.infrastructure.web.productavailability.productstockcheckbyavailability.ProductStockCheckByIdServlet;
 import hanfak.shopofhan.infrastructure.web.removeproduct.RemoveProductServlet;
 import hanfak.shopofhan.infrastructure.web.statusprobeservlet.StatusProbeServlet;
+import hanfak.shopofhan.infrastructure.web.updateproduct.UpdateProductServlet;
 
 public interface WebServerBuilder {
     WebServerBuilder registerProductAvailabilityByNameEndPoint(EndPoint endPoint, ProductAvailabilityByNameServlet productAvailabilityByNameServlet);
@@ -17,6 +18,7 @@ public interface WebServerBuilder {
     WebServerBuilder registerAddProductEndPoint(EndPoint endPoint, AddProductServlet addProductServlet);
     WebServerBuilder registerAddStockEndPoint(EndPoint endPoint, AddStockServlet addStockServlet);
     WebServerBuilder registerDeleteProductEndPoint(EndPoint endPoint, RemoveProductServlet removeProductServlet);
+    WebServerBuilder registerUpdateProductEndPoint(EndPoint endPoint, UpdateProductServlet updateProductServlet);
 
     ShopOfHanServer build();
 }

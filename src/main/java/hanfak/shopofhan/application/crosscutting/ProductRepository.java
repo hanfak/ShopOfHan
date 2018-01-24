@@ -10,4 +10,5 @@ public interface ProductRepository {
     Optional<Product> checkProductById(ProductId productId);
     Optional<Product> addProduct(Product product) throws SQLException;
     void removeProduct(ProductId productid);
+    void updateProduct(Product product);
 }

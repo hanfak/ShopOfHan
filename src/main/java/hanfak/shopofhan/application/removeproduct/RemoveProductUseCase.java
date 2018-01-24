@@ -14,6 +14,11 @@ public class RemoveProductUseCase {
     }
 
     public void removeProduct(ProductId productid) {
+//        Optional<ProductStock> productStock = stockRepository.checkStockById(productid);
+//        if (productStock.isPresent()) {
+//            stockRepository.removeStock(productId);
+//        }
+
         productRepository.removeProduct(productid);
     }
 }

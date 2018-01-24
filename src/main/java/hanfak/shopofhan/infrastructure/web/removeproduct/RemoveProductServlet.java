@@ -29,4 +29,6 @@ public class RemoveProductServlet extends HttpServlet {
         successContent(format("Product, %s, has been deleted", productId.value))
                 .render(response);
     }
+
+    // TODO add a REST method here to hit same endpoint
 }

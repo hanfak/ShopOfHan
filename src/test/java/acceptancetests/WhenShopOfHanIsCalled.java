@@ -5,6 +5,7 @@ import httpclient.Header;
 import httpclient.Request;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -32,16 +33,22 @@ public abstract class WhenShopOfHanIsCalled {
         HttpPost httpPost = setPostRequest(request);
         CloseableHttpResponse execute = HttpClientBuilder.create().build().execute(httpPost);
         httpclient.Response domainResponse = httpclient.Response.fromApacheResponse(execute);
+        System.out.println(domainResponse);
         testState.add("response", domainResponse);
         capturedInputAndOutputs.add(format("Response from %s to %s", APPLICATION_NAME, CALLER), domainResponse);
         return capturedInputAndOutputs;
     }
 
-    private HttpPost setPostRequest(Request request) throws UnsupportedEncodingException {
-        HttpPost httpPost = new HttpPost(request.url);
-        httpPost.setEntity(new StringEntity(request.body));
-        httpPost.setHeader(new BasicHeader(Header.CONTENT_TYPE_KEY, Header.APPLICATION_JSON));
-        return httpPost;
+    protected CapturedInputAndOutputs whenWeMakeAGetRequestTo(CapturedInputAndOutputs capturedInputAndOutputs, Request request) throws IOException {
+        capturedInputAndOutputs.add(format("Request from %s to %s",CALLER, APPLICATION_NAME), request);
+        testState.add("request", request.body); //Need???
+        System.out.println(request.toString());
+        HttpGet httpGet = setGetRequest(request);
+        CloseableHttpResponse execute = HttpClientBuilder.create().build().execute(httpGet);
+        httpclient.Response domainResponse = httpclient.Response.fromApacheResponse(execute);
+        testState.add("response", domainResponse);
+        capturedInputAndOutputs.add(format("Response from %s to %s", APPLICATION_NAME, CALLER), domainResponse);
+        return capturedInputAndOutputs;
     }
 
     protected CapturedInputAndOutputs whenWeMakeADeleteRequestTo(CapturedInputAndOutputs capturedInputAndOutputs, Request request) throws IOException {
@@ -58,6 +65,17 @@ public abstract class WhenShopOfHanIsCalled {
 
     private HttpDelete setDeleteRequest(Request request) throws UnsupportedEncodingException {
         return new HttpDelete(request.url);
+    }
+
+    private HttpGet setGetRequest(Request request) {
+        return new HttpGet(request.url);
+    }
+
+    private HttpPost setPostRequest(Request request) throws UnsupportedEncodingException {
+        HttpPost httpPost = new HttpPost(request.url);
+        httpPost.setEntity(new StringEntity(request.body));
+        httpPost.setHeader(new BasicHeader(Header.CONTENT_TYPE_KEY, Header.APPLICATION_JSON));
+        return httpPost;
     }
 
     protected abstract Request buildRequest();

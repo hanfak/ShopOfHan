@@ -46,6 +46,11 @@ public class TestProductRepository implements ProductRepository {
         productLists.remove(productToBeRemoved.get(0));
     }
 
+    @Override
+    public void updateProduct(Product product) {
+        //TODO add  so that can test using stub
+    }
+
     private void populateProductStockLists() {
         productLists.add(JOY_OF_JAVA_PRODUCT);
         productLists.add(SQL_THE_SEQUEL_PRODUCT);

@@ -56,8 +56,7 @@ public class Then implements WithAssertions {
             assertThat(product.get().productId).isEqualTo(productId(id));
             assertThat(product.get().productDescription).isEqualTo(productDescription(description));
         } else {
-            fail("Noth" +
-                    "ing matches in then productDatabase");
+            fail("Nothing matches in then productDatabase");
         }
     }
 

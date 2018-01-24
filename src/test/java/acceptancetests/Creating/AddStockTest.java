@@ -1,4 +1,4 @@
-package acceptancetests.stockcheck;
+package acceptancetests.Creating;
 
 import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;

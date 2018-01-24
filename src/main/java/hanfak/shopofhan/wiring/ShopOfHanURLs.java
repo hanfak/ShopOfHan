@@ -8,6 +8,7 @@ public class ShopOfHanURLs {
     public static final String PRODUCT_STOCK_CHECK_BY_ID = "/fullProductStockCheck/id/*";
     public static final String PRODUCTS = "/products";
     public static final String PRODUCT = "/product/id/*";
+    public static final String UPDATE_PRODUCT = "/updateProduct";
     public static final String STOCK = "/stock";
     public static final String STATUS_PAGE = "/status";
 }
