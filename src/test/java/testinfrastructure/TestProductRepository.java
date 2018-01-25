@@ -51,6 +51,16 @@ public class TestProductRepository implements ProductRepository {
         //TODO add  so that can test using stub
     }
 
+    @Override
+    public Optional<List<Product>> getAllProducts() {
+        return Optional.of(productLists);
+    }
+
+    @Override
+    public void removeAllProducts() {
+        productLists.clear();
+    }
+
     private void populateProductStockLists() {
         productLists.add(JOY_OF_JAVA_PRODUCT);
         productLists.add(SQL_THE_SEQUEL_PRODUCT);

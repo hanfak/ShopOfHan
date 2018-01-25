@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 import static hanfak.shopofhan.domain.product.Product.product;
@@ -23,8 +25,10 @@ import static java.lang.String.format;
 public class JDBCProductRepository implements ProductRepository {
 
     private static final String SQL_STATEMENT = "SELECT product_name, product_id, product_description FROM product WHERE product_id=?";
+    private static final String SQL_SELECT_ALL_PRODUCTS = "SELECT product_name, product_id, product_description FROM product";
     private static final String SQL_STATEMENT_1 = "INSERT INTO product (product_name, product_description, product_id) VALUES (?,?,?)";
     private static final String SQL_REMOVE_PRODUCT = "DELETE FROM product WHERE product_id = ?";
+    private static final String SQL_REMOVE_ALL_PRODUCT = "DELETE FROM product";
     private static final String SQL_UPDATE_PRODUCT = "UPDATE product SET product_name = ?, product_description = ? WHERE product_id = ?";
     private final Logger logger;
     private final JDBCDatabaseConnectionManager databaseConnectionManager;
@@ -73,6 +77,60 @@ public class JDBCProductRepository implements ProductRepository {
         } catch (Exception e) {
             logger.error("error " + e);
         }
+    }
+
+    @Override
+    public Optional<List<Product>> getAllProducts() {
+        try {
+            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
+            if (connection.isPresent()) {
+                try (Connection dbConnection = connection.get(); //TODO change to the above
+                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_SELECT_ALL_PRODUCTS)) {
+
+                    Optional<List<Product>> resultSet = readProduct(stmt);
+                    if (resultSet.isPresent()) return resultSet;
+                }
+            }
+        } catch (Exception e) {
+            logger.error("error " + e);
+        }
+        return Optional.empty();
+    }
+
+    // TODO Removed and passed to testJdbc only
+    // FOr testing only
+    @Override
+    public void removeAllProducts() {
+        try {
+            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
+            if (connection.isPresent()) {
+                try (Connection dbConnection = connection.get();
+                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_REMOVE_ALL_PRODUCT)) {
+
+
+                    logger.info("Removing all product rom database");
+                    stmt.execute();
+                    logger.info("Removed all product from database");
+                }
+            }
+        } catch (Exception e) {
+            logger.error("error " + e);
+        }
+    }
+
+    private Optional<List<Product>> readProduct(PreparedStatement stmt) throws SQLException {
+
+        ResultSet resultSet = stmt.executeQuery(); // TODO try catch and log error uinit test
+
+        // tODO will be a while loop for more than one product
+        if (resultSet.next()) {
+            logger.info("Getting data from database");
+            return Optional.of(Collections.singletonList(product(productDescription(resultSet.getString("product_description")),
+                    productId(resultSet.getString("product_id")),
+                    productName(resultSet.getString("product_name")))));
+        }
+        resultSet.close();
+        return Optional.empty();
     }
 
 

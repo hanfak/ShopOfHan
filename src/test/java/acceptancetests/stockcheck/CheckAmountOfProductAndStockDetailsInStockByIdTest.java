@@ -12,6 +12,8 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
+        // TODO prime database
+        //         given(aProductAlreadyExists(withProductId("CTD1"), andProductName("Clojure the door"), andProductDescription("Book about clojure")));
         when(weMake.aGetRequestTo(PATH + SQL_THE_SEQUEL));
         thenTheResponseCodeIs200AndTheBodyIs(EXPECTED_RESPONSE);
         andThenContentTypeIs("Content-Type: application/json");

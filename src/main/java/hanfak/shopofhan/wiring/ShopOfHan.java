@@ -27,7 +27,7 @@ public class ShopOfHan {
                 .registerProductAvailabilityByNameEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_NAME), wiring.productAvailabilityByNameServlet())
                 .registerProductAvailabilityByIdEndPoint(EndPoint.get(PRODUCT_AVAILABILITY_BY_ID), wiring.productAvailabilityByIdServlet())
                 .registerproductStockCheckByIdEndPoint(EndPoint.get(PRODUCT_STOCK_CHECK_BY_ID), wiring.productStockCheckByIdServlet())
-                .registerAddProductEndPoint(EndPoint.post(PRODUCTS), wiring.addProductServlet())
+                .registerAddProductEndPoint(EndPoint.multiple(PRODUCTS), wiring.addProductServlet())
                 .registerAddStockEndPoint(EndPoint.post(STOCK), wiring.addStockServlet())
                 .registerDeleteProductEndPoint(EndPoint.delete(PRODUCT), wiring.removeProductServlet())
                 .registerUpdateProductEndPoint(EndPoint.post(UPDATE_PRODUCT), wiring.updateProductServlet())

@@ -5,6 +5,7 @@ import hanfak.shopofhan.application.createstock.AddStockUseCase;
 import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.application.crosscutting.StockRepository;
+import hanfak.shopofhan.application.productavailability.AllProductsCheckUseCase;
 import hanfak.shopofhan.application.productavailability.ProductCheckByIdUseCase;
 import hanfak.shopofhan.application.productavailability.ProductCheckByNameUseCase;
 import hanfak.shopofhan.application.productavailability.ProductStockCheckByIdUseCase;
@@ -25,6 +26,7 @@ import hanfak.shopofhan.infrastructure.web.Unmarshaller;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductServlet;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductUnmarshaller;
 import hanfak.shopofhan.infrastructure.web.createproduct.AddProductWebService;
+import hanfak.shopofhan.infrastructure.web.createproduct.AllProductsMarshaller;
 import hanfak.shopofhan.infrastructure.web.createstock.AddStockServlet;
 import hanfak.shopofhan.infrastructure.web.createstock.AddStockUnmarshaller;
 import hanfak.shopofhan.infrastructure.web.createstock.AddStockWebService;
@@ -54,7 +56,7 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("UseUtilityClass")
 public class Wiring {
 
-    public static final String ENVIRONMENT = "localhost";
+    public static final String ENVIRONMENT = "work";
 
     // TODO singleton pattern
     public Settings settings() {
@@ -137,7 +139,7 @@ public class Wiring {
     }
 
     public AddProductServlet addProductServlet() {
-        return new AddProductServlet(new AddProductUnmarshaller(), new AddProductWebService(new AddProductUseCase(productRepository(), logger(AddProductUseCase.class))));
+        return new AddProductServlet(new AddProductUnmarshaller(), new AllProductsMarshaller(), new AddProductWebService(new AddProductUseCase(productRepository(), logger(AddProductUseCase.class))), new AllProductsCheckUseCase(productRepository()));
     }
 
     public ProductRepository productRepository() {

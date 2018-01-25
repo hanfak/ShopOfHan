@@ -75,7 +75,7 @@ not working with docker at the momentc
 - Update a product given a json
     - use parse json to return jsonObject when unmarshalling  json
 - Update stock given productid and xml
-
+- Test wiring, factory for using stubs or database by using specific property file
 - delete specific stock given stock id and product id
 - Show all products
 - Show all products and stock

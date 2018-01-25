@@ -32,4 +32,8 @@ public class EndPoint {
     public static EndPoint delete(String path) {
         return new EndPoint("DELETE", path, emptyList());
     }
+
+    public static EndPoint multiple(String path) {
+        return new EndPoint("", path, emptyList());
+    }
 }
