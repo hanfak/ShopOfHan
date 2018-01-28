@@ -70,7 +70,7 @@ public class Wiring {
     }
 
     // TODO singleton pattern
-    public Logger logger(Class<?> cls) {
+    private Logger logger(Class<?> cls) {
         return LoggerFactory.getLogger(cls);
     }
 

@@ -3,18 +3,38 @@ package acceptancetests.stockcheck;
 import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
+import hanfak.shopofhan.domain.product.Product;
+import hanfak.shopofhan.domain.product.ProductId;
+import hanfak.shopofhan.domain.stock.Stock;
+import hanfak.shopofhan.domain.stock.StockAmount;
+import hanfak.shopofhan.domain.stock.StockDescription;
+import hanfak.shopofhan.domain.stock.StockId;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.sql.SQLException;
+import java.util.Optional;
+
+import static hanfak.shopofhan.domain.product.Product.product;
+import static hanfak.shopofhan.domain.product.ProductDescription.productDescription;
+import static hanfak.shopofhan.domain.product.ProductId.productId;
+import static hanfak.shopofhan.domain.product.ProductName.productName;
 
 @RunWith(SpecRunner.class)
 public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends AcceptanceTest {
 
+    private Optional<Product> product;
+
+    // TODO pass when using database instead of stub
     @Test
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
-        // TODO prime database
-        //         given(aProductAlreadyExists(withProductId("CTD1"), andProductName("Clojure the door"), andProductDescription("Book about clojure")));
+        and(aProductAlreadyExists(withProductId("STS1"), andProductName("SQL the sequel"), andProductDescription("Book about SQL")));
+        and(stockAlreadyExistsForProductId("STS1", "STD1", "Single Pack", 0));
+        and(stockAlreadyExistsForProductId("STS1", "STD2", "Multi Pack", 3));
+
         when(weMake.aGetRequestTo(PATH + SQL_THE_SEQUEL));
+
         thenTheResponseCodeIs200AndTheBodyIs(EXPECTED_RESPONSE);
         andThenContentTypeIs("Content-Type: application/json");
     }
@@ -22,13 +42,39 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     @Test
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
+
         thenTheResponseCodeIs404AndTheBodyIs("Product 'HP1' is not stocked java.lang.IllegalStateException: Product is not found");
         andThenContentTypeIs("Content-Type: text/plain");
     }
 
     // Todo: test if product is there but no stock
 
+    private GivensBuilder aProductAlreadyExists(String productId, String productName, String productDescription) throws SQLException {
+        product = productRepository.addProduct(product(productDescription(productDescription), productId(productId), productName(productName)));
+        testState().interestingGivens.add("productId", productId);
+        return givens -> givens;
+    }
+
+    private GivensBuilder stockAlreadyExistsForProductId(String productId, String stockId, String stockDescription, Integer stockAmount) throws SQLException {
+        testProductStockRepository.addStock(Stock.stock(StockAmount.stockAmount(stockAmount), StockId.stockId(stockId), StockDescription.stockDescription(stockDescription), ProductId.productId(productId)));
+        testProductStockRepository.addToProductStockList(product);
+        testState().interestingGivens.add("productId", productId);
+        return givens -> givens;
+    }
+    private String andProductDescription(String productDescription) {
+        return productDescription;
+    }
+
+    private String andProductName(String productName) {
+        return productName;
+    }
+
+    private String withProductId(String productId) {
+        return productId;
+    }
+
     private GivensBuilder theSystemIsRunning() {
+        testProductStockRepository.remove();
         testState().interestingGivens.add("productName","Joy Of Java");
         return givens -> givens;
     }
@@ -60,7 +106,7 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     private static final String SQL_THE_SEQUEL = "STS1";
 
     private static final String EXPECTED_RESPONSE =
-            "{\"productName\": \"SQL then sequel\"," +
+            "{\"productName\": \"SQL the sequel\"," +
                     "\"productId\": \"STS1\"," +
                     "\"productDescription\": \"Book about SQL\"," +
                     "\"stock\":" +

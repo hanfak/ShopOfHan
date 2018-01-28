@@ -63,7 +63,7 @@ public class UpdateProductTest extends AcceptanceTest {
 
     private GivensBuilder aProductAlreadyExists(String productId, String productName, String productDescription) throws SQLException {
         productRepository.addProduct(product(productDescription(productDescription), productId(productId), productName(productName)));
-        testState().interestingGivens.add("productId", "CTD1");
+        testState().interestingGivens.add("productId", productId);
         return givens -> givens;
     }
 

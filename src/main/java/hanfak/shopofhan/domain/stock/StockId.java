@@ -7,7 +7,7 @@ public class StockId extends SingleValueType<String> {
         super(value);
     }
 
-    public static StockId stockId(String amount) {
-        return new StockId(amount);
+    public static StockId stockId(String stockId) {
+        return new StockId(stockId);
     }
 }

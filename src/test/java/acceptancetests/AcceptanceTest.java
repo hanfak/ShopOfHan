@@ -16,6 +16,7 @@ import hanfak.shopofhan.infrastructure.properties.Settings;
 import hanfak.shopofhan.wiring.ShopOfHan;
 import org.junit.After;
 import org.junit.Before;
+import testinfrastructure.TestProductStockRepository;
 import testinfrastructure.TestStockRepository;
 import testinfrastructure.TestWiring;
 
@@ -25,9 +26,6 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.Collections.singletonList;
 import static testinfrastructure.TestWiring.ENVIRONMENT;
@@ -45,6 +43,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
     private static final TestWiring TEST_WIRING = new TestWiring();
     public static final ProductRepository productRepository = TEST_WIRING.productRepository();
     public static final TestStockRepository stockRepository = new TestStockRepository();
+    public static final TestProductStockRepository testProductStockRepository = new TestProductStockRepository();
 
     @Before
     public void setUp() throws Exception {
@@ -78,13 +77,15 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
     public void resetDatabaseContents() throws IOException {
         //https://stackoverflow.com/questions/10929369/how-to-execute-multiple-sql-statements-from-java
         // get each command, store as  separate sql stmt and use batch command in isDeleted
-        List<String> sqlCommands = Arrays.stream(readSqlPriming().split("\n\n")).collect(Collectors.toList());
-        executeSQL(sqlCommands.get(0));
-        executeSQL(sqlCommands.get(1));
-        executeSQL(sqlCommands.get(2));
-        executeSQL(sqlCommands.get(3));
-        executeSQL(sqlCommands.get(4));
-        executeSQL(sqlCommands.get(5));
+//        List<String> sqlCommands = Arrays.stream(readSqlPriming().split("\n\n")).collect(Collectors.toList());
+//        executeSQL(sqlCommands.get(0));
+//        executeSQL(sqlCommands.get(1));
+//        executeSQL(sqlCommands.get(2));
+//        executeSQL(sqlCommands.get(3));
+//        executeSQL(sqlCommands.get(4));
+//        executeSQL(sqlCommands.get(5));
+        executeSQL("DELETE FROM stock");
+        executeSQL("DELETE FROM product");
     }
 
     private String readSqlPriming() throws IOException {
@@ -99,6 +100,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
         }
         try (Connection connection = TEST_WIRING.databaseConnectionManager().getDBConnection().get();
              PreparedStatement statement = connection.prepareStatement(sql)) {
+//            statement.execute();
             if (statement.execute()) {
                 throw new IllegalArgumentException(statement.toString());
             }

@@ -32,10 +32,15 @@ public class TestProductStockRepository implements ProductStockRepository {
 
     @Override
     public Optional<ProductStockList> findListOfProductStock(ProductId productId) {
-        System.out.println("productId = 5234523452345" + productId);
         return productStockLists.stream()
                 .filter(doesProductStockHaveProductId(productId))
                 .findFirst();
+    }
+
+    public void addStock(Stock stock) {
+        System.out.println(stockList);
+        stockList.add(stock);
+        System.out.println("changed  " + stockList);
     }
 
     private Predicate<ProductStockList> doesProductStockHaveProductId(ProductId productId) {
@@ -47,7 +52,17 @@ public class TestProductStockRepository implements ProductStockRepository {
         productStockLists.add(SQL_THE_SEQUEL);
     }
 
+
+    public void addToProductStockList(Optional<Product> product) {
+        product.ifPresent(product1 -> productStockLists.add(productStockList(product1, stockList)));
+    }
+
+    private static final List<Stock> stockList = new ArrayList<>();
     private static final List<ProductStockList> productStockLists = new ArrayList<>();
+
+    public void remove() {
+        productStockLists.clear();
+    }
     private static final List<Stock> JOY_OF_JAVA_STOCK = new ArrayList<>(asList(stock(stockAmount(4), stockId("STD1"), StockDescription.stockDescription("Single Pack"),null)));
     private static final Product  JOY_OF_JAVA_PRODUCT = product(productDescription("Book about java"), productId("JOJ1"), productName("Joy Of Java"));
     private static final ProductStockList JOY_OF_JAVA = productStockList(JOY_OF_JAVA_PRODUCT, JOY_OF_JAVA_STOCK);

@@ -21,7 +21,7 @@ public class AddStockTest extends AcceptanceTest {
     @Test
     public void shouldReturn200WhenStoringNewStock() throws Exception {
         given(theSystemIsRunning());
-        and(aProductAlreadyExists());
+        and(aProductAlreadyExists()); // TODO show args in yatspec
 
         when(stockIsAdded.throughARequestTo("http://localhost:8081/stock", withProductId("CTD1"), withStockId("STD1"), withStockDescription("Single Pack"), andAmount(5)));
 

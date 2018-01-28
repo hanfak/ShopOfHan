@@ -48,7 +48,11 @@ public class TestProductRepository implements ProductRepository {
 
     @Override
     public void updateProduct(Product product) {
-        //TODO add  so that can test using stub
+        List<Product> updatedProductList = productLists.stream()
+                .map(storedProduct -> storedProduct.equals(product) ? storedProduct : product)
+                .collect(Collectors.toList());
+        productLists.clear();
+        productLists.addAll(updatedProductList);
     }
 
     @Override
@@ -66,7 +70,7 @@ public class TestProductRepository implements ProductRepository {
         productLists.add(SQL_THE_SEQUEL_PRODUCT);
     }
 
-    private static final List<Product> productLists = new ArrayList<>();
     private static final Product JOY_OF_JAVA_PRODUCT = product(productDescription("Book about java"), productId("JOJ1"), productName("Joy Of Java"));
     private static final Product SQL_THE_SEQUEL_PRODUCT = product(productDescription("Book about SQL"), productId("STS1"), productName("SQL then sequel"));
+    public static final List<Product> productLists = new ArrayList<>();
 }

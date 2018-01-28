@@ -71,15 +71,20 @@ not working with docker at the momentc
 - Not found page
 - No servlet found
 - Use a test db instead of stubs or prod db
+    - Fix stub to make all tests past without filling stub first
+    - Have a testStock and testPRoduct repository, 
+        - which acccess database and only has db methods used in test
+    - Extract test stub and test db into two separate wirings, 
+        - just need to change properties file to decide what to use (no commenting out)
+    
 - Test http client
 - Update a product given a json
     - use parse json to return jsonObject when unmarshalling  json
 - Update stock given productid and xml
+- Logger interfaece
 - Test wiring, factory for using stubs or database by using specific property file
 - delete specific stock given stock id and product id
 - Show all products
-- Show all products and stock
-- Use a test db instead of stub
 - use wriemock and 3rd party service
 - refactor arg passed to use case to only needed not request
-- Validation for unmarshalling
+- Validation for unmarshalling and /or domain objects
