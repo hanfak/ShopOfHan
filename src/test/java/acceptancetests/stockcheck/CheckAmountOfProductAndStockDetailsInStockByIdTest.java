@@ -4,11 +4,6 @@ import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
 import hanfak.shopofhan.domain.product.Product;
-import hanfak.shopofhan.domain.product.ProductId;
-import hanfak.shopofhan.domain.stock.Stock;
-import hanfak.shopofhan.domain.stock.StockAmount;
-import hanfak.shopofhan.domain.stock.StockDescription;
-import hanfak.shopofhan.domain.stock.StockId;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -56,8 +51,8 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     }
 
     private GivensBuilder stockAlreadyExistsForProductId(String productId, String stockId, String stockDescription, Integer stockAmount) throws SQLException {
-        testProductStockRepository.addStock(Stock.stock(StockAmount.stockAmount(stockAmount), StockId.stockId(stockId), StockDescription.stockDescription(stockDescription), ProductId.productId(productId)));
-        testProductStockRepository.addToProductStockList(product);
+//        testProductStockRepository.addStock(Stock.stock(StockAmount.stockAmount(stockAmount), StockId.stockId(stockId), StockDescription.stockDescription(stockDescription), ProductId.productId(productId)));
+//        testProductStockRepository.addToProductStockList(product);
         testState().interestingGivens.add("productId", productId);
         return givens -> givens;
     }
@@ -74,7 +69,6 @@ public class CheckAmountOfProductAndStockDetailsInStockByIdTest extends Acceptan
     }
 
     private GivensBuilder theSystemIsRunning() {
-        testProductStockRepository.remove();
         testState().interestingGivens.add("productName","Joy Of Java");
         return givens -> givens;
     }

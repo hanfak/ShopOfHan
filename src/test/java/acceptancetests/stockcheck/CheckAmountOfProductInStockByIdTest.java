@@ -54,7 +54,7 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
 
     private GivensBuilder stockAlreadyExistsForProductId(String productId, String stockId, String stockDescription, Integer stockAmount) throws SQLException {
         stockRepository.addStock(stock(stockAmount(stockAmount), stockId(stockId), stockDescription(stockDescription), productId(productId)));
-        stockRepository.addToProductStockList(product);
+//        stockRepository.addToProductStockList(product);
         testState().interestingGivens.add("productId", productId);
         return givens -> givens;
     }

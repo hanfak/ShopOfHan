@@ -13,7 +13,6 @@ import java.util.Optional;
 // example of using straight up connection
 public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectionManager {
 
-    private static final String DATABASE_NAME = "shop_of_han_database";
     // TODO properties for timeout
     private static final String DATABASE_FLAGS = "?connectTimeout=3000&verifyServerCertificate=false&useSSL=true";
 
@@ -29,10 +28,10 @@ public class MySqlJDBCDatabaseConnectionManager implements JDBCDatabaseConnectio
     public Optional<Connection> getDBConnection() {
         try {
             Connection connection = DriverManager.getConnection( // tODOTry with resuorces
-                    settings.databaseURL() + DATABASE_NAME + DATABASE_FLAGS,
+                    settings.databaseURL() + settings.databaseName() + DATABASE_FLAGS,
                     settings.databaseUsername(),
                     settings.databasePassword());
-            logger.info("db url " + settings.databaseURL());
+            logger.info("db url " + settings.databaseURL()  + settings.databaseName());
 
             return Optional.of(connection);
         } catch(Exception e) {

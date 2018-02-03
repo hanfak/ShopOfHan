@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS shop_of_han_database;
+DROP DATABASE IF EXISTS shop_of_han_database_test;
 
-CREATE DATABASE IF NOT EXISTS shop_of_han_database;
+CREATE DATABASE IF NOT EXISTS shop_of_han_database_test;
 
-USE shop_of_han_database;
+USE shop_of_han_database_test;
 
 CREATE TABLE product
 (
@@ -13,7 +13,6 @@ CREATE TABLE product
   PRIMARY KEY           (id)
 ) ENGINE=INNODB;
 
---add price
 CREATE TABLE stock
 (
   id                INT AUTO_INCREMENT,
@@ -25,8 +24,6 @@ CREATE TABLE stock
   PRIMARY KEY       (id),
   CONSTRAINT products_product_id_fk FOREIGN KEY (product_id) REFERENCES product(product_id)
 ) ENGINE=INNODB;
-
-
 
 
 INSERT INTO product (product_name, product_description, product_id) VALUES ('Joy Of Java','Book about java', 'JOJ1'), ('SQL the sequel','Book about SQL', 'STS1'), ('Scala the mountian','Book about Scala', 'SCM1');

@@ -55,7 +55,6 @@ public class ShowAllProductsTest extends AcceptanceTest {
     }
 
     private GivensBuilder aProductAlreadyExists(String productId, String productName, String productDescription) throws SQLException {
-        productRepository.removeAllProducts(); // TODO passed to  before script
         productRepository.addProduct(product(productDescription(productDescription), productId(productId), productName(productName)));
         testState().interestingGivens.add("productId", "CTD1");
         return givens -> givens;

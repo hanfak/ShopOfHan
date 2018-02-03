@@ -9,8 +9,6 @@ import java.util.Optional;
 
 public interface StockRepository {
     Optional<ProductStock> checkStockByName(ProductName productName);
-
     Optional<ProductStock> checkStockById(ProductId productId);
-
     void addStock(Stock stock);
 }

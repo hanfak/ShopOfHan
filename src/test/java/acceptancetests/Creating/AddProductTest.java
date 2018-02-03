@@ -69,7 +69,7 @@ public class AddProductTest extends AcceptanceTest {
     // techinical failure
 
     private GivensBuilder theSystemIsRunning() throws IOException {
-        productRepository.removeAllProducts();
+//        productRepository.removeAllProducts();
         // TODO add parts of products to interestinggivens
         return givens -> givens;
     }

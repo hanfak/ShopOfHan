@@ -1,4 +1,4 @@
-package testinfrastructure;
+package testinfrastructure.stubs;
 
 import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.domain.product.Product;
@@ -15,10 +15,10 @@ import static hanfak.shopofhan.domain.product.ProductDescription.productDescript
 import static hanfak.shopofhan.domain.product.ProductId.productId;
 import static hanfak.shopofhan.domain.product.ProductName.productName;
 
-public class TestProductRepository implements ProductRepository {
+public class TestStubProductRepository implements ProductRepository {
 
     @SuppressWarnings("WeakerAccess")
-    public TestProductRepository() {
+    public TestStubProductRepository() {
         populateProductStockLists();
     }
 

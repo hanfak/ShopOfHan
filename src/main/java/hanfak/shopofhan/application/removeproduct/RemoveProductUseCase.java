@@ -18,7 +18,7 @@ public class RemoveProductUseCase {
 //        if (productStock.isPresent()) {
 //            stockRepository.removeStock(productId);
 //        }
-
+        System.out.println(productRepository.getAllProducts().get());
         productRepository.removeProduct(productid);
     }
 }

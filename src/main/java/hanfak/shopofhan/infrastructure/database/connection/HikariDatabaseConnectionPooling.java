@@ -11,7 +11,6 @@ import javax.sql.DataSource;
 
 // TODO: working on local, need to fix so it works via docker
 public class HikariDatabaseConnectionPooling {
-    private static final String DATABASE_NAME = "shop_of_han_database";
 //    private static final Settings settings = Wiring.settings();
     private static DataSource datasource;
 
@@ -23,7 +22,7 @@ public class HikariDatabaseConnectionPooling {
         if (datasource == null) {
             HikariConfig config = new HikariConfig();
 
-            config.setJdbcUrl(settings.databaseURL() + DATABASE_NAME);
+            config.setJdbcUrl(settings.databaseURL() + settings.databaseName());
             config.setUsername(settings.databaseUsername());
             config.setPassword(settings.databasePassword());
 

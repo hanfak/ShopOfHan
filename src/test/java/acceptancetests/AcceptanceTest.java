@@ -12,17 +12,15 @@ import com.googlecode.yatspec.rendering.html.DontHighlightRenderer;
 import com.googlecode.yatspec.rendering.html.HtmlResultRenderer;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
 import hanfak.shopofhan.application.crosscutting.ProductRepository;
+import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.infrastructure.properties.Settings;
 import hanfak.shopofhan.wiring.ShopOfHan;
 import org.junit.After;
 import org.junit.Before;
-import testinfrastructure.TestProductStockRepository;
-import testinfrastructure.TestStockRepository;
 import testinfrastructure.TestWiring;
+import testinfrastructure.testrepositories.TestStockRepository;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -42,8 +40,8 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
     protected final Then then = new Then(testState, capturedInputAndOutputs);
     private static final TestWiring TEST_WIRING = new TestWiring();
     public static final ProductRepository productRepository = TEST_WIRING.productRepository();
-    public static final TestStockRepository stockRepository = new TestStockRepository();
-    public static final TestProductStockRepository testProductStockRepository = new TestProductStockRepository();
+    public static final TestStockRepository stockRepository = TEST_WIRING.testStockRepository();
+    public static final ProductStockRepository testProductStockRepository = TEST_WIRING.productStockRepository();
 
     @Before
     public void setUp() throws Exception {
@@ -75,32 +73,19 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
 
 // TODO reset primings for all tests in @Before
     public void resetDatabaseContents() throws IOException {
-        //https://stackoverflow.com/questions/10929369/how-to-execute-multiple-sql-statements-from-java
-        // get each command, store as  separate sql stmt and use batch command in isDeleted
-//        List<String> sqlCommands = Arrays.stream(readSqlPriming().split("\n\n")).collect(Collectors.toList());
-//        executeSQL(sqlCommands.get(0));
-//        executeSQL(sqlCommands.get(1));
-//        executeSQL(sqlCommands.get(2));
-//        executeSQL(sqlCommands.get(3));
-//        executeSQL(sqlCommands.get(4));
-//        executeSQL(sqlCommands.get(5));
         executeSQL("DELETE FROM stock");
         executeSQL("DELETE FROM product");
     }
 
-    private String readSqlPriming() throws IOException {
-        //TODO how to read file from path
-        return new String(Files.readAllBytes(Paths.get("ShopOfHanSQL/commands_01.sql")));
-    }
-
     @SuppressWarnings("ConstantConditions")
     private void executeSQL(String sql) {
-        if (ENVIRONMENT.equals("test")) {
+        // Change to run stubs
+        if (!ENVIRONMENT.equals("test")) {
             return;
         }
         try (Connection connection = TEST_WIRING.databaseConnectionManager().getDBConnection().get();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-//            statement.execute();
+            statement.execute();
             if (statement.execute()) {
                 throw new IllegalArgumentException(statement.toString());
             }

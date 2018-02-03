@@ -67,9 +67,14 @@ not working with docker at the momentc
 
 ## TODOs
 
+- add stock, has stock id stored as stock desc.
+
 - Delete a product given a product id and rest of the stock
 - Not found page
 - No servlet found
+- -db sql, foreign key constraints-
+    - https://www.w3schools.com/sql/sql_foreignkey.asp
+- rethink db design, do i need a join table
 - Use a test db instead of stubs or prod db
     - Fix stub to make all tests past without filling stub first
     - Have a testStock and testPRoduct repository, 
@@ -78,13 +83,14 @@ not working with docker at the momentc
         - just need to change properties file to decide what to use (no commenting out)
     
 - Test http client
-- Update a product given a json
+- ~~Update a product given a json~~
     - use parse json to return jsonObject when unmarshalling  json
 - Update stock given productid and xml
 - Logger interfaece
 - Test wiring, factory for using stubs or database by using specific property file
 - delete specific stock given stock id and product id
-- Show all products
+- -Show all products-
+- show one stock given id
 - use wriemock and 3rd party service
 - refactor arg passed to use case to only needed not request
 - Validation for unmarshalling and /or domain objects

@@ -27,4 +27,9 @@ public class Settings implements DatabaseSettings, ServerSettings {
     public String databasePassword() {
         return propertiesReader.readProperty("database.password");
     }
+
+    @Override
+    public String databaseName() {
+        return propertiesReader.readProperty("database.name");
+    }
 }

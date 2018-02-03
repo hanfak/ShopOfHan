@@ -55,8 +55,8 @@ public class JDBCStockRepository implements StockRepository {
 
     public void setInsertParameters(EnhancedPreparedStatement enhancedPreparedStatement, Stock stock) throws SQLException {
         enhancedPreparedStatement.setString(stock.productId.value);
-        enhancedPreparedStatement.setString(stock.stockDescription.value);
         enhancedPreparedStatement.setString(stock.stockId.value);
+        enhancedPreparedStatement.setString(stock.stockDescription.value);
         enhancedPreparedStatement.setInt(stock.amount.value);
     }
 

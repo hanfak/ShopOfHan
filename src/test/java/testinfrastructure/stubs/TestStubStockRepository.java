@@ -1,4 +1,4 @@
-package testinfrastructure;
+package testinfrastructure.stubs;
 
 import hanfak.shopofhan.application.crosscutting.StockRepository;
 import hanfak.shopofhan.domain.ProductStock;
@@ -27,10 +27,10 @@ import static hanfak.shopofhan.domain.stock.StockDescription.stockDescription;
 import static hanfak.shopofhan.domain.stock.StockId.stockId;
 import static java.util.Arrays.asList;
 
-public class TestStockRepository implements StockRepository {
+public class TestStubStockRepository implements StockRepository {
 
     @SuppressWarnings("WeakerAccess")
-    public TestStockRepository() {
+    public TestStubStockRepository() {
         populateProductStockLists();
     }
 
@@ -46,7 +46,6 @@ public class TestStockRepository implements StockRepository {
 
     @Override
     public Optional<ProductStock> checkStockById(ProductId productId) {
-        System.out.println("blah  " + stockList);
         return productStockLists.stream()
                 .peek(productStockList -> System.out.println("blllll" + productStockList.product.productId))
                 .filter(productStockList -> productStockList.product.productId.equals(productId))

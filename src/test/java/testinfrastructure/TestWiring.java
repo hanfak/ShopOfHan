@@ -1,14 +1,19 @@
 package testinfrastructure;
 
+import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
+import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcWriterFactory;
+import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCStockRepository;
 import hanfak.shopofhan.infrastructure.properties.PropertiesReader;
 import hanfak.shopofhan.infrastructure.properties.Settings;
 import hanfak.shopofhan.wiring.Wiring;
+import testinfrastructure.testrepositories.TestStockRepository;
 
 
 // interface for both hanfak.shopofhan.wiring and TestWiring
 public class TestWiring extends Wiring {
-//    public static final String ENVIRONMENT = "test";  // to use test stub, uncomment methods
-    public static final String ENVIRONMENT = "localhost"; // to use database, comment methods
+    public static final String ENVIRONMENT = "test";  // to use test db, comment methods
+//    public static final String ENVIRONMENT = "localhost"; /// to use test stub, uncomment methods
     // TODO singleton pattern
 
     @Override
@@ -18,16 +23,23 @@ public class TestWiring extends Wiring {
 
 //    @Override
 //    public StockRepository stockRepository() {
-//        return new TestStockRepository();
+//        return new TestStubStockRepository();
 //    }
-//
-//    @Override
-//    public ProductStockRepository productStockRepository() {
-//        return new TestProductStockRepository();
-//    }
-//
+
+    public TestStockRepository testStockRepository() {
+        return new TestStockRepository(logger(JDBCStockRepository.class), new JdbcRecordReaderFactory(logger(JdbcRecordReaderFactory.class), databaseConnectionManager()), new JdbcWriterFactory(logger(JdbcWriterFactory.class), databaseConnectionManager()));
+    }
+
+
+    @Override
+    public ProductStockRepository productStockRepository() {
+        return null;
+//        return new TestStubProductStockRepository();
+    }
+
 //    @Override
 //    public ProductRepository productRepository() {
-//        return new TestProductRepository();
+//        return null;
+////        return new TestStubProductRepository();
 //    }
 }

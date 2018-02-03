@@ -48,4 +48,14 @@ public class SettingsTest implements WithAssertions {
 
         assertThat(settings.databasePassword()).isEqualTo("password");
     }
+
+    @Test
+    public void databaseNameTest() throws Exception {
+        PropertiesReader properties = mock(PropertiesReader.class);
+        Settings settings = new Settings(properties);
+
+        when(properties.readProperty("database.name")).thenReturn("blah");
+
+        assertThat(settings.databaseName()).isEqualTo("blah");
+    }
 }

@@ -61,8 +61,8 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
 
     private GivensBuilder stockAlreadyExistsForProductId(String productId, String stockId, String stockDescription, Integer stockAmount) throws SQLException {
         stockRepository.addStock(Stock.stock(StockAmount.stockAmount(stockAmount), StockId.stockId(stockId), StockDescription.stockDescription(stockDescription), ProductId.productId(productId)));
-        stockRepository.addToProductStockList(product);
-        System.out.println("asdfnaklsdjfk " + stockRepository.showAll());
+//        stockRepository.addToProductStockList(product);
+//        System.out.println("asdfnaklsdjfk " + stockRepository.showAll());
         testState().interestingGivens.add("productId", productId);
         return givens -> givens;
     }
@@ -80,8 +80,6 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
     }
 
     private GivensBuilder theSystemIsRunning() {
-
-         stockRepository.remove();
         return givens -> givens;
     }
 
