@@ -9,6 +9,7 @@ import hanfak.shopofhan.domain.stock.Stock;
 import hanfak.shopofhan.domain.stock.StockAmount;
 import hanfak.shopofhan.domain.stock.StockDescription;
 import hanfak.shopofhan.domain.stock.StockId;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -24,6 +25,7 @@ import static hanfak.shopofhan.domain.product.ProductName.productName;
 public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
 
     @Test
+    @Ignore
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
         given(aProductAlreadyExists(withProductId("JOJ1"), andProductName("Joy Of Java"), andProductDescription("Book about java")));
@@ -37,14 +39,17 @@ public class CheckAmountOfProductInStockByNameTest extends AcceptanceTest {
     }
 
     @Test
+    @Ignore
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
+
         thenItReturnsAStatusCodeOf(404);
         thenTheResponseCodeIs404AndTheBodyIs("Product 'Harry Potter' is not stocked java.lang.IllegalStateException: Product is not found");
         andThenContentTypeIs("Content-Type: text/plain");
     }
 
     @Test
+    @Ignore
     public void shouldFail() throws Exception {
         when(weMake.aGetRequestTo(BAD_URL));
         thenItReturnsAStatusCodeOf(404);

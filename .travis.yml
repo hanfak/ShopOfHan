@@ -1,8 +1,13 @@
 language : java
 jdk:
   - oraclejdk8
+services:
+  - mysql
 sudo: false
 before_install:
+  - mysql -e 'DROP DATABASE IF EXISTS shop_of_han_database_test;'
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS shop_of_han_database_test;'
+  - mysql -u root --default-character-set=utf8 shop_of_han_database_test < ShopOfHanSQL/priming_test_travis.sql
   - pip install --user codecov
 script:
   - mvn install -q

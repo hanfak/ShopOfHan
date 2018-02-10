@@ -97,27 +97,6 @@ public class JDBCProductRepository implements ProductRepository {
         return Optional.empty();
     }
 
-    // TODO Removed and passed to testJdbc only
-    // FOr testing only
-    @Override
-    public void removeAllProducts() {
-        try {
-            Optional<Connection> connection = databaseConnectionManager.getDBConnection();
-            if (connection.isPresent()) {
-                try (Connection dbConnection = connection.get();
-                     PreparedStatement stmt = dbConnection.prepareStatement(SQL_REMOVE_ALL_PRODUCT)) {
-
-
-                    logger.info("Removing all product rom database");
-                    stmt.execute();
-                    logger.info("Removed all product from database");
-                }
-            }
-        } catch (Exception e) {
-            logger.error("error " + e);
-        }
-    }
-
     private Optional<List<Product>> readProduct(PreparedStatement stmt) throws SQLException {
 
         ResultSet resultSet = stmt.executeQuery(); // TODO try catch and log error uinit test

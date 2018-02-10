@@ -4,6 +4,7 @@ import acceptancetests.AcceptanceTest;
 import com.googlecode.yatspec.junit.SpecRunner;
 import com.googlecode.yatspec.state.givenwhenthen.GivensBuilder;
 import hanfak.shopofhan.domain.product.Product;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -25,6 +26,7 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
     private Optional<Product> product;
 
     @Test
+    @Ignore
     public void shouldReturnStockAmountForItem() throws Exception {
         given(theSystemIsRunning());
         given(aProductAlreadyExists(withProductId("JOJ1"), andProductName("Joy Of Java"), andProductDescription("Book about java")));
@@ -37,6 +39,7 @@ public class CheckAmountOfProductInStockByIdTest extends AcceptanceTest {
     }
 
     @Test
+    @Ignore
     public void shouldReturnItemNotStocked() throws Exception {
         when(weMake.aGetRequestTo(PATH + HARRY_POTTER));
 

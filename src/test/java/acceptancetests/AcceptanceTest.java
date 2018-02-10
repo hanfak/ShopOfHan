@@ -11,13 +11,13 @@ import com.googlecode.yatspec.plugin.sequencediagram.SvgWrapper;
 import com.googlecode.yatspec.rendering.html.DontHighlightRenderer;
 import com.googlecode.yatspec.rendering.html.HtmlResultRenderer;
 import com.googlecode.yatspec.state.givenwhenthen.TestState;
-import hanfak.shopofhan.application.crosscutting.ProductRepository;
 import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.infrastructure.properties.Settings;
 import hanfak.shopofhan.wiring.ShopOfHan;
 import org.junit.After;
 import org.junit.Before;
 import testinfrastructure.TestWiring;
+import testinfrastructure.testrepositories.TestProductRepository;
 import testinfrastructure.testrepositories.TestStockRepository;
 
 import java.io.IOException;
@@ -39,7 +39,7 @@ public abstract class AcceptanceTest extends TestState implements WithCustomResu
 
     protected final Then then = new Then(testState, capturedInputAndOutputs);
     private static final TestWiring TEST_WIRING = new TestWiring();
-    public static final ProductRepository productRepository = TEST_WIRING.productRepository();
+    public static final TestProductRepository productRepository = TEST_WIRING.testProductRepository();
     public static final TestStockRepository stockRepository = TEST_WIRING.testStockRepository();
     public static final ProductStockRepository testProductStockRepository = TEST_WIRING.productStockRepository();
 

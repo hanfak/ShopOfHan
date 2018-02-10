@@ -3,16 +3,19 @@ package testinfrastructure;
 import hanfak.shopofhan.application.crosscutting.ProductStockRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcRecordReaderFactory;
 import hanfak.shopofhan.infrastructure.database.jdbc.helperlibrary.JdbcWriterFactory;
+import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCProductRepository;
 import hanfak.shopofhan.infrastructure.database.jdbc.repositories.JDBCStockRepository;
 import hanfak.shopofhan.infrastructure.properties.PropertiesReader;
 import hanfak.shopofhan.infrastructure.properties.Settings;
 import hanfak.shopofhan.wiring.Wiring;
+import testinfrastructure.stubs.TestStubProductStockRepository;
+import testinfrastructure.testrepositories.TestProductRepository;
 import testinfrastructure.testrepositories.TestStockRepository;
 
-
+// TODO Use stub or testRepo depending on what environment is passed through???? How???
 // interface for both hanfak.shopofhan.wiring and TestWiring
 public class TestWiring extends Wiring {
-    public static final String ENVIRONMENT = "test";  // to use test db, comment methods
+    public static final String ENVIRONMENT = "travis";  // to use test db, comment methods
 //    public static final String ENVIRONMENT = "localhost"; /// to use test stub, uncomment methods
     // TODO singleton pattern
 
@@ -33,13 +36,16 @@ public class TestWiring extends Wiring {
 
     @Override
     public ProductStockRepository productStockRepository() {
-        return null;
-//        return new TestStubProductStockRepository();
+//        return null;
+        return new TestStubProductStockRepository();
     }
 
 //    @Override
 //    public ProductRepository productRepository() {
-//        return null;
-////        return new TestStubProductRepository();
+//        return new TestStubProductRepository();
 //    }
+
+    public TestProductRepository testProductRepository() {
+        return new TestProductRepository(logger(JDBCProductRepository.class), databaseConnectionManager());
+    }
 }

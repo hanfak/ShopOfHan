@@ -13,5 +13,4 @@ public interface ProductRepository {
     void removeProduct(ProductId productid);
     void updateProduct(Product product);
     Optional<List<Product>> getAllProducts();
-    void removeAllProducts();
 }
